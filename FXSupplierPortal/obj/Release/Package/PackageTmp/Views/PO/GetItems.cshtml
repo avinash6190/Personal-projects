@@ -1,0 +1,93 @@
+﻿
+
+@model IEnumerable<VW_PRODUCT_MASTER>
+
+@{
+    ViewBag.Title = "Purchase Order";
+    Layout = null;
+    WebGrid webGrid = new WebGrid(source: Model, canPage: false, selectionFieldName: "orgName", canSort: false);
+}
+<script src="~/Scripts/jquery.dataTables.js"></script>
+<link href="~/Content/jquery.dataTables.css" rel="stylesheet" />
+@Styles.Render("~/Content/webgridstyle.css")
+@Scripts.Render("~/bundles/jqueryui")
+@Scripts.Render("~/bundles/jqueryval")
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Select Item from the list</title>
+    <script>
+        $(document).ready(function () {
+            $("#itemWebGrid").dataTable().fnDestroy();
+            $("#itemWebGrid thead").find("tr:gt(0)").remove();
+            $('#itemWebGrid thead tr').clone(true).appendTo('#itemWebGrid thead');
+
+            $('#itemWebGrid thead tr:eq(1) th').each(function (i) {
+                var title = $(this).text();
+                if (i == 0) {
+                    $(this).html('<input type="text" style="display:none; width:100%; font-size:11px;" placeholder=" ' + title + '" />');
+                    $(this).removeClass('sorting_asc');
+                }
+                else {
+                    $(this).html('<input type="text" style="width:100%; font-size:11px;" placeholder=" ' + title + '" />');
+                }
+                $('input', this).on('keyup change', function () {
+                    if (table.column(i).search() !== this.value) {
+                        table.column(i).search(this.value).draw();
+                    }
+                });
+            });
+            
+            var table = $('#itemWebGrid').DataTable({
+                orderCellsTop: true,
+                fixedHeader: true,
+                search: false
+            });
+        });
+
+        setTimeout(function () {
+            //$("#poWebGridDiv").removeAttr("style");
+            $("#itemWebGridDiv").show();
+        }, 20);
+
+        function setItems(itemCode, itemDesc) {
+            $("#ITEMNUM").val(itemCode);
+            $("#DESCRIPTION").val(itemDesc);
+            $("#getItems").dialog('close');
+        }
+    </script>
+</head>
+<body>
+    <div id="itemWebGridDiv" style="display:none">
+        <form id="myForm">
+            <div id='getItems'>
+                @webGrid.GetHtml(
+               htmlAttributes: new { @id = "itemWebGrid" },
+               tableStyle: "webgrid-table",
+               headerStyle: "webgrid-header",
+               footerStyle: "webgrid-footer",
+               alternatingRowStyle: "webgrid-alternating-row",
+               selectedRowStyle: "webgrid-selected-row",
+               rowStyle: "webgrid-row-style",
+               mode: WebGridPagerModes.All,
+               columns: webGrid.Columns(
+                    webGrid.Column("Select", "Select", format: @<text><a href="#" onclick="setItems('@item.prm_item_code','@item.prm_item_desc');" + style="color: blue;text-decoration: underline;">Select</a></text>),
+                 webGrid.Column("orgName", "Division"),
+                 webGrid.Column("prm_item_code", "Item Code"),
+                 webGrid.Column("prm_item_desc", "Item Description"),
+                 webGrid.Column("uom_desc", "Order Unit")
+                 ))
+            </div>
+
+        </form>
+    </div>
+</body>
+
+
+</html>
+
+
+

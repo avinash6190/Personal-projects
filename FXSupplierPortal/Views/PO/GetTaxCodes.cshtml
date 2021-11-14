@@ -1,0 +1,102 @@
+﻿
+@model IEnumerable<FXSupplierPortal.TAXCODE>
+
+@{
+    ViewBag.Title = "Tax Code List";
+    Layout = null;
+    WebGrid webGrid = new WebGrid(source: Model, canSort: false, selectionFieldName: "TAXCODEID", canPage: false);
+}
+<script src="~/Scripts/jquery.dataTables.js"></script>
+<link href="~/Content/jquery.dataTables.css" rel="stylesheet" />
+@Styles.Render("~/Content/webgridstyle.css")
+@Scripts.Render("~/bundles/jqueryui")
+@Scripts.Render("~/bundles/jqueryval")
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("#taxwebGrid").dataTable().fnDestroy();
+            $("#taxwebGrid thead").find("tr:gt(0)").remove();
+            $('#taxwebGrid thead tr').clone(true).appendTo('#taxwebGrid thead');
+
+            $('#taxwebGrid thead tr:eq(1) th').each(function (i) {
+                var title = $(this).text();
+                if (i == 0) {
+                    $(this).html('<input type="text" style="display:none; width:100%; font-size:11px;" placeholder=" ' + title + '" />');
+                    $(this).removeClass('sorting_asc');
+                }
+                else {
+                    $(this).html('<input type="text" style="width:100%; font-size:11px;" placeholder=" ' + title + '" />');
+                }
+                $('input', this).on('keyup change', function () {
+                    if (table.column(i).search() !== this.value) {
+                        table.column(i).search(this.value).draw();
+                    }
+                });
+            });
+
+            $("#taxwebGrid").dataTable().fnDestroy();
+            var table = $('#taxwebGrid').DataTable({
+                orderCellsTop: true,
+                fixedHeader: true,
+                //Ordering: false
+            });
+        });
+
+
+
+        setTimeout(function () {
+            //$("#webGridDiv").style.visibility = 'visible';
+            $("#taxGridDiv").show();
+        }, 100);
+
+        function setTaxCode(taxCode) {
+
+            $("#TAXCODE").val(taxCode);
+            getTaxCalculation();
+            $("#getTaxCode").dialog('close');
+            
+        }
+    </script>
+
+
+</head>
+<body>
+    <div id="taxGridDiv" style="display:none">
+        <h2 class="text-primary">Search Purchase Order</h2>
+        <div id='getTaxCode'>
+            @webGrid.GetHtml(
+                htmlAttributes: new { @id = "taxwebGrid" },
+                tableStyle: "webgrid-table",
+                headerStyle: "webgrid-header",
+                footerStyle: "webgrid-footer",
+                alternatingRowStyle: "webgrid-alternating-row",
+                selectedRowStyle: "webgrid-selected-row",
+                rowStyle: "webgrid-row-style",
+                mode: WebGridPagerModes.All,
+                columns: webGrid.Columns(
+                           webGrid.Column("select", "Select", format: @<text><a href="#" onclick="setTaxCode('@item.TAXCODEID');" + style="color: blue;text-decoration: underline;">Select</a></text>),
+                                                                                                                                    webGrid.Column("TAXCODEID", "Tax Id"),
+                                                                                                                                    webGrid.Column("TAXDESC", "Tax Desc"),
+                                                                                                                                    webGrid.Column("TAXRATE", "Tax Rate"),
+                                                                                                                                    webGrid.Column("EFFDATE", "Eff Date")))
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

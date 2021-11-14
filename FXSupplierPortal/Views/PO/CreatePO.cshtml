@@ -1,0 +1,888 @@
+﻿@model FXSupplierPortal.Models.POViewModel
+
+@{
+    ViewBag.Title = "Create Purchase Order";
+    WebGrid pOLineGrid = new WebGrid(source: Model.poLine, canSort: false, canPage: false);
+    WebGrid pOSignatureGrid = new WebGrid(source: Model.poSignatures, canSort: false, canPage: false);
+}
+
+<h2 id="POTitle" class="text-primary">Create Purchase Order</h2>
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/webGridDatatable")
+@Styles.Render("~/Content/webGridDatatableStyles")
+@Styles.Render("~/Content/webgridstyle.css")
+@Scripts.Render("~/bundles/jqueryval")
+@Scripts.Render("~/bundles/bootstrapjs")
+@Scripts.Render("~/bundles/jqueryui")
+@Styles.Render("~/Content/themes/base/css")
+
+<li class="dropdown nav navbar-nav navbar-right" style="margin-bottom:30px">
+    <a class="dropdown-toggle dropdownToggle" data-toggle="dropdown" align="right" href="#">Actions <span class="caret"></span></a>
+    <ul class="dropdown-menu" style="width: 200px;">
+        <li><a class="fa fa-user fa-fw" onclick="changePOStatus()" href="#">  Change Status</a></li>
+        <li><a class="fa fa-user fa-fw" href="#">   Revise PO</a></li>
+        <li><a class="fa fa-user fa-fw" href="#">   Print Purchase Order</a></li>
+        <li><a class="fa fa-user fa-fw" href="#">   Define PO Permission</a></li>
+        <li><a class="fa fa-gear fa-fw" href="#">   View Status History</a></li>
+        <li><a class="fa fa-gear fa-fw" href="#">   View Revision History</a></li>
+        <li><a class="fa fa-gear fa-fw" href="#">   View Permission History</a></li>
+    </ul>
+</li>
+@using (Ajax.BeginForm("CreatePO", "PO", null, new AjaxOptions() { OnSuccess = "getresult", HttpMethod = "post" }, new { id = "CreatePO" }))
+{
+    <div>
+        <div id="divSuccess" style="display: none" class="alert alert-success">
+            <strong>Success!</strong> Purchase Order has been Created Successfully
+            <button id="btnClose" type="button" class="close " aria-hidden="true">&times;</button>
+        </div>
+        <div id="divRequiredFieldError" style="display:none" class="alert alert-danger">
+            @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+            <button id="btnClose" type="button" class="close" aria-hidden="true">&times;</button>
+        </div>
+        <div id="divCustomError" style="display:none" class="alert alert-danger">
+            @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+            <button id="btnClose" type="button" class="close" aria-hidden="true">&times;</button>
+        </div>
+
+
+        <ul class="nav nav-tabs" id="myTab">
+            <li class="active"><a data-toggle="tab" href="#POHome">PO</a></li>
+            <li><a data-toggle="tab" href="#POLine">PO Line</a></li>
+            <li><a data-toggle="tab" href="#POSignature">Signatures</a></li>
+            <li><a data-toggle="tab" href="#POAttachments">Notes & Attachments</a></li>
+        </ul>
+
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <!-- Tab panes -->
+            <div id="POHome" class="tab-pane fade in active">
+                <div class="form-group" align="right">
+                    <input id="btnCreate" type="submit" value="Create" class="btn btn-primary" />
+                </div>
+                <div class="reg-panel panel panel-default">
+
+                    @*@Html.Hidden("po_POMODE", (object)ViewBag.poMode.ToString())*@
+                    @Html.HiddenFor(model => model.po.POMODE, new { Value = (object)ViewBag.poMode.ToString() })
+                    @Html.HiddenFor(model => model.po.POSID)
+                    @Html.Hidden("EventMode", new { Value = (object)ViewBag.poMode.ToString() })
+                    <div class="panel-heading">
+                        <h3 class="panel-title">PO</h3>
+                    </div>
+                    <div class="panel" style="border: none;">
+                        <div class="panel-body">
+                            <div class="form-horizontal">
+                                <fieldset>
+                                    <legend>
+                                        PO Description
+                                    </legend>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+
+                                            @Html.Label("PONUM", "PONum", htmlAttributes: new { @class = "control-label col-sm-4 Pdringtop" })
+                                            <div class="col-sm-7">
+                                                @Html.EditorFor(model => model.po.PONUM, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            @Html.Label("POREVISION", "Revision", htmlAttributes: new { @class = "control-label col-sm-4 Pdringtop" })
+                                            <div class="col-sm-7">
+                                                @Html.EditorFor(model => model.po.POREVISION, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+
+                                                @Html.EditorFor(model => model.po.DESCRIPTION, new { htmlAttributes = new { @class = "form-control" } })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                @Html.EditorFor(model => model.po.REVCOMMENTS, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            @Html.Label("STATUS", "Status", htmlAttributes: new { @Value = "Draft", @class = "control-label col-sm-4 Pdringtop" })
+                                            <div class="col-sm-7">
+                                                @Html.EditorFor(model => model.po.STATUS, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control extendWidth" } })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            @Html.Label("STATUSDATE", "StatusDate", htmlAttributes: new { @Value = DateTime.Now, @class = "control-label col-sm-4 Pdringtop" })
+                                            <div class="col-sm-7">
+                                                @Html.EditorFor(model => model.po.STATUSDATE, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control extendWidth" } })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                @* End PO*@
+
+                @* Po Information *@
+                <div class="reg-panel panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">PO Information</h3>
+                    </div>
+                    <div class="panel" style="border: none;">
+                        <div class="panel-body">
+                            <div class="form-horizontal">
+                                <div class="col-sm-3">
+                                    <fieldset>
+                                        <legend>Details</legend>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-4 Pdringtop" for="inputName">
+                                                <span class="showAstrik">*</span>Division
+
+                                            </label>
+                                            <div class="col-sm-7">
+                                                @Html.EditorFor(model => model.po.ORGNAME, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+                                                @Html.HiddenFor(model => model.po.ORGCODE)
+                                            </div>
+                                            <div style="float: left; margin-left: -25px; " class="col-sm-1">
+                                                <img id="imgDivision" src="../images/img_lookup.gif" class="searchImage" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-4 Pdringtop" for="inputName">
+                                                <span class="showAstrik">*</span>Project
+                                            </label>
+                                            <div class="col-sm-7">
+                                                @Html.EditorFor(model => model.po.PROJECTNAME, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+                                                @Html.HiddenFor(model => model.po.PROJECTCODE)
+                                            </div>
+                                            <div style="float: left; margin-left: -25px; " class="col-sm-1">
+                                                <img id="imgProject" src="../images/img_lookup.gif" class="searchImage" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-4 Pdringtop" for="inputName">
+                                                <span class="showAstrik">*</span>Buyer
+                                            </label>
+                                            <div class="col-sm-7">
+                                                @Html.EditorFor(model => model.po.BUYERNAME, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+                                                @Html.HiddenFor(model => model.po.BUYERCODE)
+                                            </div>
+                                            <div style="float: left; margin-left: -25px; " class="col-sm-1">
+                                                <img id="imgUsers" src="../images/img_lookup.gif" class="searchImage" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-4 Pdringtop" for="inputName">
+                                                <span class="showAstrik">*</span>Type
+                                            </label>
+                                            <div class="col-sm-7">
+                                                @Html.EditorFor(model => model.po.POTYPETEXT, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+                                                @Html.HiddenFor(model => model.po.POTYPE)
+                                            </div>
+                                            <div style="float: left; margin-left: -25px; " class="col-sm-1">
+                                                <img id="imgPoType" src="../images/img_lookup.gif" class="searchImage" />
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <div class="col-sm-3">
+                                    <fieldset>
+                                        <legend>PO Reference</legend>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-5 Pdringtop" for="inputName">
+                                                Requistion Ref #
+                                            </label>
+                                            <div class="col-sm-6">
+                                                @Html.EditorFor(model => model.po.MRNUM, new { htmlAttributes = new { @class = "form-control" } })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-5 Pdringtop" for="inputName">
+                                                Quotation Ref #
+                                            </label>
+                                            <div class="col-sm-6">
+                                                @Html.EditorFor(model => model.po.QNUM, new { htmlAttributes = new { @class = "form-control" } })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-5 Pdringtop" for="inputName">
+                                                Contract Ref #
+                                            </label>
+                                            <div class="col-sm-6">
+                                                @Html.EditorFor(model => model.po.ORIGINALCONTRACTNUM, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.HiddenFor(model => model.po.CONTRACTREFNUM)
+                                            </div>
+                                            <div style="float: left; margin-left: -25px; " class="col-sm-1">
+                                                <img id="imgContractRef" src="../images/img_lookup.gif" class="searchImage" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-5 Pdringtop" for="inputName">
+                                                PO Ref
+                                            </label>
+                                            <div class="col-sm-6">
+                                                @Html.EditorFor(model => model.po.ORIGINALPONUM, new { htmlAttributes = new { @class = "form-control" } })
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <div class="col-sm-3">
+                                    <fieldset>
+                                        <legend>Dates</legend>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-5 Pdringtop" for="inputName">
+                                                <span class="showAstrik">*</span>  Order Date
+                                            </label>
+                                            <div class="col-sm-6">
+                                                @Html.EditorFor(model => model.po.ORDERDATE, new { htmlAttributes = new { @class = "form-control, datePickerBase", data_val_date = "Please enter a valid Order date in mm/dd/yyyy format.", autocomplete = "off" } })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-5 Pdringtop" for="inputName">
+                                                Required Date
+                                            </label>
+                                            <div class="col-sm-6">
+                                                @Html.EditorFor(model => model.po.REQUIREDATE, new { htmlAttributes = new { @class = "form-control, datePickerBase", data_val_date = "Please enter a valid Required date in mm/dd/yyyy format.", autocomplete = "off" } })
+
+                                            </div>
+                                            <div class="col-sm-1" style="margin-left: -12px;">
+                                                <asp:ImageButton ID="imgpopCalender1" ImageUrl="~/images/rsz_calendar-icon-png-4.png" ImageAlign="Bottom" runat="server" CssClass="imgPopup" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-5 Pdringtop" for="inputName">
+                                                Vendor Date
+                                            </label>
+                                            <div class="col-sm-6">
+                                                @Html.EditorFor(model => model.po.VENDORDATE, new { htmlAttributes = new { @class = "form-control, datePickerBase", data_val_date = "Please enter a valid Vendor date in mm/dd/yyyy format.", autocomplete = "off" } })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-5 Pdringtop" for="inputName">
+                                                Quotation Date
+                                            </label>
+                                            <div class="col-sm-6">
+                                                @Html.EditorFor(model => model.po.QDATE, new { htmlAttributes = new { @class = "form-control, datePickerBase", data_val_date = "Please enter a valid Quotation date in mm/dd/yyyy format.", autocomplete = "off" } })
+
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <div class="col-sm-3">
+                                    <fieldset>
+                                        <legend>Costs</legend>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-5 Pdringtop" for="inputName">
+                                                Pretax Total
+                                            </label>
+                                            <div class="col-sm-7">
+                                                @Html.EditorFor(model => model.po.PRETAXTOTAL, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-5 Pdringtop" for="inputName">
+                                                Total Tax
+                                            </label>
+                                            <div class="col-sm-7">
+                                                @Html.EditorFor(model => model.po.TOTALTAX, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-5 Pdringtop" for="inputName">
+                                                Total Cost
+                                            </label>
+                                            <div class="col-sm-7">
+                                                @Html.EditorFor(model => model.po.TOTALCOST, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-5 Pdringtop" for="inputName">
+                                                <span class="showAstrik">*</span>Currency
+                                            </label>
+                                            <div class="col-sm-6">
+                                                @Html.EditorFor(model => model.po.CURRENCYCODE, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                                @Html.Hidden("CurrencyName")
+                                            </div>
+                                            <div style="float: left; margin-left: -25px; " class="col-sm-1">
+                                                <img id="imgCurrency" src="../images/img_lookup.gif" class="searchImage" />
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                @* End PO Information *@
+
+                @*Start Supplier Information*@
+
+                <div class="reg-panel panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Supplier Information</h3>
+                    </div>
+                    <div class="panel" style="border: none;">
+                        <div class="panel-body">
+                            <div class="form-horizontal">
+                                <div class="col-sm-4">
+                                    <fieldset>
+                                        <legend>Supplier Details</legend>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-3 Pdringtop" for="inputName">
+                                                Company
+                                            </label>
+                                            <div class="col-sm-7">
+                                                @Html.EditorFor(model => model.po.VENDORID, new { htmlAttributes = new { @class = "form-control" } })
+                                            </div>
+                                            <div style="float: left; margin-left: -25px; " class="col-sm-1">
+                                                <img id="imgSupplier" src="../images/img_lookup.gif" class="searchImage" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-3 Pdringtop" for="inputName">
+                                                Name
+                                            </label>
+                                            <div class="col-sm-7">
+                                                @Html.EditorFor(model => model.po.VENDORNAME, new { htmlAttributes = new { @class = "form-control" } })
+                                            </div>
+                                            <div style="width: 2%; float: left;">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-3 Pdringtop" for="inputName">
+                                                Address
+                                            </label>
+                                            <div class="col-sm-9">
+                                                @Html.TextAreaFor(model => model.po.VENDORADDR, new { htmlAttributes = new { @class = "form-control" } })
+                                            </div>
+                                            <div style="width: 2%; float: left;">
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <div class="col-sm-4">
+                                    <fieldset>
+                                        <legend>PO Supplier Contact 1</legend>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-4 Pdringtop" for="inputName">
+                                                Full Name
+                                            </label>
+                                            <div class="col-sm-7">
+                                                @Html.EditorFor(model => model.po.VENDORATTN1NAME, new { htmlAttributes = new { @class = "form-control" } })
+                                            </div>
+                                            <div style="width: 2%; float: left;">
+                                                &nbsp;
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-4 Pdringtop" for="inputName">
+                                                Position
+                                            </label>
+                                            <div class="col-sm-7">
+                                                @Html.EditorFor(model => model.po.VENDORATTN1POS, new { htmlAttributes = new { @class = "form-control" } })
+                                            </div>
+                                            <div style="width: 2%; float: left;">
+                                                &nbsp;
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-4 Pdringtop" for="inputName">
+                                                Mobile
+                                            </label>
+                                            <div class="col-sm-7">
+                                                @Html.EditorFor(model => model.po.VENDORATTN1MOB, new { htmlAttributes = new { @class = "form-control" } })
+                                            </div>
+                                            <div style="width: 2%; float: left;">
+                                                &nbsp;
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-4 Pdringtop" for="inputName">
+                                                Phone
+                                            </label>
+                                            <div class="col-sm-7">
+                                                @Html.EditorFor(model => model.po.VENDORATTN1TEL, new { htmlAttributes = new { @class = "form-control" } })
+                                            </div>
+                                            <div style="width: 2%; float: left;">
+                                                &nbsp;
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-4 Pdringtop" for="inputName">
+                                                Fax
+                                            </label>
+                                            <div class="col-sm-7">
+                                                @Html.EditorFor(model => model.po.VENDORATTN1FAX, new { htmlAttributes = new { @class = "form-control" } })
+                                            </div>
+                                            <div style="width: 2%; float: left;">
+                                                &nbsp;
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-4 Pdringtop" for="inputName">
+                                                Email
+                                            </label>
+                                            <div class="col-sm-7">
+                                                @Html.EditorFor(model => model.po.VENDORATTN1EMAIL, new { htmlAttributes = new { @class = "form-control" } })
+                                            </div>
+                                            <div style="width: 2%; float: left;">
+                                                &nbsp;
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <div class="col-sm-4">
+                                    <fieldset>
+                                        <legend>PO Supplier Contact 2</legend>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-4 Pdringtop" for="inputName">
+                                                Full Name
+                                            </label>
+                                            <div class="col-sm-8">
+                                                @Html.EditorFor(model => model.po.VENDORATTN2NAME, new { htmlAttributes = new { @class = "form-control" } })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-4 Pdringtop" for="inputName">
+                                                Position
+                                            </label>
+                                            <div class="col-sm-8">
+                                                @Html.EditorFor(model => model.po.VENDORATTN2POS, new { htmlAttributes = new { @class = "form-control" } })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-4 Pdringtop" for="inputName">
+                                                Mobile
+                                            </label>
+                                            <div class="col-sm-8">
+                                                @Html.EditorFor(model => model.po.VENDORATTN2MOB, new { htmlAttributes = new { @class = "form-control" } })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-4 Pdringtop" for="inputName">
+                                                Phone
+                                            </label>
+                                            <div class="col-sm-8">
+                                                @Html.EditorFor(model => model.po.VENDORATTN2TEL, new { htmlAttributes = new { @class = "form-control" } })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-4 Pdringtop" for="inputName">
+                                                Fax
+                                            </label>
+                                            <div class="col-sm-8">
+                                                @Html.EditorFor(model => model.po.VENDORATTN2FAX, new { htmlAttributes = new { @class = "form-control" } })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-4 Pdringtop" for="inputName">
+                                                Email
+                                            </label>
+                                            <div class="col-sm-8">
+                                                @Html.EditorFor(model => model.po.VENDORATTN2EMAIL, new { htmlAttributes = new { @class = "form-control" } })
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                @*</div>*@
+
+                <div class="reg-panel panel panel-default">
+                    <div class="panel-heading" style="background-color:aqua">
+                        <h3 class="panel-title">Delivery Information</h3>
+                    </div>
+                    <div class="panel" style="border: none;">
+                        <div class="panel-body">
+
+                            @*<div class="panel-body">*@
+                            <div class="form-horizontal">
+                                <div class="col-sm-4">
+                                    <fieldset>
+                                        <legend style="font-weight: bold">Delivery Details</legend>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-3 Pdringtop" for="inputName">
+                                                Ship to Address
+                                            </label>
+                                            <div class="col-sm-7">
+                                                @Html.TextAreaFor(model => model.po.SHIPTOADDR, new { htmlAttributes = new { @class = "form-control" } })
+                                            </div>
+                                            <div style="width: 2%; float: left;">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-3 Pdringtop" for="inputName">
+                                                Payment Terms
+                                            </label>
+                                            <div class="col-sm-7">
+                                                @Html.EditorFor(model => model.po.PAYMENTTERMS, new { htmlAttributes = new { @class = "form-control" } })
+                                            </div>
+                                            <div style="width: 2%; float: left;">
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <div class="col-sm-4">
+                                    <fieldset>
+                                        <legend>Fibrex Person 1</legend>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-4 Pdringtop" for="inputName">Full Name</label>
+                                            <div class="col-sm-7">
+                                                @Html.EditorFor(model => model.po.SHIPTOATTN1NAME, new { htmlAttributes = new { @class = "form-control" } })
+                                            </div>
+                                            <div style="width: 2%; float: left;">
+                                                &nbsp;
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-4 Pdringtop" for="inputName">Position</label>
+                                            <div class="col-sm-7">
+                                                @Html.EditorFor(model => model.po.SHIPTOATTN1POS, new { htmlAttributes = new { @class = "form-control" } })
+                                            </div>
+                                            <div style="width: 2%; float: left;">
+                                                &nbsp;
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-4 Pdringtop" for="inputName">Mobile</label>
+                                            <div class="col-sm-7">
+                                                @Html.EditorFor(model => model.po.SHIPTOATTN1MOB, new { htmlAttributes = new { @class = "form-control" } })
+                                            </div>
+                                            <div style="width: 2%; float: left;">
+                                                &nbsp;
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <div class="col-sm-4">
+                                    <fieldset>
+                                        <legend>Fibrex Person 2</legend>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-4 Pdringtop" for="inputName">
+                                                Full Name
+                                            </label>
+                                            <div class="col-sm-8">
+                                                @Html.EditorFor(model => model.po.SHIPTOATTN2NAME, new { htmlAttributes = new { @class = "form-control" } })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-4 Pdringtop" for="inputName">
+                                                Position
+                                            </label>
+                                            <div class="col-sm-8">
+                                                @Html.EditorFor(model => model.po.SHIPTOATTN2POS, new { htmlAttributes = new { @class = "form-control" } })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-4 Pdringtop" for="inputName">
+                                                Mobile
+                                            </label>
+                                            <div class="col-sm-8">
+                                                @Html.EditorFor(model => model.po.SHIPTOATTN2MOB, new { htmlAttributes = new { @class = "form-control" } })
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                @* End Supplier Information
+
+
+                    @*Purchase Order Information*@
+
+
+
+
+                @*Audit Information*@
+                <div id="AuditInfo" style="display: none" class="reg-panel panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Audit Information</h3>
+                    </div>
+                    <div class="panel-body">
+
+                        <ContentTemplate>
+                            <div class="form-horizontal">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-4 Pdringtop" for="inputName">
+                                            Created By
+                                        </label>
+                                        <label class="control-label col-sm-7 Pdringtop txtleft" for="inputName">
+                                            @Html.DisplayFor(model => model.po.CREATEDBY)
+                                        </label>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-4 Pdringtop" for="inputName">
+                                            Last Modified By
+                                        </label>
+                                        <label class="control-label col-sm-7 Pdringtop txtleft" for="inputName">
+                                            @Html.DisplayFor(model => model.po.LASTMODIFIEDBY)
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-4 Pdringtop" for="inputName">
+                                            Created Timestamp
+                                        </label>
+                                        <label id="CreatedDateTime" class="control-label col-sm-7 Pdringtop txtleft" for="inputName">
+                                            @Html.DisplayFor(model => model.po.CREATIONDATETIME)
+                                        </label>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-4 Pdringtop" for="inputName">
+                                            Last Modified Timestamp
+                                        </label>
+                                        <label id="LastModifiedDate" class="control-label col-sm-7 Pdringtop txtleft" for="inputName">
+                                            @Html.DisplayFor(model => model.po.LASTMODIFIEDDATE)
+                                        </label>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </ContentTemplate>
+
+                    </div>
+                </div>
+                @*AuditInformation*@
+
+
+                <div id='GetOrganization'>
+                </div>
+                <div id='GetProjects'>
+                </div>
+                <div id='GetUsers'>
+                </div>
+                <div id='GetPOType'>
+                </div>
+                <div id='GetSuppliers'>
+                </div>
+                <div id='GetContractRef'>
+                </div>
+                <div id='GetCurrency'>
+                </div>
+
+            </div>
+
+            <div id="POLine" class="tab-pane fade">
+                @*<h3>PO Line</h3>*@
+                <div class="panel" style="border: none;">
+                    <div class="panel-body">
+                        <div class="form-horizontal">
+                            <fieldset>
+                                <legend>
+                                    PO Description
+                                </legend>
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+
+                                        @Html.Label("PONUM", "PONum", htmlAttributes: new { @class = "control-label col-sm-4 Pdringtop" })
+                                        <div class="col-sm-7">
+                                            @Html.EditorFor(model => model.po.PONUM, new { @id = "poLinePoNum", htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.Label("POREVISION", "Revision", htmlAttributes: new { @class = "control-label col-sm-4 Pdringtop" })
+                                        <div class="col-sm-7">
+                                            @Html.EditorFor(model => model.po.POREVISION, new { @id = "poLineRev", htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+
+                                            @Html.EditorFor(model => model.po.DESCRIPTION, new { @id = "poLineDesc", htmlAttributes = new { @class = "form-control" } })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            @Html.EditorFor(model => model.po.REVCOMMENTS, new { @id = "poLineRevComm", htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        @Html.Label("STATUS", "Status", htmlAttributes: new { @Value = "DRAFT", @class = "control-label col-sm-4 Pdringtop" })
+                                        <div class="col-sm-7">
+                                            @Html.EditorFor(model => model.po.STATUS, new { @id = "poLineStatus", htmlAttributes = new { @readonly = "readonly", @class = "form-control extendWidth" } })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.Label("TOTALCOST", "TotalCost", htmlAttributes: new { @Value = DateTime.Now, @class = "control-label col-sm-4 Pdringtop" })
+                                        <div class="col-sm-7">
+                                            @Html.Editor("POLineTotalCost", new { htmlAttributes = new { @readonly = "readonly", @class = "form-control extendWidth" } })
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <div id="editPOLine"></div>
+                            <div id="CreatePOLine"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <text>
+                    <a href="#" onclick="CreatePOLine()" + class="btn btn-primary">Create New PO Line</a>
+                </text>
+                <div id="POLineItemWebGridDiv">
+                    <h3>PO Line Item List</h3>
+                    @pOLineGrid.GetHtml(
+                        htmlAttributes: new { @id = "pOLineId" },
+                        tableStyle: "webgrid-table",
+                        headerStyle: "webgrid-header",
+                        footerStyle: "webgrid-footer",
+                        alternatingRowStyle: "webgrid-alternating-row",
+                        selectedRowStyle: "webgrid-selected-row",
+                        rowStyle: "webgrid-row-style",
+                        mode: WebGridPagerModes.All,
+                        columns: pOLineGrid.Columns(
+                        pOLineGrid.Column("POLINENUM", "Line"),
+                        pOLineGrid.Column("LINETYPE", "Line Type"),
+                        pOLineGrid.Column("ITEMNUM", "Item"),
+                        pOLineGrid.Column("DESCRIPTION", "Description"),
+                        pOLineGrid.Column("ORDERQTY", "Quantity", format: @<text> @item.ORDERQTY.ToString("0.00")</text>),
+                  pOLineGrid.Column("ORDERUNIT", "Unit"),
+                  pOLineGrid.Column("UNITCOST", "Unit Price", format: @<text> @item.UNITCOST.ToString("0.00")</text>),
+             pOLineGrid.Column("LINECOST", "Line Cost", format: @<text> @item.LINECOST.ToString("0.00")</text>),
+         pOLineGrid.Column("TAXTOTAL", "Tax"),
+         pOLineGrid.Column("Edit", "Edit", format: @<text><a href="#" onclick="editPOLine('@item.PONUM','@item.POREVISION','@item.POLINENUM');" + class="btn btn-primary">EDIT</a></text>),
+     pOLineGrid.Column("Delete", "Delete", format: @<text><a href="#" onclick="deletePOLine('@item.PONUM','@item.POREVISION','@item.POLINENUM');" ;" + class="btn btn-primary">DELETE</a></text>)
+
+            ))
+                </div>
+            </div>
+            <div id="POSignature" class="tab-pane fade">
+                <h3>PO Signature</h3>
+                <div class="panel" style="border: none;">
+                    <div class="panel-body">
+                        <div class="form-horizontal">
+                            <fieldset>
+                                <legend>
+                                    PO Description
+                                </legend>
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+
+                                        @Html.Label("PONUM", "PONum", htmlAttributes: new { @class = "control-label col-sm-4 Pdringtop" })
+                                        <div class="col-sm-7">
+                                            @Html.EditorFor(model => model.po.PONUM, new { @id = "poLinePoNum", htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.Label("POREVISION", "Revision", htmlAttributes: new { @class = "control-label col-sm-4 Pdringtop" })
+                                        <div class="col-sm-7">
+                                            @Html.EditorFor(model => model.po.POREVISION, new { @id = "poLineRev", htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+
+                                            @Html.EditorFor(model => model.po.DESCRIPTION, new { @id = "poLineDesc", htmlAttributes = new { @class = "form-control" } })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            @Html.EditorFor(model => model.po.REVCOMMENTS, new { @id = "poLineRevComm", htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        @Html.Label("STATUS", "Status", htmlAttributes: new { @Value = "DRAFT", @class = "control-label col-sm-4 Pdringtop" })
+                                        <div class="col-sm-7">
+                                            @Html.EditorFor(model => model.po.STATUS, new { @id = "poLineStatus", htmlAttributes = new { @readonly = "readonly", @class = "form-control extendWidth" } })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.Label("TOTALCOST", "TotalCost", htmlAttributes: new { @Value = DateTime.Now, @class = "control-label col-sm-4 Pdringtop" })
+                                        <div class="col-sm-7">
+                                            @Html.Editor("POSignatureTotalCost", new { htmlAttributes = new { @readonly = "readonly", @class = "form-control extendWidth" } })
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <div id="CreatePOSignature"></div>
+                            <div id="EditPOSignature"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <text>
+                    <a href="#" onclick="CreatePOSignature()" + class="btn btn-primary">Add Signature</a>
+                </text>
+                <div id="SignatureItemWebGridDiv">
+                    <h3>Signature List</h3>
+                    @pOSignatureGrid.GetHtml(
+                        htmlAttributes: new { @id = "webGridSignature" },
+                        tableStyle: "webgrid-table",
+                        headerStyle: "webgrid-header",
+                        footerStyle: "webgrid-footer",
+                        alternatingRowStyle: "webgrid-alternating-row",
+                        selectedRowStyle: "webgrid-selected-row",
+                        rowStyle: "webgrid-row-style",
+                        mode: WebGridPagerModes.All,
+                        columns: pOSignatureGrid.Columns(
+                        pOSignatureGrid.Column("OrderNo", "No"),
+                        pOSignatureGrid.Column("Authority", "Authority"),
+                        pOSignatureGrid.Column("Designation", "Designation"),
+                        pOSignatureGrid.Column("TeamMemberCode", "Badge#"),
+                        pOSignatureGrid.Column("TeamMemberName", "Emp Name"),
+                        pOSignatureGrid.Column("ModifiedBy", "Modified By"),
+                        pOSignatureGrid.Column("ModifiedDateTime", "Last Modified Date"),
+                        pOSignatureGrid.Column("Edit", "Edit", format: @<text><a href="#" onclick="EditPOSignature('@item.OrderNo');" + class="btn btn-primary">EDIT</a></text>),
+                     pOSignatureGrid.Column("Delete", "Delete", format: @<text><a href="#" onclick="deletePOSig('@item.OrderNo');" ;" + class="btn btn-primary">DELETE</a></text>)))
+                </div>
+            </div>
+            <div id="POAttachments" class="tab-pane fade">
+                <h3>PO Attachments</h3>
+               
+                @Html.CheckBoxFor(model => model.po.SENDNOTETOACCTS) Tax Exempt?
+
+            </div>
+
+        </div>
+    </div>
+}
+<div id="ChangeStatus">
+
+</div>
+<div id="deleteModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Confirmation</h4>
+            </div>
+            <div class="modal-body">
+                <p></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" onclick=" delItem()">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@Scripts.Render("~/Scripts/Custom/PO.js")
+@Scripts.Render("~/Scripts/Custom/POLine.js")

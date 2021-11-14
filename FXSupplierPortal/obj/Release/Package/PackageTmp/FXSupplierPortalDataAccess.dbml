@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="FSPPO" Class="FXSupplierPortalDataAccessDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=172.172.101.53;Initial Catalog=FSPPO;User ID=myhr_user" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="FSPPOConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.FIRMS_GetAllProjects" Method="FIRMS_GetAllProjects">
+    <Parameter Name="INPUTORGCODE" Parameter="iNPUTORGCODE" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.PO_ResolvePONUM" Method="PO_ResolvePONUM">
+    <Parameter Name="OUTPUTPONUM" Parameter="oUTPUTPONUM" Type="System.Decimal" DbType="Decimal(8,0)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

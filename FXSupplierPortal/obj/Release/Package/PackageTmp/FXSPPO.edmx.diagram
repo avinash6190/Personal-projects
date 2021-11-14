@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="00d56db4b2f64c88b34fc3cb34c9f03f" Name="Diagram1">
+        <EntityTypeShape EntityType="FSPPOModel.A_Attachment" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.A_CONTRACT" Width="1.5" PointX="7.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.A_CONTRACTREF" Width="1.5" PointX="9.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.A_PO" Width="1.5" PointX="15" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.A_PODefination" Width="1.5" PointX="17.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.A_POLINE" Width="1.5" PointX="19.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.A_POPERMISSION" Width="1.5" PointX="19.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.A_POSignature" Width="1.5" PointX="14.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.A_POSignatureTemplate" Width="1.5" PointX="0.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.A_POTEMPLATE" Width="1.5" PointX="2.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.A_Registration" Width="1.5" PointX="10" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.A_RegSupplierAddress" Width="1.5" PointX="4.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.A_Supplier" Width="1.5" PointX="3" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.A_SupplierAddress" Width="1.5" PointX="5.25" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.A_SupplierBankingDetails" Width="1.5" PointX="5.25" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.A_UserOrg" Width="1.5" PointX="21.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.A_UserProjects" Width="1.5" PointX="9.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.A_Users" Width="1.5" PointX="11.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.A_UserSecurityGroup" Width="1.5" PointX="19.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.ActivityLog" Width="1.5" PointX="21.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.Attachment" Width="1.5" PointX="21.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.ChangeRequest" Width="1.5" PointX="17.75" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.ChangeRequestDetail" Width="1.5" PointX="20" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.CONTRACT" Width="1.5" PointX="17.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.CONTRACTREF" Width="1.5" PointX="22.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.ContractStatusHistory" Width="1.5" PointX="20" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.ControlFieldREL" Width="1.5" PointX="20" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.FieldHelp" Width="1.5" PointX="17.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.FieldLabel" Width="1.5" PointX="22.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.Notification" Width="1.5" PointX="22.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.NotificationTemplate" Width="1.5" PointX="16.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.OrgRole" Width="1.5" PointX="23.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.PO" Width="1.5" PointX="12.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.PODefination" Width="1.5" PointX="23.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.POLINE" Width="1.5" PointX="23.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.POPERMISSION" Width="1.5" PointX="24.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.POREVISIONHISTORY" Width="1.5" PointX="25.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.POSignature" Width="1.5" PointX="25.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.POSignatureTemplate" Width="1.5" PointX="6.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.POSTATUSHISTORY" Width="1.5" PointX="8.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.POTEMPLATE" Width="1.5" PointX="13.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.Project" Width="1.5" PointX="25.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.Registration" Width="1.5" PointX="7.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.RegistrationStatusHistory" Width="1.5" PointX="10" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.RegSupplierAddress" Width="1.5" PointX="10" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.SS_ALNDomain" Width="1.5" PointX="15.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.SS_LookUpMap" Width="1.5" PointX="25.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.SS_Messages" Width="1.5" PointX="25.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.SS_NumDomain" Width="1.5" PointX="25.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.SS_Pages" Width="1.5" PointX="10.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.SS_Permission" Width="1.5" PointX="26.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.SS_SecurityGroup" Width="1.5" PointX="17.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.SS_SecurityGroupPermission" Width="1.5" PointX="19.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.SS_UserLoginActivity" Width="1.5" PointX="12.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.SS_UserSecurityGroup" Width="1.5" PointX="21.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.STG_FIRMS_SUPPLIER" Width="1.5" PointX="27.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.Supplier" Width="1.5" PointX="0.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.SupplierAddress" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.SupplierBankingDetail" Width="1.5" PointX="3" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.SupplierStatusHistory" Width="1.5" PointX="3" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.SupplierUser" Width="1.5" PointX="27.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.sysdiagram" Width="1.5" PointX="27.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.TAXCODE" Width="1.5" PointX="27.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.UserOrg" Width="1.5" PointX="27.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.UserProject" Width="1.5" PointX="27.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.User" Width="1.5" PointX="15" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.UserSession" Width="1.5" PointX="29.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.LoadAllUserRole" Width="1.5" PointX="29.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.ViewAllChangeRequest" Width="1.5" PointX="4.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.ViewAllContract" Width="1.5" PointX="6.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.ViewAllPactSupplier" Width="1.5" PointX="29.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.ViewAllPOContract" Width="1.5" PointX="8.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.ViewAllPurchaseOrder" Width="1.5" PointX="10.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.ViewAllPurchaseOrderTemplate" Width="1.5" PointX="29.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.ViewAllRegistrationSupplier" Width="1.5" PointX="19.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.ViewAllSupplierAudit" Width="1.5" PointX="21.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.ViewAllSupplier" Width="1.5" PointX="29.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.ViewLoadAllRole" Width="1.5" PointX="23.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.VW_AllPOSignatureTemplates" Width="1.5" PointX="0.75" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.VW_PO" Width="1.5" PointX="15.75" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.VW_POLINE" Width="1.5" PointX="25.75" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.VW_PORANK" Width="1.5" PointX="27.75" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.VW_POSignatures" Width="1.5" PointX="29.75" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FSPPOModel.vw_ProjectPOSignatures" Width="1.5" PointX="31.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="FSPPOModel.FK_A_PO_PO" ManuallyRouted="false" />
+        <AssociationConnector Association="FSPPOModel.FK_A_Registration_Registration1" ManuallyRouted="false" />
+        <AssociationConnector Association="FSPPOModel.FK_AuditSupplier_Supplier" ManuallyRouted="false" />
+        <AssociationConnector Association="FSPPOModel.FK_A_SupplierAddress_SupplierAddress" ManuallyRouted="false" />
+        <AssociationConnector Association="FSPPOModel.FK_A_SupplierBankingDetails_SupplierBankingDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="FSPPOModel.FK_ChangeRequestDetail_ChangeRequest" ManuallyRouted="false" />
+        <AssociationConnector Association="FSPPOModel.FK_ContractStatusHistory_CONTRACT" ManuallyRouted="false" />
+        <AssociationConnector Association="FSPPOModel.FK_ControlFieldREL_FieldHelp" ManuallyRouted="false" />
+        <AssociationConnector Association="FSPPOModel.FK_RegistrationStatusHistory_Registration" ManuallyRouted="false" />
+        <AssociationConnector Association="FSPPOModel.FK_RegSupplierAddress_RegistrationSupplier" ManuallyRouted="false" />
+        <AssociationConnector Association="FSPPOModel.FK_Users_SS_UserLoginActivity" ManuallyRouted="false" />
+        <AssociationConnector Association="FSPPOModel.FK_FSP_BankingInf_FSP_Supplier" ManuallyRouted="false" />
+        <AssociationConnector Association="FSPPOModel.FK_FSP_SupAddress_FSP_Supplier" ManuallyRouted="false" />
+        <AssociationConnector Association="FSPPOModel.FK_SupplierStatusHistory_Supplier" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,46 @@
+﻿@model IEnumerable<FXSupplierPortal.PO>
+@{
+    ViewBag.Title = "Purchase Order";
+    Layout = null;
+    WebGrid webGrid = new WebGrid(source: Model);
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+
+</head>
+<body>
+    @webGrid.GetHtml(
+        htmlAttributes: new { @id = "WebGrid" },
+        tableStyle: "webgrid-table",
+        headerStyle: "webgrid-header",
+        footerStyle: "webgrid-footer",
+        alternatingRowStyle: "webgrid-alternating-row",
+        selectedRowStyle: "webgrid-selected-row",
+        rowStyle: "webgrid-row-style",
+        mode: WebGridPagerModes.All,
+        columns: webGrid.Columns(
+                 webGrid.Column("PONUM", "PO"),
+                 webGrid.Column("POREVISION", "Revision"),
+                 webGrid.Column("STATUS", "Status"),
+                 webGrid.Column("ORGNAME", "Division"),
+                 webGrid.Column("PROJECTCODE", "Project"),
+                 webGrid.Column("PROJECTNAME", "Project Name"),
+                 webGrid.Column("VENDORID", "Vendor"),
+                 webGrid.Column("VENDORNAME", "Vendor Name"),
+                  webGrid.Column("BUYERNAME", "Buyer"),
+                 webGrid.Column("CURRENCYCODE", "Currency"),
+                 webGrid.Column("TOTALCOST", "Totalcost")))
+                
+</body>
+</html>
+
+@Styles.Render("~/Content/webgridstyle.css")
+
+
+
+

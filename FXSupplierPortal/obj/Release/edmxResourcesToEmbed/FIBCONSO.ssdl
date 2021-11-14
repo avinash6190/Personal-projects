@@ -1,0 +1,1978 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FibConsoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="a_conso_sup_map_tbl">
+    <Key>
+      <PropertyRef Name="csm_audit_id" />
+    </Key>
+    <Property Name="csm_audit_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="csm_audit_by" Type="nvarchar" MaxLength="20" />
+    <Property Name="csm_audit_timestamp" Type="datetime" />
+    <Property Name="csm_audit_action" Type="nvarchar" MaxLength="6" />
+    <Property Name="csm_acct_code" Type="int" />
+    <Property Name="csm_org_code" Type="smallint" />
+    <Property Name="csm_org_acct_code" Type="int" />
+    <Property Name="csm_status" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="acct_mgrp">
+    <Key>
+      <PropertyRef Name="acct_mgrp_type" />
+      <PropertyRef Name="acct_mgrp_code" />
+    </Key>
+    <Property Name="acct_mgrp_type" Type="smallint" Nullable="false" />
+    <Property Name="acct_mgrp_code" Type="smallint" Nullable="false" />
+    <Property Name="acct_mgrp_desc" Type="varchar" MaxLength="50" />
+    <Property Name="acct_mgrp_desc_ar" Type="nvarchar" MaxLength="100" />
+    <Property Name="acct_mgrp_mode" Type="tinyint" />
+    <Property Name="acct_bspl_mgrp" Type="smallint" />
+    <Property Name="acct_bspl_sgrp" Type="smallint" />
+    <Property Name="acct_bspl_det" Type="smallint" />
+  </EntityType>
+  <EntityType Name="acct_sgrp">
+    <Key>
+      <PropertyRef Name="acct_sgrp_type" />
+      <PropertyRef Name="acct_sgrp_mgrp" />
+      <PropertyRef Name="acct_sgrp_code" />
+    </Key>
+    <Property Name="acct_sgrp_type" Type="smallint" Nullable="false" />
+    <Property Name="acct_sgrp_mgrp" Type="smallint" Nullable="false" />
+    <Property Name="acct_sgrp_code" Type="smallint" Nullable="false" />
+    <Property Name="acct_sgrp_desc" Type="varchar" MaxLength="50" />
+    <Property Name="acct_sgrp_desc_ar" Type="nvarchar" MaxLength="100" />
+    <Property Name="acct_exclude_os_inv" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="acct_type">
+    <Key>
+      <PropertyRef Name="acct_type_code" />
+    </Key>
+    <Property Name="acct_type_code" Type="smallint" Nullable="false" />
+    <Property Name="acct_type_desc" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="branch_master">
+    <Key>
+      <PropertyRef Name="bm_code" />
+    </Key>
+    <Property Name="bm_code" Type="smallint" Nullable="false" />
+    <Property Name="bm_desc" Type="varchar" MaxLength="50" />
+    <Property Name="bm_reg_code" Type="smallint" />
+    <Property Name="bm_desc_arabic" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="bspl_det_master">
+    <Key>
+      <PropertyRef Name="bspldt_mgrp_code" />
+      <PropertyRef Name="bspldt_sgrp_code" />
+      <PropertyRef Name="bspldt_det_code" />
+    </Key>
+    <Property Name="bspldt_mgrp_code" Type="smallint" Nullable="false" />
+    <Property Name="bspldt_sgrp_code" Type="smallint" Nullable="false" />
+    <Property Name="bspldt_det_code" Type="smallint" Nullable="false" />
+    <Property Name="bspldt_desc" Type="varchar" MaxLength="50" />
+    <Property Name="bspldt_desc_ar" Type="nvarchar" MaxLength="100" />
+    <Property Name="bspldr_status" Type="bit" />
+  </EntityType>
+  <EntityType Name="bspl_master">
+    <Key>
+      <PropertyRef Name="bspl_code" />
+    </Key>
+    <Property Name="bspl_code" Type="smallint" Nullable="false" />
+    <Property Name="bspl_desc" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="bspl_mgrp_master">
+    <Key>
+      <PropertyRef Name="bsplmg_mgrp_code" />
+    </Key>
+    <Property Name="bsplmg_mgrp_code" Type="smallint" Nullable="false" />
+    <Property Name="bsplmg_mgrp_desc" Type="varchar" MaxLength="50" />
+    <Property Name="bsplmg_mgrp_desc_ar" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="bspl_sgrp_master">
+    <Key>
+      <PropertyRef Name="bsplsg_mgrp_code" />
+      <PropertyRef Name="bsplsg_sgrp_code" />
+    </Key>
+    <Property Name="bsplsg_mgrp_code" Type="smallint" Nullable="false" />
+    <Property Name="bsplsg_sgrp_code" Type="smallint" Nullable="false" />
+    <Property Name="bsplsg_sgrp_desc" Type="varchar" MaxLength="50" />
+    <Property Name="bsplsg_sgrp_desc_ar" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="cm_unified_mapping">
+    <Key>
+      <PropertyRef Name="cm_unified_acct_code" />
+      <PropertyRef Name="cm_org_code" />
+    </Key>
+    <Property Name="cm_unified_acct_code" Type="int" Nullable="false" />
+    <Property Name="cm_org_code" Type="smallint" Nullable="false" />
+    <Property Name="cm_unified_acct_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="cm_div_acct_code" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'tmpFibConso.dbo.conso_sup_list' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="conso_sup_list">
+    <Key>
+      <PropertyRef Name="org_code" />
+    </Key>
+    <Property Name="org_code" Type="smallint" Nullable="false" />
+    <Property Name="org_name" Type="varchar" MaxLength="20" />
+    <Property Name="sup_acct_code" Type="int" />
+    <Property Name="sup_acct_name" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'tmpFibConso.dbo.conso_sup_list_cln' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="conso_sup_list_cln">
+          <Property Name="org_code" Type="smallint" />
+          <Property Name="org_name" Type="varchar" MaxLength="20" />
+          <Property Name="sup_acct_code" Type="int" />
+          <Property Name="sup_acct_name" Type="varchar" MaxLength="250" />
+          <Property Name="sup_acct_name_cln" Type="varchar" MaxLength="250" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'tmpFibConso.dbo.conso_sup_list_dm_final' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="conso_sup_list_dm_final">
+          <Property Name="supplier_type_code" Type="smallint" />
+          <Property Name="supplier_type_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="org_code" Type="smallint" />
+          <Property Name="org_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="org_acct_code" Type="int" />
+          <Property Name="cm_acct_code" Type="int" />
+          <Property Name="SupID" Type="int" />
+          <Property Name="cm_comp_name" Type="nvarchar" MaxLength="100" />
+          <Property Name="CompContactNameFull" Type="nvarchar" MaxLength="100" />
+          <Property Name="CompContactTitle" Type="nvarchar" MaxLength="10" />
+          <Property Name="CompContactFirst" Type="nvarchar" MaxLength="50" />
+          <Property Name="CompContactLast" Type="nvarchar" MaxLength="50" />
+          <Property Name="CompContactPos" Type="nvarchar" MaxLength="50" />
+          <Property Name="CompMobile" Type="nvarchar" MaxLength="25" />
+          <Property Name="CompPhoneNo" Type="nvarchar" MaxLength="25" />
+          <Property Name="CompExt" Type="nvarchar" MaxLength="10" />
+          <Property Name="CompContactEmail" Type="nvarchar" MaxLength="50" />
+          <Property Name="CompType" Type="nvarchar" MaxLength="25" />
+          <Property Name="CompBC" Type="nvarchar" MaxLength="4" />
+          <Property Name="CompSupType" Type="nvarchar" MaxLength="5" />
+          <Property Name="RegDocType" Type="nvarchar" MaxLength="10" />
+          <Property Name="RegDocID" Type="nvarchar" MaxLength="30" />
+          <Property Name="CompOfficialName" Type="nvarchar" MaxLength="100" />
+          <Property Name="RegDocIssAuth" Type="nvarchar" MaxLength="100" />
+          <Property Name="RegDocExpDate" Type="date" />
+          <Property Name="REMARKS" Type="nvarchar" MaxLength="300" />
+          <Property Name="record_proc_status" Type="nvarchar" MaxLength="30" />
+        </EntityType>-->
+  <EntityType Name="conso_sup_list_dm_final_2">
+    <Key>
+      <PropertyRef Name="SupID" />
+    </Key>
+    <Property Name="supplier_type_code" Type="smallint" />
+    <Property Name="supplier_type_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="org_code" Type="smallint" />
+    <Property Name="org_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="org_acct_code" Type="int" />
+    <Property Name="cm_acct_code" Type="int" />
+    <Property Name="SupID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cm_comp_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="CompContactNameFull" Type="nvarchar" MaxLength="100" />
+    <Property Name="CompContactTitle" Type="nvarchar" MaxLength="10" />
+    <Property Name="CompContactFirst" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompContactLast" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompContactPos" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompMobile" Type="nvarchar" MaxLength="25" />
+    <Property Name="CompPhoneNo" Type="nvarchar" MaxLength="25" />
+    <Property Name="CompExt" Type="nvarchar" MaxLength="10" />
+    <Property Name="CompContactEmail" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompType" Type="nvarchar" MaxLength="25" />
+    <Property Name="CompBC" Type="nvarchar" MaxLength="4" />
+    <Property Name="CompSupType" Type="nvarchar" MaxLength="5" />
+    <Property Name="RegDocType" Type="nvarchar" MaxLength="10" />
+    <Property Name="RegDocID" Type="nvarchar" MaxLength="30" />
+    <Property Name="CompOfficialName" Type="nvarchar" MaxLength="100" />
+    <Property Name="RegDocIssAuth" Type="nvarchar" MaxLength="100" />
+    <Property Name="RegDocExpDate" Type="date" />
+    <Property Name="REMARKS" Type="nvarchar" MaxLength="300" />
+    <Property Name="record_proc_status" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'tmpFibConso.dbo.conso_sup_list_dm_final_2_backup' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="conso_sup_list_dm_final_2_backup">
+    <Key>
+      <PropertyRef Name="SupID" />
+    </Key>
+    <Property Name="supplier_type_code" Type="smallint" />
+    <Property Name="supplier_type_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="org_code" Type="smallint" />
+    <Property Name="org_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="org_acct_code" Type="int" />
+    <Property Name="cm_acct_code" Type="int" />
+    <Property Name="SupID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cm_comp_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="CompContactNameFull" Type="nvarchar" MaxLength="100" />
+    <Property Name="CompContactTitle" Type="nvarchar" MaxLength="10" />
+    <Property Name="CompContactFirst" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompContactLast" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompContactPos" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompMobile" Type="nvarchar" MaxLength="25" />
+    <Property Name="CompPhoneNo" Type="nvarchar" MaxLength="25" />
+    <Property Name="CompExt" Type="nvarchar" MaxLength="10" />
+    <Property Name="CompContactEmail" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompType" Type="nvarchar" MaxLength="25" />
+    <Property Name="CompBC" Type="nvarchar" MaxLength="4" />
+    <Property Name="CompSupType" Type="nvarchar" MaxLength="5" />
+    <Property Name="RegDocType" Type="nvarchar" MaxLength="10" />
+    <Property Name="RegDocID" Type="nvarchar" MaxLength="30" />
+    <Property Name="CompOfficialName" Type="nvarchar" MaxLength="100" />
+    <Property Name="RegDocIssAuth" Type="nvarchar" MaxLength="100" />
+    <Property Name="RegDocExpDate" Type="date" />
+    <Property Name="REMARKS" Type="nvarchar" MaxLength="300" />
+    <Property Name="record_proc_status" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'tmpFibConso.dbo.conso_sup_list_dm_final_backup' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="conso_sup_list_dm_final_backup">
+          <Property Name="supplier_type_code" Type="smallint" />
+          <Property Name="supplier_type_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="org_code" Type="smallint" />
+          <Property Name="org_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="org_acct_code" Type="int" />
+          <Property Name="cm_acct_code" Type="int" />
+          <Property Name="SupID" Type="int" />
+          <Property Name="cm_comp_name" Type="nvarchar" MaxLength="100" />
+          <Property Name="CompContactNameFull" Type="nvarchar" MaxLength="100" />
+          <Property Name="CompContactTitle" Type="nvarchar" MaxLength="10" />
+          <Property Name="CompContactFirst" Type="nvarchar" MaxLength="50" />
+          <Property Name="CompContactLast" Type="nvarchar" MaxLength="50" />
+          <Property Name="CompContactPos" Type="nvarchar" MaxLength="50" />
+          <Property Name="CompMobile" Type="nvarchar" MaxLength="25" />
+          <Property Name="CompPhoneNo" Type="nvarchar" MaxLength="25" />
+          <Property Name="CompExt" Type="nvarchar" MaxLength="10" />
+          <Property Name="CompContactEmail" Type="nvarchar" MaxLength="50" />
+          <Property Name="CompType" Type="nvarchar" MaxLength="25" />
+          <Property Name="CompBC" Type="nvarchar" MaxLength="4" />
+          <Property Name="CompSupType" Type="nvarchar" MaxLength="5" />
+          <Property Name="RegDocType" Type="nvarchar" MaxLength="10" />
+          <Property Name="RegDocID" Type="nvarchar" MaxLength="30" />
+          <Property Name="CompOfficialName" Type="nvarchar" MaxLength="100" />
+          <Property Name="RegDocIssAuth" Type="nvarchar" MaxLength="100" />
+          <Property Name="RegDocExpDate" Type="date" />
+          <Property Name="REMARKS" Type="nvarchar" MaxLength="300" />
+          <Property Name="record_proc_status" Type="nvarchar" MaxLength="30" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'tmpFibConso.dbo.conso_sup_list_dm_temp' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="conso_sup_list_dm_temp">
+          <Property Name="supplier_type_code" Type="smallint" />
+          <Property Name="supplier_type_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="org_code" Type="smallint" />
+          <Property Name="org_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="org_acct_code" Type="int" />
+          <Property Name="cm_acct_code" Type="int" />
+          <Property Name="SupID" Type="int" />
+          <Property Name="cm_comp_name" Type="nvarchar" MaxLength="100" />
+          <Property Name="CompContactTitle" Type="nvarchar" MaxLength="10" />
+          <Property Name="CompContactName" Type="nvarchar" MaxLength="50" />
+          <Property Name="CompMobile" Type="nvarchar" MaxLength="25" />
+          <Property Name="CompPhoneNo" Type="nvarchar" MaxLength="25" />
+          <Property Name="CompType" Type="nvarchar" MaxLength="25" />
+          <Property Name="CompBC" Type="nvarchar" MaxLength="4" />
+          <Property Name="CompSupType" Type="nvarchar" MaxLength="5" />
+          <Property Name="RegDocType" Type="nvarchar" MaxLength="10" />
+          <Property Name="RegDocID" Type="nvarchar" MaxLength="30" />
+          <Property Name="CompOfficialName" Type="nvarchar" MaxLength="100" />
+          <Property Name="RegDocIssAuth" Type="nvarchar" MaxLength="100" />
+          <Property Name="RegDocExpDate" Type="date" />
+          <Property Name="REMARKS" Type="nvarchar" MaxLength="300" />
+          <Property Name="Processed" Type="nvarchar" MaxLength="30" />
+        </EntityType>-->
+  <EntityType Name="conso_sup_list_dm_temp_2">
+    <Key>
+      <PropertyRef Name="SupID" />
+    </Key>
+    <Property Name="supplier_type_code" Type="smallint" />
+    <Property Name="supplier_type_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="org_code" Type="smallint" />
+    <Property Name="org_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="org_acct_code" Type="int" />
+    <Property Name="cm_acct_code" Type="int" />
+    <Property Name="SupID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cm_comp_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="CompContactTitle" Type="nvarchar" MaxLength="10" />
+    <Property Name="CompContactName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompMobile" Type="nvarchar" MaxLength="25" />
+    <Property Name="CompPhoneNo" Type="nvarchar" MaxLength="25" />
+    <Property Name="CompType" Type="nvarchar" MaxLength="25" />
+    <Property Name="CompBC" Type="nvarchar" MaxLength="4" />
+    <Property Name="CompSupType" Type="nvarchar" MaxLength="5" />
+    <Property Name="RegDocType" Type="nvarchar" MaxLength="10" />
+    <Property Name="RegDocID" Type="nvarchar" MaxLength="30" />
+    <Property Name="CompOfficialName" Type="nvarchar" MaxLength="100" />
+    <Property Name="RegDocIssAuth" Type="nvarchar" MaxLength="100" />
+    <Property Name="RegDocExpDate" Type="date" />
+    <Property Name="REMARKS" Type="nvarchar" MaxLength="300" />
+    <Property Name="Processed" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'tmpFibConso.dbo.conso_sup_list_opt' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="conso_sup_list_opt">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="org_code" Type="smallint" />
+    <Property Name="org_name" Type="varchar" MaxLength="20" />
+    <Property Name="sup_acct_code" Type="int" />
+    <Property Name="sup_acct_name" Type="varchar" MaxLength="250" />
+    <Property Name="sup_acct_name_cln" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'tmpFibConso.dbo.conso_sup_list_tmp' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="conso_sup_list_tmp">
+    <Key>
+      <PropertyRef Name="org_code" />
+    </Key>
+    <Property Name="org_code" Type="smallint" Nullable="false" />
+    <Property Name="org_name" Type="varchar" MaxLength="20" />
+    <Property Name="sup_acct_code" Type="int" />
+    <Property Name="sup_acct_name" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="conso_sup_map_tbl">
+    <Key>
+      <PropertyRef Name="csm_acct_code" />
+      <PropertyRef Name="csm_org_code" />
+      <PropertyRef Name="csm_org_acct_code" />
+    </Key>
+    <Property Name="csm_acct_code" Type="int" Nullable="false" />
+    <Property Name="csm_org_code" Type="smallint" Nullable="false" />
+    <Property Name="csm_org_acct_code" Type="int" Nullable="false" />
+    <Property Name="csm_status" Type="tinyint" />
+    <Property Name="csm_created_by" Type="nvarchar" MaxLength="25" />
+    <Property Name="csm_created_date" Type="smalldatetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'tmpFibConso.dbo.conso_sup_map_tbl_backup' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="conso_sup_map_tbl_backup">
+    <Key>
+      <PropertyRef Name="csm_acct_code" />
+      <PropertyRef Name="csm_org_code" />
+      <PropertyRef Name="csm_org_acct_code" />
+    </Key>
+    <Property Name="csm_acct_code" Type="int" Nullable="false" />
+    <Property Name="csm_org_code" Type="smallint" Nullable="false" />
+    <Property Name="csm_org_acct_code" Type="int" Nullable="false" />
+    <Property Name="csm_status" Type="tinyint" />
+    <Property Name="csm_created_by" Type="nvarchar" MaxLength="25" />
+    <Property Name="csm_created_date" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="conso_sup_map_tbl_del">
+    <Key>
+      <PropertyRef Name="csm_acct_code" />
+      <PropertyRef Name="csm_org_code" />
+      <PropertyRef Name="csm_org_acct_code" />
+    </Key>
+    <Property Name="csm_acct_code" Type="int" Nullable="false" />
+    <Property Name="csm_org_code" Type="smallint" Nullable="false" />
+    <Property Name="csm_org_acct_code" Type="int" Nullable="false" />
+    <Property Name="csm_status" Type="tinyint" />
+    <Property Name="csm_created_by" Type="nvarchar" MaxLength="25" />
+    <Property Name="csm_created_date" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="country_table">
+    <Key>
+      <PropertyRef Name="cnt_country_code" />
+    </Key>
+    <Property Name="cnt_country_code" Type="smallint" Nullable="false" />
+    <Property Name="cnt_country_name" Type="varchar" MaxLength="50" />
+    <Property Name="cnt_nationality" Type="varchar" MaxLength="50" />
+    <Property Name="cnt_country_short" Type="nvarchar" MaxLength="3" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'tmpFibConso.dbo.customer' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="customer">
+    <Key>
+      <PropertyRef Name="cm_acct_type" />
+      <PropertyRef Name="cm_mgrp_code" />
+      <PropertyRef Name="cm_sgrp_code" />
+      <PropertyRef Name="cm_acct_serial" />
+      <PropertyRef Name="cm_acct_code" />
+    </Key>
+    <Property Name="cm_acct_type" Type="smallint" Nullable="false" />
+    <Property Name="cm_mgrp_code" Type="smallint" Nullable="false" />
+    <Property Name="cm_sgrp_code" Type="smallint" Nullable="false" />
+    <Property Name="cm_acct_serial" Type="smallint" Nullable="false" />
+    <Property Name="cm_acct_code" Type="int" Nullable="false" />
+    <Property Name="cm_comp_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="cm_comp_name_ar" Type="nvarchar" MaxLength="100" />
+    <Property Name="cm_comp_name_short" Type="varchar" MaxLength="50" />
+    <Property Name="cm_comp_offic_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="cm_sup_id" Type="int" />
+    <Property Name="cm_sup_status" Type="nvarchar" MaxLength="10" />
+    <Property Name="cm_sup_status_date" Type="smalldatetime" />
+    <Property Name="cm_sup_country" Type="char" MaxLength="3" />
+    <Property Name="cm_sup_bc" Type="nvarchar" MaxLength="4" />
+    <Property Name="cm_comp_type" Type="nvarchar" MaxLength="5" />
+    <Property Name="cm_email" Type="nvarchar" MaxLength="50" />
+    <Property Name="cm_contact_per" Type="nvarchar" MaxLength="100" />
+    <Property Name="cm_contact_pos" Type="varchar" MaxLength="50" />
+    <Property Name="cm_mobil" Type="nvarchar" MaxLength="25" />
+    <Property Name="cm_contact_tel" Type="nvarchar" MaxLength="25" />
+    <Property Name="cm_contact_ext" Type="nvarchar" MaxLength="25" />
+    <Property Name="cm_reg_doc_type" Type="nvarchar" MaxLength="10" />
+    <Property Name="cm_license_num" Type="nvarchar" MaxLength="80" />
+    <Property Name="cm_issu_auth" Type="nvarchar" MaxLength="50" />
+    <Property Name="cm_license_exp_date" Type="date" />
+    <Property Name="cm_country_code" Type="smallint" />
+    <Property Name="cm_address1" Type="nvarchar" MaxLength="100" />
+    <Property Name="cm_address2" Type="nvarchar" MaxLength="100" />
+    <Property Name="cm_city" Type="nvarchar" MaxLength="50" />
+    <Property Name="cm_city_code" Type="smallint" />
+    <Property Name="cm_pobox" Type="nvarchar" MaxLength="15" />
+    <Property Name="cm_worktel1" Type="nvarchar" MaxLength="25" />
+    <Property Name="cm_worktel2" Type="nvarchar" MaxLength="25" />
+    <Property Name="cm_fax" Type="nvarchar" MaxLength="25" />
+    <Property Name="cm_restel" Type="nvarchar" MaxLength="25" />
+    <Property Name="cm_mcoc_num" Type="nvarchar" MaxLength="50" />
+    <Property Name="cm_url" Type="nvarchar" MaxLength="50" />
+    <Property Name="cm_cuscat_code" Type="smallint" />
+    <Property Name="cm_retention_acno" Type="int" />
+    <Property Name="cm_advance_acno" Type="int" />
+    <Property Name="cm_vat_acno" Type="int" />
+    <Property Name="cm_is_subcontr" Type="bit" />
+    <Property Name="cm_pay_term" Type="smallint" />
+    <Property Name="cm_cr_limit" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="cm_amt_bal" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="cm_pdc_amount" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="cm_last_inv_date" Type="datetime" />
+    <Property Name="cm_last_rec_date" Type="datetime" />
+    <Property Name="cm_age_type" Type="char" MaxLength="1" />
+    <Property Name="cm_age_01" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="cm_age_02" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="cm_age_03" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="cm_age_04" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="cm_age_05" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="cm_age_06" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="cm_age_07" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="cm_age_08" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="cm_age_09" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="cm_age_10" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="cm_age_11" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="cm_age_12" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="cm_group_company" Type="bit" />
+    <Property Name="cm_assoc_company" Type="bit" />
+    <Property Name="cm_salesman_code" Type="int" />
+    <Property Name="cm_is_vat_registered" Type="bit" />
+    <Property Name="cm_vat_reg_type" Type="nvarchar" MaxLength="5" />
+    <Property Name="cm_vat_reg_no" Type="nvarchar" MaxLength="25" />
+    <Property Name="cm_vat_grp_rep_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="cm_acct_status" Type="tinyint" />
+    <Property Name="cm_registered_by" Type="nvarchar" MaxLength="80" />
+    <Property Name="cm_created_by" Type="nvarchar" MaxLength="25" />
+    <Property Name="cm_last_mod_by" Type="nvarchar" MaxLength="25" />
+    <Property Name="cm_creation_date" Type="smalldatetime" />
+    <Property Name="cm_last_mod_date" Type="smalldatetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'tmpFibConso.dbo.customer_4_2017_backup' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="customer_4_2017_backup">
+    <Key>
+      <PropertyRef Name="cm_acct_type" />
+      <PropertyRef Name="cm_mgrp_code" />
+      <PropertyRef Name="cm_sgrp_code" />
+      <PropertyRef Name="cm_acct_serial" />
+      <PropertyRef Name="cm_acct_code" />
+    </Key>
+    <Property Name="cm_acct_type" Type="smallint" Nullable="false" />
+    <Property Name="cm_mgrp_code" Type="smallint" Nullable="false" />
+    <Property Name="cm_sgrp_code" Type="smallint" Nullable="false" />
+    <Property Name="cm_acct_serial" Type="smallint" Nullable="false" />
+    <Property Name="cm_acct_code" Type="int" Nullable="false" />
+    <Property Name="cm_comp_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="cm_comp_name_ar" Type="nvarchar" MaxLength="100" />
+    <Property Name="cm_comp_name_short" Type="varchar" MaxLength="50" />
+    <Property Name="cm_comp_offic_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="cm_sup_id" Type="int" />
+    <Property Name="cm_sup_status" Type="nvarchar" MaxLength="10" />
+    <Property Name="cm_sup_status_date" Type="smalldatetime" />
+    <Property Name="cm_sup_country" Type="char" MaxLength="3" />
+    <Property Name="cm_sup_bc" Type="nvarchar" MaxLength="4" />
+    <Property Name="cm_comp_type" Type="nvarchar" MaxLength="5" />
+    <Property Name="cm_email" Type="nvarchar" MaxLength="50" />
+    <Property Name="cm_contact_per" Type="nvarchar" MaxLength="100" />
+    <Property Name="cm_contact_pos" Type="varchar" MaxLength="50" />
+    <Property Name="cm_mobil" Type="nvarchar" MaxLength="25" />
+    <Property Name="cm_contact_tel" Type="nvarchar" MaxLength="25" />
+    <Property Name="cm_contact_ext" Type="nvarchar" MaxLength="25" />
+    <Property Name="cm_reg_doc_type" Type="nvarchar" MaxLength="10" />
+    <Property Name="cm_license_num" Type="nvarchar" MaxLength="80" />
+    <Property Name="cm_issu_auth" Type="nvarchar" MaxLength="50" />
+    <Property Name="cm_license_exp_date" Type="date" />
+    <Property Name="cm_country_code" Type="smallint" />
+    <Property Name="cm_address1" Type="nvarchar" MaxLength="100" />
+    <Property Name="cm_address2" Type="nvarchar" MaxLength="100" />
+    <Property Name="cm_city" Type="nvarchar" MaxLength="50" />
+    <Property Name="cm_city_code" Type="smallint" />
+    <Property Name="cm_pobox" Type="nvarchar" MaxLength="15" />
+    <Property Name="cm_worktel1" Type="nvarchar" MaxLength="25" />
+    <Property Name="cm_worktel2" Type="nvarchar" MaxLength="25" />
+    <Property Name="cm_fax" Type="nvarchar" MaxLength="25" />
+    <Property Name="cm_restel" Type="nvarchar" MaxLength="25" />
+    <Property Name="cm_mcoc_num" Type="nvarchar" MaxLength="50" />
+    <Property Name="cm_url" Type="nvarchar" MaxLength="50" />
+    <Property Name="cm_cuscat_code" Type="smallint" />
+    <Property Name="cm_retention_acno" Type="int" />
+    <Property Name="cm_advance_acno" Type="int" />
+    <Property Name="cm_is_subcontr" Type="bit" />
+    <Property Name="cm_pay_term" Type="smallint" />
+    <Property Name="cm_cr_limit" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="cm_amt_bal" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="cm_pdc_amount" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="cm_last_inv_date" Type="datetime" />
+    <Property Name="cm_last_rec_date" Type="datetime" />
+    <Property Name="cm_age_type" Type="char" MaxLength="1" />
+    <Property Name="cm_age_01" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="cm_age_02" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="cm_age_03" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="cm_age_04" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="cm_age_05" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="cm_age_06" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="cm_age_07" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="cm_age_08" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="cm_age_09" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="cm_age_10" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="cm_age_11" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="cm_age_12" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="cm_group_company" Type="bit" />
+    <Property Name="cm_assoc_company" Type="bit" />
+    <Property Name="cm_salesman_code" Type="int" />
+    <Property Name="cm_vat_reg_no" Type="nvarchar" MaxLength="25" />
+    <Property Name="cm_acct_status" Type="tinyint" />
+    <Property Name="cm_registered_by" Type="nvarchar" MaxLength="80" />
+    <Property Name="cm_created_by" Type="nvarchar" MaxLength="25" />
+    <Property Name="cm_last_mod_by" Type="nvarchar" MaxLength="25" />
+    <Property Name="cm_creation_date" Type="smalldatetime" />
+    <Property Name="cm_last_mod_date" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="customer_business">
+    <Key>
+      <PropertyRef Name="cb_acct_code" />
+      <PropertyRef Name="cb_org_code" />
+    </Key>
+    <Property Name="cb_acct_code" Type="int" Nullable="false" />
+    <Property Name="cb_org_code" Type="smallint" Nullable="false" />
+    <Property Name="cb_org_acct_code" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'tmpFibConso.dbo.customer_LMS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="customer_LMS">
+    <Key>
+      <PropertyRef Name="cm_acct_type" />
+      <PropertyRef Name="cm_mgrp_code" />
+      <PropertyRef Name="cm_sgrp_code" />
+      <PropertyRef Name="cm_acct_serial" />
+      <PropertyRef Name="cm_acct_code" />
+    </Key>
+    <Property Name="cm_acct_type" Type="smallint" Nullable="false" />
+    <Property Name="cm_mgrp_code" Type="smallint" Nullable="false" />
+    <Property Name="cm_sgrp_code" Type="smallint" Nullable="false" />
+    <Property Name="cm_acct_serial" Type="smallint" Nullable="false" />
+    <Property Name="cm_acct_code" Type="int" Nullable="false" />
+    <Property Name="cm_comp_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="cm_comp_name_ar" Type="nvarchar" MaxLength="100" />
+    <Property Name="cm_comp_name_short" Type="varchar" MaxLength="50" />
+    <Property Name="cm_comp_offic_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="cm_sup_id" Type="int" />
+    <Property Name="cm_sup_status" Type="nvarchar" MaxLength="10" />
+    <Property Name="cm_sup_status_date" Type="smalldatetime" />
+    <Property Name="cm_sup_country" Type="char" MaxLength="3" />
+    <Property Name="cm_sup_bc" Type="nvarchar" MaxLength="4" />
+    <Property Name="cm_comp_type" Type="nvarchar" MaxLength="5" />
+    <Property Name="cm_email" Type="nvarchar" MaxLength="50" />
+    <Property Name="cm_contact_per" Type="nvarchar" MaxLength="100" />
+    <Property Name="cm_contact_pos" Type="varchar" MaxLength="50" />
+    <Property Name="cm_mobil" Type="nvarchar" MaxLength="25" />
+    <Property Name="cm_contact_tel" Type="nvarchar" MaxLength="25" />
+    <Property Name="cm_contact_ext" Type="nvarchar" MaxLength="25" />
+    <Property Name="cm_reg_doc_type" Type="nvarchar" MaxLength="10" />
+    <Property Name="cm_license_num" Type="nvarchar" MaxLength="80" />
+    <Property Name="cm_issu_auth" Type="nvarchar" MaxLength="50" />
+    <Property Name="cm_license_exp_date" Type="date" />
+    <Property Name="cm_country_code" Type="smallint" />
+    <Property Name="cm_address1" Type="nvarchar" MaxLength="100" />
+    <Property Name="cm_address2" Type="nvarchar" MaxLength="100" />
+    <Property Name="cm_city" Type="nvarchar" MaxLength="50" />
+    <Property Name="cm_city_code" Type="smallint" />
+    <Property Name="cm_pobox" Type="int" />
+    <Property Name="cm_worktel1" Type="nvarchar" MaxLength="25" />
+    <Property Name="cm_worktel2" Type="nvarchar" MaxLength="25" />
+    <Property Name="cm_fax" Type="nvarchar" MaxLength="25" />
+    <Property Name="cm_restel" Type="nvarchar" MaxLength="25" />
+    <Property Name="cm_mcoc_num" Type="nvarchar" MaxLength="50" />
+    <Property Name="cm_url" Type="nvarchar" MaxLength="50" />
+    <Property Name="cm_cuscat_code" Type="smallint" />
+    <Property Name="cm_retention_acno" Type="int" />
+    <Property Name="cm_advance_acno" Type="int" />
+    <Property Name="cm_is_subcontr" Type="bit" />
+    <Property Name="cm_pay_term" Type="smallint" />
+    <Property Name="cm_cr_limit" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="cm_amt_bal" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="cm_pdc_amount" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="cm_last_inv_date" Type="datetime" />
+    <Property Name="cm_last_rec_date" Type="datetime" />
+    <Property Name="cm_age_type" Type="char" MaxLength="1" />
+    <Property Name="cm_age_01" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="cm_age_02" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="cm_age_03" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="cm_age_04" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="cm_age_05" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="cm_age_06" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="cm_age_07" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="cm_age_08" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="cm_age_09" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="cm_age_10" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="cm_age_11" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="cm_age_12" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="cm_group_company" Type="bit" />
+    <Property Name="cm_assoc_company" Type="bit" />
+    <Property Name="cm_salesman_code" Type="int" />
+    <Property Name="cm_vat_reg_no" Type="nvarchar" MaxLength="25" />
+    <Property Name="cm_acct_status" Type="tinyint" />
+    <Property Name="cm_registered_by" Type="nvarchar" MaxLength="50" />
+    <Property Name="cm_created_by" Type="nvarchar" MaxLength="25" />
+    <Property Name="cm_last_mod_by" Type="nvarchar" MaxLength="25" />
+    <Property Name="cm_creation_date" Type="smalldatetime" />
+    <Property Name="cm_last_mod_date" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="domain">
+    <Key>
+      <PropertyRef Name="domain_id" />
+      <PropertyRef Name="domain_value" />
+    </Key>
+    <Property Name="domain_id" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="domain_value" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="domain_descr" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="labour_supply_master">
+    <Key>
+      <PropertyRef Name="lsm_supp_id" />
+    </Key>
+    <Property Name="lsm_supp_id" Type="int" Nullable="false" />
+    <Property Name="lsm_supp_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="lsm_supp_type" Type="nvarchar" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="project_master">
+    <Key>
+      <PropertyRef Name="project_code" />
+      <PropertyRef Name="project_desc" />
+    </Key>
+    <Property Name="project_code" Type="nvarchar" MaxLength="6" Nullable="false" />
+    <Property Name="project_desc" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="project_client" Type="nvarchar" MaxLength="100" />
+    <Property Name="projet_consultant" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'tmpFibConso.dbo.supplier_mapping_tbl' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="supplier_mapping_tbl">
+          <Property Name="supplier_type_code" Type="smallint" />
+          <Property Name="supplier_type_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="division_code" Type="smallint" />
+          <Property Name="division_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="cm_acct_code" Type="int" />
+          <Property Name="cm_comp_name" Type="nvarchar" MaxLength="100" />
+          <Property Name="acct_type" Type="nvarchar" MaxLength="20" />
+          <Property Name="cm_comp_name_revised" Type="nvarchar" MaxLength="100" />
+          <Property Name="cm_retention_acno" Type="int" />
+          <Property Name="cm_advance_acno" Type="int" />
+          <Property Name="unified_supplier_code" Type="int" />
+          <Property Name="unified_supplier_name" Type="nvarchar" MaxLength="100" />
+          <Property Name="supplier_div_status" Type="smallint" />
+          <Property Name="supplier_div_status_desc" Type="nvarchar" MaxLength="20" />
+          <Property Name="supplier_conso_status" Type="smallint" />
+          <Property Name="supplier_conso_status_desc" Type="nvarchar" MaxLength="20" />
+          <Property Name="validation_status_code" Type="smallint" />
+          <Property Name="validation_status_desc" Type="nvarchar" MaxLength="50" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'tmpFibConso.dbo.supplier_mapping_tbl_fnl' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="supplier_mapping_tbl_fnl">
+          <Property Name="supplier_type_code" Type="smallint" />
+          <Property Name="supplier_type_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="division_code" Type="smallint" />
+          <Property Name="division_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="cm_acct_code" Type="int" />
+          <Property Name="cm_comp_name" Type="nvarchar" MaxLength="100" />
+          <Property Name="acct_type" Type="nvarchar" MaxLength="20" />
+          <Property Name="cm_comp_name_revised" Type="nvarchar" MaxLength="100" />
+          <Property Name="cm_retention_acno" Type="int" />
+          <Property Name="cm_advance_acno" Type="int" />
+          <Property Name="unified_supplier_code" Type="int" />
+          <Property Name="unified_supplier_name" Type="nvarchar" MaxLength="100" />
+          <Property Name="supplier_div_status" Type="smallint" />
+          <Property Name="supplier_div_status_desc" Type="nvarchar" MaxLength="20" />
+          <Property Name="supplier_conso_status" Type="smallint" />
+          <Property Name="supplier_conso_status_desc" Type="nvarchar" MaxLength="20" />
+          <Property Name="validation_status_code" Type="smallint" />
+          <Property Name="validation_status_desc" Type="nvarchar" MaxLength="50" />
+          <Property Name="last_updated_date" Type="smalldatetime" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'tmpFibConso.dbo.supplier_mapping_tbl_fnl_old' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="supplier_mapping_tbl_fnl_old">
+          <Property Name="supplier_type_code" Type="smallint" />
+          <Property Name="supplier_type_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="division_code" Type="smallint" />
+          <Property Name="division_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="cm_acct_code" Type="int" />
+          <Property Name="cm_comp_name" Type="nvarchar" MaxLength="100" />
+          <Property Name="acct_type" Type="nvarchar" MaxLength="20" />
+          <Property Name="cm_comp_name_revised" Type="nvarchar" MaxLength="100" />
+          <Property Name="cm_retention_acno" Type="int" />
+          <Property Name="cm_advance_acno" Type="int" />
+          <Property Name="unified_supplier_code" Type="int" />
+          <Property Name="unified_supplier_name" Type="nvarchar" MaxLength="100" />
+          <Property Name="supplier_div_status" Type="smallint" />
+          <Property Name="supplier_div_status_desc" Type="nvarchar" MaxLength="20" />
+          <Property Name="supplier_conso_status" Type="smallint" />
+          <Property Name="supplier_conso_status_desc" Type="nvarchar" MaxLength="20" />
+          <Property Name="validation_status_code" Type="smallint" />
+          <Property Name="validation_status_desc" Type="nvarchar" MaxLength="50" />
+          <Property Name="last_updated_date" Type="smalldatetime" />
+        </EntityType>-->
+  <EntityType Name="supply_labour_employee">
+    <Key>
+      <PropertyRef Name="sle_supp_id" />
+      <PropertyRef Name="sle_hemp_code" />
+    </Key>
+    <Property Name="sle_supp_id" Type="int" Nullable="false" />
+    <Property Name="sle_hemp_code" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="sle_hemp_name" Type="varchar" MaxLength="50" />
+    <Property Name="sle_eid_no" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'tmpFibConso.dbo.VW_COST_CODE_MASTER' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VW_COST_CODE_MASTER">
+    <Key>
+      <PropertyRef Name="orgCode" />
+      <PropertyRef Name="orgName" />
+      <PropertyRef Name="ccm_type" />
+      <PropertyRef Name="ccm_serial" />
+      <PropertyRef Name="ccm_cost_code" />
+    </Key>
+    <Property Name="orgCode" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="orgName" Type="varchar" MaxLength="16" Nullable="false" />
+    <Property Name="ccm_type" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="ccm_serial" Type="nvarchar" MaxLength="6" Nullable="false" />
+    <Property Name="ccm_cost_code" Type="nvarchar" MaxLength="9" Nullable="false" />
+    <Property Name="ccm_desc" Type="varchar" MaxLength="50" />
+    <Property Name="ccm_status" Type="tinyint" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'tmpFibConso.dbo.VW_MATRECTRANS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VW_MATRECTRANS">
+    <Key>
+      <PropertyRef Name="mrvm_vr_loc" />
+      <PropertyRef Name="mrvm_vr_no" />
+      <PropertyRef Name="mrvd_serial_no" />
+    </Key>
+    <Property Name="mrvm_org_code" Type="int" />
+    <Property Name="mrvm_vr_loc" Type="smallint" Nullable="false" />
+    <Property Name="mrvm_vr_no" Type="int" Nullable="false" />
+    <Property Name="mrvm_po_no" Type="int" />
+    <Property Name="mrvm_po_rev" Type="smallint" />
+    <Property Name="mrvd_serial_no" Type="smallint" Nullable="false" />
+    <Property Name="mrvd_po_line_id" Type="bigint" />
+    <Property Name="mrvd_po_line_no" Type="smallint" />
+    <Property Name="mrvd_item_code" Type="nvarchar" MaxLength="25" />
+    <Property Name="mrvd_rcvd_order_unit" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="mrvd_unit_rate_lc" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="mrvd_value_fc" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="mrvd_line_vat" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="mrvd_createdBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="mrvd_creationDate" Type="datetime" />
+    <Property Name="mrvd_LastModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="mrvd_LastModifiedDate" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'tmpFibConso.dbo.VW_PO360' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="VW_PO360">
+          <Property Name="ORGCODE" Type="smallint" />
+          <Property Name="ORGNAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="PROJECTCODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="PROJECTNAME" Type="nvarchar" MaxLength="80" />
+          <Property Name="VENDORID" Type="int" />
+          <Property Name="VENDORNAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="PONUM" Type="numeric" Precision="8" Scale="0" />
+          <Property Name="TOTALCOST" Type="numeric" Precision="16" Scale="2" />
+          <Property Name="RECEIVINGTOTALCOST" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="RECEIVEDTOTALCOST" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="RECEIPTSTATUS" Type="varchar" MaxLength="8" />
+          <Property Name="INVO" Type="numeric" Precision="38" Scale="2" />
+          <Property Name="INPROG" Type="numeric" Precision="38" Scale="2" />
+          <Property Name="WAITFA" Type="numeric" Precision="38" Scale="2" />
+          <Property Name="PAID" Type="numeric" Precision="38" Scale="2" />
+          <Property Name="PCV" Type="numeric" Precision="38" Scale="2" />
+          <Property Name="REV" Type="numeric" Precision="38" Scale="2" />
+          <Property Name="UNKNOWN" Type="numeric" Precision="38" Scale="2" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'tmpFibConso.dbo.VW_POLINERECEIVING' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VW_POLINERECEIVING">
+    <Key>
+      <PropertyRef Name="PONUM" />
+      <PropertyRef Name="POREVISION" />
+      <PropertyRef Name="POLINENUM" />
+      <PropertyRef Name="POLINEID" />
+      <PropertyRef Name="RECEIVEDQTY" />
+    </Key>
+    <Property Name="PONUM" Type="numeric" Precision="8" Scale="0" Nullable="false" />
+    <Property Name="POREVISION" Type="smallint" Nullable="false" />
+    <Property Name="POLINENUM" Type="smallint" Nullable="false" />
+    <Property Name="POLINEID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ORDERQTY" Type="numeric" Precision="16" Scale="2" />
+    <Property Name="UNITCOST" Type="numeric" Precision="16" Scale="2" />
+    <Property Name="LINECOST" Type="numeric" Precision="16" Scale="2" />
+    <Property Name="TAXTOTAL" Type="numeric" Precision="10" Scale="2" />
+    <Property Name="RECEIVEDQTY" Type="decimal" Precision="38" Scale="2" Nullable="false" />
+    <Property Name="REMAININGQTY" Type="numeric" Precision="38" Scale="2" />
+    <Property Name="RECEIPTTOLERANCE" Type="numeric" Precision="5" Scale="2" />
+    <Property Name="RECEIPTTOLQTY" Type="numeric" Precision="28" Scale="9" />
+    <Property Name="RECEIPTTOLAMT" Type="numeric" Precision="28" Scale="9" />
+    <Property Name="RECEIVEDTOTALCOST" Type="numeric" Precision="38" Scale="6" />
+    <Property Name="RECEIPTSTATUS" Type="varchar" MaxLength="8" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'tmpFibConso.dbo.VW_PORECEIVING' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VW_PORECEIVING">
+    <Key>
+      <PropertyRef Name="PONUM" />
+      <PropertyRef Name="POREVISION" />
+    </Key>
+    <Property Name="ORGCODE" Type="nvarchar" MaxLength="30" />
+    <Property Name="PROJECTCODE" Type="nvarchar" MaxLength="10" />
+    <Property Name="VENDORCODE" Type="int" />
+    <Property Name="PONUM" Type="numeric" Precision="8" Scale="0" Nullable="false" />
+    <Property Name="POREVISION" Type="smallint" Nullable="false" />
+    <Property Name="PRETAXRECEIVINGTOTALCOST" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="RECEIVINGTOTALCOST" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="RECEIVEDTOTALCOST" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="RECEIPTSTATUS" Type="varchar" MaxLength="8" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'tmpFibConso.dbo.VW_PRODUCT_MASTER' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VW_PRODUCT_MASTER">
+    <Key>
+      <PropertyRef Name="orgCode" />
+      <PropertyRef Name="orgName" />
+      <PropertyRef Name="prm_item_code" />
+    </Key>
+    <Property Name="orgCode" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="orgName" Type="varchar" MaxLength="16" Nullable="false" />
+    <Property Name="prm_item_code" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="prm_item_desc" Type="varchar" MaxLength="50" />
+    <Property Name="prm_uom_code" Type="smallint" />
+    <Property Name="uom_desc" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'tmpFibConso.dbo.VW_SUPPYMTFCST' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="VW_SUPPYMTFCST">
+          <Property Name="ORGCODE" Type="nvarchar" MaxLength="30" />
+          <Property Name="ORGNAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="PROJECTCODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="PROJECTNAME" Type="nvarchar" MaxLength="80" />
+          <Property Name="VENDORID" Type="int" />
+          <Property Name="VENDORNAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="FCSTRECCOST" Type="numeric" Precision="38" Scale="2" />
+          <Property Name="FCSTORDERNOTREC" Type="numeric" Precision="17" Scale="2" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'tmpFibConso.dbo.VW_SUPPYMTSMRY' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="VW_SUPPYMTSMRY">
+          <Property Name="SUPPLIERID" Type="int" />
+          <Property Name="VORGCODE" Type="smallint" />
+          <Property Name="PROJECTCODE" Type="nvarchar" MaxLength="6" />
+          <Property Name="PROJECTNAME" Type="varchar" MaxLength="50" />
+          <Property Name="PONUM" Type="nvarchar" MaxLength="25" />
+          <Property Name="INVO" Type="numeric" Precision="38" Scale="2" />
+          <Property Name="INPROG" Type="numeric" Precision="38" Scale="2" />
+          <Property Name="WAITFA" Type="numeric" Precision="38" Scale="2" />
+          <Property Name="PAID" Type="numeric" Precision="38" Scale="2" />
+          <Property Name="PCV" Type="numeric" Precision="38" Scale="2" />
+          <Property Name="REV" Type="numeric" Precision="38" Scale="2" />
+          <Property Name="UNKNOWN" Type="numeric" Precision="38" Scale="2" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'tmpFibConso.dbo.VW_SUPPYMTTRANS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VW_SUPPYMTTRANS">
+    <Key>
+      <PropertyRef Name="VTYPE" />
+      <PropertyRef Name="VMNUM" />
+    </Key>
+    <Property Name="SUPPLIERID" Type="int" />
+    <Property Name="SUPACCTCODE" Type="int" />
+    <Property Name="VORGCODE" Type="smallint" />
+    <Property Name="PROJECTCODE" Type="nvarchar" MaxLength="6" />
+    <Property Name="PROJECTNAME" Type="varchar" MaxLength="50" />
+    <Property Name="VDATE" Type="date" />
+    <Property Name="VTYPE" Type="tinyint" Nullable="false" />
+    <Property Name="VTYPEDESC" Type="varchar" MaxLength="19" />
+    <Property Name="VMNUM" Type="int" Nullable="false" />
+    <Property Name="VDNUM" Type="smallint" />
+    <Property Name="INVOICENUM" Type="int" />
+    <Property Name="PONUM" Type="nvarchar" MaxLength="25" />
+    <Property Name="POEXEMPT" Type="bit" />
+    <Property Name="VAMOUNT" Type="numeric" Precision="12" Scale="2" />
+    <Property Name="VSTATUS" Type="tinyint" />
+    <Property Name="VSTATUSDESC" Type="varchar" MaxLength="15" />
+    <Property Name="INVOICEDATE" Type="date" />
+    <Property Name="INVPAYTERM" Type="smallint" />
+    <Property Name="INVOICEDUEDATE" Type="date" />
+  </EntityType>
+  <Association Name="acct_mgrp_acct_sgrp_FK1">
+    <End Role="acct_mgrp" Type="Self.acct_mgrp" Multiplicity="1" />
+    <End Role="acct_sgrp" Type="Self.acct_sgrp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="acct_mgrp">
+        <PropertyRef Name="acct_mgrp_type" />
+        <PropertyRef Name="acct_mgrp_code" />
+      </Principal>
+      <Dependent Role="acct_sgrp">
+        <PropertyRef Name="acct_sgrp_type" />
+        <PropertyRef Name="acct_sgrp_mgrp" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="acct_type_acct_mgrp_FK1">
+    <End Role="acct_type" Type="Self.acct_type" Multiplicity="1" />
+    <End Role="acct_mgrp" Type="Self.acct_mgrp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="acct_type">
+        <PropertyRef Name="acct_type_code" />
+      </Principal>
+      <Dependent Role="acct_mgrp">
+        <PropertyRef Name="acct_mgrp_type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_bspl_det_master_bspl_sgrp_master">
+    <End Role="bspl_sgrp_master" Type="Self.bspl_sgrp_master" Multiplicity="1" />
+    <End Role="bspl_det_master" Type="Self.bspl_det_master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="bspl_sgrp_master">
+        <PropertyRef Name="bsplsg_mgrp_code" />
+        <PropertyRef Name="bsplsg_sgrp_code" />
+      </Principal>
+      <Dependent Role="bspl_det_master">
+        <PropertyRef Name="bspldt_mgrp_code" />
+        <PropertyRef Name="bspldt_sgrp_code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_bspl_sgrp_master_bspl_mgrp_master">
+    <End Role="bspl_mgrp_master" Type="Self.bspl_mgrp_master" Multiplicity="1" />
+    <End Role="bspl_sgrp_master" Type="Self.bspl_sgrp_master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="bspl_mgrp_master">
+        <PropertyRef Name="bsplmg_mgrp_code" />
+      </Principal>
+      <Dependent Role="bspl_sgrp_master">
+        <PropertyRef Name="bsplsg_mgrp_code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="AddAccountMainGroup" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="iAccountType" Type="smallint" Mode="In" />
+    <Parameter Name="iMainGroupCode" Type="smallint" Mode="In" />
+    <Parameter Name="iMainGroupDesc" Type="varchar" Mode="In" />
+    <Parameter Name="iMainGroupDescAr" Type="nvarchar" Mode="In" />
+    <Parameter Name="imode" Type="smallint" Mode="In" />
+    <Parameter Name="bsplmaincode" Type="smallint" Mode="In" />
+    <Parameter Name="bsplsubcode" Type="smallint" Mode="In" />
+    <Parameter Name="bsplcode" Type="smallint" Mode="In" />
+  </Function>
+  <Function Name="AddAccountSubGroup" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="iAccountType" Type="smallint" Mode="In" />
+    <Parameter Name="iMainGroupCode" Type="smallint" Mode="In" />
+    <Parameter Name="iSubGroupCode" Type="smallint" Mode="In" />
+    <Parameter Name="iSubGroupDesc" Type="varchar" Mode="In" />
+    <Parameter Name="iSubGroupDescAr" Type="nvarchar" Mode="In" />
+    <Parameter Name="iExcOsInv" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="AddEditBsPlMaingroupMaster" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="code" Type="smallint" Mode="In" />
+    <Parameter Name="name" Type="nvarchar" Mode="In" />
+    <Parameter Name="mode" Type="char" Mode="In" />
+    <Parameter Name="nameAr" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="AddEditBsPlMaster" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mcode" Type="smallint" Mode="In" />
+    <Parameter Name="scode" Type="smallint" Mode="In" />
+    <Parameter Name="code" Type="smallint" Mode="In" />
+    <Parameter Name="name" Type="nvarchar" Mode="In" />
+    <Parameter Name="mode" Type="char" Mode="In" />
+    <Parameter Name="nameAr" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="AddEditBsPlSubgroupMaster" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mcode" Type="smallint" Mode="In" />
+    <Parameter Name="scode" Type="smallint" Mode="In" />
+    <Parameter Name="name" Type="nvarchar" Mode="In" />
+    <Parameter Name="mode" Type="char" Mode="In" />
+    <Parameter Name="nameAr" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="AddEditConProjectMaster" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="iCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="iName" Type="nvarchar" Mode="In" />
+    <Parameter Name="iclient" Type="nvarchar" Mode="In" />
+    <Parameter Name="iconsul" Type="nvarchar" Mode="In" />
+    <Parameter Name="iMode" Type="char" Mode="In" />
+    <Parameter Name="retValue" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="AddEditCustBussUnits" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="iAccCode" Type="int" Mode="In" />
+    <Parameter Name="iRetAccCode" Type="int" Mode="In" />
+    <Parameter Name="iAdvAccCode" Type="int" Mode="In" />
+    <Parameter Name="iOrgCode" Type="int" Mode="In" />
+    <Parameter Name="iAccName" Type="nvarchar" Mode="In" />
+    <Parameter Name="iOrgAccCode" Type="int" Mode="In" />
+  </Function>
+  <Function Name="AddEditCustomerSuppForConsoli" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="iCode" Type="int" Mode="In" />
+    <Parameter Name="iName" Type="varchar" Mode="In" />
+    <Parameter Name="iAddr1" Type="varchar" Mode="In" />
+    <Parameter Name="iAddr2" Type="varchar" Mode="In" />
+    <Parameter Name="iTel1" Type="varchar" Mode="In" />
+    <Parameter Name="iMobile" Type="varchar" Mode="In" />
+    <Parameter Name="iFax" Type="nvarchar" Mode="In" />
+    <Parameter Name="iEmail" Type="varchar" Mode="In" />
+    <Parameter Name="iPayTerm" Type="smallint" Mode="In" />
+    <Parameter Name="iCreditLimit" Type="decimal" Mode="In" />
+    <Parameter Name="iCtyCode" Type="int" Mode="In" />
+    <Parameter Name="iGrpComp" Type="bit" Mode="In" />
+    <Parameter Name="iAssComp" Type="bit" Mode="In" />
+    <Parameter Name="iSalCode" Type="int" Mode="In" />
+    <Parameter Name="iBSPLDrCode" Type="int" Mode="In" />
+    <Parameter Name="iBSPLCrCode" Type="int" Mode="In" />
+    <Parameter Name="iBranch" Type="int" Mode="In" />
+    <Parameter Name="iPoBox" Type="int" Mode="In" />
+    <Parameter Name="iContact" Type="nvarchar" Mode="In" />
+    <Parameter Name="iMode" Type="char" Mode="In" />
+    <Parameter Name="iCustCat" Type="smallint" Mode="In" />
+    <Parameter Name="iAcctStatus" Type="bit" Mode="In" />
+    <Parameter Name="iVatRegNo" Type="nvarchar" Mode="In" />
+    <Parameter Name="ibsplMainCode" Type="smallint" Mode="In" />
+    <Parameter Name="ibsplSubCode" Type="smallint" Mode="In" />
+    <Parameter Name="ibsplCode" Type="smallint" Mode="In" />
+    <Parameter Name="iretAccount" Type="int" Mode="In" />
+    <Parameter Name="iadvAccount" Type="int" Mode="In" />
+    <Parameter Name="iArabicName" Type="nvarchar" Mode="In" />
+    <Parameter Name="iSubCont" Type="bit" Mode="In" />
+    <Parameter Name="ishortName" Type="nvarchar" Mode="In" />
+    <Parameter Name="ilicenNo" Type="nvarchar" Mode="In" />
+    <Parameter Name="imcoc" Type="nvarchar" Mode="In" />
+    <Parameter Name="iurl" Type="nvarchar" Mode="In" />
+    <Parameter Name="iposition" Type="nvarchar" Mode="In" />
+    <Parameter Name="iusrId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="AddEditLaborSupplyMaster" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="supId" Type="int" Mode="In" />
+    <Parameter Name="supActCode" Type="int" Mode="In" />
+    <Parameter Name="Supname" Type="nvarchar" Mode="In" />
+    <Parameter Name="SupType" Type="nvarchar" Mode="In" />
+    <Parameter Name="mode" Type="char" Mode="In" />
+  </Function>
+  <Function Name="AddEditSupplier" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="iCode" Type="int" Mode="In" />
+    <Parameter Name="iName" Type="varchar" Mode="In" />
+    <Parameter Name="iretAccount" Type="int" Mode="In" />
+    <Parameter Name="iadvAccount" Type="int" Mode="In" />
+    <Parameter Name="iPayTerm" Type="smallint" Mode="In" />
+    <Parameter Name="iCreditLimit" Type="decimal" Mode="In" />
+    <Parameter Name="iAcctStatus" Type="tinyint" Mode="In" />
+    <Parameter Name="iEmail" Type="varchar" Mode="In" />
+    <Parameter Name="iContact" Type="nvarchar" Mode="In" />
+    <Parameter Name="iposition" Type="nvarchar" Mode="In" />
+    <Parameter Name="iMobile" Type="varchar" Mode="In" />
+    <Parameter Name="contTel" Type="varchar" Mode="In" />
+    <Parameter Name="contExt" Type="varchar" Mode="In" />
+    <Parameter Name="RegDocType" Type="nvarchar" Mode="In" />
+    <Parameter Name="ilicenNo" Type="nvarchar" Mode="In" />
+    <Parameter Name="issuingAuth" Type="nvarchar" Mode="In" />
+    <Parameter Name="expDate" Type="datetime" Mode="In" />
+    <Parameter Name="iCtyCode" Type="smallint" Mode="In" />
+    <Parameter Name="iAddr1" Type="nvarchar" Mode="In" />
+    <Parameter Name="iAddr2" Type="nvarchar" Mode="In" />
+    <Parameter Name="cmCity" Type="varchar" Mode="In" />
+    <Parameter Name="iPoBox" Type="nvarchar" Mode="In" />
+    <Parameter Name="iTel1" Type="varchar" Mode="In" />
+    <Parameter Name="iFax" Type="nvarchar" Mode="In" />
+    <Parameter Name="Supp_id" Type="int" Mode="In" />
+    <Parameter Name="Sup_status" Type="nvarchar" Mode="In" />
+    <Parameter Name="SuppStatusDate" Type="datetime" Mode="In" />
+    <Parameter Name="CompOffiName" Type="nvarchar" Mode="In" />
+    <Parameter Name="CompShortName" Type="nvarchar" Mode="In" />
+    <Parameter Name="supCountry" Type="smallint" Mode="In" />
+    <Parameter Name="supBc" Type="nvarchar" Mode="In" />
+    <Parameter Name="iMode" Type="char" Mode="In" />
+    <Parameter Name="iusrId" Type="nvarchar" Mode="In" />
+    <Parameter Name="supType" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="AddEditSupplierForConsolidation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="iCode" Type="int" Mode="In" />
+    <Parameter Name="iName" Type="varchar" Mode="In" />
+    <Parameter Name="iretAccount" Type="int" Mode="In" />
+    <Parameter Name="iadvAccount" Type="int" Mode="In" />
+    <Parameter Name="iPayTerm" Type="smallint" Mode="In" />
+    <Parameter Name="iCreditLimit" Type="decimal" Mode="In" />
+    <Parameter Name="iAcctStatus" Type="tinyint" Mode="In" />
+    <Parameter Name="iEmail" Type="varchar" Mode="In" />
+    <Parameter Name="iContact" Type="nvarchar" Mode="In" />
+    <Parameter Name="iposition" Type="nvarchar" Mode="In" />
+    <Parameter Name="iMobile" Type="varchar" Mode="In" />
+    <Parameter Name="contTel" Type="varchar" Mode="In" />
+    <Parameter Name="contExt" Type="varchar" Mode="In" />
+    <Parameter Name="RegDocType" Type="nvarchar" Mode="In" />
+    <Parameter Name="ilicenNo" Type="nvarchar" Mode="In" />
+    <Parameter Name="issuingAuth" Type="nvarchar" Mode="In" />
+    <Parameter Name="expDate" Type="datetime" Mode="In" />
+    <Parameter Name="iCtyCode" Type="smallint" Mode="In" />
+    <Parameter Name="iAddr1" Type="nvarchar" Mode="In" />
+    <Parameter Name="iAddr2" Type="nvarchar" Mode="In" />
+    <Parameter Name="cmCity" Type="varchar" Mode="In" />
+    <Parameter Name="iPoBox" Type="nvarchar" Mode="In" />
+    <Parameter Name="iTel1" Type="varchar" Mode="In" />
+    <Parameter Name="iFax" Type="nvarchar" Mode="In" />
+    <Parameter Name="Supp_id" Type="int" Mode="In" />
+    <Parameter Name="Sup_status" Type="nvarchar" Mode="In" />
+    <Parameter Name="SuppStatusDate" Type="datetime" Mode="In" />
+    <Parameter Name="CompOffiName" Type="nvarchar" Mode="In" />
+    <Parameter Name="CompShortName" Type="nvarchar" Mode="In" />
+    <Parameter Name="supCountry" Type="smallint" Mode="In" />
+    <Parameter Name="supBc" Type="nvarchar" Mode="In" />
+    <Parameter Name="iMode" Type="char" Mode="In" />
+    <Parameter Name="iusrId" Type="nvarchar" Mode="In" />
+    <Parameter Name="supType" Type="nvarchar" Mode="In" />
+    <Parameter Name="iVatRegNo" Type="nvarchar" Mode="In" />
+    <Parameter Name="iVatRegType" Type="nvarchar" Mode="In" />
+    <Parameter Name="iVatIsReg" Type="bit" Mode="In" />
+    <Parameter Name="iVatAccount" Type="int" Mode="In" />
+    <Parameter Name="iVatGrpName" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="AddEditSupplierForDivision" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="iAccCode" Type="int" Mode="In" />
+    <Parameter Name="iUserId" Type="nvarchar" Mode="In" />
+    <Parameter Name="entry" Type="tinyint" Mode="In" />
+    <Parameter Name="vError" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="AddEditSupplierMapping" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="iAccCode" Type="int" Mode="In" />
+    <Parameter Name="iRetAccCode" Type="int" Mode="In" />
+    <Parameter Name="iAdvAccCode" Type="int" Mode="In" />
+    <Parameter Name="iOrgCode" Type="int" Mode="In" />
+    <Parameter Name="iOrgAccCode" Type="int" Mode="In" />
+    <Parameter Name="iUserId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="AddHERegEntry" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SuppID" Type="int" Mode="In" />
+    <Parameter Name="pseEmpCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="pseEmpName" Type="nvarchar" Mode="In" />
+    <Parameter Name="pseEID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="CheckBsPlEnable" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="iOrgId" Type="int" Mode="In" />
+    <Parameter Name="iResult" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="chkDuplicateRegID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AccCode" Type="int" Mode="In" />
+    <Parameter Name="orgCode" Type="smallint" Mode="In" />
+    <Parameter Name="RegType" Type="nvarchar" Mode="In" />
+    <Parameter Name="RegId" Type="nvarchar" Mode="In" />
+    <Parameter Name="iRetValue" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="DeleteConProjectMaster" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="iCode" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="DeleteCustBussUnits" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="iAccCode" Type="int" Mode="In" />
+    <Parameter Name="iRetAccCode" Type="int" Mode="In" />
+    <Parameter Name="iAdvAccCode" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeleteHERegEntry" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SuppID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeleteLaborSupplyMaster" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="code" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeleteSupplierMapping" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="iAccCode" Type="int" Mode="In" />
+    <Parameter Name="iRetAccCode" Type="int" Mode="In" />
+    <Parameter Name="iAdvAccCode" Type="int" Mode="In" />
+  </Function>
+  <Function Name="FASGetErrorMsg" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="iError" Type="int" Mode="In" />
+    <Parameter Name="oSeverity" Type="smallint" Mode="InOut" />
+    <Parameter Name="oLevel" Type="smallint" Mode="InOut" />
+    <Parameter Name="oErrorMsg" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="fn_StrClean" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar(max)">
+    <Parameter Name="p_str1" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GeLaborSupplyMasterByPage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="iCurrentPage" Type="int" Mode="In" />
+    <Parameter Name="iPageSize" Type="int" Mode="In" />
+    <Parameter Name="iSortType" Type="int" Mode="In" />
+    <Parameter Name="iSortCol" Type="varchar" Mode="In" />
+    <Parameter Name="iSearchField" Type="varchar" Mode="In" />
+    <Parameter Name="iSearchValue" Type="varchar" Mode="In" />
+    <Parameter Name="iSearchFilter" Type="varchar" Mode="In" />
+    <Parameter Name="iTotalRecords" Type="int" Mode="InOut" />
+    <Parameter Name="iTable" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetAccountsMainGroupByPage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="iCurrentPage" Type="int" Mode="In" />
+    <Parameter Name="iPageSize" Type="int" Mode="In" />
+    <Parameter Name="iSortType" Type="int" Mode="In" />
+    <Parameter Name="iSortCol" Type="varchar" Mode="In" />
+    <Parameter Name="iSearchField" Type="varchar" Mode="In" />
+    <Parameter Name="iSearchValue" Type="varchar" Mode="In" />
+    <Parameter Name="iSearchFilter" Type="varchar" Mode="In" />
+    <Parameter Name="iTotalRecords" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="GetAccountsSubGroupByPage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="iCurrentPage" Type="int" Mode="In" />
+    <Parameter Name="iPageSize" Type="int" Mode="In" />
+    <Parameter Name="iSortType" Type="int" Mode="In" />
+    <Parameter Name="iSortCol" Type="varchar" Mode="In" />
+    <Parameter Name="iSearchField" Type="varchar" Mode="In" />
+    <Parameter Name="iSearchValue" Type="varchar" Mode="In" />
+    <Parameter Name="iSearchFilter" Type="varchar" Mode="In" />
+    <Parameter Name="iTotalRecords" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="GetAccountType" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AccCode" Type="int" Mode="In" />
+    <Parameter Name="orgAccCode" Type="int" Mode="In" />
+    <Parameter Name="orgLongName" Type="nvarchar" Mode="In" />
+    <Parameter Name="iRetValue" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="GetAcctStatus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DocumentType" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="GetAllOrgCostCode" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetAllOrgProductMaster" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetBsplMaingroupByPage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="iCurrentPage" Type="int" Mode="In" />
+    <Parameter Name="iPageSize" Type="int" Mode="In" />
+    <Parameter Name="iSortType" Type="int" Mode="In" />
+    <Parameter Name="iSortCol" Type="varchar" Mode="In" />
+    <Parameter Name="iSearchField" Type="varchar" Mode="In" />
+    <Parameter Name="iSearchValue" Type="varchar" Mode="In" />
+    <Parameter Name="iSearchFilter" Type="varchar" Mode="In" />
+    <Parameter Name="iTotalRecords" Type="int" Mode="InOut" />
+    <Parameter Name="iTable" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetBsplMasterByPage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="iCurrentPage" Type="int" Mode="In" />
+    <Parameter Name="iPageSize" Type="int" Mode="In" />
+    <Parameter Name="iSortType" Type="int" Mode="In" />
+    <Parameter Name="iSortCol" Type="varchar" Mode="In" />
+    <Parameter Name="iSearchField" Type="varchar" Mode="In" />
+    <Parameter Name="iSearchValue" Type="varchar" Mode="In" />
+    <Parameter Name="iSearchFilter" Type="varchar" Mode="In" />
+    <Parameter Name="iTotalRecords" Type="int" Mode="InOut" />
+    <Parameter Name="iTable" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetBsplSubgroupByPage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="iCurrentPage" Type="int" Mode="In" />
+    <Parameter Name="iPageSize" Type="int" Mode="In" />
+    <Parameter Name="iSortType" Type="int" Mode="In" />
+    <Parameter Name="iSortCol" Type="varchar" Mode="In" />
+    <Parameter Name="iSearchField" Type="varchar" Mode="In" />
+    <Parameter Name="iSearchValue" Type="varchar" Mode="In" />
+    <Parameter Name="iSearchFilter" Type="varchar" Mode="In" />
+    <Parameter Name="iTotalRecords" Type="int" Mode="InOut" />
+    <Parameter Name="iTable" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetConProjectMasterByPage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="iCurrentPage" Type="int" Mode="In" />
+    <Parameter Name="iPageSize" Type="int" Mode="In" />
+    <Parameter Name="iSortType" Type="int" Mode="In" />
+    <Parameter Name="iSortCol" Type="varchar" Mode="In" />
+    <Parameter Name="iSearchField" Type="varchar" Mode="In" />
+    <Parameter Name="iSearchValue" Type="varchar" Mode="In" />
+    <Parameter Name="iSearchFilter" Type="varchar" Mode="In" />
+    <Parameter Name="iTotalRecords" Type="int" Mode="InOut" />
+    <Parameter Name="iTable" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetCostCenterOrgByPage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="iCurrentPage" Type="int" Mode="In" />
+    <Parameter Name="iPageSize" Type="int" Mode="In" />
+    <Parameter Name="iSortType" Type="int" Mode="In" />
+    <Parameter Name="iSortCol" Type="varchar" Mode="In" />
+    <Parameter Name="iSearchField" Type="varchar" Mode="In" />
+    <Parameter Name="iSearchValue" Type="varchar" Mode="In" />
+    <Parameter Name="iSearchFilter" Type="varchar" Mode="In" />
+    <Parameter Name="iTotalRecords" Type="int" Mode="InOut" />
+    <Parameter Name="pgOrg" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetCostCode" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="orgCode" Type="int" />
+          <Property Name="orgName" Type="nvarchar" MaxLength="15" />
+          <Property Name="ccm_type" Type="char" MaxLength="3" />
+          <Property Name="ccm_serial" Type="nvarchar" MaxLength="6" />
+          <Property Name="ccm_cost_code" Type="nvarchar" MaxLength="9" />
+          <Property Name="ccm_desc" Type="nvarchar" MaxLength="50" />
+          <Property Name="ccm_status" Type="bit" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="GetCustIDMaxNo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="iRetValue" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="GetCustomerBusiness" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="iCode" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetCustomerBusinessForOrgAccCode" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="iCode" Type="int" Mode="In" />
+    <Parameter Name="iOrgCode" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetCustomerName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AccCode" Type="int" Mode="In" />
+    <Parameter Name="orgCode" Type="smallint" Mode="In" />
+  </Function>
+  <Function Name="GetExitOrgMapping" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="iCode" Type="int" Mode="In" />
+    <Parameter Name="Status" Type="tinyint" Mode="In" />
+  </Function>
+  <Function Name="GetHERegEntry" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SuppID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GETITEMMASTER_SP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetMaxAccountSerial" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="iType" Type="smallint" Mode="In" />
+    <Parameter Name="iGroup" Type="smallint" Mode="In" />
+    <Parameter Name="iSubGroup" Type="smallint" Mode="In" />
+  </Function>
+  <Function Name="GetMaxBsPlMaingroupMaster" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="result" Type="smallint" Mode="InOut" />
+  </Function>
+  <Function Name="GetMaxBsPlMaster" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="result" Type="smallint" Mode="InOut" />
+    <Parameter Name="mcode" Type="smallint" Mode="In" />
+    <Parameter Name="scode" Type="smallint" Mode="In" />
+  </Function>
+  <Function Name="GetMaxBsPlSubgroupMaster" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="result" Type="smallint" Mode="InOut" />
+    <Parameter Name="mcode" Type="smallint" Mode="In" />
+  </Function>
+  <Function Name="GetMaxGroupCode" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="iType" Type="smallint" Mode="In" />
+  </Function>
+  <Function Name="GetMaxSubGroupCode" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="iType" Type="smallint" Mode="In" />
+    <Parameter Name="iGroup" Type="smallint" Mode="In" />
+  </Function>
+  <Function Name="GetMGRPmode" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="iacctType" Type="int" Mode="In" />
+    <Parameter Name="iacctMode" Type="int" Mode="In" />
+    <Parameter Name="iResult" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="GetNewCustomerSupplierByPage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="iCurrentPage" Type="int" Mode="In" />
+    <Parameter Name="iPageSize" Type="int" Mode="In" />
+    <Parameter Name="iSortType" Type="int" Mode="In" />
+    <Parameter Name="iSortCol" Type="varchar" Mode="In" />
+    <Parameter Name="iSearchField" Type="varchar" Mode="In" />
+    <Parameter Name="iSearchValue" Type="varchar" Mode="In" />
+    <Parameter Name="iSearchFilter" Type="varchar" Mode="In" />
+    <Parameter Name="iTotalRecords" Type="int" Mode="InOut" />
+    <Parameter Name="iTable" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetNewCustomerSupplierLMSByPage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="iCurrentPage" Type="int" Mode="In" />
+    <Parameter Name="iPageSize" Type="int" Mode="In" />
+    <Parameter Name="iSortType" Type="int" Mode="In" />
+    <Parameter Name="iSortCol" Type="varchar" Mode="In" />
+    <Parameter Name="iSearchField" Type="varchar" Mode="In" />
+    <Parameter Name="iSearchValue" Type="varchar" Mode="In" />
+    <Parameter Name="iSearchFilter" Type="varchar" Mode="In" />
+    <Parameter Name="iTotalRecords" Type="int" Mode="InOut" />
+    <Parameter Name="iTable" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetPossMatchOrgMapping" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SuppName" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="GetRegDocumentType" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DocumentType" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="GetSimilarSuppliers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="supplierName" Type="nvarchar" Mode="In" />
+    <Parameter Name="output" Type="varchar(max)" Mode="InOut" />
+  </Function>
+  <Function Name="GetSimilarSuppliersOpt" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="supplierName" Type="nvarchar" Mode="In" />
+    <Parameter Name="output" Type="varchar(max)" Mode="InOut" />
+  </Function>
+  <Function Name="GetSupIrgId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SupOrgName" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="GetSupplierDetailsForGrid" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="iCode" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetSupplierName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AccCode" Type="int" Mode="In" />
+    <Parameter Name="orgCode" Type="smallint" Mode="In" />
+  </Function>
+  <Function Name="MATRECTRANS_SP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="PadString" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
+    <Parameter Name="iNum" Type="int" Mode="In" />
+    <Parameter Name="iLen" Type="int" Mode="In" />
+  </Function>
+  <Function Name="POLINERECEIVING_SP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="RetrieveAccountMainGroup" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="iAccountType" Type="tinyint" Mode="In" />
+    <Parameter Name="iMainGroupCode" Type="tinyint" Mode="In" />
+  </Function>
+  <Function Name="RetrieveAccountMainGroupForMaster" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="iAccountType" Type="tinyint" Mode="In" />
+    <Parameter Name="iMainGroupCode" Type="tinyint" Mode="In" />
+  </Function>
+  <Function Name="RetrieveAccountSubGroup" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="iAccountType" Type="smallint" Mode="In" />
+    <Parameter Name="iMainGroupCode" Type="smallint" Mode="In" />
+    <Parameter Name="iSubGroupCode" Type="smallint" Mode="In" />
+  </Function>
+  <Function Name="RetrieveAccountType" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="iAccountType" Type="smallint" Mode="In" />
+  </Function>
+  <Function Name="RetrieveAllOrgns" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="currentOrgId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="RetrieveAllPOorgns" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="currentOrgId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="RetrieveBranch" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="iCode" Type="smallint" Mode="In" />
+  </Function>
+  <Function Name="RetrieveBsPlMainGroupMaster" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="code" Type="smallint" Mode="In" />
+  </Function>
+  <Function Name="RetrieveChqAppForOrgByDateForConsolidation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ChqType" Type="int" Mode="In" />
+    <Parameter Name="dtFrom" Type="nvarchar" Mode="In" />
+    <Parameter Name="dtTo" Type="nvarchar" Mode="In" />
+    <Parameter Name="suppcode" Type="int" Mode="In" />
+    <Parameter Name="frmgrp" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="RetrieveCountry" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="iCode" Type="smallint" Mode="In" />
+  </Function>
+  <Function Name="RetrieveCustomerSupplier" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="iCode" Type="int" Mode="In" />
+  </Function>
+  <Function Name="RetrieveCustomerSupplierLMS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="iCode" Type="int" Mode="In" />
+  </Function>
+  <Function Name="RetrieveDepartmentsPO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="iCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="orgCode" Type="smallint" Mode="In" />
+  </Function>
+  <Function Name="RetrieveLaborSupplyMaster" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="supId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="RetrievePorjetMaster" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="iCode" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="RptForePurOrderPay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="acctFrom" Type="int" Mode="In" />
+    <Parameter Name="DivOrgId" Type="int" Mode="In" />
+    <Parameter Name="projCode" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="RptPurchase360Degree" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="acctFrom" Type="int" Mode="In" />
+    <Parameter Name="DivOrgId" Type="int" Mode="In" />
+    <Parameter Name="projCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="rType" Type="smallint" Mode="In" />
+  </Function>
+  <Function Name="RptStatementOfAcctsConlidation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="acctNoFrom" Type="int" Mode="In" />
+    <Parameter Name="dtFrom" Type="nvarchar" Mode="In" />
+    <Parameter Name="dtTo" Type="nvarchar" Mode="In" />
+    <Parameter Name="frmgrp" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SearchSupplierDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AccName" Type="nvarchar" Mode="In" />
+    <Parameter Name="SearchAccName" Type="nvarchar" Mode="In" />
+    <Parameter Name="AccCode" Type="int" Mode="In" />
+    <Parameter Name="SearchAccCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="AccStatus" Type="smallint" Mode="In" />
+    <Parameter Name="SearchAccStatus" Type="nvarchar" Mode="In" />
+    <Parameter Name="SuppStatus" Type="nvarchar" Mode="In" />
+    <Parameter Name="SearchSuppStatus" Type="nvarchar" Mode="In" />
+    <Parameter Name="RegDocType" Type="nvarchar" Mode="In" />
+    <Parameter Name="SearchRegDocType" Type="nvarchar" Mode="In" />
+    <Parameter Name="RegDocId" Type="nvarchar" Mode="In" />
+    <Parameter Name="SearchRegDocId" Type="nvarchar" Mode="In" />
+    <Parameter Name="Address" Type="nvarchar" Mode="In" />
+    <Parameter Name="SearchAddress" Type="nvarchar" Mode="In" />
+    <Parameter Name="creationDate" Type="datetime" Mode="In" />
+    <Parameter Name="creationDate2" Type="datetime" Mode="In" />
+    <Parameter Name="SearchcreationDate" Type="nvarchar" Mode="In" />
+    <Parameter Name="SearchMapped" Type="tinyint" Mode="In" />
+    <Parameter Name="IsVatReg" Type="tinyint" Mode="In" />
+    <Parameter Name="SearchIsVatReg" Type="nvarchar" Mode="In" />
+    <Parameter Name="VatRegType" Type="nvarchar" Mode="In" />
+    <Parameter Name="SearchVatRegType" Type="nvarchar" Mode="In" />
+    <Parameter Name="VatRegNo" Type="nvarchar" Mode="In" />
+    <Parameter Name="SearchVatRegNo" Type="nvarchar" Mode="In" />
+    <Parameter Name="VatGrpName" Type="nvarchar" Mode="In" />
+    <Parameter Name="SearchVatGrpName" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SUPPYMTTRANS_SP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="uspAgeingForComsolidationReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="iType" Type="tinyint" Mode="In" />
+    <Parameter Name="iDateUpTo" Type="datetime" Mode="In" />
+    <Parameter Name="balType" Type="tinyint" Mode="In" />
+    <Parameter Name="repType" Type="tinyint" Mode="In" />
+    <Parameter Name="orderBy" Type="tinyint" Mode="In" />
+    <Parameter Name="orgId" Type="int" Mode="In" />
+    <Parameter Name="acctGrp" Type="smallint" Mode="In" />
+    <Parameter Name="acctSgrp" Type="smallint" Mode="In" />
+    <Parameter Name="acctNoFrom" Type="int" Mode="In" />
+    <Parameter Name="frmgrp" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="uspGetOrgParaFileByOrgId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="orgId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="uspSecGetRptVouchertHeader" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="orgCode" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ValidateSupplier" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="orgAccCode" Type="int" Mode="In" />
+    <Parameter Name="orgCodev" Type="smallint" Mode="In" />
+    <Parameter Name="RegType" Type="nvarchar" Mode="In" />
+    <Parameter Name="RegId" Type="nvarchar" Mode="In" />
+    <Parameter Name="iRetValue" Type="int" Mode="InOut" />
+  </Function>
+  <EntityContainer Name="FibConsoModelStoreContainer">
+    <EntitySet Name="a_conso_sup_map_tbl" EntityType="Self.a_conso_sup_map_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="acct_mgrp" EntityType="Self.acct_mgrp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="acct_sgrp" EntityType="Self.acct_sgrp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="acct_type" EntityType="Self.acct_type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="branch_master" EntityType="Self.branch_master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="bspl_det_master" EntityType="Self.bspl_det_master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="bspl_master" EntityType="Self.bspl_master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="bspl_mgrp_master" EntityType="Self.bspl_mgrp_master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="bspl_sgrp_master" EntityType="Self.bspl_sgrp_master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cm_unified_mapping" EntityType="Self.cm_unified_mapping" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="conso_sup_list_dm_final_2" EntityType="Self.conso_sup_list_dm_final_2" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="conso_sup_list_dm_temp_2" EntityType="Self.conso_sup_list_dm_temp_2" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="conso_sup_map_tbl" EntityType="Self.conso_sup_map_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="conso_sup_map_tbl_del" EntityType="Self.conso_sup_map_tbl_del" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="country_table" EntityType="Self.country_table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="customer_business" EntityType="Self.customer_business" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="domain" EntityType="Self.domain" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="labour_supply_master" EntityType="Self.labour_supply_master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="project_master" EntityType="Self.project_master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="supply_labour_employee" EntityType="Self.supply_labour_employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="conso_sup_list" EntityType="Self.conso_sup_list" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [conso_sup_list].[org_code] AS [org_code], 
+    [conso_sup_list].[org_name] AS [org_name], 
+    [conso_sup_list].[sup_acct_code] AS [sup_acct_code], 
+    [conso_sup_list].[sup_acct_name] AS [sup_acct_name]
+    FROM [dbo].[conso_sup_list] AS [conso_sup_list]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="conso_sup_list_dm_final_2_backup" EntityType="Self.conso_sup_list_dm_final_2_backup" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [conso_sup_list_dm_final_2_backup].[supplier_type_code] AS [supplier_type_code], 
+    [conso_sup_list_dm_final_2_backup].[supplier_type_name] AS [supplier_type_name], 
+    [conso_sup_list_dm_final_2_backup].[org_code] AS [org_code], 
+    [conso_sup_list_dm_final_2_backup].[org_name] AS [org_name], 
+    [conso_sup_list_dm_final_2_backup].[org_acct_code] AS [org_acct_code], 
+    [conso_sup_list_dm_final_2_backup].[cm_acct_code] AS [cm_acct_code], 
+    [conso_sup_list_dm_final_2_backup].[SupID] AS [SupID], 
+    [conso_sup_list_dm_final_2_backup].[cm_comp_name] AS [cm_comp_name], 
+    [conso_sup_list_dm_final_2_backup].[CompContactNameFull] AS [CompContactNameFull], 
+    [conso_sup_list_dm_final_2_backup].[CompContactTitle] AS [CompContactTitle], 
+    [conso_sup_list_dm_final_2_backup].[CompContactFirst] AS [CompContactFirst], 
+    [conso_sup_list_dm_final_2_backup].[CompContactLast] AS [CompContactLast], 
+    [conso_sup_list_dm_final_2_backup].[CompContactPos] AS [CompContactPos], 
+    [conso_sup_list_dm_final_2_backup].[CompMobile] AS [CompMobile], 
+    [conso_sup_list_dm_final_2_backup].[CompPhoneNo] AS [CompPhoneNo], 
+    [conso_sup_list_dm_final_2_backup].[CompExt] AS [CompExt], 
+    [conso_sup_list_dm_final_2_backup].[CompContactEmail] AS [CompContactEmail], 
+    [conso_sup_list_dm_final_2_backup].[CompType] AS [CompType], 
+    [conso_sup_list_dm_final_2_backup].[CompBC] AS [CompBC], 
+    [conso_sup_list_dm_final_2_backup].[CompSupType] AS [CompSupType], 
+    [conso_sup_list_dm_final_2_backup].[RegDocType] AS [RegDocType], 
+    [conso_sup_list_dm_final_2_backup].[RegDocID] AS [RegDocID], 
+    [conso_sup_list_dm_final_2_backup].[CompOfficialName] AS [CompOfficialName], 
+    [conso_sup_list_dm_final_2_backup].[RegDocIssAuth] AS [RegDocIssAuth], 
+    [conso_sup_list_dm_final_2_backup].[RegDocExpDate] AS [RegDocExpDate], 
+    [conso_sup_list_dm_final_2_backup].[REMARKS] AS [REMARKS], 
+    [conso_sup_list_dm_final_2_backup].[record_proc_status] AS [record_proc_status]
+    FROM [dbo].[conso_sup_list_dm_final_2_backup] AS [conso_sup_list_dm_final_2_backup]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="conso_sup_list_opt" EntityType="Self.conso_sup_list_opt" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [conso_sup_list_opt].[id] AS [id], 
+    [conso_sup_list_opt].[org_code] AS [org_code], 
+    [conso_sup_list_opt].[org_name] AS [org_name], 
+    [conso_sup_list_opt].[sup_acct_code] AS [sup_acct_code], 
+    [conso_sup_list_opt].[sup_acct_name] AS [sup_acct_name], 
+    [conso_sup_list_opt].[sup_acct_name_cln] AS [sup_acct_name_cln]
+    FROM [dbo].[conso_sup_list_opt] AS [conso_sup_list_opt]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="conso_sup_list_tmp" EntityType="Self.conso_sup_list_tmp" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [conso_sup_list_tmp].[org_code] AS [org_code], 
+    [conso_sup_list_tmp].[org_name] AS [org_name], 
+    [conso_sup_list_tmp].[sup_acct_code] AS [sup_acct_code], 
+    [conso_sup_list_tmp].[sup_acct_name] AS [sup_acct_name]
+    FROM [dbo].[conso_sup_list_tmp] AS [conso_sup_list_tmp]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="conso_sup_map_tbl_backup" EntityType="Self.conso_sup_map_tbl_backup" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [conso_sup_map_tbl_backup].[csm_acct_code] AS [csm_acct_code], 
+    [conso_sup_map_tbl_backup].[csm_org_code] AS [csm_org_code], 
+    [conso_sup_map_tbl_backup].[csm_org_acct_code] AS [csm_org_acct_code], 
+    [conso_sup_map_tbl_backup].[csm_status] AS [csm_status], 
+    [conso_sup_map_tbl_backup].[csm_created_by] AS [csm_created_by], 
+    [conso_sup_map_tbl_backup].[csm_created_date] AS [csm_created_date]
+    FROM [dbo].[conso_sup_map_tbl_backup] AS [conso_sup_map_tbl_backup]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="customer" EntityType="Self.customer" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [customer].[cm_acct_type] AS [cm_acct_type], 
+    [customer].[cm_mgrp_code] AS [cm_mgrp_code], 
+    [customer].[cm_sgrp_code] AS [cm_sgrp_code], 
+    [customer].[cm_acct_serial] AS [cm_acct_serial], 
+    [customer].[cm_acct_code] AS [cm_acct_code], 
+    [customer].[cm_comp_name] AS [cm_comp_name], 
+    [customer].[cm_comp_name_ar] AS [cm_comp_name_ar], 
+    [customer].[cm_comp_name_short] AS [cm_comp_name_short], 
+    [customer].[cm_comp_offic_name] AS [cm_comp_offic_name], 
+    [customer].[cm_sup_id] AS [cm_sup_id], 
+    [customer].[cm_sup_status] AS [cm_sup_status], 
+    [customer].[cm_sup_status_date] AS [cm_sup_status_date], 
+    [customer].[cm_sup_country] AS [cm_sup_country], 
+    [customer].[cm_sup_bc] AS [cm_sup_bc], 
+    [customer].[cm_comp_type] AS [cm_comp_type], 
+    [customer].[cm_email] AS [cm_email], 
+    [customer].[cm_contact_per] AS [cm_contact_per], 
+    [customer].[cm_contact_pos] AS [cm_contact_pos], 
+    [customer].[cm_mobil] AS [cm_mobil], 
+    [customer].[cm_contact_tel] AS [cm_contact_tel], 
+    [customer].[cm_contact_ext] AS [cm_contact_ext], 
+    [customer].[cm_reg_doc_type] AS [cm_reg_doc_type], 
+    [customer].[cm_license_num] AS [cm_license_num], 
+    [customer].[cm_issu_auth] AS [cm_issu_auth], 
+    [customer].[cm_license_exp_date] AS [cm_license_exp_date], 
+    [customer].[cm_country_code] AS [cm_country_code], 
+    [customer].[cm_address1] AS [cm_address1], 
+    [customer].[cm_address2] AS [cm_address2], 
+    [customer].[cm_city] AS [cm_city], 
+    [customer].[cm_city_code] AS [cm_city_code], 
+    [customer].[cm_pobox] AS [cm_pobox], 
+    [customer].[cm_worktel1] AS [cm_worktel1], 
+    [customer].[cm_worktel2] AS [cm_worktel2], 
+    [customer].[cm_fax] AS [cm_fax], 
+    [customer].[cm_restel] AS [cm_restel], 
+    [customer].[cm_mcoc_num] AS [cm_mcoc_num], 
+    [customer].[cm_url] AS [cm_url], 
+    [customer].[cm_cuscat_code] AS [cm_cuscat_code], 
+    [customer].[cm_retention_acno] AS [cm_retention_acno], 
+    [customer].[cm_advance_acno] AS [cm_advance_acno], 
+    [customer].[cm_vat_acno] AS [cm_vat_acno], 
+    [customer].[cm_is_subcontr] AS [cm_is_subcontr], 
+    [customer].[cm_pay_term] AS [cm_pay_term], 
+    [customer].[cm_cr_limit] AS [cm_cr_limit], 
+    [customer].[cm_amt_bal] AS [cm_amt_bal], 
+    [customer].[cm_pdc_amount] AS [cm_pdc_amount], 
+    [customer].[cm_last_inv_date] AS [cm_last_inv_date], 
+    [customer].[cm_last_rec_date] AS [cm_last_rec_date], 
+    [customer].[cm_age_type] AS [cm_age_type], 
+    [customer].[cm_age_01] AS [cm_age_01], 
+    [customer].[cm_age_02] AS [cm_age_02], 
+    [customer].[cm_age_03] AS [cm_age_03], 
+    [customer].[cm_age_04] AS [cm_age_04], 
+    [customer].[cm_age_05] AS [cm_age_05], 
+    [customer].[cm_age_06] AS [cm_age_06], 
+    [customer].[cm_age_07] AS [cm_age_07], 
+    [customer].[cm_age_08] AS [cm_age_08], 
+    [customer].[cm_age_09] AS [cm_age_09], 
+    [customer].[cm_age_10] AS [cm_age_10], 
+    [customer].[cm_age_11] AS [cm_age_11], 
+    [customer].[cm_age_12] AS [cm_age_12], 
+    [customer].[cm_group_company] AS [cm_group_company], 
+    [customer].[cm_assoc_company] AS [cm_assoc_company], 
+    [customer].[cm_salesman_code] AS [cm_salesman_code], 
+    [customer].[cm_is_vat_registered] AS [cm_is_vat_registered], 
+    [customer].[cm_vat_reg_type] AS [cm_vat_reg_type], 
+    [customer].[cm_vat_reg_no] AS [cm_vat_reg_no], 
+    [customer].[cm_vat_grp_rep_name] AS [cm_vat_grp_rep_name], 
+    [customer].[cm_acct_status] AS [cm_acct_status], 
+    [customer].[cm_registered_by] AS [cm_registered_by], 
+    [customer].[cm_created_by] AS [cm_created_by], 
+    [customer].[cm_last_mod_by] AS [cm_last_mod_by], 
+    [customer].[cm_creation_date] AS [cm_creation_date], 
+    [customer].[cm_last_mod_date] AS [cm_last_mod_date]
+    FROM [dbo].[customer] AS [customer]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="customer_4_2017_backup" EntityType="Self.customer_4_2017_backup" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [customer_4_2017_backup].[cm_acct_type] AS [cm_acct_type], 
+    [customer_4_2017_backup].[cm_mgrp_code] AS [cm_mgrp_code], 
+    [customer_4_2017_backup].[cm_sgrp_code] AS [cm_sgrp_code], 
+    [customer_4_2017_backup].[cm_acct_serial] AS [cm_acct_serial], 
+    [customer_4_2017_backup].[cm_acct_code] AS [cm_acct_code], 
+    [customer_4_2017_backup].[cm_comp_name] AS [cm_comp_name], 
+    [customer_4_2017_backup].[cm_comp_name_ar] AS [cm_comp_name_ar], 
+    [customer_4_2017_backup].[cm_comp_name_short] AS [cm_comp_name_short], 
+    [customer_4_2017_backup].[cm_comp_offic_name] AS [cm_comp_offic_name], 
+    [customer_4_2017_backup].[cm_sup_id] AS [cm_sup_id], 
+    [customer_4_2017_backup].[cm_sup_status] AS [cm_sup_status], 
+    [customer_4_2017_backup].[cm_sup_status_date] AS [cm_sup_status_date], 
+    [customer_4_2017_backup].[cm_sup_country] AS [cm_sup_country], 
+    [customer_4_2017_backup].[cm_sup_bc] AS [cm_sup_bc], 
+    [customer_4_2017_backup].[cm_comp_type] AS [cm_comp_type], 
+    [customer_4_2017_backup].[cm_email] AS [cm_email], 
+    [customer_4_2017_backup].[cm_contact_per] AS [cm_contact_per], 
+    [customer_4_2017_backup].[cm_contact_pos] AS [cm_contact_pos], 
+    [customer_4_2017_backup].[cm_mobil] AS [cm_mobil], 
+    [customer_4_2017_backup].[cm_contact_tel] AS [cm_contact_tel], 
+    [customer_4_2017_backup].[cm_contact_ext] AS [cm_contact_ext], 
+    [customer_4_2017_backup].[cm_reg_doc_type] AS [cm_reg_doc_type], 
+    [customer_4_2017_backup].[cm_license_num] AS [cm_license_num], 
+    [customer_4_2017_backup].[cm_issu_auth] AS [cm_issu_auth], 
+    [customer_4_2017_backup].[cm_license_exp_date] AS [cm_license_exp_date], 
+    [customer_4_2017_backup].[cm_country_code] AS [cm_country_code], 
+    [customer_4_2017_backup].[cm_address1] AS [cm_address1], 
+    [customer_4_2017_backup].[cm_address2] AS [cm_address2], 
+    [customer_4_2017_backup].[cm_city] AS [cm_city], 
+    [customer_4_2017_backup].[cm_city_code] AS [cm_city_code], 
+    [customer_4_2017_backup].[cm_pobox] AS [cm_pobox], 
+    [customer_4_2017_backup].[cm_worktel1] AS [cm_worktel1], 
+    [customer_4_2017_backup].[cm_worktel2] AS [cm_worktel2], 
+    [customer_4_2017_backup].[cm_fax] AS [cm_fax], 
+    [customer_4_2017_backup].[cm_restel] AS [cm_restel], 
+    [customer_4_2017_backup].[cm_mcoc_num] AS [cm_mcoc_num], 
+    [customer_4_2017_backup].[cm_url] AS [cm_url], 
+    [customer_4_2017_backup].[cm_cuscat_code] AS [cm_cuscat_code], 
+    [customer_4_2017_backup].[cm_retention_acno] AS [cm_retention_acno], 
+    [customer_4_2017_backup].[cm_advance_acno] AS [cm_advance_acno], 
+    [customer_4_2017_backup].[cm_is_subcontr] AS [cm_is_subcontr], 
+    [customer_4_2017_backup].[cm_pay_term] AS [cm_pay_term], 
+    [customer_4_2017_backup].[cm_cr_limit] AS [cm_cr_limit], 
+    [customer_4_2017_backup].[cm_amt_bal] AS [cm_amt_bal], 
+    [customer_4_2017_backup].[cm_pdc_amount] AS [cm_pdc_amount], 
+    [customer_4_2017_backup].[cm_last_inv_date] AS [cm_last_inv_date], 
+    [customer_4_2017_backup].[cm_last_rec_date] AS [cm_last_rec_date], 
+    [customer_4_2017_backup].[cm_age_type] AS [cm_age_type], 
+    [customer_4_2017_backup].[cm_age_01] AS [cm_age_01], 
+    [customer_4_2017_backup].[cm_age_02] AS [cm_age_02], 
+    [customer_4_2017_backup].[cm_age_03] AS [cm_age_03], 
+    [customer_4_2017_backup].[cm_age_04] AS [cm_age_04], 
+    [customer_4_2017_backup].[cm_age_05] AS [cm_age_05], 
+    [customer_4_2017_backup].[cm_age_06] AS [cm_age_06], 
+    [customer_4_2017_backup].[cm_age_07] AS [cm_age_07], 
+    [customer_4_2017_backup].[cm_age_08] AS [cm_age_08], 
+    [customer_4_2017_backup].[cm_age_09] AS [cm_age_09], 
+    [customer_4_2017_backup].[cm_age_10] AS [cm_age_10], 
+    [customer_4_2017_backup].[cm_age_11] AS [cm_age_11], 
+    [customer_4_2017_backup].[cm_age_12] AS [cm_age_12], 
+    [customer_4_2017_backup].[cm_group_company] AS [cm_group_company], 
+    [customer_4_2017_backup].[cm_assoc_company] AS [cm_assoc_company], 
+    [customer_4_2017_backup].[cm_salesman_code] AS [cm_salesman_code], 
+    [customer_4_2017_backup].[cm_vat_reg_no] AS [cm_vat_reg_no], 
+    [customer_4_2017_backup].[cm_acct_status] AS [cm_acct_status], 
+    [customer_4_2017_backup].[cm_registered_by] AS [cm_registered_by], 
+    [customer_4_2017_backup].[cm_created_by] AS [cm_created_by], 
+    [customer_4_2017_backup].[cm_last_mod_by] AS [cm_last_mod_by], 
+    [customer_4_2017_backup].[cm_creation_date] AS [cm_creation_date], 
+    [customer_4_2017_backup].[cm_last_mod_date] AS [cm_last_mod_date]
+    FROM [dbo].[customer_4_2017_backup] AS [customer_4_2017_backup]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="customer_LMS" EntityType="Self.customer_LMS" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [customer_LMS].[cm_acct_type] AS [cm_acct_type], 
+    [customer_LMS].[cm_mgrp_code] AS [cm_mgrp_code], 
+    [customer_LMS].[cm_sgrp_code] AS [cm_sgrp_code], 
+    [customer_LMS].[cm_acct_serial] AS [cm_acct_serial], 
+    [customer_LMS].[cm_acct_code] AS [cm_acct_code], 
+    [customer_LMS].[cm_comp_name] AS [cm_comp_name], 
+    [customer_LMS].[cm_comp_name_ar] AS [cm_comp_name_ar], 
+    [customer_LMS].[cm_comp_name_short] AS [cm_comp_name_short], 
+    [customer_LMS].[cm_comp_offic_name] AS [cm_comp_offic_name], 
+    [customer_LMS].[cm_sup_id] AS [cm_sup_id], 
+    [customer_LMS].[cm_sup_status] AS [cm_sup_status], 
+    [customer_LMS].[cm_sup_status_date] AS [cm_sup_status_date], 
+    [customer_LMS].[cm_sup_country] AS [cm_sup_country], 
+    [customer_LMS].[cm_sup_bc] AS [cm_sup_bc], 
+    [customer_LMS].[cm_comp_type] AS [cm_comp_type], 
+    [customer_LMS].[cm_email] AS [cm_email], 
+    [customer_LMS].[cm_contact_per] AS [cm_contact_per], 
+    [customer_LMS].[cm_contact_pos] AS [cm_contact_pos], 
+    [customer_LMS].[cm_mobil] AS [cm_mobil], 
+    [customer_LMS].[cm_contact_tel] AS [cm_contact_tel], 
+    [customer_LMS].[cm_contact_ext] AS [cm_contact_ext], 
+    [customer_LMS].[cm_reg_doc_type] AS [cm_reg_doc_type], 
+    [customer_LMS].[cm_license_num] AS [cm_license_num], 
+    [customer_LMS].[cm_issu_auth] AS [cm_issu_auth], 
+    [customer_LMS].[cm_license_exp_date] AS [cm_license_exp_date], 
+    [customer_LMS].[cm_country_code] AS [cm_country_code], 
+    [customer_LMS].[cm_address1] AS [cm_address1], 
+    [customer_LMS].[cm_address2] AS [cm_address2], 
+    [customer_LMS].[cm_city] AS [cm_city], 
+    [customer_LMS].[cm_city_code] AS [cm_city_code], 
+    [customer_LMS].[cm_pobox] AS [cm_pobox], 
+    [customer_LMS].[cm_worktel1] AS [cm_worktel1], 
+    [customer_LMS].[cm_worktel2] AS [cm_worktel2], 
+    [customer_LMS].[cm_fax] AS [cm_fax], 
+    [customer_LMS].[cm_restel] AS [cm_restel], 
+    [customer_LMS].[cm_mcoc_num] AS [cm_mcoc_num], 
+    [customer_LMS].[cm_url] AS [cm_url], 
+    [customer_LMS].[cm_cuscat_code] AS [cm_cuscat_code], 
+    [customer_LMS].[cm_retention_acno] AS [cm_retention_acno], 
+    [customer_LMS].[cm_advance_acno] AS [cm_advance_acno], 
+    [customer_LMS].[cm_is_subcontr] AS [cm_is_subcontr], 
+    [customer_LMS].[cm_pay_term] AS [cm_pay_term], 
+    [customer_LMS].[cm_cr_limit] AS [cm_cr_limit], 
+    [customer_LMS].[cm_amt_bal] AS [cm_amt_bal], 
+    [customer_LMS].[cm_pdc_amount] AS [cm_pdc_amount], 
+    [customer_LMS].[cm_last_inv_date] AS [cm_last_inv_date], 
+    [customer_LMS].[cm_last_rec_date] AS [cm_last_rec_date], 
+    [customer_LMS].[cm_age_type] AS [cm_age_type], 
+    [customer_LMS].[cm_age_01] AS [cm_age_01], 
+    [customer_LMS].[cm_age_02] AS [cm_age_02], 
+    [customer_LMS].[cm_age_03] AS [cm_age_03], 
+    [customer_LMS].[cm_age_04] AS [cm_age_04], 
+    [customer_LMS].[cm_age_05] AS [cm_age_05], 
+    [customer_LMS].[cm_age_06] AS [cm_age_06], 
+    [customer_LMS].[cm_age_07] AS [cm_age_07], 
+    [customer_LMS].[cm_age_08] AS [cm_age_08], 
+    [customer_LMS].[cm_age_09] AS [cm_age_09], 
+    [customer_LMS].[cm_age_10] AS [cm_age_10], 
+    [customer_LMS].[cm_age_11] AS [cm_age_11], 
+    [customer_LMS].[cm_age_12] AS [cm_age_12], 
+    [customer_LMS].[cm_group_company] AS [cm_group_company], 
+    [customer_LMS].[cm_assoc_company] AS [cm_assoc_company], 
+    [customer_LMS].[cm_salesman_code] AS [cm_salesman_code], 
+    [customer_LMS].[cm_vat_reg_no] AS [cm_vat_reg_no], 
+    [customer_LMS].[cm_acct_status] AS [cm_acct_status], 
+    [customer_LMS].[cm_registered_by] AS [cm_registered_by], 
+    [customer_LMS].[cm_created_by] AS [cm_created_by], 
+    [customer_LMS].[cm_last_mod_by] AS [cm_last_mod_by], 
+    [customer_LMS].[cm_creation_date] AS [cm_creation_date], 
+    [customer_LMS].[cm_last_mod_date] AS [cm_last_mod_date]
+    FROM [dbo].[customer_LMS] AS [customer_LMS]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VW_COST_CODE_MASTER" EntityType="Self.VW_COST_CODE_MASTER" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VW_COST_CODE_MASTER].[orgCode] AS [orgCode], 
+    [VW_COST_CODE_MASTER].[orgName] AS [orgName], 
+    [VW_COST_CODE_MASTER].[ccm_type] AS [ccm_type], 
+    [VW_COST_CODE_MASTER].[ccm_serial] AS [ccm_serial], 
+    [VW_COST_CODE_MASTER].[ccm_cost_code] AS [ccm_cost_code], 
+    [VW_COST_CODE_MASTER].[ccm_desc] AS [ccm_desc], 
+    [VW_COST_CODE_MASTER].[ccm_status] AS [ccm_status]
+    FROM [dbo].[VW_COST_CODE_MASTER] AS [VW_COST_CODE_MASTER]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VW_MATRECTRANS" EntityType="Self.VW_MATRECTRANS" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VW_MATRECTRANS].[mrvm_org_code] AS [mrvm_org_code], 
+    [VW_MATRECTRANS].[mrvm_vr_loc] AS [mrvm_vr_loc], 
+    [VW_MATRECTRANS].[mrvm_vr_no] AS [mrvm_vr_no], 
+    [VW_MATRECTRANS].[mrvm_po_no] AS [mrvm_po_no], 
+    [VW_MATRECTRANS].[mrvm_po_rev] AS [mrvm_po_rev], 
+    [VW_MATRECTRANS].[mrvd_serial_no] AS [mrvd_serial_no], 
+    [VW_MATRECTRANS].[mrvd_po_line_id] AS [mrvd_po_line_id], 
+    [VW_MATRECTRANS].[mrvd_po_line_no] AS [mrvd_po_line_no], 
+    [VW_MATRECTRANS].[mrvd_item_code] AS [mrvd_item_code], 
+    [VW_MATRECTRANS].[mrvd_rcvd_order_unit] AS [mrvd_rcvd_order_unit], 
+    [VW_MATRECTRANS].[mrvd_unit_rate_lc] AS [mrvd_unit_rate_lc], 
+    [VW_MATRECTRANS].[mrvd_value_fc] AS [mrvd_value_fc], 
+    [VW_MATRECTRANS].[mrvd_line_vat] AS [mrvd_line_vat], 
+    [VW_MATRECTRANS].[mrvd_createdBy] AS [mrvd_createdBy], 
+    [VW_MATRECTRANS].[mrvd_creationDate] AS [mrvd_creationDate], 
+    [VW_MATRECTRANS].[mrvd_LastModifiedBy] AS [mrvd_LastModifiedBy], 
+    [VW_MATRECTRANS].[mrvd_LastModifiedDate] AS [mrvd_LastModifiedDate]
+    FROM [dbo].[VW_MATRECTRANS] AS [VW_MATRECTRANS]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VW_POLINERECEIVING" EntityType="Self.VW_POLINERECEIVING" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VW_POLINERECEIVING].[PONUM] AS [PONUM], 
+    [VW_POLINERECEIVING].[POREVISION] AS [POREVISION], 
+    [VW_POLINERECEIVING].[POLINENUM] AS [POLINENUM], 
+    [VW_POLINERECEIVING].[POLINEID] AS [POLINEID], 
+    [VW_POLINERECEIVING].[ORDERQTY] AS [ORDERQTY], 
+    [VW_POLINERECEIVING].[UNITCOST] AS [UNITCOST], 
+    [VW_POLINERECEIVING].[LINECOST] AS [LINECOST], 
+    [VW_POLINERECEIVING].[TAXTOTAL] AS [TAXTOTAL], 
+    [VW_POLINERECEIVING].[RECEIVEDQTY] AS [RECEIVEDQTY], 
+    [VW_POLINERECEIVING].[REMAININGQTY] AS [REMAININGQTY], 
+    [VW_POLINERECEIVING].[RECEIPTTOLERANCE] AS [RECEIPTTOLERANCE], 
+    [VW_POLINERECEIVING].[RECEIPTTOLQTY] AS [RECEIPTTOLQTY], 
+    [VW_POLINERECEIVING].[RECEIPTTOLAMT] AS [RECEIPTTOLAMT], 
+    [VW_POLINERECEIVING].[RECEIVEDTOTALCOST] AS [RECEIVEDTOTALCOST], 
+    [VW_POLINERECEIVING].[RECEIPTSTATUS] AS [RECEIPTSTATUS]
+    FROM [dbo].[VW_POLINERECEIVING] AS [VW_POLINERECEIVING]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VW_PORECEIVING" EntityType="Self.VW_PORECEIVING" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VW_PORECEIVING].[ORGCODE] AS [ORGCODE], 
+    [VW_PORECEIVING].[PROJECTCODE] AS [PROJECTCODE], 
+    [VW_PORECEIVING].[VENDORCODE] AS [VENDORCODE], 
+    [VW_PORECEIVING].[PONUM] AS [PONUM], 
+    [VW_PORECEIVING].[POREVISION] AS [POREVISION], 
+    [VW_PORECEIVING].[PRETAXRECEIVINGTOTALCOST] AS [PRETAXRECEIVINGTOTALCOST], 
+    [VW_PORECEIVING].[RECEIVINGTOTALCOST] AS [RECEIVINGTOTALCOST], 
+    [VW_PORECEIVING].[RECEIVEDTOTALCOST] AS [RECEIVEDTOTALCOST], 
+    [VW_PORECEIVING].[RECEIPTSTATUS] AS [RECEIPTSTATUS]
+    FROM [dbo].[VW_PORECEIVING] AS [VW_PORECEIVING]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VW_PRODUCT_MASTER" EntityType="Self.VW_PRODUCT_MASTER" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VW_PRODUCT_MASTER].[orgCode] AS [orgCode], 
+    [VW_PRODUCT_MASTER].[orgName] AS [orgName], 
+    [VW_PRODUCT_MASTER].[prm_item_code] AS [prm_item_code], 
+    [VW_PRODUCT_MASTER].[prm_item_desc] AS [prm_item_desc], 
+    [VW_PRODUCT_MASTER].[prm_uom_code] AS [prm_uom_code], 
+    [VW_PRODUCT_MASTER].[uom_desc] AS [uom_desc]
+    FROM [dbo].[VW_PRODUCT_MASTER] AS [VW_PRODUCT_MASTER]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VW_SUPPYMTTRANS" EntityType="Self.VW_SUPPYMTTRANS" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VW_SUPPYMTTRANS].[SUPPLIERID] AS [SUPPLIERID], 
+    [VW_SUPPYMTTRANS].[SUPACCTCODE] AS [SUPACCTCODE], 
+    [VW_SUPPYMTTRANS].[VORGCODE] AS [VORGCODE], 
+    [VW_SUPPYMTTRANS].[PROJECTCODE] AS [PROJECTCODE], 
+    [VW_SUPPYMTTRANS].[PROJECTNAME] AS [PROJECTNAME], 
+    [VW_SUPPYMTTRANS].[VDATE] AS [VDATE], 
+    [VW_SUPPYMTTRANS].[VTYPE] AS [VTYPE], 
+    [VW_SUPPYMTTRANS].[VTYPEDESC] AS [VTYPEDESC], 
+    [VW_SUPPYMTTRANS].[VMNUM] AS [VMNUM], 
+    [VW_SUPPYMTTRANS].[VDNUM] AS [VDNUM], 
+    [VW_SUPPYMTTRANS].[INVOICENUM] AS [INVOICENUM], 
+    [VW_SUPPYMTTRANS].[PONUM] AS [PONUM], 
+    [VW_SUPPYMTTRANS].[POEXEMPT] AS [POEXEMPT], 
+    [VW_SUPPYMTTRANS].[VAMOUNT] AS [VAMOUNT], 
+    [VW_SUPPYMTTRANS].[VSTATUS] AS [VSTATUS], 
+    [VW_SUPPYMTTRANS].[VSTATUSDESC] AS [VSTATUSDESC], 
+    [VW_SUPPYMTTRANS].[INVOICEDATE] AS [INVOICEDATE], 
+    [VW_SUPPYMTTRANS].[INVPAYTERM] AS [INVPAYTERM], 
+    [VW_SUPPYMTTRANS].[INVOICEDUEDATE] AS [INVOICEDUEDATE]
+    FROM [dbo].[VW_SUPPYMTTRANS] AS [VW_SUPPYMTTRANS]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="acct_mgrp_acct_sgrp_FK1" Association="Self.acct_mgrp_acct_sgrp_FK1">
+      <End Role="acct_mgrp" EntitySet="acct_mgrp" />
+      <End Role="acct_sgrp" EntitySet="acct_sgrp" />
+    </AssociationSet>
+    <AssociationSet Name="acct_type_acct_mgrp_FK1" Association="Self.acct_type_acct_mgrp_FK1">
+      <End Role="acct_type" EntitySet="acct_type" />
+      <End Role="acct_mgrp" EntitySet="acct_mgrp" />
+    </AssociationSet>
+    <AssociationSet Name="FK_bspl_det_master_bspl_sgrp_master" Association="Self.FK_bspl_det_master_bspl_sgrp_master">
+      <End Role="bspl_sgrp_master" EntitySet="bspl_sgrp_master" />
+      <End Role="bspl_det_master" EntitySet="bspl_det_master" />
+    </AssociationSet>
+    <AssociationSet Name="FK_bspl_sgrp_master_bspl_mgrp_master" Association="Self.FK_bspl_sgrp_master_bspl_mgrp_master">
+      <End Role="bspl_mgrp_master" EntitySet="bspl_mgrp_master" />
+      <End Role="bspl_sgrp_master" EntitySet="bspl_sgrp_master" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

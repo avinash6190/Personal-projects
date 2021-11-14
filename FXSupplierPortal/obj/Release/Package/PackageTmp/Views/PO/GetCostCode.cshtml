@@ -1,0 +1,89 @@
+﻿
+@model IEnumerable<VW_COST_CODE_MASTER>
+
+@{
+    ViewBag.Title = "Purchase Order";
+    Layout = null;
+    WebGrid webGrid = new WebGrid(source: Model, canPage: false, selectionFieldName: "ccm_desc", canSort: false);
+}
+<script src="~/Scripts/jquery.dataTables.js"></script>
+<link href="~/Content/jquery.dataTables.css" rel="stylesheet" />
+@Styles.Render("~/Content/webgridstyle.css")
+@Scripts.Render("~/bundles/jqueryui")
+@Scripts.Render("~/bundles/jqueryval")
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Select Cost Code from the list</title>
+    <script>
+        $(document).ready(function () {
+            $("#costWebGrid").dataTable().fnDestroy();
+            $("#costWebGrid thead").find("tr:gt(0)").remove();
+            $('#costWebGrid thead tr').clone(true).appendTo('#costWebGrid thead');
+
+            $('#costWebGrid thead tr:eq(1) th').each(function (i) {
+                var title = $(this).text();
+                if (i == 0) {
+                    $(this).html('<input type="text" style="display:none; width:100%; font-size:11px;" placeholder=" ' + title + '" />');
+                    $(this).removeClass('sorting_asc');
+                }
+                else {
+                    $(this).html('<input type="text" style="width:100%; font-size:11px;" placeholder=" ' + title + '" />');
+                }
+                $('input', this).on('keyup change', function () {
+                    if (table.column(i).search() !== this.value) {
+                        table.column(i).search(this.value).draw();
+                    }
+                });
+            });
+          
+            var table = $('#costWebGrid').DataTable({
+                orderCellsTop: true,
+                fixedHeader: true
+                
+            });
+        });
+
+        setTimeout(function () {
+            //$("#poWebGridDiv").removeAttr("style");
+            $("#costWebGridDiv").show();
+        }, 10);
+
+        function setCostCode(costCode) {
+            $("#COSTCODE").val(costCode);
+            $("#getCostCode").dialog('close')
+        }
+    </script>
+</head>
+<body>
+    <div id="costWebGridDiv" style="display:none">
+        <form id="myForm">
+            <div id='getCostCode'>
+                @webGrid.GetHtml(
+               htmlAttributes: new { @id = "costWebGrid" },
+               tableStyle: "webgrid-table",
+               headerStyle: "webgrid-header",
+               footerStyle: "webgrid-footer",
+               alternatingRowStyle: "webgrid-alternating-row",
+               selectedRowStyle: "webgrid-selected-row",
+               rowStyle: "webgrid-row-style",
+               mode: WebGridPagerModes.All,
+               columns: webGrid.Columns(
+                    webGrid.Column("Select", "Select", format: @<text><a href="#" onclick="setCostCode('@item.ccm_cost_code');" + style="color: blue;text-decoration: underline;">Select</a></text>),
+                    webGrid.Column("orgName", "Division"),
+                    webGrid.Column("ccm_cost_code", "Cost Code"),
+                    webGrid.Column("ccm_desc", "Cost Description")))
+            </div>
+
+        </form>
+    </div>
+</body>
+
+
+</html>
+
+
+

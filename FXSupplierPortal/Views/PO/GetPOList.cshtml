@@ -1,0 +1,86 @@
+﻿@model IEnumerable<FXSupplierPortal.PO>
+
+@{
+    ViewBag.Title = "Search Purchase Order";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    WebGrid webGrid = new WebGrid(source: Model, canSort: false, canPage: false);
+}
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/webGridDatatable")
+@Styles.Render("~/Content/webGridDatatableStyles")
+@Styles.Render("~/Content/webgridstyle.css")
+@Scripts.Render("~/bundles/jqueryui")
+@Scripts.Render("~/bundles/jqueryval")
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('#WebGrid thead tr').clone(true).appendTo('#WebGrid thead');
+
+            $('#WebGrid thead tr:eq(1) th').each(function (i) {
+                var title = $(this).text();
+                $(this).html('<input type="text" style="width:100%; font-size:11px" placeholder=" ' + title + '" />');
+                $('input', this).on('keyup change', function () {
+                    if (table.column(i).search() !== this.value) {
+                        table.column(i).search(this.value).draw();
+                    }
+                });
+            });
+            var table = $('#WebGrid').DataTable({
+                orderCellsTop: true,
+                fixedHeader: true,
+                //Ordering: false
+            });
+        });
+
+        setTimeout(function () {
+            //$("#webGridDiv").style.visibility = 'visible';
+            $("#webGridDiv").show();
+        }, 100);
+    </script>
+
+
+</head>
+<body>
+    <div id="webGridDiv" style="display:none">
+        <h2 class="text-primary">Search Purchase Order</h2>
+        @webGrid.GetHtml(
+            htmlAttributes: new { @id = "WebGrid" },
+            tableStyle: "webgrid-table",
+            headerStyle: "webgrid-header",
+            footerStyle: "webgrid-footer",
+            alternatingRowStyle: "webgrid-alternating-row",
+            selectedRowStyle: "webgrid-selected-row",
+            rowStyle: "webgrid-row-style",
+            mode: WebGridPagerModes.All,
+            columns: webGrid.Columns(
+                     webGrid.Column("PONUM", "PO", format: @<text><a href="/PO/GetPurchaseOrder?poNum=@item.PONUM&poRev=@item.POREVISION" ;" + class="btn btn-link">@item.PONUM</a></text>),
+                                     webGrid.Column("POREVISION", "Revision"),
+                                     webGrid.Column("STATUS", "Status"),
+                                     webGrid.Column("ORGNAME", "Division"),
+                                     webGrid.Column("PROJECTCODE", "Project"),
+                                     webGrid.Column("PROJECTNAME", "Project Name"),
+                                     webGrid.Column("VENDORID", "Vendor"),
+                                     webGrid.Column("VENDORNAME", "Vendor Name"),
+                                     webGrid.Column("BUYERNAME", "Buyer"),
+                                     webGrid.Column("CURRENCYCODE", "Currency"),
+                                     webGrid.Column("TOTALCOST", "Totalcost")))
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

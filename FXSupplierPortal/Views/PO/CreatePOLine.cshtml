@@ -1,0 +1,300 @@
+﻿@using FXSupplierPortal.Models
+
+@model FXSupplierPortal.POLINE
+
+@using (Ajax.BeginForm("AddPOLine", "PO", null, new AjaxOptions() { OnSuccess = "getPOLineResult", HttpMethod = "post" }, new { id = "AddPOLine" }))
+{
+    <div id="editPOLine">
+
+        <div id="divPOLineRequiredFieldError" style="display:none" class="alert alert-danger">
+            @Html.ValidationSummary(false, "", new { @id = "validationSummaryErrors", @class = "text-danger" })
+            <button id="btnPOLineClose" type="button" class="close" aria-hidden="true">&times;</button>
+        </div>
+
+
+
+        @Html.HiddenFor(model => model.PONUM)
+        @Html.HiddenFor(model => model.POREVISION)
+        @Html.HiddenFor(model => model.POLINEID)
+        @Html.HiddenFor(model => model.POLINEMODE, new { Value = (object)ViewBag.POLINEMODE.ToString() })
+        @* New POLIne*@
+        <div class="panel panel-default">
+            <div class="panel-heading">Line Item</div>
+            <div class="panel-body">
+                <div class="container-fluid">
+                    <form>
+                         <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <label for="POLINENUM">Line:</label>
+                                    <div class="input-group col-md-12">
+                                        @Html.EditorFor(model => model.POLINENUM, new { htmlAttributes = new { @class = "form-control", Value = (object)ViewBag.POLINENUM, @readonly = "readonly" } })
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="LINETYPE">Line Type:</label>
+                                    <div class="input-group col-md-12">
+                                        @Html.DropDownListFor(model => model.LINETYPE, new SelectList(Enum.GetValues(typeof(LineType))), new { @onchange = "changeItem()", @class = "form-control" })
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="ITEMNUM"> Item:</label>
+                                    <div class="input-group col-md-12">
+                                        @Html.EditorFor(model => model.ITEMNUM, new { htmlAttributes = new { @class = "form-control" } })
+                                        <span id="imgItem" class="input-group-addon">
+                                            <i id="imgItem" class="fa fa-search"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="DESCRIPTION"></label>
+                                    <div class="input-group col-md-12">
+                                        @*@Html.TextAreaFor(model => model.DESCRIPTION, new { htmlAttributes = new { @class = "form-control" } })*@
+                                        @Html.TextAreaFor(model => model.DESCRIPTION, new { @class = "form-control", @rows = 3 })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <label for="MODELNUM"> Model:</label>
+                                    <div class="input-group col-md-12">
+                                        @Html.EditorFor(model => model.MODELNUM, new { htmlAttributes = new { @class = "form-control" } })
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="COSTCODE"> Cost Code:</label>
+                                    <div class="input-group col-md-12">
+                                        @Html.EditorFor(model => model.COSTCODE, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                        <span id="imgCostCode" class="input-group-addon">
+                                            <i id="imgCostCode" class="fa fa-search"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="MANUFACUTRER"> Manufacturer:</label>
+                                    <div class="input-group col-md-12">
+                                        @Html.EditorFor(model => model.MANUFACUTRER, new { htmlAttributes = new { @class = "form-control" } })
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="CATALOGCODE"> Supplier Ref:</label>
+                                    <div class="input-group col-md-12">
+                                        @Html.EditorFor(model => model.CATALOGCODE, new { htmlAttributes = new { @class = "form-control" } })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <label for="SPECIFICATION"> Additional Specification:</label>
+                                    <div class="input-group col-md-12">
+                                        @Html.EditorFor(model => model.SPECIFICATION, new { htmlAttributes = new { @class = "form-control" } })
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="REMARK"> Remarks:</label>
+                                    <div class="input-group col-md-12">
+                                        @Html.EditorFor(model => model.REMARK, new { htmlAttributes = new { @class = "form-control" } })
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="REQUESTEDBYNAME"> Requested By:</label>
+                                    <div class="input-group col-md-12">
+                                        @Html.EditorFor(model => model.REQUESTEDBYNAME, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                        <span id="imgRequestedBy" class="input-group-addon">
+                                            <i id="imgRequestedBy" class="fa fa-search"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-heading">Quantity and Cost</div>
+                <div class="panel-body">
+                    <div class="container-fluid">
+
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label for="ORDERQTY"><span class="showAstrik">*</span>Quantity:</label>
+                                        <div class="input-group col-md-12">
+                                            @Html.EditorFor(model => model.ORDERQTY, new { htmlAttributes = new { @class = "form-control", @type = "number" } })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="ORDERUNIT"><span class="showAstrik">*</span>Order Unit:</label>
+                                        <div class="input-group col-md-12">
+                                            @Html.EditorFor(model => model.ORDERUNIT, new { htmlAttributes = new { @class = "form-control" } })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="UNITCOST"> <span class="showAstrik">*</span>Unit Price:</label>
+                                        <div class="input-group col-md-12">
+                                            @Html.EditorFor(model => model.UNITCOST, new { htmlAttributes = new { @class = "form-control", @type = "number" } })
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="LINECOST"> <span class="showAstrik">*</span>Line Cost:</label>
+                                        <div class="input-group col-md-12">
+                                            @Html.EditorFor(model => model.LINECOST, new { htmlAttributes = new { @class = "form-control", @type = "number" } })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label for="TAXCODE"> Tax Code:</label>
+                                        <div class="input-group col-md-12">
+                                            @Html.EditorFor(model => model.TAXCODE, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                            <span id ="imgTaxCode" class="input-group-addon">
+                                                <i id="imgTaxCode" class="fa fa-search"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="TAXTOTAL"> Tax:</label>
+                                        <div class="input-group col-md-12">
+                                            @Html.EditorFor(model => model.TAXTOTAL, new { htmlAttributes = new { @class = "form-control", @type = "number" } })
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="TAXED"> </label>
+                                        <div class="input-group col-md-12">
+                                            @Html.CheckBoxFor(model => model.TAXED, new { onchange = "changeTaxed()" }) Tax Exempt?
+                                         </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                        
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-heading">Receipts</div>
+                <div class="panel-body">
+                    <div class="container-fluid">
+
+                     
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label for="RECEIPTCOMPLETED"></label>
+                                        <div class="input-group col-md-12">
+                                           @Html.CheckBoxFor(model => model.RECEIPTCOMPLETED, new { @checked = "checked", @disabled = "disabled" }) Receipt Completed?
+                                            @*@Html.CheckBoxFor(model => model.RECEIPTCOMPLETED.Value, new { @checked = "checked" }) Receipt Completed?*@
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <label for="RECEIVEDQTY">Quantity Received:</label>
+                                        <div class="input-group col-md-12">
+                                            @Html.EditorFor(model => model.RECEIVEDQTY, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="RECEIVEDCOST">Cost Received:</label>
+                                        <div class="input-group col-md-12">
+                                            @Html.EditorFor(model => model.RECEIVEDCOST, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="RECEIPTTOLERANCE">Receipt Tolerance:</label>
+                                        <div class="input-group col-md-12">
+                                            @Html.EditorFor(model => model.RECEIPTTOLERANCE, new { htmlAttributes = new { @class = "form-control" } })
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                       
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-heading">Audit Details</div>
+                <div class="panel-body">
+                    <div class="container-fluid">
+
+                      
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label for="CREATEDBY">Entered By:</label>
+                                        <div class="input-group col-md-12">
+                                            @Html.EditorFor(model => model.CREATEDBY, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <label for="CREATIONDATE">Entered On:</label>
+                                        <div class="input-group col-md-12">
+                                            @Html.EditorFor(model => model.CREATIONDATE, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="LASTMODIFIEDBY">Edited By:</label>
+                                        <div class="input-group col-md-12">
+                                            @Html.EditorFor(model => model.LASTMODIFIEDBY, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="LASTMODIFIEDDATE">Edited On:</label>
+                                        <div class="input-group col-md-12">
+                                            @Html.EditorFor(model => model.LASTMODIFIEDDATE, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="form-group" align="right">
+        <input id="btnCreatePoLine" type="submit" value="Create" class="btn btn-primary" />
+        </div>
+        <div id="getCostCode"></div>
+        <div id="getTaxCode"></div>
+        <div id="getItems"></div>
+    </div>
+}
+
+@Scripts.Render("~/Scripts/Custom/PO.js")
+@Scripts.Render("~/Scripts/Custom/POLine.js")

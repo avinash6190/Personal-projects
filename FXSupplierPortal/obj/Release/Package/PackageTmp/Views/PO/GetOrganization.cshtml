@@ -1,0 +1,88 @@
+﻿@model IEnumerable<FXSupplierPortal.FIRMS_GetAllOrgs_Result>
+
+@{
+    ViewBag.Title = "Purchase Order";
+    Layout = null;
+    WebGrid webGrid = new WebGrid(source: Model.ToList(), canPage: false, selectionFieldName: "org_name", canSort: false);
+}
+<script src="~/Scripts/jquery.dataTables.js"></script>
+<link href="~/Content/jquery.dataTables.css" rel="stylesheet" />
+@Styles.Render("~/Content/webgridstyle.css")
+@Scripts.Render("~/bundles/jqueryui")
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script>
+        $(document).ready(function () {
+            $("#OrgWebGrid").dataTable().fnDestroy();
+            $("#OrgWebGrid thead").find("tr:gt(0)").remove();
+            $('#OrgWebGrid thead tr').clone(true).appendTo('#OrgWebGrid thead');
+
+            $('#OrgWebGrid thead tr:eq(1) th').each(function (i) {
+                var title = $(this).text();
+                if (i == 0) {
+                    $(this).html('<input type="text" style="display:none; width:100%; font-size:11px;" placeholder=" ' + title + '" />');
+                    $(this).removeClass('sorting_asc');
+                }
+                else {
+                    $(this).html('<input type="text" style="width:100%; font-size:11px;" placeholder=" ' + title + '" />');
+                }
+
+               $('input', this).on('keyup change', function () {
+                    if (table.column(i).search() !== this.value) {
+                        table.column(i).search(this.value).draw();
+                    }
+                });
+            });
+            
+            var table = $('#OrgWebGrid').DataTable({
+                orderCellsTop: true,
+                fixedHeader: true
+                //search: false
+            });
+        });
+
+        setTimeout(function () {
+            //$("#OrgWebGridDiv").removeAttr("style");
+            $("#OrgWebGridDiv").show();
+        }, 10);
+
+        function setOrganization(orgCode, orgName) {
+            $("#po_ORGNAME").val(orgName);
+            $("#po_ORGCODE").val(orgCode);
+            $("#GetOrganization").dialog('close');
+        }
+    </script>
+
+</head>
+<body>
+    @*<div id="OrgWebGridDiv" style="visibility:hidden">*@
+        <div id="OrgWebGridDiv" style="display:none">
+            <form id="myForm">
+                <div id='GetOrganization'>
+                    @webGrid.GetHtml(
+                   htmlAttributes: new { @id = "OrgWebGrid" },
+                   tableStyle: "webgrid-table",
+                   headerStyle: "webgrid-header",
+                   footerStyle: "webgrid-footer",
+                   alternatingRowStyle: "webgrid-alternating-row",
+                   selectedRowStyle: "webgrid-selected-row",
+                   rowStyle: "webgrid-row-style",
+                   mode: WebGridPagerModes.All,
+                   columns: webGrid.Columns(
+                        webGrid.Column("Select", "Select", format: @<text><a href="#" onclick="setOrganization('@item.org_code','@item.org_name');" + style="color: blue;text-decoration: underline;">Select</a></text>),
+                           webGrid.Column("org_code", "Code"),
+                           webGrid.Column("org_abbr_name", "Abbr Name"),
+                           webGrid.Column("org_name", "Division Name")))
+                </div>
+
+            </form>
+        </div>
+</body>
+
+
+
+</html>

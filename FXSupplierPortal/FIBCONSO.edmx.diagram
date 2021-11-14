@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6ee9039412864e7aab6b2af1d8ed358e" Name="Diagram1">
+        <EntityTypeShape EntityType="FibConsoModel.a_conso_sup_map_tbl" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FibConsoModel.acct_mgrp" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FibConsoModel.acct_sgrp" Width="1.5" PointX="5.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FibConsoModel.acct_type" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FibConsoModel.branch_master" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FibConsoModel.bspl_det_master" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="FibConsoModel.bspl_master" Width="1.5" PointX="7.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FibConsoModel.bspl_mgrp_master" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FibConsoModel.bspl_sgrp_master" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="FibConsoModel.cm_unified_mapping" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FibConsoModel.conso_sup_list_dm_final_2" Width="1.5" PointX="2.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FibConsoModel.conso_sup_list_dm_temp_2" Width="1.5" PointX="4.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FibConsoModel.conso_sup_map_tbl" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FibConsoModel.conso_sup_map_tbl_del" Width="1.5" PointX="9.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FibConsoModel.country_table" Width="1.5" PointX="9.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FibConsoModel.customer_business" Width="1.5" PointX="9.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FibConsoModel.domain" Width="1.5" PointX="6.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FibConsoModel.labour_supply_master" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FibConsoModel.project_master" Width="1.5" PointX="11.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FibConsoModel.supply_labour_employee" Width="1.5" PointX="11.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FibConsoModel.conso_sup_list" Width="1.5" PointX="11.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FibConsoModel.conso_sup_list_dm_final_2_backup" Width="1.5" PointX="8.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FibConsoModel.conso_sup_list_opt" Width="1.5" PointX="10.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FibConsoModel.conso_sup_list_tmp" Width="1.5" PointX="12.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FibConsoModel.conso_sup_map_tbl_backup" Width="1.5" PointX="13.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FibConsoModel.customer" Width="1.5" PointX="14.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FibConsoModel.customer_4_2017_backup" Width="1.5" PointX="4.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FibConsoModel.customer_LMS" Width="1.5" PointX="0.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FibConsoModel.VW_COST_CODE_MASTER" Width="1.5" PointX="10.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FibConsoModel.VW_MATRECTRANS" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FibConsoModel.VW_POLINERECEIVING" Width="1.5" PointX="16.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FibConsoModel.VW_PORECEIVING" Width="1.5" PointX="16.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FibConsoModel.VW_PRODUCT_MASTER" Width="1.5" PointX="16.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FibConsoModel.VW_SUPPYMTTRANS" Width="1.5" PointX="18.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="FibConsoModel.acct_mgrp_acct_sgrp_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="FibConsoModel.acct_type_acct_mgrp_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="FibConsoModel.FK_bspl_det_master_bspl_sgrp_master" ManuallyRouted="false" />
+        <AssociationConnector Association="FibConsoModel.FK_bspl_sgrp_master_bspl_mgrp_master" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

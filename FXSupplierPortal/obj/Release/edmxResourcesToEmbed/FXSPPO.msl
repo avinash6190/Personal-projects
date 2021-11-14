@@ -1,0 +1,2158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FSPPOModelStoreContainer" CdmEntityContainer="FSPPOEntities">
+    <EntitySetMapping Name="A_Attachment">
+      <EntityTypeMapping TypeName="FSPPOModel.A_Attachment">
+        <MappingFragment StoreEntitySet="A_Attachment">
+          <ScalarProperty Name="AuditID" ColumnName="AuditID" />
+          <ScalarProperty Name="AuditBy" ColumnName="AuditBy" />
+          <ScalarProperty Name="AuditAction" ColumnName="AuditAction" />
+          <ScalarProperty Name="AuditTimeStamp" ColumnName="AuditTimeStamp" />
+          <ScalarProperty Name="AttachmentID" ColumnName="AttachmentID" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+          <ScalarProperty Name="OwnerTable" ColumnName="OwnerTable" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="FileSize" ColumnName="FileSize" />
+          <ScalarProperty Name="FileExtension" ColumnName="FileExtension" />
+          <ScalarProperty Name="FileURL" ColumnName="FileURL" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_CONTRACT">
+      <EntityTypeMapping TypeName="FSPPOModel.A_CONTRACT">
+        <MappingFragment StoreEntitySet="A_CONTRACT">
+          <ScalarProperty Name="AUDITID" ColumnName="AUDITID" />
+          <ScalarProperty Name="AUDITACTION" ColumnName="AUDITACTION" />
+          <ScalarProperty Name="AUDITBY" ColumnName="AUDITBY" />
+          <ScalarProperty Name="AUDITTIMESTAMP" ColumnName="AUDITTIMESTAMP" />
+          <ScalarProperty Name="CONTRACTNUM" ColumnName="CONTRACTNUM" />
+          <ScalarProperty Name="ORIGINALCONTRACTNUM" ColumnName="ORIGINALCONTRACTNUM" />
+          <ScalarProperty Name="CONTRACTTYPE" ColumnName="CONTRACTTYPE" />
+          <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+          <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+          <ScalarProperty Name="SUBJECT" ColumnName="SUBJECT" />
+          <ScalarProperty Name="ORGCODE" ColumnName="ORGCODE" />
+          <ScalarProperty Name="ORGNAME" ColumnName="ORGNAME" />
+          <ScalarProperty Name="PROJECTCODE" ColumnName="PROJECTCODE" />
+          <ScalarProperty Name="PROJECTNAME" ColumnName="PROJECTNAME" />
+          <ScalarProperty Name="TOTALAMOUNT" ColumnName="TOTALAMOUNT" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="STATUSDATE" ColumnName="STATUSDATE" />
+          <ScalarProperty Name="BUYERCODE" ColumnName="BUYERCODE" />
+          <ScalarProperty Name="BUYERNAME" ColumnName="BUYERNAME" />
+          <ScalarProperty Name="CURRENCYCODE" ColumnName="CURRENCYCODE" />
+          <ScalarProperty Name="VENDORID" ColumnName="VENDORID" />
+          <ScalarProperty Name="VENDORNAME" ColumnName="VENDORNAME" />
+          <ScalarProperty Name="VENDORADDR" ColumnName="VENDORADDR" />
+          <ScalarProperty Name="VENDORATTNNAME" ColumnName="VENDORATTNNAME" />
+          <ScalarProperty Name="VENDORATTNPOS" ColumnName="VENDORATTNPOS" />
+          <ScalarProperty Name="VENDORATTNMOB" ColumnName="VENDORATTNMOB" />
+          <ScalarProperty Name="VENDORATTTEL" ColumnName="VENDORATTTEL" />
+          <ScalarProperty Name="VENDOREMAIL" ColumnName="VENDOREMAIL" />
+          <ScalarProperty Name="MASTERCONTRACT" ColumnName="MASTERCONTRACT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_CONTRACTREF">
+      <EntityTypeMapping TypeName="FSPPOModel.A_CONTRACTREF">
+        <MappingFragment StoreEntitySet="A_CONTRACTREF">
+          <ScalarProperty Name="AUDITID" ColumnName="AUDITID" />
+          <ScalarProperty Name="AUDITACTION" ColumnName="AUDITACTION" />
+          <ScalarProperty Name="AUDITBY" ColumnName="AUDITBY" />
+          <ScalarProperty Name="AUDITTIMESTAMP" ColumnName="AUDITTIMESTAMP" />
+          <ScalarProperty Name="CONTRACTNUM" ColumnName="CONTRACTNUM" />
+          <ScalarProperty Name="RELATEDCONTRACTTYPE" ColumnName="RELATEDCONTRACTTYPE" />
+          <ScalarProperty Name="RELATEDCONTRACTNUM" ColumnName="RELATEDCONTRACTNUM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_PO">
+      <EntityTypeMapping TypeName="FSPPOModel.A_PO">
+        <MappingFragment StoreEntitySet="A_PO">
+          <ScalarProperty Name="AUDITID" ColumnName="AUDITID" />
+          <ScalarProperty Name="AUDITACTION" ColumnName="AUDITACTION" />
+          <ScalarProperty Name="AUDITBY" ColumnName="AUDITBY" />
+          <ScalarProperty Name="AUDITTIMESTAMP" ColumnName="AUDITTIMESTAMP" />
+          <ScalarProperty Name="PONUM" ColumnName="PONUM" />
+          <ScalarProperty Name="POREF" ColumnName="POREF" />
+          <ScalarProperty Name="POSID" ColumnName="POSID" />
+          <ScalarProperty Name="POREVISION" ColumnName="POREVISION" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="ORGCODE" ColumnName="ORGCODE" />
+          <ScalarProperty Name="ORGNAME" ColumnName="ORGNAME" />
+          <ScalarProperty Name="PROJECTCODE" ColumnName="PROJECTCODE" />
+          <ScalarProperty Name="PROJECTNAME" ColumnName="PROJECTNAME" />
+          <ScalarProperty Name="MRNUM" ColumnName="MRNUM" />
+          <ScalarProperty Name="QNUM" ColumnName="QNUM" />
+          <ScalarProperty Name="QDATE" ColumnName="QDATE" />
+          <ScalarProperty Name="PAYMENTTERMS" ColumnName="PAYMENTTERMS" />
+          <ScalarProperty Name="ORDERDATE" ColumnName="ORDERDATE" />
+          <ScalarProperty Name="REQUIREDATE" ColumnName="REQUIREDATE" />
+          <ScalarProperty Name="VENDORDATE" ColumnName="VENDORDATE" />
+          <ScalarProperty Name="POTYPE" ColumnName="POTYPE" />
+          <ScalarProperty Name="ORIGINALPONUM" ColumnName="ORIGINALPONUM" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="STATUSDATE" ColumnName="STATUSDATE" />
+          <ScalarProperty Name="BUYERCODE" ColumnName="BUYERCODE" />
+          <ScalarProperty Name="BUYERNAME" ColumnName="BUYERNAME" />
+          <ScalarProperty Name="VENDORID" ColumnName="VENDORID" />
+          <ScalarProperty Name="VENDORNAME" ColumnName="VENDORNAME" />
+          <ScalarProperty Name="VENDORADDR" ColumnName="VENDORADDR" />
+          <ScalarProperty Name="VENDORATTN1NAME" ColumnName="VENDORATTN1NAME" />
+          <ScalarProperty Name="VENDORATTN1POS" ColumnName="VENDORATTN1POS" />
+          <ScalarProperty Name="VENDORATTN1MOB" ColumnName="VENDORATTN1MOB" />
+          <ScalarProperty Name="VENDORATTN1TEL" ColumnName="VENDORATTN1TEL" />
+          <ScalarProperty Name="VENDORATTN1FAX" ColumnName="VENDORATTN1FAX" />
+          <ScalarProperty Name="VENDORATTN1EMAIL" ColumnName="VENDORATTN1EMAIL" />
+          <ScalarProperty Name="VENDORATTN2NAME" ColumnName="VENDORATTN2NAME" />
+          <ScalarProperty Name="VENDORATTN2POS" ColumnName="VENDORATTN2POS" />
+          <ScalarProperty Name="VENDORATTN2MOB" ColumnName="VENDORATTN2MOB" />
+          <ScalarProperty Name="VENDORATTN2TEL" ColumnName="VENDORATTN2TEL" />
+          <ScalarProperty Name="VENDORATTN2FAX" ColumnName="VENDORATTN2FAX" />
+          <ScalarProperty Name="VENDORATTN2EMAIL" ColumnName="VENDORATTN2EMAIL" />
+          <ScalarProperty Name="SHIPTOADDR" ColumnName="SHIPTOADDR" />
+          <ScalarProperty Name="SHIPTOATTN1NAME" ColumnName="SHIPTOATTN1NAME" />
+          <ScalarProperty Name="SHIPTOATTN1MOB" ColumnName="SHIPTOATTN1MOB" />
+          <ScalarProperty Name="SHIPTOATTN1POS" ColumnName="SHIPTOATTN1POS" />
+          <ScalarProperty Name="SHIPTOATTN2NAME" ColumnName="SHIPTOATTN2NAME" />
+          <ScalarProperty Name="SHIPTOATTN2MOB" ColumnName="SHIPTOATTN2MOB" />
+          <ScalarProperty Name="SHIPTOATTN2POS" ColumnName="SHIPTOATTN2POS" />
+          <ScalarProperty Name="CONTRACTREFNUM" ColumnName="CONTRACTREFNUM" />
+          <ScalarProperty Name="REVCOMMENTS" ColumnName="REVCOMMENTS" />
+          <ScalarProperty Name="HISTORYFLAG" ColumnName="HISTORYFLAG" />
+          <ScalarProperty Name="CURRENCYCODE" ColumnName="CURRENCYCODE" />
+          <ScalarProperty Name="TOTALTAX" ColumnName="TOTALTAX" />
+          <ScalarProperty Name="PRETAXTOTAL" ColumnName="PRETAXTOTAL" />
+          <ScalarProperty Name="INTNOTE" ColumnName="INTNOTE" />
+          <ScalarProperty Name="EXTNOTE" ColumnName="EXTNOTE" />
+          <ScalarProperty Name="SENDNOTETOACCTS" ColumnName="SENDNOTETOACCTS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_PODefination">
+      <EntityTypeMapping TypeName="FSPPOModel.A_PODefination">
+        <MappingFragment StoreEntitySet="A_PODefination">
+          <ScalarProperty Name="POAuditID" ColumnName="POAuditID" />
+          <ScalarProperty Name="AuditBy" ColumnName="AuditBy" />
+          <ScalarProperty Name="AuditAction" ColumnName="AuditAction" />
+          <ScalarProperty Name="AuditTimeStamp" ColumnName="AuditTimeStamp" />
+          <ScalarProperty Name="PODefinationID" ColumnName="PODefinationID" />
+          <ScalarProperty Name="OrgCode" ColumnName="OrgCode" />
+          <ScalarProperty Name="OrgName" ColumnName="OrgName" />
+          <ScalarProperty Name="DefinationType" ColumnName="DefinationType" />
+          <ScalarProperty Name="DefinationContent" ColumnName="DefinationContent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_POLINE">
+      <EntityTypeMapping TypeName="FSPPOModel.A_POLINE">
+        <MappingFragment StoreEntitySet="A_POLINE">
+          <ScalarProperty Name="AUDITID" ColumnName="AUDITID" />
+          <ScalarProperty Name="AUDITACTION" ColumnName="AUDITACTION" />
+          <ScalarProperty Name="AUDITBY" ColumnName="AUDITBY" />
+          <ScalarProperty Name="AUDITTIMESTAMP" ColumnName="AUDITTIMESTAMP" />
+          <ScalarProperty Name="POLINEID" ColumnName="POLINEID" />
+          <ScalarProperty Name="PONUM" ColumnName="PONUM" />
+          <ScalarProperty Name="POREVISION" ColumnName="POREVISION" />
+          <ScalarProperty Name="POLINENUM" ColumnName="POLINENUM" />
+          <ScalarProperty Name="LINETYPE" ColumnName="LINETYPE" />
+          <ScalarProperty Name="COSTCODE" ColumnName="COSTCODE" />
+          <ScalarProperty Name="CATALOGCODE" ColumnName="CATALOGCODE" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="ORDERQTY" ColumnName="ORDERQTY" />
+          <ScalarProperty Name="ORDERUNIT" ColumnName="ORDERUNIT" />
+          <ScalarProperty Name="UNITCOST" ColumnName="UNITCOST" />
+          <ScalarProperty Name="LINECOST" ColumnName="LINECOST" />
+          <ScalarProperty Name="ITEMNUM" ColumnName="ITEMNUM" />
+          <ScalarProperty Name="MODELNUM" ColumnName="MODELNUM" />
+          <ScalarProperty Name="REQUESTEDBYCODE" ColumnName="REQUESTEDBYCODE" />
+          <ScalarProperty Name="REQUESTEDBYNAME" ColumnName="REQUESTEDBYNAME" />
+          <ScalarProperty Name="REQDELIVERYDATE" ColumnName="REQDELIVERYDATE" />
+          <ScalarProperty Name="MANUFACUTRER" ColumnName="MANUFACUTRER" />
+          <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+          <ScalarProperty Name="TAXCODE" ColumnName="TAXCODE" />
+          <ScalarProperty Name="TAXTOTAL" ColumnName="TAXTOTAL" />
+          <ScalarProperty Name="TAXED" ColumnName="TAXED" />
+          <ScalarProperty Name="ROWSTAMP" ColumnName="ROWSTAMP" />
+          <ScalarProperty Name="TAXRATE" ColumnName="TAXRATE" />
+          <ScalarProperty Name="RECEIPTTOLERANCE" ColumnName="RECEIPTTOLERANCE" />
+          <ScalarProperty Name="SPECIFICATION" ColumnName="SPECIFICATION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_POPERMISSION">
+      <EntityTypeMapping TypeName="FSPPOModel.A_POPERMISSION">
+        <MappingFragment StoreEntitySet="A_POPERMISSION">
+          <ScalarProperty Name="AUDITID" ColumnName="AUDITID" />
+          <ScalarProperty Name="AUDITACTION" ColumnName="AUDITACTION" />
+          <ScalarProperty Name="AUDITBY" ColumnName="AUDITBY" />
+          <ScalarProperty Name="AUDITTIMESTAMP" ColumnName="AUDITTIMESTAMP" />
+          <ScalarProperty Name="PONUM" ColumnName="PONUM" />
+          <ScalarProperty Name="PERMCODE" ColumnName="PERMCODE" />
+          <ScalarProperty Name="AUTHBY" ColumnName="AUTHBY" />
+          <ScalarProperty Name="JUSTIFICATION" ColumnName="JUSTIFICATION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_POSignature">
+      <EntityTypeMapping TypeName="FSPPOModel.A_POSignature">
+        <MappingFragment StoreEntitySet="A_POSignature">
+          <ScalarProperty Name="AuditPOSignID" ColumnName="AuditPOSignID" />
+          <ScalarProperty Name="AuditBy" ColumnName="AuditBy" />
+          <ScalarProperty Name="AuditAction" ColumnName="AuditAction" />
+          <ScalarProperty Name="AuditTimeStamp" ColumnName="AuditTimeStamp" />
+          <ScalarProperty Name="POSignID" ColumnName="POSignID" />
+          <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+          <ScalarProperty Name="PONum" ColumnName="PONum" />
+          <ScalarProperty Name="POREVISION" ColumnName="POREVISION" />
+          <ScalarProperty Name="Authority" ColumnName="Authority" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="TeamMemberCode" ColumnName="TeamMemberCode" />
+          <ScalarProperty Name="TeamMemberName" ColumnName="TeamMemberName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_POSignatureTemplate">
+      <EntityTypeMapping TypeName="FSPPOModel.A_POSignatureTemplate">
+        <MappingFragment StoreEntitySet="A_POSignatureTemplate">
+          <ScalarProperty Name="POSignatureTemplateAuditID" ColumnName="POSignatureTemplateAuditID" />
+          <ScalarProperty Name="AuditBy" ColumnName="AuditBy" />
+          <ScalarProperty Name="AuditAction" ColumnName="AuditAction" />
+          <ScalarProperty Name="AuditTimeStamp" ColumnName="AuditTimeStamp" />
+          <ScalarProperty Name="POSignatureTemplateID" ColumnName="POSignatureTemplateID" />
+          <ScalarProperty Name="OrgCode" ColumnName="OrgCode" />
+          <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+          <ScalarProperty Name="Authority" ColumnName="Authority" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_POTEMPLATE">
+      <EntityTypeMapping TypeName="FSPPOModel.A_POTEMPLATE">
+        <MappingFragment StoreEntitySet="A_POTEMPLATE">
+          <ScalarProperty Name="AUDITID" ColumnName="AUDITID" />
+          <ScalarProperty Name="AUDITACTION" ColumnName="AUDITACTION" />
+          <ScalarProperty Name="AUDITBY" ColumnName="AUDITBY" />
+          <ScalarProperty Name="AUDITTIMESTAMP" ColumnName="AUDITTIMESTAMP" />
+          <ScalarProperty Name="POTEMPLATEID" ColumnName="POTEMPLATEID" />
+          <ScalarProperty Name="POTEMPLATENAME" ColumnName="POTEMPLATENAME" />
+          <ScalarProperty Name="POTEMPLATEDESC" ColumnName="POTEMPLATEDESC" />
+          <ScalarProperty Name="ORGCODE" ColumnName="ORGCODE" />
+          <ScalarProperty Name="ORGNAME" ColumnName="ORGNAME" />
+          <ScalarProperty Name="PROJECTCODE" ColumnName="PROJECTCODE" />
+          <ScalarProperty Name="PROJECTNAME" ColumnName="PROJECTNAME" />
+          <ScalarProperty Name="PAYMENTTERMS" ColumnName="PAYMENTTERMS" />
+          <ScalarProperty Name="POTYPE" ColumnName="POTYPE" />
+          <ScalarProperty Name="BUYERCODE" ColumnName="BUYERCODE" />
+          <ScalarProperty Name="BUYERNAME" ColumnName="BUYERNAME" />
+          <ScalarProperty Name="VENDORID" ColumnName="VENDORID" />
+          <ScalarProperty Name="VENDORNAME" ColumnName="VENDORNAME" />
+          <ScalarProperty Name="VENDORADDR" ColumnName="VENDORADDR" />
+          <ScalarProperty Name="VENDORATTN1NAME" ColumnName="VENDORATTN1NAME" />
+          <ScalarProperty Name="VENDORATTN1POS" ColumnName="VENDORATTN1POS" />
+          <ScalarProperty Name="VENDORATTN1MOB" ColumnName="VENDORATTN1MOB" />
+          <ScalarProperty Name="VENDORATTN1TEL" ColumnName="VENDORATTN1TEL" />
+          <ScalarProperty Name="VENDORATTN1FAX" ColumnName="VENDORATTN1FAX" />
+          <ScalarProperty Name="VENDORATTN1EMAIL" ColumnName="VENDORATTN1EMAIL" />
+          <ScalarProperty Name="VENDORATTN2NAME" ColumnName="VENDORATTN2NAME" />
+          <ScalarProperty Name="VENDORATTN2POS" ColumnName="VENDORATTN2POS" />
+          <ScalarProperty Name="VENDORATTN2MOB" ColumnName="VENDORATTN2MOB" />
+          <ScalarProperty Name="VENDORATTN2TEL" ColumnName="VENDORATTN2TEL" />
+          <ScalarProperty Name="VENDORATTN2FAX" ColumnName="VENDORATTN2FAX" />
+          <ScalarProperty Name="VENDORATTN2EMAIL" ColumnName="VENDORATTN2EMAIL" />
+          <ScalarProperty Name="SHIPTOADDR" ColumnName="SHIPTOADDR" />
+          <ScalarProperty Name="SHIPTOATTN1NAME" ColumnName="SHIPTOATTN1NAME" />
+          <ScalarProperty Name="SHIPTOATTN1MOB" ColumnName="SHIPTOATTN1MOB" />
+          <ScalarProperty Name="SHIPTOATTN1POS" ColumnName="SHIPTOATTN1POS" />
+          <ScalarProperty Name="SHIPTOATTN2NAME" ColumnName="SHIPTOATTN2NAME" />
+          <ScalarProperty Name="SHIPTOATTN2MOB" ColumnName="SHIPTOATTN2MOB" />
+          <ScalarProperty Name="SHIPTOATTN2POS" ColumnName="SHIPTOATTN2POS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_Registration">
+      <EntityTypeMapping TypeName="FSPPOModel.A_Registration">
+        <MappingFragment StoreEntitySet="A_Registration">
+          <ScalarProperty Name="AuditRegistrationID" ColumnName="AuditRegistrationID" />
+          <ScalarProperty Name="AuditAction" ColumnName="AuditAction" />
+          <ScalarProperty Name="AuditBy" ColumnName="AuditBy" />
+          <ScalarProperty Name="AuditTimeStamp" ColumnName="AuditTimeStamp" />
+          <ScalarProperty Name="RegistrationID" ColumnName="RegistrationID" />
+          <ScalarProperty Name="RegistrationType" ColumnName="RegistrationType" />
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="SupplierShortName" ColumnName="SupplierShortName" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="SupplierType" ColumnName="SupplierType" />
+          <ScalarProperty Name="BusinessClass" ColumnName="BusinessClass" />
+          <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="OfficialEmail" ColumnName="OfficialEmail" />
+          <ScalarProperty Name="ContactFirstName" ColumnName="ContactFirstName" />
+          <ScalarProperty Name="ContactLastName" ColumnName="ContactLastName" />
+          <ScalarProperty Name="ContactPosition" ColumnName="ContactPosition" />
+          <ScalarProperty Name="ContactPhone" ColumnName="ContactPhone" />
+          <ScalarProperty Name="ContactExtension" ColumnName="ContactExtension" />
+          <ScalarProperty Name="ContactMobile" ColumnName="ContactMobile" />
+          <ScalarProperty Name="RegDocType" ColumnName="RegDocType" />
+          <ScalarProperty Name="RegDocID" ColumnName="RegDocID" />
+          <ScalarProperty Name="RegDocIssAuth" ColumnName="RegDocIssAuth" />
+          <ScalarProperty Name="RegDocExpiryDate" ColumnName="RegDocExpiryDate" />
+          <ScalarProperty Name="VATRegistrationNo" ColumnName="VATRegistrationNo" />
+          <ScalarProperty Name="IsVATRegistered" ColumnName="IsVATRegistered" />
+          <ScalarProperty Name="VATRegistrationType" ColumnName="VATRegistrationType" />
+          <ScalarProperty Name="VATGrpRepName" ColumnName="VATGrpRepName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_RegSupplierAddress">
+      <EntityTypeMapping TypeName="FSPPOModel.A_RegSupplierAddress">
+        <MappingFragment StoreEntitySet="A_RegSupplierAddress">
+          <ScalarProperty Name="AuditRegistrationAddressID" ColumnName="AuditRegistrationAddressID" />
+          <ScalarProperty Name="AuditAction" ColumnName="AuditAction" />
+          <ScalarProperty Name="AuditBy" ColumnName="AuditBy" />
+          <ScalarProperty Name="AuditTimeStamp" ColumnName="AuditTimeStamp" />
+          <ScalarProperty Name="RegAddressID" ColumnName="RegAddressID" />
+          <ScalarProperty Name="RegistrationID" ColumnName="RegistrationID" />
+          <ScalarProperty Name="AddressName" ColumnName="AddressName" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="AddressLine1" ColumnName="AddressLine1" />
+          <ScalarProperty Name="AddressLine2" ColumnName="AddressLine2" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="PhoneNum" ColumnName="PhoneNum" />
+          <ScalarProperty Name="FaxNum" ColumnName="FaxNum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_Supplier">
+      <EntityTypeMapping TypeName="FSPPOModel.A_Supplier">
+        <MappingFragment StoreEntitySet="A_Supplier">
+          <ScalarProperty Name="AuditID" ColumnName="AuditID" />
+          <ScalarProperty Name="AuditAction" ColumnName="AuditAction" />
+          <ScalarProperty Name="AuditBy" ColumnName="AuditBy" />
+          <ScalarProperty Name="AuditTimeStamp" ColumnName="AuditTimeStamp" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="SupplierShortName" ColumnName="SupplierShortName" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="SupplierType" ColumnName="SupplierType" />
+          <ScalarProperty Name="BusinessClassification" ColumnName="BusinessClassification" />
+          <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="OfficialEmail" ColumnName="OfficialEmail" />
+          <ScalarProperty Name="ContactFirstName" ColumnName="ContactFirstName" />
+          <ScalarProperty Name="ContactLastName" ColumnName="ContactLastName" />
+          <ScalarProperty Name="ContactPosition" ColumnName="ContactPosition" />
+          <ScalarProperty Name="ContactPhone" ColumnName="ContactPhone" />
+          <ScalarProperty Name="ContactExtension" ColumnName="ContactExtension" />
+          <ScalarProperty Name="ContactMobile" ColumnName="ContactMobile" />
+          <ScalarProperty Name="RegDocType" ColumnName="RegDocType" />
+          <ScalarProperty Name="RegDocID" ColumnName="RegDocID" />
+          <ScalarProperty Name="RegDocIssAuth" ColumnName="RegDocIssAuth" />
+          <ScalarProperty Name="RegDocExpiryDate" ColumnName="RegDocExpiryDate" />
+          <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
+          <ScalarProperty Name="VATRegistrationNo" ColumnName="VATRegistrationNo" />
+          <ScalarProperty Name="IsVATRegistered" ColumnName="IsVATRegistered" />
+          <ScalarProperty Name="VATRegistrationType" ColumnName="VATRegistrationType" />
+          <ScalarProperty Name="VATGrpRepName" ColumnName="VATGrpRepName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_SupplierAddress">
+      <EntityTypeMapping TypeName="FSPPOModel.A_SupplierAddress">
+        <MappingFragment StoreEntitySet="A_SupplierAddress">
+          <ScalarProperty Name="AuditAddressID" ColumnName="AuditAddressID" />
+          <ScalarProperty Name="AuditAction" ColumnName="AuditAction" />
+          <ScalarProperty Name="AuditBy" ColumnName="AuditBy" />
+          <ScalarProperty Name="AuditTimeStamp" ColumnName="AuditTimeStamp" />
+          <ScalarProperty Name="SupplierAddressID" ColumnName="SupplierAddressID" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="AddressName" ColumnName="AddressName" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="AddressLine1" ColumnName="AddressLine1" />
+          <ScalarProperty Name="AddressLine2" ColumnName="AddressLine2" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="PhoneNum" ColumnName="PhoneNum" />
+          <ScalarProperty Name="FaxNum" ColumnName="FaxNum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_SupplierBankingDetails">
+      <EntityTypeMapping TypeName="FSPPOModel.A_SupplierBankingDetails">
+        <MappingFragment StoreEntitySet="A_SupplierBankingDetails">
+          <ScalarProperty Name="AuditBankDetail" ColumnName="AuditBankDetail" />
+          <ScalarProperty Name="AuditAction" ColumnName="AuditAction" />
+          <ScalarProperty Name="AuditBy" ColumnName="AuditBy" />
+          <ScalarProperty Name="AuditTimeStamp" ColumnName="AuditTimeStamp" />
+          <ScalarProperty Name="SupplierBankDetailID" ColumnName="SupplierBankDetailID" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+          <ScalarProperty Name="BranchAddress" ColumnName="BranchAddress" />
+          <ScalarProperty Name="AccountNum" ColumnName="AccountNum" />
+          <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+          <ScalarProperty Name="IBAN" ColumnName="IBAN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_UserOrg">
+      <EntityTypeMapping TypeName="FSPPOModel.A_UserOrg">
+        <MappingFragment StoreEntitySet="A_UserOrg">
+          <ScalarProperty Name="AuditUserOrgID" ColumnName="AuditUserOrgID" />
+          <ScalarProperty Name="AuditAction" ColumnName="AuditAction" />
+          <ScalarProperty Name="AuditBy" ColumnName="AuditBy" />
+          <ScalarProperty Name="AuditTimeStamp" ColumnName="AuditTimeStamp" />
+          <ScalarProperty Name="UserOrgID" ColumnName="UserOrgID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="OrgCode" ColumnName="OrgCode" />
+          <ScalarProperty Name="OrgName" ColumnName="OrgName" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_UserProjects">
+      <EntityTypeMapping TypeName="FSPPOModel.A_UserProjects">
+        <MappingFragment StoreEntitySet="A_UserProjects">
+          <ScalarProperty Name="AuditUserProjectID" ColumnName="AuditUserProjectID" />
+          <ScalarProperty Name="AuditAction" ColumnName="AuditAction" />
+          <ScalarProperty Name="AuditBy" ColumnName="AuditBy" />
+          <ScalarProperty Name="AuditTimeStamp" ColumnName="AuditTimeStamp" />
+          <ScalarProperty Name="UserProjID" ColumnName="UserProjID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="OrgCode" ColumnName="OrgCode" />
+          <ScalarProperty Name="ProjectCode" ColumnName="ProjectCode" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_Users">
+      <EntityTypeMapping TypeName="FSPPOModel.A_Users">
+        <MappingFragment StoreEntitySet="A_Users">
+          <ScalarProperty Name="AuditID" ColumnName="AuditID" />
+          <ScalarProperty Name="AuditBy" ColumnName="AuditBy" />
+          <ScalarProperty Name="AuditAction" ColumnName="AuditAction" />
+          <ScalarProperty Name="AuditTimeStamp" ColumnName="AuditTimeStamp" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="PhoneNum" ColumnName="PhoneNum" />
+          <ScalarProperty Name="AuthSystem" ColumnName="AuthSystem" />
+          <ScalarProperty Name="OrgCode" ColumnName="OrgCode" />
+          <ScalarProperty Name="emp_code" ColumnName="emp_code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_UserSecurityGroup">
+      <EntityTypeMapping TypeName="FSPPOModel.A_UserSecurityGroup">
+        <MappingFragment StoreEntitySet="A_UserSecurityGroup">
+          <ScalarProperty Name="AuditID" ColumnName="AuditID" />
+          <ScalarProperty Name="AuditBy" ColumnName="AuditBy" />
+          <ScalarProperty Name="AuditAction" ColumnName="AuditAction" />
+          <ScalarProperty Name="AuditTimeStamp" ColumnName="AuditTimeStamp" />
+          <ScalarProperty Name="SecurityGroupMemberID" ColumnName="SecurityGroupMemberID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="SecurityGroupID" ColumnName="SecurityGroupID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ActivityLogs">
+      <EntityTypeMapping TypeName="FSPPOModel.ActivityLog">
+        <MappingFragment StoreEntitySet="ActivityLog">
+          <ScalarProperty Name="ActivityID" ColumnName="ActivityID" />
+          <ScalarProperty Name="FormName" ColumnName="FormName" />
+          <ScalarProperty Name="ActivityName" ColumnName="ActivityName" />
+          <ScalarProperty Name="ActionName" ColumnName="ActionName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDateTime" ColumnName="CreationDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Attachments">
+      <EntityTypeMapping TypeName="FSPPOModel.Attachment">
+        <MappingFragment StoreEntitySet="Attachment">
+          <ScalarProperty Name="AttachmentID" ColumnName="AttachmentID" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+          <ScalarProperty Name="OwnerTable" ColumnName="OwnerTable" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="FileSize" ColumnName="FileSize" />
+          <ScalarProperty Name="FileExtension" ColumnName="FileExtension" />
+          <ScalarProperty Name="FileURL" ColumnName="FileURL" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDateTime" ColumnName="CreationDateTime" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+          <ScalarProperty Name="LastModifiedDateTime" ColumnName="LastModifiedDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChangeRequests">
+      <EntityTypeMapping TypeName="FSPPOModel.ChangeRequest">
+        <MappingFragment StoreEntitySet="ChangeRequest">
+          <ScalarProperty Name="ChangeRequestID" ColumnName="ChangeRequestID" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Memo" ColumnName="Memo" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDateTime" ColumnName="CreationDateTime" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+          <ScalarProperty Name="LastModifiedDateTime" ColumnName="LastModifiedDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChangeRequestDetails">
+      <EntityTypeMapping TypeName="FSPPOModel.ChangeRequestDetail">
+        <MappingFragment StoreEntitySet="ChangeRequestDetail">
+          <ScalarProperty Name="ChangeRequestDetailID" ColumnName="ChangeRequestDetailID" />
+          <ScalarProperty Name="ChangeRequestID" ColumnName="ChangeRequestID" />
+          <ScalarProperty Name="TableName" ColumnName="TableName" />
+          <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+          <ScalarProperty Name="FieldName" ColumnName="FieldName" />
+          <ScalarProperty Name="ActionTaken" ColumnName="ActionTaken" />
+          <ScalarProperty Name="CurrentValue" ColumnName="CurrentValue" />
+          <ScalarProperty Name="ProposedValue" ColumnName="ProposedValue" />
+          <ScalarProperty Name="AdjustedValue" ColumnName="AdjustedValue" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDateTime" ColumnName="CreationDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CONTRACTs">
+      <EntityTypeMapping TypeName="FSPPOModel.CONTRACT">
+        <MappingFragment StoreEntitySet="CONTRACT">
+          <ScalarProperty Name="CONTRACTID" ColumnName="CONTRACTID" />
+          <ScalarProperty Name="CONTRACTNUM" ColumnName="CONTRACTNUM" />
+          <ScalarProperty Name="ORIGINALCONTRACTNUM" ColumnName="ORIGINALCONTRACTNUM" />
+          <ScalarProperty Name="CONTRACTTYPE" ColumnName="CONTRACTTYPE" />
+          <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+          <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+          <ScalarProperty Name="SUBJECT" ColumnName="SUBJECT" />
+          <ScalarProperty Name="ORGCODE" ColumnName="ORGCODE" />
+          <ScalarProperty Name="ORGNAME" ColumnName="ORGNAME" />
+          <ScalarProperty Name="PROJECTCODE" ColumnName="PROJECTCODE" />
+          <ScalarProperty Name="PROJECTNAME" ColumnName="PROJECTNAME" />
+          <ScalarProperty Name="TOTALAMOUNT" ColumnName="TOTALAMOUNT" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="STATUSDATE" ColumnName="STATUSDATE" />
+          <ScalarProperty Name="BUYERCODE" ColumnName="BUYERCODE" />
+          <ScalarProperty Name="BUYERNAME" ColumnName="BUYERNAME" />
+          <ScalarProperty Name="VENDORID" ColumnName="VENDORID" />
+          <ScalarProperty Name="VENDORNAME" ColumnName="VENDORNAME" />
+          <ScalarProperty Name="VENDORADDR" ColumnName="VENDORADDR" />
+          <ScalarProperty Name="VENDORATTNNAME" ColumnName="VENDORATTNNAME" />
+          <ScalarProperty Name="VENDORATTNPOS" ColumnName="VENDORATTNPOS" />
+          <ScalarProperty Name="VENDORATTNMOB" ColumnName="VENDORATTNMOB" />
+          <ScalarProperty Name="VENDORATTTEL" ColumnName="VENDORATTTEL" />
+          <ScalarProperty Name="VENDOREMAIL" ColumnName="VENDOREMAIL" />
+          <ScalarProperty Name="MASTERCONTRACT" ColumnName="MASTERCONTRACT" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="CREATIONDATE" ColumnName="CREATIONDATE" />
+          <ScalarProperty Name="LASTMODIFIEDBY" ColumnName="LASTMODIFIEDBY" />
+          <ScalarProperty Name="LASTMODIFIEDDATE" ColumnName="LASTMODIFIEDDATE" />
+          <ScalarProperty Name="CURRENCYCODE" ColumnName="CURRENCYCODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CONTRACTREFs">
+      <EntityTypeMapping TypeName="FSPPOModel.CONTRACTREF">
+        <MappingFragment StoreEntitySet="CONTRACTREF">
+          <ScalarProperty Name="CONTRACTREFID" ColumnName="CONTRACTREFID" />
+          <ScalarProperty Name="CONTRACTNUM" ColumnName="CONTRACTNUM" />
+          <ScalarProperty Name="RELATEDCONTRACTTYPE" ColumnName="RELATEDCONTRACTTYPE" />
+          <ScalarProperty Name="RELATEDCONTRACTNUM" ColumnName="RELATEDCONTRACTNUM" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="CREATIONDATE" ColumnName="CREATIONDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContractStatusHistories">
+      <EntityTypeMapping TypeName="FSPPOModel.ContractStatusHistory">
+        <MappingFragment StoreEntitySet="ContractStatusHistory">
+          <ScalarProperty Name="ContractStatusHistoryID" ColumnName="ContractStatusHistoryID" />
+          <ScalarProperty Name="CONTRACTNUM" ColumnName="CONTRACTNUM" />
+          <ScalarProperty Name="OLDSTATUS" ColumnName="OLDSTATUS" />
+          <ScalarProperty Name="NEWSTATUS" ColumnName="NEWSTATUS" />
+          <ScalarProperty Name="MEMO" ColumnName="MEMO" />
+          <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+          <ScalarProperty Name="MODIFICATIONDATE" ColumnName="MODIFICATIONDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ControlFieldRELs">
+      <EntityTypeMapping TypeName="FSPPOModel.ControlFieldREL">
+        <MappingFragment StoreEntitySet="ControlFieldREL">
+          <ScalarProperty Name="CONTROLID" ColumnName="CONTROLID" />
+          <ScalarProperty Name="COLUMNID" ColumnName="COLUMNID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FieldHelps">
+      <EntityTypeMapping TypeName="FSPPOModel.FieldHelp">
+        <MappingFragment StoreEntitySet="FieldHelp">
+          <ScalarProperty Name="COLUMNID" ColumnName="COLUMNID" />
+          <ScalarProperty Name="DATABASENAME" ColumnName="DATABASENAME" />
+          <ScalarProperty Name="TABLENAME" ColumnName="TABLENAME" />
+          <ScalarProperty Name="COLUMNNAME" ColumnName="COLUMNNAME" />
+          <ScalarProperty Name="COLUMNDESC" ColumnName="COLUMNDESC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FieldLabels">
+      <EntityTypeMapping TypeName="FSPPOModel.FieldLabel">
+        <MappingFragment StoreEntitySet="FieldLabels">
+          <ScalarProperty Name="LabelID" ColumnName="LabelID" />
+          <ScalarProperty Name="TableName" ColumnName="TableName" />
+          <ScalarProperty Name="FieldName" ColumnName="FieldName" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Notifications">
+      <EntityTypeMapping TypeName="FSPPOModel.Notification">
+        <MappingFragment StoreEntitySet="Notification">
+          <ScalarProperty Name="NotificationID" ColumnName="NotificationID" />
+          <ScalarProperty Name="NotificationTemplatesID" ColumnName="NotificationTemplatesID" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+          <ScalarProperty Name="Sender" ColumnName="Sender" />
+          <ScalarProperty Name="Recepient" ColumnName="Recepient" />
+          <ScalarProperty Name="SendDateTime" ColumnName="SendDateTime" />
+          <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ReadDate" ColumnName="ReadDate" />
+          <ScalarProperty Name="IsMailSend" ColumnName="IsMailSend" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NotificationTemplates">
+      <EntityTypeMapping TypeName="FSPPOModel.NotificationTemplate">
+        <MappingFragment StoreEntitySet="NotificationTemplate">
+          <ScalarProperty Name="NotificationTemplatesID" ColumnName="NotificationTemplatesID" />
+          <ScalarProperty Name="NotificationTempName" ColumnName="NotificationTempName" />
+          <ScalarProperty Name="NotificationTemplateDesc" ColumnName="NotificationTemplateDesc" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+          <ScalarProperty Name="IsNotificationSend" ColumnName="IsNotificationSend" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrgRoles">
+      <EntityTypeMapping TypeName="FSPPOModel.OrgRole">
+        <MappingFragment StoreEntitySet="OrgRoles">
+          <ScalarProperty Name="ORGROLEID" ColumnName="ORGROLEID" />
+          <ScalarProperty Name="ORGROLENAME" ColumnName="ORGROLENAME" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="CREATIONDATETIME" ColumnName="CREATIONDATETIME" />
+          <ScalarProperty Name="LASTMODIFIEDBY" ColumnName="LASTMODIFIEDBY" />
+          <ScalarProperty Name="LASTMODIFIEDDATE" ColumnName="LASTMODIFIEDDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="POes">
+      <EntityTypeMapping TypeName="FSPPOModel.PO">
+        <MappingFragment StoreEntitySet="PO">
+          <ScalarProperty Name="POID" ColumnName="POID" />
+          <ScalarProperty Name="PONUM" ColumnName="PONUM" />
+          <ScalarProperty Name="POREF" ColumnName="POREF" />
+          <ScalarProperty Name="POSID" ColumnName="POSID" />
+          <ScalarProperty Name="POREVISION" ColumnName="POREVISION" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="ORGCODE" ColumnName="ORGCODE" />
+          <ScalarProperty Name="ORGNAME" ColumnName="ORGNAME" />
+          <ScalarProperty Name="PROJECTCODE" ColumnName="PROJECTCODE" />
+          <ScalarProperty Name="PROJECTNAME" ColumnName="PROJECTNAME" />
+          <ScalarProperty Name="MRNUM" ColumnName="MRNUM" />
+          <ScalarProperty Name="QNUM" ColumnName="QNUM" />
+          <ScalarProperty Name="QDATE" ColumnName="QDATE" />
+          <ScalarProperty Name="PAYMENTTERMS" ColumnName="PAYMENTTERMS" />
+          <ScalarProperty Name="ORDERDATE" ColumnName="ORDERDATE" />
+          <ScalarProperty Name="REQUIREDATE" ColumnName="REQUIREDATE" />
+          <ScalarProperty Name="VENDORDATE" ColumnName="VENDORDATE" />
+          <ScalarProperty Name="POTYPE" ColumnName="POTYPE" />
+          <ScalarProperty Name="ORIGINALPONUM" ColumnName="ORIGINALPONUM" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="STATUSDATE" ColumnName="STATUSDATE" />
+          <ScalarProperty Name="BUYERCODE" ColumnName="BUYERCODE" />
+          <ScalarProperty Name="BUYERNAME" ColumnName="BUYERNAME" />
+          <ScalarProperty Name="VENDORID" ColumnName="VENDORID" />
+          <ScalarProperty Name="VENDORNAME" ColumnName="VENDORNAME" />
+          <ScalarProperty Name="VENDORADDR" ColumnName="VENDORADDR" />
+          <ScalarProperty Name="VENDORATTN1NAME" ColumnName="VENDORATTN1NAME" />
+          <ScalarProperty Name="VENDORATTN1POS" ColumnName="VENDORATTN1POS" />
+          <ScalarProperty Name="VENDORATTN1MOB" ColumnName="VENDORATTN1MOB" />
+          <ScalarProperty Name="VENDORATTN1TEL" ColumnName="VENDORATTN1TEL" />
+          <ScalarProperty Name="VENDORATTN1FAX" ColumnName="VENDORATTN1FAX" />
+          <ScalarProperty Name="VENDORATTN1EMAIL" ColumnName="VENDORATTN1EMAIL" />
+          <ScalarProperty Name="VENDORATTN2NAME" ColumnName="VENDORATTN2NAME" />
+          <ScalarProperty Name="VENDORATTN2POS" ColumnName="VENDORATTN2POS" />
+          <ScalarProperty Name="VENDORATTN2MOB" ColumnName="VENDORATTN2MOB" />
+          <ScalarProperty Name="VENDORATTN2TEL" ColumnName="VENDORATTN2TEL" />
+          <ScalarProperty Name="VENDORATTN2FAX" ColumnName="VENDORATTN2FAX" />
+          <ScalarProperty Name="VENDORATTN2EMAIL" ColumnName="VENDORATTN2EMAIL" />
+          <ScalarProperty Name="SHIPTOADDR" ColumnName="SHIPTOADDR" />
+          <ScalarProperty Name="SHIPTOATTN1NAME" ColumnName="SHIPTOATTN1NAME" />
+          <ScalarProperty Name="SHIPTOATTN1MOB" ColumnName="SHIPTOATTN1MOB" />
+          <ScalarProperty Name="SHIPTOATTN1POS" ColumnName="SHIPTOATTN1POS" />
+          <ScalarProperty Name="SHIPTOATTN2NAME" ColumnName="SHIPTOATTN2NAME" />
+          <ScalarProperty Name="SHIPTOATTN2MOB" ColumnName="SHIPTOATTN2MOB" />
+          <ScalarProperty Name="SHIPTOATTN2POS" ColumnName="SHIPTOATTN2POS" />
+          <ScalarProperty Name="TOTALCOST" ColumnName="TOTALCOST" />
+          <ScalarProperty Name="CURRENCYCODE" ColumnName="CURRENCYCODE" />
+          <ScalarProperty Name="TOTALTAX" ColumnName="TOTALTAX" />
+          <ScalarProperty Name="PRETAXTOTAL" ColumnName="PRETAXTOTAL" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="CREATIONDATETIME" ColumnName="CREATIONDATETIME" />
+          <ScalarProperty Name="LASTMODIFIEDBY" ColumnName="LASTMODIFIEDBY" />
+          <ScalarProperty Name="LASTMODIFIEDDATE" ColumnName="LASTMODIFIEDDATE" />
+          <ScalarProperty Name="CONTRACTREFNUM" ColumnName="CONTRACTREFNUM" />
+          <ScalarProperty Name="REVCOMMENTS" ColumnName="REVCOMMENTS" />
+          <ScalarProperty Name="HISTORYFLAG" ColumnName="HISTORYFLAG" />
+          <ScalarProperty Name="INTNOTE" ColumnName="INTNOTE" />
+          <ScalarProperty Name="EXTNOTE" ColumnName="EXTNOTE" />
+          <ScalarProperty Name="SENDNOTETOACCTS" ColumnName="SENDNOTETOACCTS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PODefinations">
+      <EntityTypeMapping TypeName="FSPPOModel.PODefination">
+        <MappingFragment StoreEntitySet="PODefination">
+          <ScalarProperty Name="PODefinationID" ColumnName="PODefinationID" />
+          <ScalarProperty Name="OrgCode" ColumnName="OrgCode" />
+          <ScalarProperty Name="OrgName" ColumnName="OrgName" />
+          <ScalarProperty Name="DefinationType" ColumnName="DefinationType" />
+          <ScalarProperty Name="DefinationContent" ColumnName="DefinationContent" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDateTime" ColumnName="CreationDateTime" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDateTime" ColumnName="ModifiedDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="POLINEs">
+      <EntityTypeMapping TypeName="FSPPOModel.POLINE">
+        <MappingFragment StoreEntitySet="POLINE">
+          <ScalarProperty Name="POLINEID" ColumnName="POLINEID" />
+          <ScalarProperty Name="PONUM" ColumnName="PONUM" />
+          <ScalarProperty Name="POREVISION" ColumnName="POREVISION" />
+          <ScalarProperty Name="POLINENUM" ColumnName="POLINENUM" />
+          <ScalarProperty Name="LINETYPE" ColumnName="LINETYPE" />
+          <ScalarProperty Name="COSTCODE" ColumnName="COSTCODE" />
+          <ScalarProperty Name="CATALOGCODE" ColumnName="CATALOGCODE" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="ORDERQTY" ColumnName="ORDERQTY" />
+          <ScalarProperty Name="ORDERUNIT" ColumnName="ORDERUNIT" />
+          <ScalarProperty Name="UNITCOST" ColumnName="UNITCOST" />
+          <ScalarProperty Name="LINECOST" ColumnName="LINECOST" />
+          <ScalarProperty Name="ITEMNUM" ColumnName="ITEMNUM" />
+          <ScalarProperty Name="MODELNUM" ColumnName="MODELNUM" />
+          <ScalarProperty Name="REQUESTEDBYCODE" ColumnName="REQUESTEDBYCODE" />
+          <ScalarProperty Name="REQUESTEDBYNAME" ColumnName="REQUESTEDBYNAME" />
+          <ScalarProperty Name="REQDELIVERYDATE" ColumnName="REQDELIVERYDATE" />
+          <ScalarProperty Name="MANUFACUTRER" ColumnName="MANUFACUTRER" />
+          <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+          <ScalarProperty Name="TAXCODE" ColumnName="TAXCODE" />
+          <ScalarProperty Name="TAXTOTAL" ColumnName="TAXTOTAL" />
+          <ScalarProperty Name="TAXED" ColumnName="TAXED" />
+          <ScalarProperty Name="ROWSTAMP" ColumnName="ROWSTAMP" />
+          <ScalarProperty Name="TAXRATE" ColumnName="TAXRATE" />
+          <ScalarProperty Name="CREATIONDATE" ColumnName="CREATIONDATE" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="LASTMODIFIEDBY" ColumnName="LASTMODIFIEDBY" />
+          <ScalarProperty Name="LASTMODIFIEDDATE" ColumnName="LASTMODIFIEDDATE" />
+          <ScalarProperty Name="RECEIPTTOLERANCE" ColumnName="RECEIPTTOLERANCE" />
+          <ScalarProperty Name="SPECIFICATION" ColumnName="SPECIFICATION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="POPERMISSIONs">
+      <EntityTypeMapping TypeName="FSPPOModel.POPERMISSION">
+        <MappingFragment StoreEntitySet="POPERMISSION">
+          <ScalarProperty Name="POPERMISSIONID" ColumnName="POPERMISSIONID" />
+          <ScalarProperty Name="PONUM" ColumnName="PONUM" />
+          <ScalarProperty Name="PERMCODE" ColumnName="PERMCODE" />
+          <ScalarProperty Name="AUTHBYCODE" ColumnName="AUTHBYCODE" />
+          <ScalarProperty Name="AUTHBYNAME" ColumnName="AUTHBYNAME" />
+          <ScalarProperty Name="AUTHBYPOS" ColumnName="AUTHBYPOS" />
+          <ScalarProperty Name="JUSTIFICATION" ColumnName="JUSTIFICATION" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="CREATIONDATE" ColumnName="CREATIONDATE" />
+          <ScalarProperty Name="LASTMODIFIEDBY" ColumnName="LASTMODIFIEDBY" />
+          <ScalarProperty Name="LASTMODIFIEDDATE" ColumnName="LASTMODIFIEDDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="POREVISIONHISTORies">
+      <EntityTypeMapping TypeName="FSPPOModel.POREVISIONHISTORY">
+        <MappingFragment StoreEntitySet="POREVISIONHISTORY">
+          <ScalarProperty Name="POREVISIONHISTORYID" ColumnName="POREVISIONHISTORYID" />
+          <ScalarProperty Name="PONUM" ColumnName="PONUM" />
+          <ScalarProperty Name="POREVISION" ColumnName="POREVISION" />
+          <ScalarProperty Name="REVSTATUS" ColumnName="REVSTATUS" />
+          <ScalarProperty Name="REVCOMMENTS" ColumnName="REVCOMMENTS" />
+          <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+          <ScalarProperty Name="LASTMODIFIEDDATE" ColumnName="LASTMODIFIEDDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="POSignatures">
+      <EntityTypeMapping TypeName="FSPPOModel.POSignature">
+        <MappingFragment StoreEntitySet="POSignature">
+          <ScalarProperty Name="POSignID" ColumnName="POSignID" />
+          <ScalarProperty Name="OrgCode" ColumnName="OrgCode" />
+          <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+          <ScalarProperty Name="PONum" ColumnName="PONum" />
+          <ScalarProperty Name="PoRevision" ColumnName="PoRevision" />
+          <ScalarProperty Name="Authority" ColumnName="Authority" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="TeamMemberCode" ColumnName="TeamMemberCode" />
+          <ScalarProperty Name="TeamMemberName" ColumnName="TeamMemberName" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDateTime" ColumnName="CreationDateTime" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDateTime" ColumnName="ModifiedDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="POSignatureTemplates">
+      <EntityTypeMapping TypeName="FSPPOModel.POSignatureTemplate">
+        <MappingFragment StoreEntitySet="POSignatureTemplate">
+          <ScalarProperty Name="POSignatureTemplateID" ColumnName="POSignatureTemplateID" />
+          <ScalarProperty Name="OrgCode" ColumnName="OrgCode" />
+          <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+          <ScalarProperty Name="Authority" ColumnName="Authority" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDateTime" ColumnName="CreationDateTime" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDateTime" ColumnName="ModifiedDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="POSTATUSHISTORies">
+      <EntityTypeMapping TypeName="FSPPOModel.POSTATUSHISTORY">
+        <MappingFragment StoreEntitySet="POSTATUSHISTORY">
+          <ScalarProperty Name="POSTATUSHISTORYID" ColumnName="POSTATUSHISTORYID" />
+          <ScalarProperty Name="PONUM" ColumnName="PONUM" />
+          <ScalarProperty Name="POREVISION" ColumnName="POREVISION" />
+          <ScalarProperty Name="OLDSTATUS" ColumnName="OLDSTATUS" />
+          <ScalarProperty Name="NEWSTATUS" ColumnName="NEWSTATUS" />
+          <ScalarProperty Name="MEMO" ColumnName="MEMO" />
+          <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+          <ScalarProperty Name="MODIFICATIONDATE" ColumnName="MODIFICATIONDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="POTEMPLATEs">
+      <EntityTypeMapping TypeName="FSPPOModel.POTEMPLATE">
+        <MappingFragment StoreEntitySet="POTEMPLATE">
+          <ScalarProperty Name="POTEMPLATEID" ColumnName="POTEMPLATEID" />
+          <ScalarProperty Name="POTEMPLATENAME" ColumnName="POTEMPLATENAME" />
+          <ScalarProperty Name="POTEMPLATEDESC" ColumnName="POTEMPLATEDESC" />
+          <ScalarProperty Name="ORGCODE" ColumnName="ORGCODE" />
+          <ScalarProperty Name="ORGNAME" ColumnName="ORGNAME" />
+          <ScalarProperty Name="PROJECTCODE" ColumnName="PROJECTCODE" />
+          <ScalarProperty Name="PROJECTNAME" ColumnName="PROJECTNAME" />
+          <ScalarProperty Name="PAYMENTTERMS" ColumnName="PAYMENTTERMS" />
+          <ScalarProperty Name="POTYPE" ColumnName="POTYPE" />
+          <ScalarProperty Name="BUYERCODE" ColumnName="BUYERCODE" />
+          <ScalarProperty Name="BUYERNAME" ColumnName="BUYERNAME" />
+          <ScalarProperty Name="VENDORID" ColumnName="VENDORID" />
+          <ScalarProperty Name="VENDORNAME" ColumnName="VENDORNAME" />
+          <ScalarProperty Name="VENDORADDR" ColumnName="VENDORADDR" />
+          <ScalarProperty Name="VENDORATTN1NAME" ColumnName="VENDORATTN1NAME" />
+          <ScalarProperty Name="VENDORATTN1POS" ColumnName="VENDORATTN1POS" />
+          <ScalarProperty Name="VENDORATTN1MOB" ColumnName="VENDORATTN1MOB" />
+          <ScalarProperty Name="VENDORATTN1TEL" ColumnName="VENDORATTN1TEL" />
+          <ScalarProperty Name="VENDORATTN1FAX" ColumnName="VENDORATTN1FAX" />
+          <ScalarProperty Name="VENDORATTN1EMAIL" ColumnName="VENDORATTN1EMAIL" />
+          <ScalarProperty Name="VENDORATTN2NAME" ColumnName="VENDORATTN2NAME" />
+          <ScalarProperty Name="VENDORATTN2POS" ColumnName="VENDORATTN2POS" />
+          <ScalarProperty Name="VENDORATTN2MOB" ColumnName="VENDORATTN2MOB" />
+          <ScalarProperty Name="VENDORATTN2TEL" ColumnName="VENDORATTN2TEL" />
+          <ScalarProperty Name="VENDORATTN2FAX" ColumnName="VENDORATTN2FAX" />
+          <ScalarProperty Name="VENDORATTN2EMAIL" ColumnName="VENDORATTN2EMAIL" />
+          <ScalarProperty Name="SHIPTOADDR" ColumnName="SHIPTOADDR" />
+          <ScalarProperty Name="SHIPTOATTN1NAME" ColumnName="SHIPTOATTN1NAME" />
+          <ScalarProperty Name="SHIPTOATTN1MOB" ColumnName="SHIPTOATTN1MOB" />
+          <ScalarProperty Name="SHIPTOATTN1POS" ColumnName="SHIPTOATTN1POS" />
+          <ScalarProperty Name="SHIPTOATTN2NAME" ColumnName="SHIPTOATTN2NAME" />
+          <ScalarProperty Name="SHIPTOATTN2MOB" ColumnName="SHIPTOATTN2MOB" />
+          <ScalarProperty Name="SHIPTOATTN2POS" ColumnName="SHIPTOATTN2POS" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="CREATIONDATETIME" ColumnName="CREATIONDATETIME" />
+          <ScalarProperty Name="LASTMODIFIEDBY" ColumnName="LASTMODIFIEDBY" />
+          <ScalarProperty Name="LASTMODIFIEDATE" ColumnName="LASTMODIFIEDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Projects">
+      <EntityTypeMapping TypeName="FSPPOModel.Project">
+        <MappingFragment StoreEntitySet="Projects">
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="ProjectCode" ColumnName="ProjectCode" />
+          <ScalarProperty Name="ProjectDesc" ColumnName="ProjectDesc" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Registrations">
+      <EntityTypeMapping TypeName="FSPPOModel.Registration">
+        <MappingFragment StoreEntitySet="Registration">
+          <ScalarProperty Name="RegistrationID" ColumnName="RegistrationID" />
+          <ScalarProperty Name="RegistrationType" ColumnName="RegistrationType" />
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="SupplierShortName" ColumnName="SupplierShortName" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="SupplierType" ColumnName="SupplierType" />
+          <ScalarProperty Name="BusinessClass" ColumnName="BusinessClass" />
+          <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="OfficialEmail" ColumnName="OfficialEmail" />
+          <ScalarProperty Name="ContactFirstName" ColumnName="ContactFirstName" />
+          <ScalarProperty Name="ContactLastName" ColumnName="ContactLastName" />
+          <ScalarProperty Name="ContactPosition" ColumnName="ContactPosition" />
+          <ScalarProperty Name="ContactPhone" ColumnName="ContactPhone" />
+          <ScalarProperty Name="ContactExtension" ColumnName="ContactExtension" />
+          <ScalarProperty Name="ContactMobile" ColumnName="ContactMobile" />
+          <ScalarProperty Name="RegDocType" ColumnName="RegDocType" />
+          <ScalarProperty Name="RegDocID" ColumnName="RegDocID" />
+          <ScalarProperty Name="VATRegistrationNo" ColumnName="VATRegistrationNo" />
+          <ScalarProperty Name="IsVATRegistered" ColumnName="IsVATRegistered" />
+          <ScalarProperty Name="VATRegistrationType" ColumnName="VATRegistrationType" />
+          <ScalarProperty Name="VATGrpRepName" ColumnName="VATGrpRepName" />
+          <ScalarProperty Name="RegDocIssAuth" ColumnName="RegDocIssAuth" />
+          <ScalarProperty Name="RegDocExpiryDate" ColumnName="RegDocExpiryDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDateTime" ColumnName="CreationDateTime" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+          <ScalarProperty Name="LastModifiedDateTime" ColumnName="LastModifiedDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RegistrationStatusHistories">
+      <EntityTypeMapping TypeName="FSPPOModel.RegistrationStatusHistory">
+        <MappingFragment StoreEntitySet="RegistrationStatusHistory">
+          <ScalarProperty Name="RegistrationStatusID" ColumnName="RegistrationStatusID" />
+          <ScalarProperty Name="RegistrationID" ColumnName="RegistrationID" />
+          <ScalarProperty Name="OldStatus" ColumnName="OldStatus" />
+          <ScalarProperty Name="NewStatus" ColumnName="NewStatus" />
+          <ScalarProperty Name="Memo" ColumnName="Memo" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModificationDateTime" ColumnName="ModificationDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RegSupplierAddresses">
+      <EntityTypeMapping TypeName="FSPPOModel.RegSupplierAddress">
+        <MappingFragment StoreEntitySet="RegSupplierAddress">
+          <ScalarProperty Name="RegAddressID" ColumnName="RegAddressID" />
+          <ScalarProperty Name="RegistrationID" ColumnName="RegistrationID" />
+          <ScalarProperty Name="AddressName" ColumnName="AddressName" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="AddressLine1" ColumnName="AddressLine1" />
+          <ScalarProperty Name="AddressLine2" ColumnName="AddressLine2" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="PhoneNum" ColumnName="PhoneNum" />
+          <ScalarProperty Name="FaxNum" ColumnName="FaxNum" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDateTime" ColumnName="CreationDateTime" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+          <ScalarProperty Name="LastModifiedDateTime" ColumnName="LastModifiedDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SS_ALNDomain">
+      <EntityTypeMapping TypeName="FSPPOModel.SS_ALNDomain">
+        <MappingFragment StoreEntitySet="SS_ALNDomain">
+          <ScalarProperty Name="DomainID" ColumnName="DomainID" />
+          <ScalarProperty Name="DomainName" ColumnName="DomainName" />
+          <ScalarProperty Name="DomainDesc" ColumnName="DomainDesc" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDateTime" ColumnName="CreationDateTime" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+          <ScalarProperty Name="LastModifiedDateTime" ColumnName="LastModifiedDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SS_LookUpMap">
+      <EntityTypeMapping TypeName="FSPPOModel.SS_LookUpMap">
+        <MappingFragment StoreEntitySet="SS_LookUpMap">
+          <ScalarProperty Name="LookupMapID" ColumnName="LookupMapID" />
+          <ScalarProperty Name="SourceTable" ColumnName="SourceTable" />
+          <ScalarProperty Name="SourceColumn" ColumnName="SourceColumn" />
+          <ScalarProperty Name="SourceValue" ColumnName="SourceValue" />
+          <ScalarProperty Name="DesTable" ColumnName="DesTable" />
+          <ScalarProperty Name="DesColumn" ColumnName="DesColumn" />
+          <ScalarProperty Name="DesValue" ColumnName="DesValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SS_Messages">
+      <EntityTypeMapping TypeName="FSPPOModel.SS_Messages">
+        <MappingFragment StoreEntitySet="SS_Messages">
+          <ScalarProperty Name="MessageID" ColumnName="MessageID" />
+          <ScalarProperty Name="MessageGroup" ColumnName="MessageGroup" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="MessageType" ColumnName="MessageType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SS_NumDomain">
+      <EntityTypeMapping TypeName="FSPPOModel.SS_NumDomain">
+        <MappingFragment StoreEntitySet="SS_NumDomain">
+          <ScalarProperty Name="DomainID" ColumnName="DomainID" />
+          <ScalarProperty Name="DomainName" ColumnName="DomainName" />
+          <ScalarProperty Name="DomainDesc" ColumnName="DomainDesc" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDateTime" ColumnName="CreationDateTime" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+          <ScalarProperty Name="LastModifiedDateTime" ColumnName="LastModifiedDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SS_Pages">
+      <EntityTypeMapping TypeName="FSPPOModel.SS_Pages">
+        <MappingFragment StoreEntitySet="SS_Pages">
+          <ScalarProperty Name="PageID" ColumnName="PageID" />
+          <ScalarProperty Name="PageName" ColumnName="PageName" />
+          <ScalarProperty Name="PageURL" ColumnName="PageURL" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SS_Permission">
+      <EntityTypeMapping TypeName="FSPPOModel.SS_Permission">
+        <MappingFragment StoreEntitySet="SS_Permission">
+          <ScalarProperty Name="PermissionID" ColumnName="PermissionID" />
+          <ScalarProperty Name="PageID" ColumnName="PageID" />
+          <ScalarProperty Name="PermissionName" ColumnName="PermissionName" />
+          <ScalarProperty Name="PermissionDesc" ColumnName="PermissionDesc" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SS_SecurityGroup">
+      <EntityTypeMapping TypeName="FSPPOModel.SS_SecurityGroup">
+        <MappingFragment StoreEntitySet="SS_SecurityGroup">
+          <ScalarProperty Name="SecurityGroupID" ColumnName="SecurityGroupID" />
+          <ScalarProperty Name="SecurityGroupName" ColumnName="SecurityGroupName" />
+          <ScalarProperty Name="SecurityGroupDesc" ColumnName="SecurityGroupDesc" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDateTime" ColumnName="CreationDateTime" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+          <ScalarProperty Name="LastModifiedDateTime" ColumnName="LastModifiedDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SS_SecurityGroupPermission">
+      <EntityTypeMapping TypeName="FSPPOModel.SS_SecurityGroupPermission">
+        <MappingFragment StoreEntitySet="SS_SecurityGroupPermission">
+          <ScalarProperty Name="SecurityGroupPermissionID" ColumnName="SecurityGroupPermissionID" />
+          <ScalarProperty Name="SecurityGroupID" ColumnName="SecurityGroupID" />
+          <ScalarProperty Name="PageID" ColumnName="PageID" />
+          <ScalarProperty Name="Permission" ColumnName="Permission" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="PermissionID" ColumnName="PermissionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SS_UserLoginActivity">
+      <EntityTypeMapping TypeName="FSPPOModel.SS_UserLoginActivity">
+        <MappingFragment StoreEntitySet="SS_UserLoginActivity">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="LastChangePassword" ColumnName="LastChangePassword" />
+          <ScalarProperty Name="ChangePassOnFirstLogin" ColumnName="ChangePassOnFirstLogin" />
+          <ScalarProperty Name="LastLoginTime" ColumnName="LastLoginTime" />
+          <ScalarProperty Name="LastLogoutTime" ColumnName="LastLogoutTime" />
+          <ScalarProperty Name="LastLoginMacAddress" ColumnName="LastLoginMacAddress" />
+          <ScalarProperty Name="LastLoginIPAddress" ColumnName="LastLoginIPAddress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SS_UserSecurityGroup">
+      <EntityTypeMapping TypeName="FSPPOModel.SS_UserSecurityGroup">
+        <MappingFragment StoreEntitySet="SS_UserSecurityGroup">
+          <ScalarProperty Name="SecurityGroupMemberID" ColumnName="SecurityGroupMemberID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="SecurityGroupID" ColumnName="SecurityGroupID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDateTime" ColumnName="CreationDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STG_FIRMS_SUPPLIER">
+      <EntityTypeMapping TypeName="FSPPOModel.STG_FIRMS_SUPPLIER">
+        <MappingFragment StoreEntitySet="STG_FIRMS_SUPPLIER">
+          <ScalarProperty Name="STG_FIRMS_SUPPLIER_ID" ColumnName="STG_FIRMS_SUPPLIER_ID" />
+          <ScalarProperty Name="TransID" ColumnName="TransID" />
+          <ScalarProperty Name="TransEvent" ColumnName="TransEvent" />
+          <ScalarProperty Name="TransStatus" ColumnName="TransStatus" />
+          <ScalarProperty Name="TransError" ColumnName="TransError" />
+          <ScalarProperty Name="TransDateTime" ColumnName="TransDateTime" />
+          <ScalarProperty Name="TransStatusDateTime" ColumnName="TransStatusDateTime" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="SupplierStatus" ColumnName="SupplierStatus" />
+          <ScalarProperty Name="SupplierStatusDateTime" ColumnName="SupplierStatusDateTime" />
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="SupplierType" ColumnName="SupplierType" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="BusinessClass" ColumnName="BusinessClass" />
+          <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
+          <ScalarProperty Name="OfficialEmail" ColumnName="OfficialEmail" />
+          <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+          <ScalarProperty Name="ContactPosition" ColumnName="ContactPosition" />
+          <ScalarProperty Name="ContactMobile" ColumnName="ContactMobile" />
+          <ScalarProperty Name="ContactPhone" ColumnName="ContactPhone" />
+          <ScalarProperty Name="ContactExt" ColumnName="ContactExt" />
+          <ScalarProperty Name="RegDocType" ColumnName="RegDocType" />
+          <ScalarProperty Name="RegDocID" ColumnName="RegDocID" />
+          <ScalarProperty Name="VATRegistrationNo" ColumnName="VATRegistrationNo" />
+          <ScalarProperty Name="IsVATRegistered" ColumnName="IsVATRegistered" />
+          <ScalarProperty Name="VATRegistrationType" ColumnName="VATRegistrationType" />
+          <ScalarProperty Name="VATGrpRepName" ColumnName="VATGrpRepName" />
+          <ScalarProperty Name="RegDocIssAuth" ColumnName="RegDocIssAuth" />
+          <ScalarProperty Name="RegDocExpiryDate" ColumnName="RegDocExpiryDate" />
+          <ScalarProperty Name="AddressCountry" ColumnName="AddressCountry" />
+          <ScalarProperty Name="AddressLine1" ColumnName="AddressLine1" />
+          <ScalarProperty Name="AddressLine2" ColumnName="AddressLine2" />
+          <ScalarProperty Name="AddressCity" ColumnName="AddressCity" />
+          <ScalarProperty Name="AddressPostalCode" ColumnName="AddressPostalCode" />
+          <ScalarProperty Name="AddressPhoneNum" ColumnName="AddressPhoneNum" />
+          <ScalarProperty Name="AddressFaxNum" ColumnName="AddressFaxNum" />
+          <ScalarProperty Name="SupplierShortName" ColumnName="SupplierShortName" />
+          <ScalarProperty Name="RegisteredBy" ColumnName="RegisteredBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Suppliers">
+      <EntityTypeMapping TypeName="FSPPOModel.Supplier">
+        <MappingFragment StoreEntitySet="Supplier">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="RegistrationNo" ColumnName="RegistrationNo" />
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="SupplierShortName" ColumnName="SupplierShortName" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="SupplierType" ColumnName="SupplierType" />
+          <ScalarProperty Name="BusinessClass" ColumnName="BusinessClass" />
+          <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="OfficialEmail" ColumnName="OfficialEmail" />
+          <ScalarProperty Name="ContactFirstName" ColumnName="ContactFirstName" />
+          <ScalarProperty Name="ContactLastName" ColumnName="ContactLastName" />
+          <ScalarProperty Name="ContactPosition" ColumnName="ContactPosition" />
+          <ScalarProperty Name="ContactPhone" ColumnName="ContactPhone" />
+          <ScalarProperty Name="ContactExtension" ColumnName="ContactExtension" />
+          <ScalarProperty Name="ContactMobile" ColumnName="ContactMobile" />
+          <ScalarProperty Name="RegDocType" ColumnName="RegDocType" />
+          <ScalarProperty Name="RegDocID" ColumnName="RegDocID" />
+          <ScalarProperty Name="IsVATRegistered" ColumnName="IsVATRegistered" />
+          <ScalarProperty Name="VATRegistrationType" ColumnName="VATRegistrationType" />
+          <ScalarProperty Name="VATRegistrationNo" ColumnName="VATRegistrationNo" />
+          <ScalarProperty Name="VATGrpRepName" ColumnName="VATGrpRepName" />
+          <ScalarProperty Name="RegDocIssAuth" ColumnName="RegDocIssAuth" />
+          <ScalarProperty Name="RegDocExpiryDate" ColumnName="RegDocExpiryDate" />
+          <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDateTime" ColumnName="CreationDateTime" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+          <ScalarProperty Name="LastModifiedDateTime" ColumnName="LastModifiedDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SupplierAddresses">
+      <EntityTypeMapping TypeName="FSPPOModel.SupplierAddress">
+        <MappingFragment StoreEntitySet="SupplierAddress">
+          <ScalarProperty Name="SupplierAddressID" ColumnName="SupplierAddressID" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="AddressName" ColumnName="AddressName" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="AddressLine1" ColumnName="AddressLine1" />
+          <ScalarProperty Name="AddressLine2" ColumnName="AddressLine2" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="PhoneNum" ColumnName="PhoneNum" />
+          <ScalarProperty Name="FaxNum" ColumnName="FaxNum" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDateTime" ColumnName="CreationDateTime" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+          <ScalarProperty Name="LastModifiedDateTime" ColumnName="LastModifiedDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SupplierBankingDetails">
+      <EntityTypeMapping TypeName="FSPPOModel.SupplierBankingDetail">
+        <MappingFragment StoreEntitySet="SupplierBankingDetails">
+          <ScalarProperty Name="SupplierBankDetailID" ColumnName="SupplierBankDetailID" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+          <ScalarProperty Name="BranchAddress" ColumnName="BranchAddress" />
+          <ScalarProperty Name="AccountNum" ColumnName="AccountNum" />
+          <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+          <ScalarProperty Name="IBAN" ColumnName="IBAN" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDateTime" ColumnName="CreationDateTime" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+          <ScalarProperty Name="LastModifiedDateTime" ColumnName="LastModifiedDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SupplierStatusHistories">
+      <EntityTypeMapping TypeName="FSPPOModel.SupplierStatusHistory">
+        <MappingFragment StoreEntitySet="SupplierStatusHistory">
+          <ScalarProperty Name="SupplierStatusID" ColumnName="SupplierStatusID" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="OldStatus" ColumnName="OldStatus" />
+          <ScalarProperty Name="NewStatus" ColumnName="NewStatus" />
+          <ScalarProperty Name="Memo" ColumnName="Memo" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModificationDateTime" ColumnName="ModificationDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SupplierUsers">
+      <EntityTypeMapping TypeName="FSPPOModel.SupplierUser">
+        <MappingFragment StoreEntitySet="SupplierUser">
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDateTime" ColumnName="CreationDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="FSPPOModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TAXCODES">
+      <EntityTypeMapping TypeName="FSPPOModel.TAXCODE">
+        <MappingFragment StoreEntitySet="TAXCODES">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TAXCODEID" ColumnName="TAXCODEID" />
+          <ScalarProperty Name="TAXDESC" ColumnName="TAXDESC" />
+          <ScalarProperty Name="TAXRATE" ColumnName="TAXRATE" />
+          <ScalarProperty Name="EFFDATE" ColumnName="EFFDATE" />
+          <ScalarProperty Name="DEFAULTTAX" ColumnName="DEFAULTTAX" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserOrgs">
+      <EntityTypeMapping TypeName="FSPPOModel.UserOrg">
+        <MappingFragment StoreEntitySet="UserOrg">
+          <ScalarProperty Name="UserOrgID" ColumnName="UserOrgID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="OrgCode" ColumnName="OrgCode" />
+          <ScalarProperty Name="OrgName" ColumnName="OrgName" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDateTime" ColumnName="CreationDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserProjects">
+      <EntityTypeMapping TypeName="FSPPOModel.UserProject">
+        <MappingFragment StoreEntitySet="UserProjects">
+          <ScalarProperty Name="UserProjID" ColumnName="UserProjID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="OrgCode" ColumnName="OrgCode" />
+          <ScalarProperty Name="ProjectCode" ColumnName="ProjectCode" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDateTime" ColumnName="CreationDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="FSPPOModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="PhoneNum" ColumnName="PhoneNum" />
+          <ScalarProperty Name="AuthSystem" ColumnName="AuthSystem" />
+          <ScalarProperty Name="OrgCode" ColumnName="OrgCode" />
+          <ScalarProperty Name="emp_code" ColumnName="emp_code" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDateTime" ColumnName="CreationDateTime" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+          <ScalarProperty Name="LastModifiedDateTime" ColumnName="LastModifiedDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserSessions">
+      <EntityTypeMapping TypeName="FSPPOModel.UserSession">
+        <MappingFragment StoreEntitySet="UserSession">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="LogonTime" ColumnName="LogonTime" />
+          <ScalarProperty Name="LogoutTime" ColumnName="LogoutTime" />
+          <ScalarProperty Name="MacAddress" ColumnName="MacAddress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoadAllUserRoles">
+      <EntityTypeMapping TypeName="FSPPOModel.LoadAllUserRole">
+        <MappingFragment StoreEntitySet="LoadAllUserRoles">
+          <ScalarProperty Name="PageName" ColumnName="PageName" />
+          <ScalarProperty Name="Permission" ColumnName="Permission" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="SecurityGroupPermissionID" ColumnName="SecurityGroupPermissionID" />
+          <ScalarProperty Name="PageID" ColumnName="PageID" />
+          <ScalarProperty Name="PageURL" ColumnName="PageURL" />
+          <ScalarProperty Name="SecurityGroupDesc" ColumnName="SecurityGroupDesc" />
+          <ScalarProperty Name="SecurityGroupID" ColumnName="SecurityGroupID" />
+          <ScalarProperty Name="SecurityGroupName" ColumnName="SecurityGroupName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewAllChangeRequests">
+      <EntityTypeMapping TypeName="FSPPOModel.ViewAllChangeRequest">
+        <MappingFragment StoreEntitySet="ViewAllChangeRequest">
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="CreationDateTime" ColumnName="CreationDateTime" />
+          <ScalarProperty Name="ChangeRequestID" ColumnName="ChangeRequestID" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Memo" ColumnName="Memo" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedByuserID" ColumnName="CreatedByuserID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewAllContracts">
+      <EntityTypeMapping TypeName="FSPPOModel.ViewAllContract">
+        <MappingFragment StoreEntitySet="ViewAllContracts">
+          <ScalarProperty Name="CONTRACTNUM" ColumnName="CONTRACTNUM" />
+          <ScalarProperty Name="ORIGINALCONTRACTNUM" ColumnName="ORIGINALCONTRACTNUM" />
+          <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+          <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+          <ScalarProperty Name="SUBJECT" ColumnName="SUBJECT" />
+          <ScalarProperty Name="ORGNAME" ColumnName="ORGNAME" />
+          <ScalarProperty Name="ORGCODE" ColumnName="ORGCODE" />
+          <ScalarProperty Name="PROJECTCODE" ColumnName="PROJECTCODE" />
+          <ScalarProperty Name="PROJECTNAME" ColumnName="PROJECTNAME" />
+          <ScalarProperty Name="TOTALAMOUNT" ColumnName="TOTALAMOUNT" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="STATUSDATE" ColumnName="STATUSDATE" />
+          <ScalarProperty Name="VENDORNAME" ColumnName="VENDORNAME" />
+          <ScalarProperty Name="VENDORID" ColumnName="VENDORID" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="CREATIONDATE" ColumnName="CREATIONDATE" />
+          <ScalarProperty Name="CONTRACTID" ColumnName="CONTRACTID" />
+          <ScalarProperty Name="DomainName" ColumnName="DomainName" />
+          <ScalarProperty Name="ContractTypeID" ColumnName="ContractTypeID" />
+          <ScalarProperty Name="ContractDescription" ColumnName="ContractDescription" />
+          <ScalarProperty Name="BUYERCODE" ColumnName="BUYERCODE" />
+          <ScalarProperty Name="BUYERNAME" ColumnName="BUYERNAME" />
+          <ScalarProperty Name="CURRENCYCODE" ColumnName="CURRENCYCODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewAllPactSuppliers">
+      <EntityTypeMapping TypeName="FSPPOModel.ViewAllPactSupplier">
+        <MappingFragment StoreEntitySet="ViewAllPactSupplier">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="RegistrationNo" ColumnName="RegistrationNo" />
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="SupplierShortName" ColumnName="SupplierShortName" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="BusinessClassification" ColumnName="BusinessClassification" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="OfficialEmail" ColumnName="OfficialEmail" />
+          <ScalarProperty Name="RegDocType" ColumnName="RegDocType" />
+          <ScalarProperty Name="RegDocTypeID" ColumnName="RegDocTypeID" />
+          <ScalarProperty Name="RegDocID" ColumnName="RegDocID" />
+          <ScalarProperty Name="RegDocIssAuth" ColumnName="RegDocIssAuth" />
+          <ScalarProperty Name="RegDocExpiryDate" ColumnName="RegDocExpiryDate" />
+          <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDateTime" ColumnName="CreationDateTime" />
+          <ScalarProperty Name="BusinessClassificationID" ColumnName="BusinessClassificationID" />
+          <ScalarProperty Name="ContactPosition" ColumnName="ContactPosition" />
+          <ScalarProperty Name="ContactPhone" ColumnName="ContactPhone" />
+          <ScalarProperty Name="ContactExtension" ColumnName="ContactExtension" />
+          <ScalarProperty Name="ContactFirstName" ColumnName="ContactFirstName" />
+          <ScalarProperty Name="ContactLastName" ColumnName="ContactLastName" />
+          <ScalarProperty Name="SupplierTypeID" ColumnName="SupplierTypeID" />
+          <ScalarProperty Name="SupplierType" ColumnName="SupplierType" />
+          <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+          <ScalarProperty Name="LastModificationDateTime" ColumnName="LastModificationDateTime" />
+          <ScalarProperty Name="SupplierLastModifiedBy" ColumnName="SupplierLastModifiedBy" />
+          <ScalarProperty Name="LastModifiedDateTime" ColumnName="LastModifiedDateTime" />
+          <ScalarProperty Name="IsVATRegistered" ColumnName="IsVATRegistered" />
+          <ScalarProperty Name="VATRegistrationType" ColumnName="VATRegistrationType" />
+          <ScalarProperty Name="VATRegistrationNo" ColumnName="VATRegistrationNo" />
+          <ScalarProperty Name="VATGrpRepName" ColumnName="VATGrpRepName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewAllPOContracts">
+      <EntityTypeMapping TypeName="FSPPOModel.ViewAllPOContract">
+        <MappingFragment StoreEntitySet="ViewAllPOContract">
+          <ScalarProperty Name="CONTRACTID" ColumnName="CONTRACTID" />
+          <ScalarProperty Name="CONTRACTNUM" ColumnName="CONTRACTNUM" />
+          <ScalarProperty Name="ORIGINALCONTRACTNUM" ColumnName="ORIGINALCONTRACTNUM" />
+          <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+          <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+          <ScalarProperty Name="SUBJECT" ColumnName="SUBJECT" />
+          <ScalarProperty Name="ORGCODE" ColumnName="ORGCODE" />
+          <ScalarProperty Name="ORGNAME" ColumnName="ORGNAME" />
+          <ScalarProperty Name="PROJECTCODE" ColumnName="PROJECTCODE" />
+          <ScalarProperty Name="PROJECTNAME" ColumnName="PROJECTNAME" />
+          <ScalarProperty Name="TOTALAMOUNT" ColumnName="TOTALAMOUNT" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="STATUSDATE" ColumnName="STATUSDATE" />
+          <ScalarProperty Name="VENDORID" ColumnName="VENDORID" />
+          <ScalarProperty Name="VENDORNAME" ColumnName="VENDORNAME" />
+          <ScalarProperty Name="VENDORADDR" ColumnName="VENDORADDR" />
+          <ScalarProperty Name="VENDORATTNNAME" ColumnName="VENDORATTNNAME" />
+          <ScalarProperty Name="VENDORATTNPOS" ColumnName="VENDORATTNPOS" />
+          <ScalarProperty Name="VENDORATTNMOB" ColumnName="VENDORATTNMOB" />
+          <ScalarProperty Name="VENDORATTTEL" ColumnName="VENDORATTTEL" />
+          <ScalarProperty Name="VENDOREMAIL" ColumnName="VENDOREMAIL" />
+          <ScalarProperty Name="CREATIONDATE" ColumnName="CREATIONDATE" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ContractValue" ColumnName="ContractValue" />
+          <ScalarProperty Name="ContractDescription" ColumnName="ContractDescription" />
+          <ScalarProperty Name="CONTRACTTYPE" ColumnName="CONTRACTTYPE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewAllPurchaseOrders">
+      <EntityTypeMapping TypeName="FSPPOModel.ViewAllPurchaseOrder">
+        <MappingFragment StoreEntitySet="ViewAllPurchaseOrder">
+          <ScalarProperty Name="StatusDescription" ColumnName="StatusDescription" />
+          <ScalarProperty Name="DomainName" ColumnName="DomainName" />
+          <ScalarProperty Name="PoTypeDescription" ColumnName="PoTypeDescription" />
+          <ScalarProperty Name="POREFNEW" ColumnName="POREFNEW" />
+          <ScalarProperty Name="POID" ColumnName="POID" />
+          <ScalarProperty Name="PONUM" ColumnName="PONUM" />
+          <ScalarProperty Name="POREF" ColumnName="POREF" />
+          <ScalarProperty Name="POSID" ColumnName="POSID" />
+          <ScalarProperty Name="POREVISION" ColumnName="POREVISION" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="ORGCODE" ColumnName="ORGCODE" />
+          <ScalarProperty Name="ORGNAME" ColumnName="ORGNAME" />
+          <ScalarProperty Name="PROJECTCODE" ColumnName="PROJECTCODE" />
+          <ScalarProperty Name="PROJECTNAME" ColumnName="PROJECTNAME" />
+          <ScalarProperty Name="MRNUM" ColumnName="MRNUM" />
+          <ScalarProperty Name="QNUM" ColumnName="QNUM" />
+          <ScalarProperty Name="QDATE" ColumnName="QDATE" />
+          <ScalarProperty Name="PAYMENTTERMS" ColumnName="PAYMENTTERMS" />
+          <ScalarProperty Name="ORDERDATE" ColumnName="ORDERDATE" />
+          <ScalarProperty Name="REQUIREDATE" ColumnName="REQUIREDATE" />
+          <ScalarProperty Name="VENDORDATE" ColumnName="VENDORDATE" />
+          <ScalarProperty Name="POTYPE" ColumnName="POTYPE" />
+          <ScalarProperty Name="ORIGINALPONUM" ColumnName="ORIGINALPONUM" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="STATUSDATE" ColumnName="STATUSDATE" />
+          <ScalarProperty Name="VENDORID" ColumnName="VENDORID" />
+          <ScalarProperty Name="VENDORNAME" ColumnName="VENDORNAME" />
+          <ScalarProperty Name="VENDORADDR" ColumnName="VENDORADDR" />
+          <ScalarProperty Name="VENDORATTN1NAME" ColumnName="VENDORATTN1NAME" />
+          <ScalarProperty Name="VENDORATTN1POS" ColumnName="VENDORATTN1POS" />
+          <ScalarProperty Name="VENDORATTN1MOB" ColumnName="VENDORATTN1MOB" />
+          <ScalarProperty Name="VENDORATTN1TEL" ColumnName="VENDORATTN1TEL" />
+          <ScalarProperty Name="VENDORATTN1FAX" ColumnName="VENDORATTN1FAX" />
+          <ScalarProperty Name="VENDORATTN1EMAIL" ColumnName="VENDORATTN1EMAIL" />
+          <ScalarProperty Name="VENDORATTN2NAME" ColumnName="VENDORATTN2NAME" />
+          <ScalarProperty Name="VENDORATTN2POS" ColumnName="VENDORATTN2POS" />
+          <ScalarProperty Name="VENDORATTN2MOB" ColumnName="VENDORATTN2MOB" />
+          <ScalarProperty Name="VENDORATTN2TEL" ColumnName="VENDORATTN2TEL" />
+          <ScalarProperty Name="VENDORATTN2FAX" ColumnName="VENDORATTN2FAX" />
+          <ScalarProperty Name="VENDORATTN2EMAIL" ColumnName="VENDORATTN2EMAIL" />
+          <ScalarProperty Name="SHIPTOADDR" ColumnName="SHIPTOADDR" />
+          <ScalarProperty Name="SHIPTOATTN1NAME" ColumnName="SHIPTOATTN1NAME" />
+          <ScalarProperty Name="SHIPTOATTN1MOB" ColumnName="SHIPTOATTN1MOB" />
+          <ScalarProperty Name="SHIPTOATTN1POS" ColumnName="SHIPTOATTN1POS" />
+          <ScalarProperty Name="SHIPTOATTN2NAME" ColumnName="SHIPTOATTN2NAME" />
+          <ScalarProperty Name="SHIPTOATTN2MOB" ColumnName="SHIPTOATTN2MOB" />
+          <ScalarProperty Name="SHIPTOATTN2POS" ColumnName="SHIPTOATTN2POS" />
+          <ScalarProperty Name="TOTALCOST" ColumnName="TOTALCOST" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="CREATIONDATETIME" ColumnName="CREATIONDATETIME" />
+          <ScalarProperty Name="LASTMODIFIEDBY" ColumnName="LASTMODIFIEDBY" />
+          <ScalarProperty Name="LASTMODIFIEDDATE" ColumnName="LASTMODIFIEDDATE" />
+          <ScalarProperty Name="CONTRACTREFNUM" ColumnName="CONTRACTREFNUM" />
+          <ScalarProperty Name="REVCOMMENTS" ColumnName="REVCOMMENTS" />
+          <ScalarProperty Name="HISTORYFLAG" ColumnName="HISTORYFLAG" />
+          <ScalarProperty Name="CURRENCYCODE" ColumnName="CURRENCYCODE" />
+          <ScalarProperty Name="TOTALTAX" ColumnName="TOTALTAX" />
+          <ScalarProperty Name="BUYERCODE" ColumnName="BUYERCODE" />
+          <ScalarProperty Name="BUYERNAME" ColumnName="BUYERNAME" />
+          <ScalarProperty Name="INTNOTE" ColumnName="INTNOTE" />
+          <ScalarProperty Name="EXTNOTE" ColumnName="EXTNOTE" />
+          <ScalarProperty Name="SENDNOTETOACCTS" ColumnName="SENDNOTETOACCTS" />
+          <ScalarProperty Name="PRETAXTOTAL" ColumnName="PRETAXTOTAL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewAllPurchaseOrderTemplates">
+      <EntityTypeMapping TypeName="FSPPOModel.ViewAllPurchaseOrderTemplate">
+        <MappingFragment StoreEntitySet="ViewAllPurchaseOrderTemplates">
+          <ScalarProperty Name="POTEMPLATENAME" ColumnName="POTEMPLATENAME" />
+          <ScalarProperty Name="POTEMPLATEDESC" ColumnName="POTEMPLATEDESC" />
+          <ScalarProperty Name="POType" ColumnName="POType" />
+          <ScalarProperty Name="VENDORID" ColumnName="VENDORID" />
+          <ScalarProperty Name="VENDORNAME" ColumnName="VENDORNAME" />
+          <ScalarProperty Name="POTYpeID" ColumnName="POTYpeID" />
+          <ScalarProperty Name="POTEMPLATEID" ColumnName="POTEMPLATEID" />
+          <ScalarProperty Name="ORGNAME" ColumnName="ORGNAME" />
+          <ScalarProperty Name="PROJECTNAME" ColumnName="PROJECTNAME" />
+          <ScalarProperty Name="CREATIONDATETIME" ColumnName="CREATIONDATETIME" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="CREATEDBYID" ColumnName="CREATEDBYID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewAllRegistrationSuppliers">
+      <EntityTypeMapping TypeName="FSPPOModel.ViewAllRegistrationSupplier">
+        <MappingFragment StoreEntitySet="ViewAllRegistrationSupplier">
+          <ScalarProperty Name="RegistrationID" ColumnName="RegistrationID" />
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="SupplierShortName" ColumnName="SupplierShortName" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="BusinessClassification" ColumnName="BusinessClassification" />
+          <ScalarProperty Name="LastModifiedDateTime" ColumnName="LastModifiedDateTime" />
+          <ScalarProperty Name="CreationDateTime" ColumnName="CreationDateTime" />
+          <ScalarProperty Name="OfficialEmail" ColumnName="OfficialEmail" />
+          <ScalarProperty Name="ContactPosition" ColumnName="ContactPosition" />
+          <ScalarProperty Name="ContactPhone" ColumnName="ContactPhone" />
+          <ScalarProperty Name="ContactExtension" ColumnName="ContactExtension" />
+          <ScalarProperty Name="RegDocType" ColumnName="RegDocType" />
+          <ScalarProperty Name="RegDocID" ColumnName="RegDocID" />
+          <ScalarProperty Name="RegDocIssAuth" ColumnName="RegDocIssAuth" />
+          <ScalarProperty Name="RegDocExpiryDate" ColumnName="RegDocExpiryDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="BusinessClassificationID" ColumnName="BusinessClassificationID" />
+          <ScalarProperty Name="ContactFirstName" ColumnName="ContactFirstName" />
+          <ScalarProperty Name="ContactLastName" ColumnName="ContactLastName" />
+          <ScalarProperty Name="RegistrationType" ColumnName="RegistrationType" />
+          <ScalarProperty Name="SupplierTypeID" ColumnName="SupplierTypeID" />
+          <ScalarProperty Name="SupplierType" ColumnName="SupplierType" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+          <ScalarProperty Name="CreatedByUserID" ColumnName="CreatedByUserID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="VATRegistrationNo" ColumnName="VATRegistrationNo" />
+          <ScalarProperty Name="VATRegistrationType" ColumnName="VATRegistrationType" />
+          <ScalarProperty Name="IsVATRegistered" ColumnName="IsVATRegistered" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewAllSupplierAudits">
+      <EntityTypeMapping TypeName="FSPPOModel.ViewAllSupplierAudit">
+        <MappingFragment StoreEntitySet="ViewAllSupplierAudit">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="AuditID" ColumnName="AuditID" />
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="SupplierShortName" ColumnName="SupplierShortName" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="SupplierTypeID" ColumnName="SupplierTypeID" />
+          <ScalarProperty Name="BusinessClassification" ColumnName="BusinessClassification" />
+          <ScalarProperty Name="OfficialEmail" ColumnName="OfficialEmail" />
+          <ScalarProperty Name="RegDocType" ColumnName="RegDocType" />
+          <ScalarProperty Name="RegDocID" ColumnName="RegDocID" />
+          <ScalarProperty Name="RegDocIssAuth" ColumnName="RegDocIssAuth" />
+          <ScalarProperty Name="RegDocExpiryDate" ColumnName="RegDocExpiryDate" />
+          <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
+          <ScalarProperty Name="DomainName" ColumnName="DomainName" />
+          <ScalarProperty Name="SupplierType" ColumnName="SupplierType" />
+          <ScalarProperty Name="ContactFirstName" ColumnName="ContactFirstName" />
+          <ScalarProperty Name="ContactLastName" ColumnName="ContactLastName" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+          <ScalarProperty Name="LastModifiedDateTime" ColumnName="LastModifiedDateTime" />
+          <ScalarProperty Name="ContactPosition" ColumnName="ContactPosition" />
+          <ScalarProperty Name="ContactPhone" ColumnName="ContactPhone" />
+          <ScalarProperty Name="ContactExtension" ColumnName="ContactExtension" />
+          <ScalarProperty Name="ContactMobile" ColumnName="ContactMobile" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewAllSuppliers">
+      <EntityTypeMapping TypeName="FSPPOModel.ViewAllSupplier">
+        <MappingFragment StoreEntitySet="ViewAllSuppliers">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="RegistrationNo" ColumnName="RegistrationNo" />
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="SupplierShortName" ColumnName="SupplierShortName" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="BusinessClassification" ColumnName="BusinessClassification" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="OfficialEmail" ColumnName="OfficialEmail" />
+          <ScalarProperty Name="RegDocIssAuth" ColumnName="RegDocIssAuth" />
+          <ScalarProperty Name="RegDocExpiryDate" ColumnName="RegDocExpiryDate" />
+          <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDateTime" ColumnName="CreationDateTime" />
+          <ScalarProperty Name="BusinessClassificationID" ColumnName="BusinessClassificationID" />
+          <ScalarProperty Name="ContactPosition" ColumnName="ContactPosition" />
+          <ScalarProperty Name="ContactPhone" ColumnName="ContactPhone" />
+          <ScalarProperty Name="ContactExtension" ColumnName="ContactExtension" />
+          <ScalarProperty Name="ContactMobile" ColumnName="ContactMobile" />
+          <ScalarProperty Name="ContactFirstName" ColumnName="ContactFirstName" />
+          <ScalarProperty Name="ContactLastName" ColumnName="ContactLastName" />
+          <ScalarProperty Name="SupplierTypeID" ColumnName="SupplierTypeID" />
+          <ScalarProperty Name="SupplierType" ColumnName="SupplierType" />
+          <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
+          <ScalarProperty Name="RegDocType" ColumnName="RegDocType" />
+          <ScalarProperty Name="RegDocID" ColumnName="RegDocID" />
+          <ScalarProperty Name="RegDocTypeID" ColumnName="RegDocTypeID" />
+          <ScalarProperty Name="VATRegistrationNo" ColumnName="VATRegistrationNo" />
+          <ScalarProperty Name="IsVATRegistered" ColumnName="IsVATRegistered" />
+          <ScalarProperty Name="VATRegistrationType" ColumnName="VATRegistrationType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewLoadAllRoles">
+      <EntityTypeMapping TypeName="FSPPOModel.ViewLoadAllRole">
+        <MappingFragment StoreEntitySet="ViewLoadAllRoles">
+          <ScalarProperty Name="PageName" ColumnName="PageName" />
+          <ScalarProperty Name="Permission" ColumnName="Permission" />
+          <ScalarProperty Name="SecurityGroupPermissionID" ColumnName="SecurityGroupPermissionID" />
+          <ScalarProperty Name="PageID" ColumnName="PageID" />
+          <ScalarProperty Name="PageURL" ColumnName="PageURL" />
+          <ScalarProperty Name="SecurityGroupID" ColumnName="SecurityGroupID" />
+          <ScalarProperty Name="SecurityGroupName" ColumnName="SecurityGroupName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_AllPOSignatureTemplates">
+      <EntityTypeMapping TypeName="FSPPOModel.VW_AllPOSignatureTemplates">
+        <MappingFragment StoreEntitySet="VW_AllPOSignatureTemplates">
+          <ScalarProperty Name="OrgCode" ColumnName="OrgCode" />
+          <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+          <ScalarProperty Name="Authority" ColumnName="Authority" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="dgt_desig_status" ColumnName="dgt_desig_status" />
+          <ScalarProperty Name="POSignatureTemplateID" ColumnName="POSignatureTemplateID" />
+          <ScalarProperty Name="dgt_desig_name" ColumnName="dgt_desig_name" />
+          <ScalarProperty Name="CreationDateTime" ColumnName="CreationDateTime" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_PO">
+      <EntityTypeMapping TypeName="FSPPOModel.VW_PO">
+        <MappingFragment StoreEntitySet="VW_PO">
+          <ScalarProperty Name="POID" ColumnName="POID" />
+          <ScalarProperty Name="PONUM" ColumnName="PONUM" />
+          <ScalarProperty Name="POREF" ColumnName="POREF" />
+          <ScalarProperty Name="POSID" ColumnName="POSID" />
+          <ScalarProperty Name="POREVISION" ColumnName="POREVISION" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="ORGCODE" ColumnName="ORGCODE" />
+          <ScalarProperty Name="ORGNAME" ColumnName="ORGNAME" />
+          <ScalarProperty Name="PROJECTCODE" ColumnName="PROJECTCODE" />
+          <ScalarProperty Name="PROJECTNAME" ColumnName="PROJECTNAME" />
+          <ScalarProperty Name="MRNUM" ColumnName="MRNUM" />
+          <ScalarProperty Name="QNUM" ColumnName="QNUM" />
+          <ScalarProperty Name="QDATE" ColumnName="QDATE" />
+          <ScalarProperty Name="PAYMENTTERMS" ColumnName="PAYMENTTERMS" />
+          <ScalarProperty Name="ORDERDATE" ColumnName="ORDERDATE" />
+          <ScalarProperty Name="REQUIREDATE" ColumnName="REQUIREDATE" />
+          <ScalarProperty Name="VENDORDATE" ColumnName="VENDORDATE" />
+          <ScalarProperty Name="POTYPE" ColumnName="POTYPE" />
+          <ScalarProperty Name="ORIGINALPONUM" ColumnName="ORIGINALPONUM" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="STATUSDATE" ColumnName="STATUSDATE" />
+          <ScalarProperty Name="BUYERCODE" ColumnName="BUYERCODE" />
+          <ScalarProperty Name="BUYERNAME" ColumnName="BUYERNAME" />
+          <ScalarProperty Name="VENDORID" ColumnName="VENDORID" />
+          <ScalarProperty Name="VENDORNAME" ColumnName="VENDORNAME" />
+          <ScalarProperty Name="VENDORADDR" ColumnName="VENDORADDR" />
+          <ScalarProperty Name="VENDORATTN1NAME" ColumnName="VENDORATTN1NAME" />
+          <ScalarProperty Name="VENDORATTN1POS" ColumnName="VENDORATTN1POS" />
+          <ScalarProperty Name="VENDORATTN1MOB" ColumnName="VENDORATTN1MOB" />
+          <ScalarProperty Name="VENDORATTN1TEL" ColumnName="VENDORATTN1TEL" />
+          <ScalarProperty Name="VENDORATTN1FAX" ColumnName="VENDORATTN1FAX" />
+          <ScalarProperty Name="VENDORATTN1EMAIL" ColumnName="VENDORATTN1EMAIL" />
+          <ScalarProperty Name="VENDORATTN2NAME" ColumnName="VENDORATTN2NAME" />
+          <ScalarProperty Name="VENDORATTN2POS" ColumnName="VENDORATTN2POS" />
+          <ScalarProperty Name="VENDORATTN2MOB" ColumnName="VENDORATTN2MOB" />
+          <ScalarProperty Name="VENDORATTN2TEL" ColumnName="VENDORATTN2TEL" />
+          <ScalarProperty Name="VENDORATTN2FAX" ColumnName="VENDORATTN2FAX" />
+          <ScalarProperty Name="VENDORATTN2EMAIL" ColumnName="VENDORATTN2EMAIL" />
+          <ScalarProperty Name="SHIPTOADDR" ColumnName="SHIPTOADDR" />
+          <ScalarProperty Name="SHIPTOATTN1NAME" ColumnName="SHIPTOATTN1NAME" />
+          <ScalarProperty Name="SHIPTOATTN1MOB" ColumnName="SHIPTOATTN1MOB" />
+          <ScalarProperty Name="SHIPTOATTN1POS" ColumnName="SHIPTOATTN1POS" />
+          <ScalarProperty Name="SHIPTOATTN2NAME" ColumnName="SHIPTOATTN2NAME" />
+          <ScalarProperty Name="SHIPTOATTN2MOB" ColumnName="SHIPTOATTN2MOB" />
+          <ScalarProperty Name="SHIPTOATTN2POS" ColumnName="SHIPTOATTN2POS" />
+          <ScalarProperty Name="TOTALCOST" ColumnName="TOTALCOST" />
+          <ScalarProperty Name="CURRENCYCODE" ColumnName="CURRENCYCODE" />
+          <ScalarProperty Name="TOTALTAX" ColumnName="TOTALTAX" />
+          <ScalarProperty Name="PRETAXTOTAL" ColumnName="PRETAXTOTAL" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="CREATIONDATETIME" ColumnName="CREATIONDATETIME" />
+          <ScalarProperty Name="LASTMODIFIEDBY" ColumnName="LASTMODIFIEDBY" />
+          <ScalarProperty Name="LASTMODIFIEDDATE" ColumnName="LASTMODIFIEDDATE" />
+          <ScalarProperty Name="CONTRACTREFNUM" ColumnName="CONTRACTREFNUM" />
+          <ScalarProperty Name="REVCOMMENTS" ColumnName="REVCOMMENTS" />
+          <ScalarProperty Name="HISTORYFLAG" ColumnName="HISTORYFLAG" />
+          <ScalarProperty Name="INTNOTE" ColumnName="INTNOTE" />
+          <ScalarProperty Name="EXTNOTE" ColumnName="EXTNOTE" />
+          <ScalarProperty Name="SENDNOTETOACCTS" ColumnName="SENDNOTETOACCTS" />
+          <ScalarProperty Name="POTYPEDESCRIPTION" ColumnName="POTYPEDESCRIPTION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_POLINE">
+      <EntityTypeMapping TypeName="FSPPOModel.VW_POLINE">
+        <MappingFragment StoreEntitySet="VW_POLINE">
+          <ScalarProperty Name="POLINEID" ColumnName="POLINEID" />
+          <ScalarProperty Name="PONUM" ColumnName="PONUM" />
+          <ScalarProperty Name="POREVISION" ColumnName="POREVISION" />
+          <ScalarProperty Name="POLINENUM" ColumnName="POLINENUM" />
+          <ScalarProperty Name="LINETYPE" ColumnName="LINETYPE" />
+          <ScalarProperty Name="COSTCODE" ColumnName="COSTCODE" />
+          <ScalarProperty Name="CATALOGCODE" ColumnName="CATALOGCODE" />
+          <ScalarProperty Name="ITEMCODE" ColumnName="ITEMCODE" />
+          <ScalarProperty Name="ITEMDESCRIPTION" ColumnName="ITEMDESCRIPTION" />
+          <ScalarProperty Name="ORDERQTY" ColumnName="ORDERQTY" />
+          <ScalarProperty Name="ORDERUNIT" ColumnName="ORDERUNIT" />
+          <ScalarProperty Name="UNITCOST" ColumnName="UNITCOST" />
+          <ScalarProperty Name="LINECOST" ColumnName="LINECOST" />
+          <ScalarProperty Name="MODELNUM" ColumnName="MODELNUM" />
+          <ScalarProperty Name="REQUESTEDBYCODE" ColumnName="REQUESTEDBYCODE" />
+          <ScalarProperty Name="REQUESTEDBYNAME" ColumnName="REQUESTEDBYNAME" />
+          <ScalarProperty Name="REQDELIVERYDATE" ColumnName="REQDELIVERYDATE" />
+          <ScalarProperty Name="MANUFACUTRER" ColumnName="MANUFACUTRER" />
+          <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+          <ScalarProperty Name="TAXCODE" ColumnName="TAXCODE" />
+          <ScalarProperty Name="TAXTOTAL" ColumnName="TAXTOTAL" />
+          <ScalarProperty Name="TAXED" ColumnName="TAXED" />
+          <ScalarProperty Name="ROWSTAMP" ColumnName="ROWSTAMP" />
+          <ScalarProperty Name="CREATIONDATE" ColumnName="CREATIONDATE" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="LASTMODIFIEDBY" ColumnName="LASTMODIFIEDBY" />
+          <ScalarProperty Name="LASTMODIFIEDDATE" ColumnName="LASTMODIFIEDDATE" />
+          <ScalarProperty Name="RECEIPTTOLERANCE" ColumnName="RECEIPTTOLERANCE" />
+          <ScalarProperty Name="SPECIFICATION" ColumnName="SPECIFICATION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_PORANK">
+      <EntityTypeMapping TypeName="FSPPOModel.VW_PORANK">
+        <MappingFragment StoreEntitySet="VW_PORANK">
+          <ScalarProperty Name="POID" ColumnName="POID" />
+          <ScalarProperty Name="PONUM" ColumnName="PONUM" />
+          <ScalarProperty Name="POREF" ColumnName="POREF" />
+          <ScalarProperty Name="POSID" ColumnName="POSID" />
+          <ScalarProperty Name="POREVISION" ColumnName="POREVISION" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="ORGCODE" ColumnName="ORGCODE" />
+          <ScalarProperty Name="ORGNAME" ColumnName="ORGNAME" />
+          <ScalarProperty Name="PROJECTCODE" ColumnName="PROJECTCODE" />
+          <ScalarProperty Name="PROJECTNAME" ColumnName="PROJECTNAME" />
+          <ScalarProperty Name="MRNUM" ColumnName="MRNUM" />
+          <ScalarProperty Name="QNUM" ColumnName="QNUM" />
+          <ScalarProperty Name="QDATE" ColumnName="QDATE" />
+          <ScalarProperty Name="PAYMENTTERMS" ColumnName="PAYMENTTERMS" />
+          <ScalarProperty Name="ORDERDATE" ColumnName="ORDERDATE" />
+          <ScalarProperty Name="REQUIREDATE" ColumnName="REQUIREDATE" />
+          <ScalarProperty Name="VENDORDATE" ColumnName="VENDORDATE" />
+          <ScalarProperty Name="POTYPE" ColumnName="POTYPE" />
+          <ScalarProperty Name="ORIGINALPONUM" ColumnName="ORIGINALPONUM" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="STATUSDATE" ColumnName="STATUSDATE" />
+          <ScalarProperty Name="VENDORID" ColumnName="VENDORID" />
+          <ScalarProperty Name="VENDORNAME" ColumnName="VENDORNAME" />
+          <ScalarProperty Name="VENDORADDR" ColumnName="VENDORADDR" />
+          <ScalarProperty Name="VENDORATTN1NAME" ColumnName="VENDORATTN1NAME" />
+          <ScalarProperty Name="VENDORATTN1POS" ColumnName="VENDORATTN1POS" />
+          <ScalarProperty Name="VENDORATTN1MOB" ColumnName="VENDORATTN1MOB" />
+          <ScalarProperty Name="VENDORATTN1TEL" ColumnName="VENDORATTN1TEL" />
+          <ScalarProperty Name="VENDORATTN1FAX" ColumnName="VENDORATTN1FAX" />
+          <ScalarProperty Name="VENDORATTN1EMAIL" ColumnName="VENDORATTN1EMAIL" />
+          <ScalarProperty Name="VENDORATTN2NAME" ColumnName="VENDORATTN2NAME" />
+          <ScalarProperty Name="VENDORATTN2POS" ColumnName="VENDORATTN2POS" />
+          <ScalarProperty Name="VENDORATTN2MOB" ColumnName="VENDORATTN2MOB" />
+          <ScalarProperty Name="VENDORATTN2TEL" ColumnName="VENDORATTN2TEL" />
+          <ScalarProperty Name="VENDORATTN2FAX" ColumnName="VENDORATTN2FAX" />
+          <ScalarProperty Name="VENDORATTN2EMAIL" ColumnName="VENDORATTN2EMAIL" />
+          <ScalarProperty Name="SHIPTOADDR" ColumnName="SHIPTOADDR" />
+          <ScalarProperty Name="SHIPTOATTN1NAME" ColumnName="SHIPTOATTN1NAME" />
+          <ScalarProperty Name="SHIPTOATTN1MOB" ColumnName="SHIPTOATTN1MOB" />
+          <ScalarProperty Name="SHIPTOATTN1POS" ColumnName="SHIPTOATTN1POS" />
+          <ScalarProperty Name="SHIPTOATTN2NAME" ColumnName="SHIPTOATTN2NAME" />
+          <ScalarProperty Name="SHIPTOATTN2MOB" ColumnName="SHIPTOATTN2MOB" />
+          <ScalarProperty Name="SHIPTOATTN2POS" ColumnName="SHIPTOATTN2POS" />
+          <ScalarProperty Name="TOTALCOST" ColumnName="TOTALCOST" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="CREATIONDATETIME" ColumnName="CREATIONDATETIME" />
+          <ScalarProperty Name="LASTMODIFIEDBY" ColumnName="LASTMODIFIEDBY" />
+          <ScalarProperty Name="LASTMODIFIEDDATE" ColumnName="LASTMODIFIEDDATE" />
+          <ScalarProperty Name="CONTRACTREFNUM" ColumnName="CONTRACTREFNUM" />
+          <ScalarProperty Name="REVCOMMENTS" ColumnName="REVCOMMENTS" />
+          <ScalarProperty Name="HISTORYFLAG" ColumnName="HISTORYFLAG" />
+          <ScalarProperty Name="CURRENCYCODE" ColumnName="CURRENCYCODE" />
+          <ScalarProperty Name="TOTALTAX" ColumnName="TOTALTAX" />
+          <ScalarProperty Name="BUYERCODE" ColumnName="BUYERCODE" />
+          <ScalarProperty Name="BUYERNAME" ColumnName="BUYERNAME" />
+          <ScalarProperty Name="INTNOTE" ColumnName="INTNOTE" />
+          <ScalarProperty Name="EXTNOTE" ColumnName="EXTNOTE" />
+          <ScalarProperty Name="SENDNOTETOACCTS" ColumnName="SENDNOTETOACCTS" />
+          <ScalarProperty Name="PRETAXTOTAL" ColumnName="PRETAXTOTAL" />
+          <ScalarProperty Name="POTYPEDESCRIPTION" ColumnName="POTYPEDESCRIPTION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_POSignatures">
+      <EntityTypeMapping TypeName="FSPPOModel.VW_POSignatures">
+        <MappingFragment StoreEntitySet="VW_POSignatures">
+          <ScalarProperty Name="dgt_desig_status" ColumnName="dgt_desig_status" />
+          <ScalarProperty Name="dgt_desig_name" ColumnName="dgt_desig_name" />
+          <ScalarProperty Name="OrgCode" ColumnName="OrgCode" />
+          <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+          <ScalarProperty Name="PONum" ColumnName="PONum" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDateTime" ColumnName="CreationDateTime" />
+          <ScalarProperty Name="PoRevision" ColumnName="PoRevision" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="POSignID" ColumnName="POSignID" />
+          <ScalarProperty Name="Authority" ColumnName="Authority" />
+          <ScalarProperty Name="TeamMemberCode" ColumnName="TeamMemberCode" />
+          <ScalarProperty Name="TeamMemberName" ColumnName="TeamMemberName" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDateTime" ColumnName="ModifiedDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_ProjectPOSignatures">
+      <EntityTypeMapping TypeName="FSPPOModel.vw_ProjectPOSignatures">
+        <MappingFragment StoreEntitySet="vw_ProjectPOSignatures">
+          <ScalarProperty Name="dgt_desig_status" ColumnName="dgt_desig_status" />
+          <ScalarProperty Name="dgt_desig_name" ColumnName="dgt_desig_name" />
+          <ScalarProperty Name="OrgCode" ColumnName="OrgCode" />
+          <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+          <ScalarProperty Name="PONum" ColumnName="PONum" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDateTime" ColumnName="CreationDateTime" />
+          <ScalarProperty Name="PoRevision" ColumnName="PoRevision" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="POSignID" ColumnName="POSignID" />
+          <ScalarProperty Name="Authority" ColumnName="Authority" />
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionName="FSPPOModel.Store.PO_ViewPORevisionHistory" FunctionImportName="PO_ViewPORevisionHistory">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FSPPOModel.PO_ViewPORevisionHistory_Result">
+          <ScalarProperty Name="POREVISION" ColumnName="POREVISION" />
+          <ScalarProperty Name="REVSTATUS" ColumnName="REVSTATUS" />
+          <ScalarProperty Name="REVCOMMENTS" ColumnName="REVCOMMENTS" />
+          <ScalarProperty Name="CHANGEDBY" ColumnName="CHANGEDBY" />
+          <ScalarProperty Name="CHANGEDDATE" ColumnName="CHANGEDDATE" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="FSPPOModel.Store.PO_ViewPOStatusHistory" FunctionImportName="PO_ViewPOStatusHistory">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FSPPOModel.PO_ViewPOStatusHistory_Result">
+          <ScalarProperty Name="OLDSTATUS" ColumnName="OLDSTATUS" />
+          <ScalarProperty Name="NEWSTATUS" ColumnName="NEWSTATUS" />
+          <ScalarProperty Name="MEMO" ColumnName="MEMO" />
+          <ScalarProperty Name="CHANGEDBY" ColumnName="CHANGEDBY" />
+          <ScalarProperty Name="STATUSDATE" ColumnName="STATUSDATE" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Contract_ViewStatusHistory" FunctionName="FSPPOModel.Store.Contract_ViewStatusHistory">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FSPPOModel.Contract_ViewStatusHistory_Result">
+          <ScalarProperty Name="ContractStatusHistoryID" ColumnName="ContractStatusHistoryID" />
+          <ScalarProperty Name="CONTRACTNUM" ColumnName="CONTRACTNUM" />
+          <ScalarProperty Name="OLDSTATUS" ColumnName="OLDSTATUS" />
+          <ScalarProperty Name="NEWSTATUS" ColumnName="NEWSTATUS" />
+          <ScalarProperty Name="MEMO" ColumnName="MEMO" />
+          <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+          <ScalarProperty Name="MODIFICATIONDATE" ColumnName="MODIFICATIONDATE" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="FIRMS_GetAllDesignation" FunctionName="FSPPOModel.Store.FIRMS_GetAllDesignation">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FSPPOModel.FIRMS_GetAllDesignation_Result">
+          <ScalarProperty Name="dgt_desig_code" ColumnName="dgt_desig_code" />
+          <ScalarProperty Name="dgt_desig_name" ColumnName="dgt_desig_name" />
+          <ScalarProperty Name="dgt_desig_type" ColumnName="dgt_desig_type" />
+          <ScalarProperty Name="dgt_desig_status" ColumnName="dgt_desig_status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="FIRMS_GetAllEmployee" FunctionName="FSPPOModel.Store.FIRMS_GetAllEmployee">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FSPPOModel.FIRMS_GetAllEmployee_Result">
+          <ScalarProperty Name="emp_code" ColumnName="emp_code" />
+          <ScalarProperty Name="emp_name" ColumnName="emp_name" />
+          <ScalarProperty Name="dgt_desig_name" ColumnName="dgt_desig_name" />
+          <ScalarProperty Name="emp_depm_code" ColumnName="emp_depm_code" />
+          <ScalarProperty Name="emp_cost_code" ColumnName="emp_cost_code" />
+          <ScalarProperty Name="emp_visa_org" ColumnName="emp_visa_org" />
+          <ScalarProperty Name="emp_status" ColumnName="emp_status" />
+          <ScalarProperty Name="emp_desig_code" ColumnName="emp_desig_code" />
+          <ScalarProperty Name="emp_our_ref_no" ColumnName="emp_our_ref_no" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="FIRMS_GetAllOrgs" FunctionName="FSPPOModel.Store.FIRMS_GetAllOrgs">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FSPPOModel.FIRMS_GetAllOrgs_Result">
+          <ScalarProperty Name="org_code" ColumnName="org_code" />
+          <ScalarProperty Name="org_abbr_name" ColumnName="org_abbr_name" />
+          <ScalarProperty Name="org_name" ColumnName="org_name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="FIRMS_GetAllProjects" FunctionName="FSPPOModel.Store.FIRMS_GetAllProjects" />
+    <FunctionImportMapping FunctionImportName="FIRMS_getOrgsName" FunctionName="FSPPOModel.Store.FIRMS_getOrgsName">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FSPPOModel.FIRMS_getOrgsName_Result">
+          <ScalarProperty Name="org_code" ColumnName="org_code" />
+          <ScalarProperty Name="org_abbr_name" ColumnName="org_abbr_name" />
+          <ScalarProperty Name="org_name" ColumnName="org_name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="FIRMS_POLINERECEIVING" FunctionName="FSPPOModel.Store.FIRMS_POLINERECEIVING">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FSPPOModel.FIRMS_POLINERECEIVING_Result">
+          <ScalarProperty Name="PONUM" ColumnName="PONUM" />
+          <ScalarProperty Name="POREVISION" ColumnName="POREVISION" />
+          <ScalarProperty Name="POLINENUM" ColumnName="POLINENUM" />
+          <ScalarProperty Name="POLINEID" ColumnName="POLINEID" />
+          <ScalarProperty Name="ORDERQTY" ColumnName="ORDERQTY" />
+          <ScalarProperty Name="UNITCOST" ColumnName="UNITCOST" />
+          <ScalarProperty Name="LINECOST" ColumnName="LINECOST" />
+          <ScalarProperty Name="RECEIVEDQTY" ColumnName="RECEIVEDQTY" />
+          <ScalarProperty Name="RECEIVEDTOTALCOST" ColumnName="RECEIVEDTOTALCOST" />
+          <ScalarProperty Name="RECEIPTSTATUS" ColumnName="RECEIPTSTATUS" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="FIRMS_ValidateEmployeeByID" FunctionName="FSPPOModel.Store.FIRMS_ValidateEmployeeByID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FSPPOModel.FIRMS_ValidateEmployeeByID_Result">
+          <ScalarProperty Name="emp_code" ColumnName="emp_code" />
+          <ScalarProperty Name="emp_name" ColumnName="emp_name" />
+          <ScalarProperty Name="dgt_desig_name" ColumnName="dgt_desig_name" />
+          <ScalarProperty Name="emp_depm_code" ColumnName="emp_depm_code" />
+          <ScalarProperty Name="emp_cost_code" ColumnName="emp_cost_code" />
+          <ScalarProperty Name="emp_visa_org" ColumnName="emp_visa_org" />
+          <ScalarProperty Name="emp_status" ColumnName="emp_status" />
+          <ScalarProperty Name="emp_desig_code" ColumnName="emp_desig_code" />
+          <ScalarProperty Name="emp_our_ref_no" ColumnName="emp_our_ref_no" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="FIRMS_VerifyOrgs" FunctionName="FSPPOModel.Store.FIRMS_VerifyOrgs">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FSPPOModel.FIRMS_VerifyOrgs_Result">
+          <ScalarProperty Name="org_code" ColumnName="org_code" />
+          <ScalarProperty Name="org_abbr_name" ColumnName="org_abbr_name" />
+          <ScalarProperty Name="org_name" ColumnName="org_name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="FIRMS_VerifyProjects" FunctionName="FSPPOModel.Store.FIRMS_VerifyProjects" />
+    <FunctionImportMapping FunctionImportName="FIRMS_VerifyProjectsUsingProjectCode" FunctionName="FSPPOModel.Store.FIRMS_VerifyProjectsUsingProjectCode" />
+    <FunctionImportMapping FunctionImportName="GetPOSignature" FunctionName="FSPPOModel.Store.GetPOSignature">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FSPPOModel.GetPOSignature_Result">
+          <ScalarProperty Name="OrgCode" ColumnName="OrgCode" />
+          <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+          <ScalarProperty Name="PONum" ColumnName="PONum" />
+          <ScalarProperty Name="PoRevision" ColumnName="PoRevision" />
+          <ScalarProperty Name="Authority" ColumnName="Authority" />
+          <ScalarProperty Name="Designationname" ColumnName="Designationname" />
+          <ScalarProperty Name="TeamMemberCode" ColumnName="TeamMemberCode" />
+          <ScalarProperty Name="TeamMemberName" ColumnName="TeamMemberName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="NotifyInactivateSupExpTlic" FunctionName="FSPPOModel.Store.NotifyInactivateSupExpTlic" />
+    <FunctionImportMapping FunctionImportName="PO_AddContractRef" FunctionName="FSPPOModel.Store.PO_AddContractRef" />
+    <FunctionImportMapping FunctionImportName="PO_AddEditDeletePOPermission" FunctionName="FSPPOModel.Store.PO_AddEditDeletePOPermission" />
+    <FunctionImportMapping FunctionImportName="PO_ADDPO" FunctionName="FSPPOModel.Store.PO_ADDPO" />
+    <FunctionImportMapping FunctionImportName="PO_AddPOLine" FunctionName="FSPPOModel.Store.PO_AddPOLine" />
+    <FunctionImportMapping FunctionImportName="PO_ADDPOSignature" FunctionName="FSPPOModel.Store.PO_ADDPOSignature" />
+    <FunctionImportMapping FunctionImportName="PO_CalculatePOTotalAmount" FunctionName="FSPPOModel.Store.PO_CalculatePOTotalAmount" />
+    <FunctionImportMapping FunctionImportName="PO_ChangePOStatus" FunctionName="FSPPOModel.Store.PO_ChangePOStatus" />
+    <FunctionImportMapping FunctionImportName="PO_CreatePORev" FunctionName="FSPPOModel.Store.PO_CreatePORev" />
+    <FunctionImportMapping FunctionImportName="PO_DeleteContractRef" FunctionName="FSPPOModel.Store.PO_DeleteContractRef" />
+    <FunctionImportMapping FunctionImportName="PO_DeletePOLine" FunctionName="FSPPOModel.Store.PO_DeletePOLine" />
+    <FunctionImportMapping FunctionImportName="PO_DeletePOSignature" FunctionName="FSPPOModel.Store.PO_DeletePOSignature" />
+    <FunctionImportMapping FunctionImportName="PO_EditPO" FunctionName="FSPPOModel.Store.PO_EditPO" />
+    <FunctionImportMapping FunctionImportName="PO_EditPOLine" FunctionName="FSPPOModel.Store.PO_EditPOLine" />
+    <FunctionImportMapping FunctionImportName="PO_EDITPOSignature" FunctionName="FSPPOModel.Store.PO_EDITPOSignature" />
+    <FunctionImportMapping FunctionImportName="PO_GetMaxPOLineNum" FunctionName="FSPPOModel.Store.PO_GetMaxPOLineNum" />
+    <FunctionImportMapping FunctionImportName="PO_GetNextPORev" FunctionName="FSPPOModel.Store.PO_GetNextPORev" />
+    <FunctionImportMapping FunctionImportName="PO_GetPOAllowStatusTrns" FunctionName="FSPPOModel.Store.PO_GetPOAllowStatusTrns" />
+    <FunctionImportMapping FunctionImportName="PO_LoadLineTypes" FunctionName="FSPPOModel.Store.PO_LoadLineTypes">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FSPPOModel.PO_LoadLineTypes_Result">
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="po_report_comparepricesbyitem" FunctionName="FSPPOModel.Store.po_report_comparepricesbyitem" />
+    <FunctionImportMapping FunctionImportName="po_report_podistbybuyer" FunctionName="FSPPOModel.Store.po_report_podistbybuyer" />
+    <FunctionImportMapping FunctionImportName="po_report_projectspendbycostcode" FunctionName="FSPPOModel.Store.po_report_projectspendbycostcode" />
+    <FunctionImportMapping FunctionImportName="po_report_spendbytopsuppliers" FunctionName="FSPPOModel.Store.po_report_spendbytopsuppliers" />
+    <FunctionImportMapping FunctionImportName="po_report_supplierpurhasesummary" FunctionName="FSPPOModel.Store.po_report_supplierpurhasesummary" />
+    <FunctionImportMapping FunctionImportName="PO_ResolveContractNum" FunctionName="FSPPOModel.Store.PO_ResolveContractNum" />
+    <FunctionImportMapping FunctionImportName="PO_ResolvePONUM" FunctionName="FSPPOModel.Store.PO_ResolvePONUM" />
+    <FunctionImportMapping FunctionImportName="PO_ResolvePORef" FunctionName="FSPPOModel.Store.PO_ResolvePORef" />
+    <FunctionImportMapping FunctionImportName="PO_ValidateLineType" FunctionName="FSPPOModel.Store.PO_ValidateLineType" />
+    <FunctionImportMapping FunctionImportName="PO_ViewPaymentStatus" FunctionName="FSPPOModel.Store.PO_ViewPaymentStatus">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FSPPOModel.PO_ViewPaymentStatus_Result">
+          <ScalarProperty Name="PONUM" ColumnName="PONUM" />
+          <ScalarProperty Name="CURRENCYCODE" ColumnName="CURRENCYCODE" />
+          <ScalarProperty Name="TOTALCOST" ColumnName="TOTALCOST" />
+          <ScalarProperty Name="RECEIVEDTOTALCOST" ColumnName="RECEIVEDTOTALCOST" />
+          <ScalarProperty Name="INVO" ColumnName="INVO" />
+          <ScalarProperty Name="INPROG" ColumnName="INPROG" />
+          <ScalarProperty Name="WAITFA" ColumnName="WAITFA" />
+          <ScalarProperty Name="PAID" ColumnName="PAID" />
+          <ScalarProperty Name="PCV" ColumnName="PCV" />
+          <ScalarProperty Name="RECEIVINGTOTALCOST" ColumnName="RECEIVINGTOTALCOST" />
+          <ScalarProperty Name="REV" ColumnName="REV" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PO_ViewPermissionsHistory" FunctionName="FSPPOModel.Store.PO_ViewPermissionsHistory">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FSPPOModel.PO_ViewPermissionsHistory_Result">
+          <ScalarProperty Name="auditid" ColumnName="auditid" />
+          <ScalarProperty Name="auditaction" ColumnName="auditaction" />
+          <ScalarProperty Name="auditby" ColumnName="auditby" />
+          <ScalarProperty Name="audittimestamp" ColumnName="audittimestamp" />
+          <ScalarProperty Name="ponum" ColumnName="ponum" />
+          <ScalarProperty Name="permcode" ColumnName="permcode" />
+          <ScalarProperty Name="authby" ColumnName="authby" />
+          <ScalarProperty Name="justification" ColumnName="justification" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PO_ViewRevisionHistory" FunctionName="FSPPOModel.Store.PO_ViewRevisionHistory">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FSPPOModel.PO_ViewRevisionHistory_Result">
+          <ScalarProperty Name="POREVISION" ColumnName="POREVISION" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="REVCOMMENTS" ColumnName="REVCOMMENTS" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+          <ScalarProperty Name="STATUSDATE" ColumnName="STATUSDATE" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PO_ViewStatusHistory" FunctionName="FSPPOModel.Store.PO_ViewStatusHistory">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FSPPOModel.PO_ViewStatusHistory_Result">
+          <ScalarProperty Name="POSTATUSHISTORYID" ColumnName="POSTATUSHISTORYID" />
+          <ScalarProperty Name="PONUM" ColumnName="PONUM" />
+          <ScalarProperty Name="POREVISION" ColumnName="POREVISION" />
+          <ScalarProperty Name="OLDSTATUS" ColumnName="OLDSTATUS" />
+          <ScalarProperty Name="NEWSTATUS" ColumnName="NEWSTATUS" />
+          <ScalarProperty Name="MEMO" ColumnName="MEMO" />
+          <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+          <ScalarProperty Name="MODIFICATIONDATE" ColumnName="MODIFICATIONDATE" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SendExpTlicRem" FunctionName="FSPPOModel.Store.SendExpTlicRem" />
+    <FunctionImportMapping FunctionImportName="SendExpTlicRemExceptions" FunctionName="FSPPOModel.Store.SendExpTlicRemExceptions" />
+    <FunctionImportMapping FunctionImportName="SendSupExpTlicRem" FunctionName="FSPPOModel.Store.SendSupExpTlicRem" />
+    <FunctionImportMapping FunctionImportName="sp_add_Attachment" FunctionName="FSPPOModel.Store.sp_add_Attachment" />
+    <FunctionImportMapping FunctionImportName="sp_add_POContract" FunctionName="FSPPOModel.Store.sp_add_POContract" />
+    <FunctionImportMapping FunctionImportName="sp_add_POTemplate" FunctionName="FSPPOModel.Store.sp_add_POTemplate" />
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="FSPPOModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="FSPPOModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_delete_Attachment" FunctionName="FSPPOModel.Store.sp_delete_Attachment" />
+    <FunctionImportMapping FunctionImportName="sp_delete_POTemplate" FunctionName="FSPPOModel.Store.sp_delete_POTemplate" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="FSPPOModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_Edit_POContract" FunctionName="FSPPOModel.Store.sp_Edit_POContract" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="FSPPOModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FSPPOModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="FSPPOModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FSPPOModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_ListAllPurchaseOrder" FunctionName="FSPPOModel.Store.sp_ListAllPurchaseOrder" />
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="FSPPOModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_update_Attachment" FunctionName="FSPPOModel.Store.sp_update_Attachment" />
+    <FunctionImportMapping FunctionImportName="sp_update_POTemplate" FunctionName="FSPPOModel.Store.sp_update_POTemplate" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="FSPPOModel.Store.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>

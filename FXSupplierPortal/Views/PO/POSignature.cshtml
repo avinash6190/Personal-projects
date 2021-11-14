@@ -1,0 +1,62 @@
+﻿@using FXSupplierPortal.Models
+
+@model FXSupplierPortal.POSignature
+@using (Ajax.BeginForm("CreateNewPOSignature", "PO", null, new AjaxOptions() { OnSuccess = "getPOSignatureResult", HttpMethod = "post" }, new { id = "AddPOSignature" }))
+{
+ <div id="divPOSignatureRequiredFieldError" style="display:none" class="alert alert-danger">
+    @Html.ValidationSummary(false, "", new { @id = "validationSummaryErrors", @class = "text-danger" })
+    <button id="btnPOSignatureClose" type="button" class="close" aria-hidden="true">&times;</button>
+</div>      
+    <div class="form-horizontal">
+        <div class="form-group">
+            @Html.HiddenFor(model => model.pOSignatureMode)
+            @Html.HiddenFor(model => model.OrgCode)
+            @Html.HiddenFor(model => model.PONum)
+            @Html.HiddenFor(model => model.PoRevision)
+            @Html.HiddenFor(model => model.TeamMemberName)
+            <label class="control-label col-sm-3 Pdringtop" for="inputName">
+                Order #
+            </label>
+            <div class="col-sm-8">
+                @Html.EditorFor(model => model.OrderNo, new { htmlAttributes = new { @class = "form-control", Value = (object)ViewBag.OrderNo, @readonly = "readonly" } })
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-3 Pdringtop" for="inputName" id="Label2" runat="server">
+                Authority
+            </label>
+            <div class="col-sm-8">
+                @Html.EditorFor(model => model.Authority, new { htmlAttributes = new { @class = "form-control" } })
+
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-3 Pdringtop" for="inputName">
+                <span class="showAstrik">*</span>
+                Designation
+            </label>
+            <div class="col-sm-8">
+                @*@Html.DropDownListFor(model => model.Designation, new SelectList((IEnumerable<SelectListItem>)ViewData["DesignationList"], ""), new { @onchange = "changeDesignation()", @class = "form-control" })*@
+                @Html.DropDownListFor(model => model.Designation, (IEnumerable<SelectListItem>)ViewData["DesignationList"], "", new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-3 Pdringtop" for="inputName">
+                <span class="showAstrik">*</span>
+                User
+            </label>
+            <div class="col-sm-8">
+                @Html.DropDownListFor(model => model.TeamMemberCode, (IEnumerable<SelectListItem>)ViewData["EmployeeList"], "", new { @onchange = "setEmployeeName()", @class = "form-control" })
+            </div>
+        </div>
+        @*</div>*@
+        <div class="form-group" align="right" style="margin-right:45px!important">
+            <input id="btnCreatePoSignature" type="submit" value="Create" class="btn btn-primary" />
+        </div>
+
+    </div>
+
+}
+@Scripts.Render("~/Scripts/Custom/PO.js")
+@Scripts.Render("~/Scripts/Custom/POLine.js")

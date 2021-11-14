@@ -1,0 +1,1287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FibConsoModelStoreContainer" CdmEntityContainer="FibConsoEntities">
+    <EntitySetMapping Name="a_conso_sup_map_tbl">
+      <EntityTypeMapping TypeName="FibConsoModel.a_conso_sup_map_tbl">
+        <MappingFragment StoreEntitySet="a_conso_sup_map_tbl">
+          <ScalarProperty Name="csm_audit_id" ColumnName="csm_audit_id" />
+          <ScalarProperty Name="csm_audit_by" ColumnName="csm_audit_by" />
+          <ScalarProperty Name="csm_audit_timestamp" ColumnName="csm_audit_timestamp" />
+          <ScalarProperty Name="csm_audit_action" ColumnName="csm_audit_action" />
+          <ScalarProperty Name="csm_acct_code" ColumnName="csm_acct_code" />
+          <ScalarProperty Name="csm_org_code" ColumnName="csm_org_code" />
+          <ScalarProperty Name="csm_org_acct_code" ColumnName="csm_org_acct_code" />
+          <ScalarProperty Name="csm_status" ColumnName="csm_status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="acct_mgrp">
+      <EntityTypeMapping TypeName="FibConsoModel.acct_mgrp">
+        <MappingFragment StoreEntitySet="acct_mgrp">
+          <ScalarProperty Name="acct_mgrp_type" ColumnName="acct_mgrp_type" />
+          <ScalarProperty Name="acct_mgrp_code" ColumnName="acct_mgrp_code" />
+          <ScalarProperty Name="acct_mgrp_desc" ColumnName="acct_mgrp_desc" />
+          <ScalarProperty Name="acct_mgrp_desc_ar" ColumnName="acct_mgrp_desc_ar" />
+          <ScalarProperty Name="acct_mgrp_mode" ColumnName="acct_mgrp_mode" />
+          <ScalarProperty Name="acct_bspl_mgrp" ColumnName="acct_bspl_mgrp" />
+          <ScalarProperty Name="acct_bspl_sgrp" ColumnName="acct_bspl_sgrp" />
+          <ScalarProperty Name="acct_bspl_det" ColumnName="acct_bspl_det" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="acct_sgrp">
+      <EntityTypeMapping TypeName="FibConsoModel.acct_sgrp">
+        <MappingFragment StoreEntitySet="acct_sgrp">
+          <ScalarProperty Name="acct_sgrp_type" ColumnName="acct_sgrp_type" />
+          <ScalarProperty Name="acct_sgrp_mgrp" ColumnName="acct_sgrp_mgrp" />
+          <ScalarProperty Name="acct_sgrp_code" ColumnName="acct_sgrp_code" />
+          <ScalarProperty Name="acct_sgrp_desc" ColumnName="acct_sgrp_desc" />
+          <ScalarProperty Name="acct_sgrp_desc_ar" ColumnName="acct_sgrp_desc_ar" />
+          <ScalarProperty Name="acct_exclude_os_inv" ColumnName="acct_exclude_os_inv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="acct_type">
+      <EntityTypeMapping TypeName="FibConsoModel.acct_type">
+        <MappingFragment StoreEntitySet="acct_type">
+          <ScalarProperty Name="acct_type_code" ColumnName="acct_type_code" />
+          <ScalarProperty Name="acct_type_desc" ColumnName="acct_type_desc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="branch_master">
+      <EntityTypeMapping TypeName="FibConsoModel.branch_master">
+        <MappingFragment StoreEntitySet="branch_master">
+          <ScalarProperty Name="bm_code" ColumnName="bm_code" />
+          <ScalarProperty Name="bm_desc" ColumnName="bm_desc" />
+          <ScalarProperty Name="bm_reg_code" ColumnName="bm_reg_code" />
+          <ScalarProperty Name="bm_desc_arabic" ColumnName="bm_desc_arabic" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="bspl_det_master">
+      <EntityTypeMapping TypeName="FibConsoModel.bspl_det_master">
+        <MappingFragment StoreEntitySet="bspl_det_master">
+          <ScalarProperty Name="bspldt_mgrp_code" ColumnName="bspldt_mgrp_code" />
+          <ScalarProperty Name="bspldt_sgrp_code" ColumnName="bspldt_sgrp_code" />
+          <ScalarProperty Name="bspldt_det_code" ColumnName="bspldt_det_code" />
+          <ScalarProperty Name="bspldt_desc" ColumnName="bspldt_desc" />
+          <ScalarProperty Name="bspldt_desc_ar" ColumnName="bspldt_desc_ar" />
+          <ScalarProperty Name="bspldr_status" ColumnName="bspldr_status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="bspl_master">
+      <EntityTypeMapping TypeName="FibConsoModel.bspl_master">
+        <MappingFragment StoreEntitySet="bspl_master">
+          <ScalarProperty Name="bspl_code" ColumnName="bspl_code" />
+          <ScalarProperty Name="bspl_desc" ColumnName="bspl_desc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="bspl_mgrp_master">
+      <EntityTypeMapping TypeName="FibConsoModel.bspl_mgrp_master">
+        <MappingFragment StoreEntitySet="bspl_mgrp_master">
+          <ScalarProperty Name="bsplmg_mgrp_code" ColumnName="bsplmg_mgrp_code" />
+          <ScalarProperty Name="bsplmg_mgrp_desc" ColumnName="bsplmg_mgrp_desc" />
+          <ScalarProperty Name="bsplmg_mgrp_desc_ar" ColumnName="bsplmg_mgrp_desc_ar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="bspl_sgrp_master">
+      <EntityTypeMapping TypeName="FibConsoModel.bspl_sgrp_master">
+        <MappingFragment StoreEntitySet="bspl_sgrp_master">
+          <ScalarProperty Name="bsplsg_mgrp_code" ColumnName="bsplsg_mgrp_code" />
+          <ScalarProperty Name="bsplsg_sgrp_code" ColumnName="bsplsg_sgrp_code" />
+          <ScalarProperty Name="bsplsg_sgrp_desc" ColumnName="bsplsg_sgrp_desc" />
+          <ScalarProperty Name="bsplsg_sgrp_desc_ar" ColumnName="bsplsg_sgrp_desc_ar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cm_unified_mapping">
+      <EntityTypeMapping TypeName="FibConsoModel.cm_unified_mapping">
+        <MappingFragment StoreEntitySet="cm_unified_mapping">
+          <ScalarProperty Name="cm_unified_acct_code" ColumnName="cm_unified_acct_code" />
+          <ScalarProperty Name="cm_org_code" ColumnName="cm_org_code" />
+          <ScalarProperty Name="cm_unified_acct_name" ColumnName="cm_unified_acct_name" />
+          <ScalarProperty Name="cm_div_acct_code" ColumnName="cm_div_acct_code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="conso_sup_list_dm_final_2">
+      <EntityTypeMapping TypeName="FibConsoModel.conso_sup_list_dm_final_2">
+        <MappingFragment StoreEntitySet="conso_sup_list_dm_final_2">
+          <ScalarProperty Name="supplier_type_code" ColumnName="supplier_type_code" />
+          <ScalarProperty Name="supplier_type_name" ColumnName="supplier_type_name" />
+          <ScalarProperty Name="org_code" ColumnName="org_code" />
+          <ScalarProperty Name="org_name" ColumnName="org_name" />
+          <ScalarProperty Name="org_acct_code" ColumnName="org_acct_code" />
+          <ScalarProperty Name="cm_acct_code" ColumnName="cm_acct_code" />
+          <ScalarProperty Name="SupID" ColumnName="SupID" />
+          <ScalarProperty Name="cm_comp_name" ColumnName="cm_comp_name" />
+          <ScalarProperty Name="CompContactNameFull" ColumnName="CompContactNameFull" />
+          <ScalarProperty Name="CompContactTitle" ColumnName="CompContactTitle" />
+          <ScalarProperty Name="CompContactFirst" ColumnName="CompContactFirst" />
+          <ScalarProperty Name="CompContactLast" ColumnName="CompContactLast" />
+          <ScalarProperty Name="CompContactPos" ColumnName="CompContactPos" />
+          <ScalarProperty Name="CompMobile" ColumnName="CompMobile" />
+          <ScalarProperty Name="CompPhoneNo" ColumnName="CompPhoneNo" />
+          <ScalarProperty Name="CompExt" ColumnName="CompExt" />
+          <ScalarProperty Name="CompContactEmail" ColumnName="CompContactEmail" />
+          <ScalarProperty Name="CompType" ColumnName="CompType" />
+          <ScalarProperty Name="CompBC" ColumnName="CompBC" />
+          <ScalarProperty Name="CompSupType" ColumnName="CompSupType" />
+          <ScalarProperty Name="RegDocType" ColumnName="RegDocType" />
+          <ScalarProperty Name="RegDocID" ColumnName="RegDocID" />
+          <ScalarProperty Name="CompOfficialName" ColumnName="CompOfficialName" />
+          <ScalarProperty Name="RegDocIssAuth" ColumnName="RegDocIssAuth" />
+          <ScalarProperty Name="RegDocExpDate" ColumnName="RegDocExpDate" />
+          <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+          <ScalarProperty Name="record_proc_status" ColumnName="record_proc_status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="conso_sup_list_dm_temp_2">
+      <EntityTypeMapping TypeName="FibConsoModel.conso_sup_list_dm_temp_2">
+        <MappingFragment StoreEntitySet="conso_sup_list_dm_temp_2">
+          <ScalarProperty Name="supplier_type_code" ColumnName="supplier_type_code" />
+          <ScalarProperty Name="supplier_type_name" ColumnName="supplier_type_name" />
+          <ScalarProperty Name="org_code" ColumnName="org_code" />
+          <ScalarProperty Name="org_name" ColumnName="org_name" />
+          <ScalarProperty Name="org_acct_code" ColumnName="org_acct_code" />
+          <ScalarProperty Name="cm_acct_code" ColumnName="cm_acct_code" />
+          <ScalarProperty Name="SupID" ColumnName="SupID" />
+          <ScalarProperty Name="cm_comp_name" ColumnName="cm_comp_name" />
+          <ScalarProperty Name="CompContactTitle" ColumnName="CompContactTitle" />
+          <ScalarProperty Name="CompContactName" ColumnName="CompContactName" />
+          <ScalarProperty Name="CompMobile" ColumnName="CompMobile" />
+          <ScalarProperty Name="CompPhoneNo" ColumnName="CompPhoneNo" />
+          <ScalarProperty Name="CompType" ColumnName="CompType" />
+          <ScalarProperty Name="CompBC" ColumnName="CompBC" />
+          <ScalarProperty Name="CompSupType" ColumnName="CompSupType" />
+          <ScalarProperty Name="RegDocType" ColumnName="RegDocType" />
+          <ScalarProperty Name="RegDocID" ColumnName="RegDocID" />
+          <ScalarProperty Name="CompOfficialName" ColumnName="CompOfficialName" />
+          <ScalarProperty Name="RegDocIssAuth" ColumnName="RegDocIssAuth" />
+          <ScalarProperty Name="RegDocExpDate" ColumnName="RegDocExpDate" />
+          <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+          <ScalarProperty Name="Processed" ColumnName="Processed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="conso_sup_map_tbl">
+      <EntityTypeMapping TypeName="FibConsoModel.conso_sup_map_tbl">
+        <MappingFragment StoreEntitySet="conso_sup_map_tbl">
+          <ScalarProperty Name="csm_acct_code" ColumnName="csm_acct_code" />
+          <ScalarProperty Name="csm_org_code" ColumnName="csm_org_code" />
+          <ScalarProperty Name="csm_org_acct_code" ColumnName="csm_org_acct_code" />
+          <ScalarProperty Name="csm_status" ColumnName="csm_status" />
+          <ScalarProperty Name="csm_created_by" ColumnName="csm_created_by" />
+          <ScalarProperty Name="csm_created_date" ColumnName="csm_created_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="conso_sup_map_tbl_del">
+      <EntityTypeMapping TypeName="FibConsoModel.conso_sup_map_tbl_del">
+        <MappingFragment StoreEntitySet="conso_sup_map_tbl_del">
+          <ScalarProperty Name="csm_acct_code" ColumnName="csm_acct_code" />
+          <ScalarProperty Name="csm_org_code" ColumnName="csm_org_code" />
+          <ScalarProperty Name="csm_org_acct_code" ColumnName="csm_org_acct_code" />
+          <ScalarProperty Name="csm_status" ColumnName="csm_status" />
+          <ScalarProperty Name="csm_created_by" ColumnName="csm_created_by" />
+          <ScalarProperty Name="csm_created_date" ColumnName="csm_created_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="country_table">
+      <EntityTypeMapping TypeName="FibConsoModel.country_table">
+        <MappingFragment StoreEntitySet="country_table">
+          <ScalarProperty Name="cnt_country_code" ColumnName="cnt_country_code" />
+          <ScalarProperty Name="cnt_country_name" ColumnName="cnt_country_name" />
+          <ScalarProperty Name="cnt_nationality" ColumnName="cnt_nationality" />
+          <ScalarProperty Name="cnt_country_short" ColumnName="cnt_country_short" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customer_business">
+      <EntityTypeMapping TypeName="FibConsoModel.customer_business">
+        <MappingFragment StoreEntitySet="customer_business">
+          <ScalarProperty Name="cb_acct_code" ColumnName="cb_acct_code" />
+          <ScalarProperty Name="cb_org_code" ColumnName="cb_org_code" />
+          <ScalarProperty Name="cb_org_acct_code" ColumnName="cb_org_acct_code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="domains">
+      <EntityTypeMapping TypeName="FibConsoModel.domain">
+        <MappingFragment StoreEntitySet="domain">
+          <ScalarProperty Name="domain_id" ColumnName="domain_id" />
+          <ScalarProperty Name="domain_value" ColumnName="domain_value" />
+          <ScalarProperty Name="domain_descr" ColumnName="domain_descr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="labour_supply_master">
+      <EntityTypeMapping TypeName="FibConsoModel.labour_supply_master">
+        <MappingFragment StoreEntitySet="labour_supply_master">
+          <ScalarProperty Name="lsm_supp_id" ColumnName="lsm_supp_id" />
+          <ScalarProperty Name="lsm_supp_name" ColumnName="lsm_supp_name" />
+          <ScalarProperty Name="lsm_supp_type" ColumnName="lsm_supp_type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="project_master">
+      <EntityTypeMapping TypeName="FibConsoModel.project_master">
+        <MappingFragment StoreEntitySet="project_master">
+          <ScalarProperty Name="project_code" ColumnName="project_code" />
+          <ScalarProperty Name="project_desc" ColumnName="project_desc" />
+          <ScalarProperty Name="project_client" ColumnName="project_client" />
+          <ScalarProperty Name="projet_consultant" ColumnName="projet_consultant" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="supply_labour_employee">
+      <EntityTypeMapping TypeName="FibConsoModel.supply_labour_employee">
+        <MappingFragment StoreEntitySet="supply_labour_employee">
+          <ScalarProperty Name="sle_supp_id" ColumnName="sle_supp_id" />
+          <ScalarProperty Name="sle_hemp_code" ColumnName="sle_hemp_code" />
+          <ScalarProperty Name="sle_hemp_name" ColumnName="sle_hemp_name" />
+          <ScalarProperty Name="sle_eid_no" ColumnName="sle_eid_no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="conso_sup_list">
+      <EntityTypeMapping TypeName="FibConsoModel.conso_sup_list">
+        <MappingFragment StoreEntitySet="conso_sup_list">
+          <ScalarProperty Name="org_code" ColumnName="org_code" />
+          <ScalarProperty Name="org_name" ColumnName="org_name" />
+          <ScalarProperty Name="sup_acct_code" ColumnName="sup_acct_code" />
+          <ScalarProperty Name="sup_acct_name" ColumnName="sup_acct_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="conso_sup_list_dm_final_2_backup">
+      <EntityTypeMapping TypeName="FibConsoModel.conso_sup_list_dm_final_2_backup">
+        <MappingFragment StoreEntitySet="conso_sup_list_dm_final_2_backup">
+          <ScalarProperty Name="supplier_type_code" ColumnName="supplier_type_code" />
+          <ScalarProperty Name="supplier_type_name" ColumnName="supplier_type_name" />
+          <ScalarProperty Name="org_code" ColumnName="org_code" />
+          <ScalarProperty Name="org_name" ColumnName="org_name" />
+          <ScalarProperty Name="org_acct_code" ColumnName="org_acct_code" />
+          <ScalarProperty Name="cm_acct_code" ColumnName="cm_acct_code" />
+          <ScalarProperty Name="SupID" ColumnName="SupID" />
+          <ScalarProperty Name="cm_comp_name" ColumnName="cm_comp_name" />
+          <ScalarProperty Name="CompContactNameFull" ColumnName="CompContactNameFull" />
+          <ScalarProperty Name="CompContactTitle" ColumnName="CompContactTitle" />
+          <ScalarProperty Name="CompContactFirst" ColumnName="CompContactFirst" />
+          <ScalarProperty Name="CompContactLast" ColumnName="CompContactLast" />
+          <ScalarProperty Name="CompContactPos" ColumnName="CompContactPos" />
+          <ScalarProperty Name="CompMobile" ColumnName="CompMobile" />
+          <ScalarProperty Name="CompPhoneNo" ColumnName="CompPhoneNo" />
+          <ScalarProperty Name="CompExt" ColumnName="CompExt" />
+          <ScalarProperty Name="CompContactEmail" ColumnName="CompContactEmail" />
+          <ScalarProperty Name="CompType" ColumnName="CompType" />
+          <ScalarProperty Name="CompBC" ColumnName="CompBC" />
+          <ScalarProperty Name="CompSupType" ColumnName="CompSupType" />
+          <ScalarProperty Name="RegDocType" ColumnName="RegDocType" />
+          <ScalarProperty Name="RegDocID" ColumnName="RegDocID" />
+          <ScalarProperty Name="CompOfficialName" ColumnName="CompOfficialName" />
+          <ScalarProperty Name="RegDocIssAuth" ColumnName="RegDocIssAuth" />
+          <ScalarProperty Name="RegDocExpDate" ColumnName="RegDocExpDate" />
+          <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+          <ScalarProperty Name="record_proc_status" ColumnName="record_proc_status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="conso_sup_list_opt">
+      <EntityTypeMapping TypeName="FibConsoModel.conso_sup_list_opt">
+        <MappingFragment StoreEntitySet="conso_sup_list_opt">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="org_code" ColumnName="org_code" />
+          <ScalarProperty Name="org_name" ColumnName="org_name" />
+          <ScalarProperty Name="sup_acct_code" ColumnName="sup_acct_code" />
+          <ScalarProperty Name="sup_acct_name" ColumnName="sup_acct_name" />
+          <ScalarProperty Name="sup_acct_name_cln" ColumnName="sup_acct_name_cln" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="conso_sup_list_tmp">
+      <EntityTypeMapping TypeName="FibConsoModel.conso_sup_list_tmp">
+        <MappingFragment StoreEntitySet="conso_sup_list_tmp">
+          <ScalarProperty Name="org_code" ColumnName="org_code" />
+          <ScalarProperty Name="org_name" ColumnName="org_name" />
+          <ScalarProperty Name="sup_acct_code" ColumnName="sup_acct_code" />
+          <ScalarProperty Name="sup_acct_name" ColumnName="sup_acct_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="conso_sup_map_tbl_backup">
+      <EntityTypeMapping TypeName="FibConsoModel.conso_sup_map_tbl_backup">
+        <MappingFragment StoreEntitySet="conso_sup_map_tbl_backup">
+          <ScalarProperty Name="csm_acct_code" ColumnName="csm_acct_code" />
+          <ScalarProperty Name="csm_org_code" ColumnName="csm_org_code" />
+          <ScalarProperty Name="csm_org_acct_code" ColumnName="csm_org_acct_code" />
+          <ScalarProperty Name="csm_status" ColumnName="csm_status" />
+          <ScalarProperty Name="csm_created_by" ColumnName="csm_created_by" />
+          <ScalarProperty Name="csm_created_date" ColumnName="csm_created_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customers">
+      <EntityTypeMapping TypeName="FibConsoModel.customer">
+        <MappingFragment StoreEntitySet="customer">
+          <ScalarProperty Name="cm_acct_type" ColumnName="cm_acct_type" />
+          <ScalarProperty Name="cm_mgrp_code" ColumnName="cm_mgrp_code" />
+          <ScalarProperty Name="cm_sgrp_code" ColumnName="cm_sgrp_code" />
+          <ScalarProperty Name="cm_acct_serial" ColumnName="cm_acct_serial" />
+          <ScalarProperty Name="cm_acct_code" ColumnName="cm_acct_code" />
+          <ScalarProperty Name="cm_comp_name" ColumnName="cm_comp_name" />
+          <ScalarProperty Name="cm_comp_name_ar" ColumnName="cm_comp_name_ar" />
+          <ScalarProperty Name="cm_comp_name_short" ColumnName="cm_comp_name_short" />
+          <ScalarProperty Name="cm_comp_offic_name" ColumnName="cm_comp_offic_name" />
+          <ScalarProperty Name="cm_sup_id" ColumnName="cm_sup_id" />
+          <ScalarProperty Name="cm_sup_status" ColumnName="cm_sup_status" />
+          <ScalarProperty Name="cm_sup_status_date" ColumnName="cm_sup_status_date" />
+          <ScalarProperty Name="cm_sup_country" ColumnName="cm_sup_country" />
+          <ScalarProperty Name="cm_sup_bc" ColumnName="cm_sup_bc" />
+          <ScalarProperty Name="cm_comp_type" ColumnName="cm_comp_type" />
+          <ScalarProperty Name="cm_email" ColumnName="cm_email" />
+          <ScalarProperty Name="cm_contact_per" ColumnName="cm_contact_per" />
+          <ScalarProperty Name="cm_contact_pos" ColumnName="cm_contact_pos" />
+          <ScalarProperty Name="cm_mobil" ColumnName="cm_mobil" />
+          <ScalarProperty Name="cm_contact_tel" ColumnName="cm_contact_tel" />
+          <ScalarProperty Name="cm_contact_ext" ColumnName="cm_contact_ext" />
+          <ScalarProperty Name="cm_reg_doc_type" ColumnName="cm_reg_doc_type" />
+          <ScalarProperty Name="cm_license_num" ColumnName="cm_license_num" />
+          <ScalarProperty Name="cm_issu_auth" ColumnName="cm_issu_auth" />
+          <ScalarProperty Name="cm_license_exp_date" ColumnName="cm_license_exp_date" />
+          <ScalarProperty Name="cm_country_code" ColumnName="cm_country_code" />
+          <ScalarProperty Name="cm_address1" ColumnName="cm_address1" />
+          <ScalarProperty Name="cm_address2" ColumnName="cm_address2" />
+          <ScalarProperty Name="cm_city" ColumnName="cm_city" />
+          <ScalarProperty Name="cm_city_code" ColumnName="cm_city_code" />
+          <ScalarProperty Name="cm_pobox" ColumnName="cm_pobox" />
+          <ScalarProperty Name="cm_worktel1" ColumnName="cm_worktel1" />
+          <ScalarProperty Name="cm_worktel2" ColumnName="cm_worktel2" />
+          <ScalarProperty Name="cm_fax" ColumnName="cm_fax" />
+          <ScalarProperty Name="cm_restel" ColumnName="cm_restel" />
+          <ScalarProperty Name="cm_mcoc_num" ColumnName="cm_mcoc_num" />
+          <ScalarProperty Name="cm_url" ColumnName="cm_url" />
+          <ScalarProperty Name="cm_cuscat_code" ColumnName="cm_cuscat_code" />
+          <ScalarProperty Name="cm_retention_acno" ColumnName="cm_retention_acno" />
+          <ScalarProperty Name="cm_advance_acno" ColumnName="cm_advance_acno" />
+          <ScalarProperty Name="cm_vat_acno" ColumnName="cm_vat_acno" />
+          <ScalarProperty Name="cm_is_subcontr" ColumnName="cm_is_subcontr" />
+          <ScalarProperty Name="cm_pay_term" ColumnName="cm_pay_term" />
+          <ScalarProperty Name="cm_cr_limit" ColumnName="cm_cr_limit" />
+          <ScalarProperty Name="cm_amt_bal" ColumnName="cm_amt_bal" />
+          <ScalarProperty Name="cm_pdc_amount" ColumnName="cm_pdc_amount" />
+          <ScalarProperty Name="cm_last_inv_date" ColumnName="cm_last_inv_date" />
+          <ScalarProperty Name="cm_last_rec_date" ColumnName="cm_last_rec_date" />
+          <ScalarProperty Name="cm_age_type" ColumnName="cm_age_type" />
+          <ScalarProperty Name="cm_age_01" ColumnName="cm_age_01" />
+          <ScalarProperty Name="cm_age_02" ColumnName="cm_age_02" />
+          <ScalarProperty Name="cm_age_03" ColumnName="cm_age_03" />
+          <ScalarProperty Name="cm_age_04" ColumnName="cm_age_04" />
+          <ScalarProperty Name="cm_age_05" ColumnName="cm_age_05" />
+          <ScalarProperty Name="cm_age_06" ColumnName="cm_age_06" />
+          <ScalarProperty Name="cm_age_07" ColumnName="cm_age_07" />
+          <ScalarProperty Name="cm_age_08" ColumnName="cm_age_08" />
+          <ScalarProperty Name="cm_age_09" ColumnName="cm_age_09" />
+          <ScalarProperty Name="cm_age_10" ColumnName="cm_age_10" />
+          <ScalarProperty Name="cm_age_11" ColumnName="cm_age_11" />
+          <ScalarProperty Name="cm_age_12" ColumnName="cm_age_12" />
+          <ScalarProperty Name="cm_group_company" ColumnName="cm_group_company" />
+          <ScalarProperty Name="cm_assoc_company" ColumnName="cm_assoc_company" />
+          <ScalarProperty Name="cm_salesman_code" ColumnName="cm_salesman_code" />
+          <ScalarProperty Name="cm_is_vat_registered" ColumnName="cm_is_vat_registered" />
+          <ScalarProperty Name="cm_vat_reg_type" ColumnName="cm_vat_reg_type" />
+          <ScalarProperty Name="cm_vat_reg_no" ColumnName="cm_vat_reg_no" />
+          <ScalarProperty Name="cm_vat_grp_rep_name" ColumnName="cm_vat_grp_rep_name" />
+          <ScalarProperty Name="cm_acct_status" ColumnName="cm_acct_status" />
+          <ScalarProperty Name="cm_registered_by" ColumnName="cm_registered_by" />
+          <ScalarProperty Name="cm_created_by" ColumnName="cm_created_by" />
+          <ScalarProperty Name="cm_last_mod_by" ColumnName="cm_last_mod_by" />
+          <ScalarProperty Name="cm_creation_date" ColumnName="cm_creation_date" />
+          <ScalarProperty Name="cm_last_mod_date" ColumnName="cm_last_mod_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customer_4_2017_backup">
+      <EntityTypeMapping TypeName="FibConsoModel.customer_4_2017_backup">
+        <MappingFragment StoreEntitySet="customer_4_2017_backup">
+          <ScalarProperty Name="cm_acct_type" ColumnName="cm_acct_type" />
+          <ScalarProperty Name="cm_mgrp_code" ColumnName="cm_mgrp_code" />
+          <ScalarProperty Name="cm_sgrp_code" ColumnName="cm_sgrp_code" />
+          <ScalarProperty Name="cm_acct_serial" ColumnName="cm_acct_serial" />
+          <ScalarProperty Name="cm_acct_code" ColumnName="cm_acct_code" />
+          <ScalarProperty Name="cm_comp_name" ColumnName="cm_comp_name" />
+          <ScalarProperty Name="cm_comp_name_ar" ColumnName="cm_comp_name_ar" />
+          <ScalarProperty Name="cm_comp_name_short" ColumnName="cm_comp_name_short" />
+          <ScalarProperty Name="cm_comp_offic_name" ColumnName="cm_comp_offic_name" />
+          <ScalarProperty Name="cm_sup_id" ColumnName="cm_sup_id" />
+          <ScalarProperty Name="cm_sup_status" ColumnName="cm_sup_status" />
+          <ScalarProperty Name="cm_sup_status_date" ColumnName="cm_sup_status_date" />
+          <ScalarProperty Name="cm_sup_country" ColumnName="cm_sup_country" />
+          <ScalarProperty Name="cm_sup_bc" ColumnName="cm_sup_bc" />
+          <ScalarProperty Name="cm_comp_type" ColumnName="cm_comp_type" />
+          <ScalarProperty Name="cm_email" ColumnName="cm_email" />
+          <ScalarProperty Name="cm_contact_per" ColumnName="cm_contact_per" />
+          <ScalarProperty Name="cm_contact_pos" ColumnName="cm_contact_pos" />
+          <ScalarProperty Name="cm_mobil" ColumnName="cm_mobil" />
+          <ScalarProperty Name="cm_contact_tel" ColumnName="cm_contact_tel" />
+          <ScalarProperty Name="cm_contact_ext" ColumnName="cm_contact_ext" />
+          <ScalarProperty Name="cm_reg_doc_type" ColumnName="cm_reg_doc_type" />
+          <ScalarProperty Name="cm_license_num" ColumnName="cm_license_num" />
+          <ScalarProperty Name="cm_issu_auth" ColumnName="cm_issu_auth" />
+          <ScalarProperty Name="cm_license_exp_date" ColumnName="cm_license_exp_date" />
+          <ScalarProperty Name="cm_country_code" ColumnName="cm_country_code" />
+          <ScalarProperty Name="cm_address1" ColumnName="cm_address1" />
+          <ScalarProperty Name="cm_address2" ColumnName="cm_address2" />
+          <ScalarProperty Name="cm_city" ColumnName="cm_city" />
+          <ScalarProperty Name="cm_city_code" ColumnName="cm_city_code" />
+          <ScalarProperty Name="cm_pobox" ColumnName="cm_pobox" />
+          <ScalarProperty Name="cm_worktel1" ColumnName="cm_worktel1" />
+          <ScalarProperty Name="cm_worktel2" ColumnName="cm_worktel2" />
+          <ScalarProperty Name="cm_fax" ColumnName="cm_fax" />
+          <ScalarProperty Name="cm_restel" ColumnName="cm_restel" />
+          <ScalarProperty Name="cm_mcoc_num" ColumnName="cm_mcoc_num" />
+          <ScalarProperty Name="cm_url" ColumnName="cm_url" />
+          <ScalarProperty Name="cm_cuscat_code" ColumnName="cm_cuscat_code" />
+          <ScalarProperty Name="cm_retention_acno" ColumnName="cm_retention_acno" />
+          <ScalarProperty Name="cm_advance_acno" ColumnName="cm_advance_acno" />
+          <ScalarProperty Name="cm_is_subcontr" ColumnName="cm_is_subcontr" />
+          <ScalarProperty Name="cm_pay_term" ColumnName="cm_pay_term" />
+          <ScalarProperty Name="cm_cr_limit" ColumnName="cm_cr_limit" />
+          <ScalarProperty Name="cm_amt_bal" ColumnName="cm_amt_bal" />
+          <ScalarProperty Name="cm_pdc_amount" ColumnName="cm_pdc_amount" />
+          <ScalarProperty Name="cm_last_inv_date" ColumnName="cm_last_inv_date" />
+          <ScalarProperty Name="cm_last_rec_date" ColumnName="cm_last_rec_date" />
+          <ScalarProperty Name="cm_age_type" ColumnName="cm_age_type" />
+          <ScalarProperty Name="cm_age_01" ColumnName="cm_age_01" />
+          <ScalarProperty Name="cm_age_02" ColumnName="cm_age_02" />
+          <ScalarProperty Name="cm_age_03" ColumnName="cm_age_03" />
+          <ScalarProperty Name="cm_age_04" ColumnName="cm_age_04" />
+          <ScalarProperty Name="cm_age_05" ColumnName="cm_age_05" />
+          <ScalarProperty Name="cm_age_06" ColumnName="cm_age_06" />
+          <ScalarProperty Name="cm_age_07" ColumnName="cm_age_07" />
+          <ScalarProperty Name="cm_age_08" ColumnName="cm_age_08" />
+          <ScalarProperty Name="cm_age_09" ColumnName="cm_age_09" />
+          <ScalarProperty Name="cm_age_10" ColumnName="cm_age_10" />
+          <ScalarProperty Name="cm_age_11" ColumnName="cm_age_11" />
+          <ScalarProperty Name="cm_age_12" ColumnName="cm_age_12" />
+          <ScalarProperty Name="cm_group_company" ColumnName="cm_group_company" />
+          <ScalarProperty Name="cm_assoc_company" ColumnName="cm_assoc_company" />
+          <ScalarProperty Name="cm_salesman_code" ColumnName="cm_salesman_code" />
+          <ScalarProperty Name="cm_vat_reg_no" ColumnName="cm_vat_reg_no" />
+          <ScalarProperty Name="cm_acct_status" ColumnName="cm_acct_status" />
+          <ScalarProperty Name="cm_registered_by" ColumnName="cm_registered_by" />
+          <ScalarProperty Name="cm_created_by" ColumnName="cm_created_by" />
+          <ScalarProperty Name="cm_last_mod_by" ColumnName="cm_last_mod_by" />
+          <ScalarProperty Name="cm_creation_date" ColumnName="cm_creation_date" />
+          <ScalarProperty Name="cm_last_mod_date" ColumnName="cm_last_mod_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customer_LMS">
+      <EntityTypeMapping TypeName="FibConsoModel.customer_LMS">
+        <MappingFragment StoreEntitySet="customer_LMS">
+          <ScalarProperty Name="cm_acct_type" ColumnName="cm_acct_type" />
+          <ScalarProperty Name="cm_mgrp_code" ColumnName="cm_mgrp_code" />
+          <ScalarProperty Name="cm_sgrp_code" ColumnName="cm_sgrp_code" />
+          <ScalarProperty Name="cm_acct_serial" ColumnName="cm_acct_serial" />
+          <ScalarProperty Name="cm_acct_code" ColumnName="cm_acct_code" />
+          <ScalarProperty Name="cm_comp_name" ColumnName="cm_comp_name" />
+          <ScalarProperty Name="cm_comp_name_ar" ColumnName="cm_comp_name_ar" />
+          <ScalarProperty Name="cm_comp_name_short" ColumnName="cm_comp_name_short" />
+          <ScalarProperty Name="cm_comp_offic_name" ColumnName="cm_comp_offic_name" />
+          <ScalarProperty Name="cm_sup_id" ColumnName="cm_sup_id" />
+          <ScalarProperty Name="cm_sup_status" ColumnName="cm_sup_status" />
+          <ScalarProperty Name="cm_sup_status_date" ColumnName="cm_sup_status_date" />
+          <ScalarProperty Name="cm_sup_country" ColumnName="cm_sup_country" />
+          <ScalarProperty Name="cm_sup_bc" ColumnName="cm_sup_bc" />
+          <ScalarProperty Name="cm_comp_type" ColumnName="cm_comp_type" />
+          <ScalarProperty Name="cm_email" ColumnName="cm_email" />
+          <ScalarProperty Name="cm_contact_per" ColumnName="cm_contact_per" />
+          <ScalarProperty Name="cm_contact_pos" ColumnName="cm_contact_pos" />
+          <ScalarProperty Name="cm_mobil" ColumnName="cm_mobil" />
+          <ScalarProperty Name="cm_contact_tel" ColumnName="cm_contact_tel" />
+          <ScalarProperty Name="cm_contact_ext" ColumnName="cm_contact_ext" />
+          <ScalarProperty Name="cm_reg_doc_type" ColumnName="cm_reg_doc_type" />
+          <ScalarProperty Name="cm_license_num" ColumnName="cm_license_num" />
+          <ScalarProperty Name="cm_issu_auth" ColumnName="cm_issu_auth" />
+          <ScalarProperty Name="cm_license_exp_date" ColumnName="cm_license_exp_date" />
+          <ScalarProperty Name="cm_country_code" ColumnName="cm_country_code" />
+          <ScalarProperty Name="cm_address1" ColumnName="cm_address1" />
+          <ScalarProperty Name="cm_address2" ColumnName="cm_address2" />
+          <ScalarProperty Name="cm_city" ColumnName="cm_city" />
+          <ScalarProperty Name="cm_city_code" ColumnName="cm_city_code" />
+          <ScalarProperty Name="cm_pobox" ColumnName="cm_pobox" />
+          <ScalarProperty Name="cm_worktel1" ColumnName="cm_worktel1" />
+          <ScalarProperty Name="cm_worktel2" ColumnName="cm_worktel2" />
+          <ScalarProperty Name="cm_fax" ColumnName="cm_fax" />
+          <ScalarProperty Name="cm_restel" ColumnName="cm_restel" />
+          <ScalarProperty Name="cm_mcoc_num" ColumnName="cm_mcoc_num" />
+          <ScalarProperty Name="cm_url" ColumnName="cm_url" />
+          <ScalarProperty Name="cm_cuscat_code" ColumnName="cm_cuscat_code" />
+          <ScalarProperty Name="cm_retention_acno" ColumnName="cm_retention_acno" />
+          <ScalarProperty Name="cm_advance_acno" ColumnName="cm_advance_acno" />
+          <ScalarProperty Name="cm_is_subcontr" ColumnName="cm_is_subcontr" />
+          <ScalarProperty Name="cm_pay_term" ColumnName="cm_pay_term" />
+          <ScalarProperty Name="cm_cr_limit" ColumnName="cm_cr_limit" />
+          <ScalarProperty Name="cm_amt_bal" ColumnName="cm_amt_bal" />
+          <ScalarProperty Name="cm_pdc_amount" ColumnName="cm_pdc_amount" />
+          <ScalarProperty Name="cm_last_inv_date" ColumnName="cm_last_inv_date" />
+          <ScalarProperty Name="cm_last_rec_date" ColumnName="cm_last_rec_date" />
+          <ScalarProperty Name="cm_age_type" ColumnName="cm_age_type" />
+          <ScalarProperty Name="cm_age_01" ColumnName="cm_age_01" />
+          <ScalarProperty Name="cm_age_02" ColumnName="cm_age_02" />
+          <ScalarProperty Name="cm_age_03" ColumnName="cm_age_03" />
+          <ScalarProperty Name="cm_age_04" ColumnName="cm_age_04" />
+          <ScalarProperty Name="cm_age_05" ColumnName="cm_age_05" />
+          <ScalarProperty Name="cm_age_06" ColumnName="cm_age_06" />
+          <ScalarProperty Name="cm_age_07" ColumnName="cm_age_07" />
+          <ScalarProperty Name="cm_age_08" ColumnName="cm_age_08" />
+          <ScalarProperty Name="cm_age_09" ColumnName="cm_age_09" />
+          <ScalarProperty Name="cm_age_10" ColumnName="cm_age_10" />
+          <ScalarProperty Name="cm_age_11" ColumnName="cm_age_11" />
+          <ScalarProperty Name="cm_age_12" ColumnName="cm_age_12" />
+          <ScalarProperty Name="cm_group_company" ColumnName="cm_group_company" />
+          <ScalarProperty Name="cm_assoc_company" ColumnName="cm_assoc_company" />
+          <ScalarProperty Name="cm_salesman_code" ColumnName="cm_salesman_code" />
+          <ScalarProperty Name="cm_vat_reg_no" ColumnName="cm_vat_reg_no" />
+          <ScalarProperty Name="cm_acct_status" ColumnName="cm_acct_status" />
+          <ScalarProperty Name="cm_registered_by" ColumnName="cm_registered_by" />
+          <ScalarProperty Name="cm_created_by" ColumnName="cm_created_by" />
+          <ScalarProperty Name="cm_last_mod_by" ColumnName="cm_last_mod_by" />
+          <ScalarProperty Name="cm_creation_date" ColumnName="cm_creation_date" />
+          <ScalarProperty Name="cm_last_mod_date" ColumnName="cm_last_mod_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_COST_CODE_MASTER">
+      <EntityTypeMapping TypeName="FibConsoModel.VW_COST_CODE_MASTER">
+        <MappingFragment StoreEntitySet="VW_COST_CODE_MASTER">
+          <ScalarProperty Name="orgCode" ColumnName="orgCode" />
+          <ScalarProperty Name="orgName" ColumnName="orgName" />
+          <ScalarProperty Name="ccm_type" ColumnName="ccm_type" />
+          <ScalarProperty Name="ccm_serial" ColumnName="ccm_serial" />
+          <ScalarProperty Name="ccm_cost_code" ColumnName="ccm_cost_code" />
+          <ScalarProperty Name="ccm_desc" ColumnName="ccm_desc" />
+          <ScalarProperty Name="ccm_status" ColumnName="ccm_status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_MATRECTRANS">
+      <EntityTypeMapping TypeName="FibConsoModel.VW_MATRECTRANS">
+        <MappingFragment StoreEntitySet="VW_MATRECTRANS">
+          <ScalarProperty Name="mrvm_org_code" ColumnName="mrvm_org_code" />
+          <ScalarProperty Name="mrvm_vr_loc" ColumnName="mrvm_vr_loc" />
+          <ScalarProperty Name="mrvm_vr_no" ColumnName="mrvm_vr_no" />
+          <ScalarProperty Name="mrvm_po_no" ColumnName="mrvm_po_no" />
+          <ScalarProperty Name="mrvm_po_rev" ColumnName="mrvm_po_rev" />
+          <ScalarProperty Name="mrvd_serial_no" ColumnName="mrvd_serial_no" />
+          <ScalarProperty Name="mrvd_po_line_id" ColumnName="mrvd_po_line_id" />
+          <ScalarProperty Name="mrvd_po_line_no" ColumnName="mrvd_po_line_no" />
+          <ScalarProperty Name="mrvd_item_code" ColumnName="mrvd_item_code" />
+          <ScalarProperty Name="mrvd_rcvd_order_unit" ColumnName="mrvd_rcvd_order_unit" />
+          <ScalarProperty Name="mrvd_unit_rate_lc" ColumnName="mrvd_unit_rate_lc" />
+          <ScalarProperty Name="mrvd_value_fc" ColumnName="mrvd_value_fc" />
+          <ScalarProperty Name="mrvd_line_vat" ColumnName="mrvd_line_vat" />
+          <ScalarProperty Name="mrvd_createdBy" ColumnName="mrvd_createdBy" />
+          <ScalarProperty Name="mrvd_creationDate" ColumnName="mrvd_creationDate" />
+          <ScalarProperty Name="mrvd_LastModifiedBy" ColumnName="mrvd_LastModifiedBy" />
+          <ScalarProperty Name="mrvd_LastModifiedDate" ColumnName="mrvd_LastModifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_POLINERECEIVING">
+      <EntityTypeMapping TypeName="FibConsoModel.VW_POLINERECEIVING">
+        <MappingFragment StoreEntitySet="VW_POLINERECEIVING">
+          <ScalarProperty Name="PONUM" ColumnName="PONUM" />
+          <ScalarProperty Name="POREVISION" ColumnName="POREVISION" />
+          <ScalarProperty Name="POLINENUM" ColumnName="POLINENUM" />
+          <ScalarProperty Name="POLINEID" ColumnName="POLINEID" />
+          <ScalarProperty Name="ORDERQTY" ColumnName="ORDERQTY" />
+          <ScalarProperty Name="UNITCOST" ColumnName="UNITCOST" />
+          <ScalarProperty Name="LINECOST" ColumnName="LINECOST" />
+          <ScalarProperty Name="TAXTOTAL" ColumnName="TAXTOTAL" />
+          <ScalarProperty Name="RECEIVEDQTY" ColumnName="RECEIVEDQTY" />
+          <ScalarProperty Name="REMAININGQTY" ColumnName="REMAININGQTY" />
+          <ScalarProperty Name="RECEIPTTOLERANCE" ColumnName="RECEIPTTOLERANCE" />
+          <ScalarProperty Name="RECEIPTTOLQTY" ColumnName="RECEIPTTOLQTY" />
+          <ScalarProperty Name="RECEIPTTOLAMT" ColumnName="RECEIPTTOLAMT" />
+          <ScalarProperty Name="RECEIVEDTOTALCOST" ColumnName="RECEIVEDTOTALCOST" />
+          <ScalarProperty Name="RECEIPTSTATUS" ColumnName="RECEIPTSTATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_PORECEIVING">
+      <EntityTypeMapping TypeName="FibConsoModel.VW_PORECEIVING">
+        <MappingFragment StoreEntitySet="VW_PORECEIVING">
+          <ScalarProperty Name="ORGCODE" ColumnName="ORGCODE" />
+          <ScalarProperty Name="PROJECTCODE" ColumnName="PROJECTCODE" />
+          <ScalarProperty Name="VENDORCODE" ColumnName="VENDORCODE" />
+          <ScalarProperty Name="PONUM" ColumnName="PONUM" />
+          <ScalarProperty Name="POREVISION" ColumnName="POREVISION" />
+          <ScalarProperty Name="PRETAXRECEIVINGTOTALCOST" ColumnName="PRETAXRECEIVINGTOTALCOST" />
+          <ScalarProperty Name="RECEIVINGTOTALCOST" ColumnName="RECEIVINGTOTALCOST" />
+          <ScalarProperty Name="RECEIVEDTOTALCOST" ColumnName="RECEIVEDTOTALCOST" />
+          <ScalarProperty Name="RECEIPTSTATUS" ColumnName="RECEIPTSTATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_PRODUCT_MASTER">
+      <EntityTypeMapping TypeName="FibConsoModel.VW_PRODUCT_MASTER">
+        <MappingFragment StoreEntitySet="VW_PRODUCT_MASTER">
+          <ScalarProperty Name="orgCode" ColumnName="orgCode" />
+          <ScalarProperty Name="orgName" ColumnName="orgName" />
+          <ScalarProperty Name="prm_item_code" ColumnName="prm_item_code" />
+          <ScalarProperty Name="prm_item_desc" ColumnName="prm_item_desc" />
+          <ScalarProperty Name="prm_uom_code" ColumnName="prm_uom_code" />
+          <ScalarProperty Name="uom_desc" ColumnName="uom_desc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_SUPPYMTTRANS">
+      <EntityTypeMapping TypeName="FibConsoModel.VW_SUPPYMTTRANS">
+        <MappingFragment StoreEntitySet="VW_SUPPYMTTRANS">
+          <ScalarProperty Name="SUPPLIERID" ColumnName="SUPPLIERID" />
+          <ScalarProperty Name="SUPACCTCODE" ColumnName="SUPACCTCODE" />
+          <ScalarProperty Name="VORGCODE" ColumnName="VORGCODE" />
+          <ScalarProperty Name="PROJECTCODE" ColumnName="PROJECTCODE" />
+          <ScalarProperty Name="PROJECTNAME" ColumnName="PROJECTNAME" />
+          <ScalarProperty Name="VDATE" ColumnName="VDATE" />
+          <ScalarProperty Name="VTYPE" ColumnName="VTYPE" />
+          <ScalarProperty Name="VTYPEDESC" ColumnName="VTYPEDESC" />
+          <ScalarProperty Name="VMNUM" ColumnName="VMNUM" />
+          <ScalarProperty Name="VDNUM" ColumnName="VDNUM" />
+          <ScalarProperty Name="INVOICENUM" ColumnName="INVOICENUM" />
+          <ScalarProperty Name="PONUM" ColumnName="PONUM" />
+          <ScalarProperty Name="POEXEMPT" ColumnName="POEXEMPT" />
+          <ScalarProperty Name="VAMOUNT" ColumnName="VAMOUNT" />
+          <ScalarProperty Name="VSTATUS" ColumnName="VSTATUS" />
+          <ScalarProperty Name="VSTATUSDESC" ColumnName="VSTATUSDESC" />
+          <ScalarProperty Name="INVOICEDATE" ColumnName="INVOICEDATE" />
+          <ScalarProperty Name="INVPAYTERM" ColumnName="INVPAYTERM" />
+          <ScalarProperty Name="INVOICEDUEDATE" ColumnName="INVOICEDUEDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionName="FibConsoModel.Store.GetCostCode" FunctionImportName="GetCostCode">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FibConsoModel.GetCostCode_Result">
+          <ScalarProperty Name="orgCode" ColumnName="orgCode" />
+          <ScalarProperty Name="orgName" ColumnName="orgName" />
+          <ScalarProperty Name="ccm_type" ColumnName="ccm_type" />
+          <ScalarProperty Name="ccm_serial" ColumnName="ccm_serial" />
+          <ScalarProperty Name="ccm_cost_code" ColumnName="ccm_cost_code" />
+          <ScalarProperty Name="ccm_desc" ColumnName="ccm_desc" />
+          <ScalarProperty Name="ccm_status" ColumnName="ccm_status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="AddAccountMainGroup" FunctionName="FibConsoModel.Store.AddAccountMainGroup" />
+    <FunctionImportMapping FunctionImportName="AddAccountSubGroup" FunctionName="FibConsoModel.Store.AddAccountSubGroup" />
+    <FunctionImportMapping FunctionImportName="AddEditBsPlMaingroupMaster" FunctionName="FibConsoModel.Store.AddEditBsPlMaingroupMaster" />
+    <FunctionImportMapping FunctionImportName="AddEditBsPlMaster" FunctionName="FibConsoModel.Store.AddEditBsPlMaster" />
+    <FunctionImportMapping FunctionImportName="AddEditBsPlSubgroupMaster" FunctionName="FibConsoModel.Store.AddEditBsPlSubgroupMaster" />
+    <FunctionImportMapping FunctionImportName="AddEditConProjectMaster" FunctionName="FibConsoModel.Store.AddEditConProjectMaster" />
+    <FunctionImportMapping FunctionImportName="AddEditCustBussUnits" FunctionName="FibConsoModel.Store.AddEditCustBussUnits" />
+    <FunctionImportMapping FunctionImportName="AddEditCustomerSuppForConsoli" FunctionName="FibConsoModel.Store.AddEditCustomerSuppForConsoli" />
+    <FunctionImportMapping FunctionImportName="AddEditLaborSupplyMaster" FunctionName="FibConsoModel.Store.AddEditLaborSupplyMaster" />
+    <FunctionImportMapping FunctionImportName="AddEditSupplier" FunctionName="FibConsoModel.Store.AddEditSupplier" />
+    <FunctionImportMapping FunctionImportName="AddEditSupplierForConsolidation" FunctionName="FibConsoModel.Store.AddEditSupplierForConsolidation" />
+    <FunctionImportMapping FunctionImportName="AddEditSupplierForDivision" FunctionName="FibConsoModel.Store.AddEditSupplierForDivision" />
+    <FunctionImportMapping FunctionImportName="AddEditSupplierMapping" FunctionName="FibConsoModel.Store.AddEditSupplierMapping" />
+    <FunctionImportMapping FunctionImportName="AddHERegEntry" FunctionName="FibConsoModel.Store.AddHERegEntry" />
+    <FunctionImportMapping FunctionImportName="CheckBsPlEnable" FunctionName="FibConsoModel.Store.CheckBsPlEnable" />
+    <FunctionImportMapping FunctionImportName="chkDuplicateRegID" FunctionName="FibConsoModel.Store.chkDuplicateRegID" />
+    <FunctionImportMapping FunctionImportName="DeleteConProjectMaster" FunctionName="FibConsoModel.Store.DeleteConProjectMaster" />
+    <FunctionImportMapping FunctionImportName="DeleteCustBussUnits" FunctionName="FibConsoModel.Store.DeleteCustBussUnits" />
+    <FunctionImportMapping FunctionImportName="DeleteHERegEntry" FunctionName="FibConsoModel.Store.DeleteHERegEntry" />
+    <FunctionImportMapping FunctionImportName="DeleteLaborSupplyMaster" FunctionName="FibConsoModel.Store.DeleteLaborSupplyMaster" />
+    <FunctionImportMapping FunctionImportName="DeleteSupplierMapping" FunctionName="FibConsoModel.Store.DeleteSupplierMapping" />
+    <FunctionImportMapping FunctionImportName="FASGetErrorMsg" FunctionName="FibConsoModel.Store.FASGetErrorMsg" />
+    <FunctionImportMapping FunctionImportName="GeLaborSupplyMasterByPage" FunctionName="FibConsoModel.Store.GeLaborSupplyMasterByPage" />
+    <FunctionImportMapping FunctionImportName="GetAccountsMainGroupByPage" FunctionName="FibConsoModel.Store.GetAccountsMainGroupByPage" />
+    <FunctionImportMapping FunctionImportName="GetAccountsSubGroupByPage" FunctionName="FibConsoModel.Store.GetAccountsSubGroupByPage" />
+    <FunctionImportMapping FunctionImportName="GetAccountType" FunctionName="FibConsoModel.Store.GetAccountType" />
+    <FunctionImportMapping FunctionImportName="GetAcctStatus" FunctionName="FibConsoModel.Store.GetAcctStatus">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FibConsoModel.GetAcctStatus_Result">
+          <ScalarProperty Name="domain_id" ColumnName="domain_id" />
+          <ScalarProperty Name="domain_name" ColumnName="domain_name" />
+          <ScalarProperty Name="domain_value" ColumnName="domain_value" />
+          <ScalarProperty Name="domain_descr" ColumnName="domain_descr" />
+          <ScalarProperty Name="domain_isActive" ColumnName="domain_isActive" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetAllOrgCostCode" FunctionName="FibConsoModel.Store.GetAllOrgCostCode">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FibConsoModel.GetAllOrgCostCode_Result">
+          <ScalarProperty Name="orgCode" ColumnName="orgCode" />
+          <ScalarProperty Name="orgName" ColumnName="orgName" />
+          <ScalarProperty Name="ccm_type" ColumnName="ccm_type" />
+          <ScalarProperty Name="ccm_serial" ColumnName="ccm_serial" />
+          <ScalarProperty Name="ccm_cost_code" ColumnName="ccm_cost_code" />
+          <ScalarProperty Name="ccm_desc" ColumnName="ccm_desc" />
+          <ScalarProperty Name="ccm_status" ColumnName="ccm_status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetAllOrgProductMaster" FunctionName="FibConsoModel.Store.GetAllOrgProductMaster">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FibConsoModel.GetAllOrgProductMaster_Result">
+          <ScalarProperty Name="orgCode" ColumnName="orgCode" />
+          <ScalarProperty Name="orgName" ColumnName="orgName" />
+          <ScalarProperty Name="prm_item_code" ColumnName="prm_item_code" />
+          <ScalarProperty Name="prm_item_desc" ColumnName="prm_item_desc" />
+          <ScalarProperty Name="prm_uom_code" ColumnName="prm_uom_code" />
+          <ScalarProperty Name="uom_desc" ColumnName="uom_desc" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetBsplMaingroupByPage" FunctionName="FibConsoModel.Store.GetBsplMaingroupByPage" />
+    <FunctionImportMapping FunctionImportName="GetBsplMasterByPage" FunctionName="FibConsoModel.Store.GetBsplMasterByPage" />
+    <FunctionImportMapping FunctionImportName="GetBsplSubgroupByPage" FunctionName="FibConsoModel.Store.GetBsplSubgroupByPage" />
+    <FunctionImportMapping FunctionImportName="GetConProjectMasterByPage" FunctionName="FibConsoModel.Store.GetConProjectMasterByPage" />
+    <FunctionImportMapping FunctionImportName="GetCostCenterOrgByPage" FunctionName="FibConsoModel.Store.GetCostCenterOrgByPage" />
+    <FunctionImportMapping FunctionImportName="GetCustIDMaxNo" FunctionName="FibConsoModel.Store.GetCustIDMaxNo" />
+    <FunctionImportMapping FunctionImportName="GetCustomerBusiness" FunctionName="FibConsoModel.Store.GetCustomerBusiness">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FibConsoModel.GetCustomerBusiness_Result">
+          <ScalarProperty Name="cb_acct_code" ColumnName="cb_acct_code" />
+          <ScalarProperty Name="cb_org_code" ColumnName="cb_org_code" />
+          <ScalarProperty Name="cb_org_acct_code" ColumnName="cb_org_acct_code" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetCustomerBusinessForOrgAccCode" FunctionName="FibConsoModel.Store.GetCustomerBusinessForOrgAccCode" />
+    <FunctionImportMapping FunctionImportName="GetCustomerName" FunctionName="FibConsoModel.Store.GetCustomerName" />
+    <FunctionImportMapping FunctionImportName="GetExitOrgMapping" FunctionName="FibConsoModel.Store.GetExitOrgMapping">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FibConsoModel.GetExitOrgMapping_Result">
+          <ScalarProperty Name="csm_org_code" ColumnName="csm_org_code" />
+          <ScalarProperty Name="org_name" ColumnName="org_name" />
+          <ScalarProperty Name="csm_org_acct_code" ColumnName="csm_org_acct_code" />
+          <ScalarProperty Name="org_acct_name" ColumnName="org_acct_name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetHERegEntry" FunctionName="FibConsoModel.Store.GetHERegEntry">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FibConsoModel.GetHERegEntry_Result">
+          <ScalarProperty Name="sle_supp_id" ColumnName="sle_supp_id" />
+          <ScalarProperty Name="sle_hemp_code" ColumnName="sle_hemp_code" />
+          <ScalarProperty Name="sle_hemp_name" ColumnName="sle_hemp_name" />
+          <ScalarProperty Name="sle_eid_no" ColumnName="sle_eid_no" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GETITEMMASTER_SP" FunctionName="FibConsoModel.Store.GETITEMMASTER_SP" />
+    <FunctionImportMapping FunctionImportName="GetMaxAccountSerial" FunctionName="FibConsoModel.Store.GetMaxAccountSerial" />
+    <FunctionImportMapping FunctionImportName="GetMaxBsPlMaingroupMaster" FunctionName="FibConsoModel.Store.GetMaxBsPlMaingroupMaster" />
+    <FunctionImportMapping FunctionImportName="GetMaxBsPlMaster" FunctionName="FibConsoModel.Store.GetMaxBsPlMaster" />
+    <FunctionImportMapping FunctionImportName="GetMaxBsPlSubgroupMaster" FunctionName="FibConsoModel.Store.GetMaxBsPlSubgroupMaster" />
+    <FunctionImportMapping FunctionImportName="GetMaxGroupCode" FunctionName="FibConsoModel.Store.GetMaxGroupCode" />
+    <FunctionImportMapping FunctionImportName="GetMaxSubGroupCode" FunctionName="FibConsoModel.Store.GetMaxSubGroupCode" />
+    <FunctionImportMapping FunctionImportName="GetMGRPmode" FunctionName="FibConsoModel.Store.GetMGRPmode" />
+    <FunctionImportMapping FunctionImportName="GetNewCustomerSupplierByPage" FunctionName="FibConsoModel.Store.GetNewCustomerSupplierByPage" />
+    <FunctionImportMapping FunctionImportName="GetNewCustomerSupplierLMSByPage" FunctionName="FibConsoModel.Store.GetNewCustomerSupplierLMSByPage" />
+    <FunctionImportMapping FunctionImportName="GetPossMatchOrgMapping" FunctionName="FibConsoModel.Store.GetPossMatchOrgMapping" />
+    <FunctionImportMapping FunctionImportName="GetRegDocumentType" FunctionName="FibConsoModel.Store.GetRegDocumentType">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FibConsoModel.GetRegDocumentType_Result">
+          <ScalarProperty Name="domain_id" ColumnName="domain_id" />
+          <ScalarProperty Name="domain_name" ColumnName="domain_name" />
+          <ScalarProperty Name="domain_value" ColumnName="domain_value" />
+          <ScalarProperty Name="domain_descr" ColumnName="domain_descr" />
+          <ScalarProperty Name="domain_isActive" ColumnName="domain_isActive" />
+          <ScalarProperty Name="domain_name_descr" ColumnName="domain_name_descr" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetSimilarSuppliers" FunctionName="FibConsoModel.Store.GetSimilarSuppliers" />
+    <FunctionImportMapping FunctionImportName="GetSimilarSuppliersOpt" FunctionName="FibConsoModel.Store.GetSimilarSuppliersOpt" />
+    <FunctionImportMapping FunctionImportName="GetSupIrgId" FunctionName="FibConsoModel.Store.GetSupIrgId" />
+    <FunctionImportMapping FunctionImportName="GetSupplierDetailsForGrid" FunctionName="FibConsoModel.Store.GetSupplierDetailsForGrid">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FibConsoModel.GetSupplierDetailsForGrid_Result">
+          <ScalarProperty Name="cm_acct_code" ColumnName="cm_acct_code" />
+          <ScalarProperty Name="cm_comp_name" ColumnName="cm_comp_name" />
+          <ScalarProperty Name="acct_type" ColumnName="acct_type" />
+          <ScalarProperty Name="cm_sup_status" ColumnName="cm_sup_status" />
+          <ScalarProperty Name="cm_acct_status" ColumnName="cm_acct_status" />
+          <ScalarProperty Name="cm_sup_bc" ColumnName="cm_sup_bc" />
+          <ScalarProperty Name="domain_descr" ColumnName="domain_descr" />
+          <ScalarProperty Name="cm_license_num" ColumnName="cm_license_num" />
+          <ScalarProperty Name="cm_creation_date" ColumnName="cm_creation_date" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetSupplierName" FunctionName="FibConsoModel.Store.GetSupplierName" />
+    <FunctionImportMapping FunctionImportName="MATRECTRANS_SP" FunctionName="FibConsoModel.Store.MATRECTRANS_SP" />
+    <FunctionImportMapping FunctionImportName="POLINERECEIVING_SP" FunctionName="FibConsoModel.Store.POLINERECEIVING_SP" />
+    <FunctionImportMapping FunctionImportName="RetrieveAccountMainGroup" FunctionName="FibConsoModel.Store.RetrieveAccountMainGroup">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FibConsoModel.RetrieveAccountMainGroup_Result">
+          <ScalarProperty Name="acct_mgrp_type" ColumnName="acct_mgrp_type" />
+          <ScalarProperty Name="acct_mgrp_code" ColumnName="acct_mgrp_code" />
+          <ScalarProperty Name="acct_mgrp_desc" ColumnName="acct_mgrp_desc" />
+          <ScalarProperty Name="acct_mgrp_desc_ar" ColumnName="acct_mgrp_desc_ar" />
+          <ScalarProperty Name="acct_mgrp_mode" ColumnName="acct_mgrp_mode" />
+          <ScalarProperty Name="acct_bspl_mgrp" ColumnName="acct_bspl_mgrp" />
+          <ScalarProperty Name="acct_bspl_sgrp" ColumnName="acct_bspl_sgrp" />
+          <ScalarProperty Name="acct_bspl_det" ColumnName="acct_bspl_det" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="RetrieveAccountMainGroupForMaster" FunctionName="FibConsoModel.Store.RetrieveAccountMainGroupForMaster">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FibConsoModel.RetrieveAccountMainGroupForMaster_Result">
+          <ScalarProperty Name="acct_mgrp_type" ColumnName="acct_mgrp_type" />
+          <ScalarProperty Name="acct_mgrp_code" ColumnName="acct_mgrp_code" />
+          <ScalarProperty Name="acct_mgrp_desc" ColumnName="acct_mgrp_desc" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="RetrieveAccountSubGroup" FunctionName="FibConsoModel.Store.RetrieveAccountSubGroup">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FibConsoModel.RetrieveAccountSubGroup_Result">
+          <ScalarProperty Name="acct_sgrp_type" ColumnName="acct_sgrp_type" />
+          <ScalarProperty Name="acct_sgrp_mgrp" ColumnName="acct_sgrp_mgrp" />
+          <ScalarProperty Name="acct_sgrp_code" ColumnName="acct_sgrp_code" />
+          <ScalarProperty Name="acct_sgrp_desc" ColumnName="acct_sgrp_desc" />
+          <ScalarProperty Name="acct_exclude_os_inv" ColumnName="acct_exclude_os_inv" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="RetrieveAccountType" FunctionName="FibConsoModel.Store.RetrieveAccountType">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FibConsoModel.RetrieveAccountType_Result">
+          <ScalarProperty Name="acct_type_code" ColumnName="acct_type_code" />
+          <ScalarProperty Name="acct_type_desc" ColumnName="acct_type_desc" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="RetrieveAllOrgns" FunctionName="FibConsoModel.Store.RetrieveAllOrgns">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FibConsoModel.RetrieveAllOrgns_Result">
+          <ScalarProperty Name="org_code" ColumnName="org_code" />
+          <ScalarProperty Name="org_short_name" ColumnName="org_short_name" />
+          <ScalarProperty Name="org_long_name" ColumnName="org_long_name" />
+          <ScalarProperty Name="org_name" ColumnName="org_name" />
+          <ScalarProperty Name="org_abbr_name" ColumnName="org_abbr_name" />
+          <ScalarProperty Name="org_address" ColumnName="org_address" />
+          <ScalarProperty Name="org_pob" ColumnName="org_pob" />
+          <ScalarProperty Name="org_city" ColumnName="org_city" />
+          <ScalarProperty Name="org_state" ColumnName="org_state" />
+          <ScalarProperty Name="org_telephone" ColumnName="org_telephone" />
+          <ScalarProperty Name="org_fax" ColumnName="org_fax" />
+          <ScalarProperty Name="org_email" ColumnName="org_email" />
+          <ScalarProperty Name="org_lang_code" ColumnName="org_lang_code" />
+          <ScalarProperty Name="org_status" ColumnName="org_status" />
+          <ScalarProperty Name="org_name_arabic" ColumnName="org_name_arabic" />
+          <ScalarProperty Name="org_address_ar" ColumnName="org_address_ar" />
+          <ScalarProperty Name="org_city_ar" ColumnName="org_city_ar" />
+          <ScalarProperty Name="org_cpl_seq" ColumnName="org_cpl_seq" />
+          <ScalarProperty Name="org_cpl_grp" ColumnName="org_cpl_grp" />
+          <ScalarProperty Name="org_is_po_active" ColumnName="org_is_po_active" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="RetrieveAllPOorgns" FunctionName="FibConsoModel.Store.RetrieveAllPOorgns">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FibConsoModel.RetrieveAllPOorgns_Result">
+          <ScalarProperty Name="org_code" ColumnName="org_code" />
+          <ScalarProperty Name="org_short_name" ColumnName="org_short_name" />
+          <ScalarProperty Name="org_long_name" ColumnName="org_long_name" />
+          <ScalarProperty Name="org_name" ColumnName="org_name" />
+          <ScalarProperty Name="org_abbr_name" ColumnName="org_abbr_name" />
+          <ScalarProperty Name="org_address" ColumnName="org_address" />
+          <ScalarProperty Name="org_pob" ColumnName="org_pob" />
+          <ScalarProperty Name="org_city" ColumnName="org_city" />
+          <ScalarProperty Name="org_state" ColumnName="org_state" />
+          <ScalarProperty Name="org_telephone" ColumnName="org_telephone" />
+          <ScalarProperty Name="org_fax" ColumnName="org_fax" />
+          <ScalarProperty Name="org_email" ColumnName="org_email" />
+          <ScalarProperty Name="org_lang_code" ColumnName="org_lang_code" />
+          <ScalarProperty Name="org_status" ColumnName="org_status" />
+          <ScalarProperty Name="org_name_arabic" ColumnName="org_name_arabic" />
+          <ScalarProperty Name="org_address_ar" ColumnName="org_address_ar" />
+          <ScalarProperty Name="org_city_ar" ColumnName="org_city_ar" />
+          <ScalarProperty Name="org_cpl_seq" ColumnName="org_cpl_seq" />
+          <ScalarProperty Name="org_cpl_grp" ColumnName="org_cpl_grp" />
+          <ScalarProperty Name="org_is_po_active" ColumnName="org_is_po_active" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="RetrieveBranch" FunctionName="FibConsoModel.Store.RetrieveBranch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FibConsoModel.RetrieveBranch_Result">
+          <ScalarProperty Name="bm_code" ColumnName="bm_code" />
+          <ScalarProperty Name="bm_desc" ColumnName="bm_desc" />
+          <ScalarProperty Name="bm_reg_code" ColumnName="bm_reg_code" />
+          <ScalarProperty Name="bm_desc_arabic" ColumnName="bm_desc_arabic" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="RetrieveBsPlMainGroupMaster" FunctionName="FibConsoModel.Store.RetrieveBsPlMainGroupMaster">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FibConsoModel.RetrieveBsPlMainGroupMaster_Result">
+          <ScalarProperty Name="bsplmg_mgrp_code" ColumnName="bsplmg_mgrp_code" />
+          <ScalarProperty Name="bsplmg_mgrp_desc" ColumnName="bsplmg_mgrp_desc" />
+          <ScalarProperty Name="bsplmg_mgrp_desc_ar" ColumnName="bsplmg_mgrp_desc_ar" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="RetrieveChqAppForOrgByDateForConsolidation" FunctionName="FibConsoModel.Store.RetrieveChqAppForOrgByDateForConsolidation" />
+    <FunctionImportMapping FunctionImportName="RetrieveCountry" FunctionName="FibConsoModel.Store.RetrieveCountry">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FibConsoModel.RetrieveCountry_Result">
+          <ScalarProperty Name="cnt_country_code" ColumnName="cnt_country_code" />
+          <ScalarProperty Name="cnt_country_name" ColumnName="cnt_country_name" />
+          <ScalarProperty Name="cnt_nationality" ColumnName="cnt_nationality" />
+          <ScalarProperty Name="cnt_country_short" ColumnName="cnt_country_short" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="RetrieveCustomerSupplier" FunctionName="FibConsoModel.Store.RetrieveCustomerSupplier">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FibConsoModel.RetrieveCustomerSupplier_Result">
+          <ScalarProperty Name="cm_acct_type" ColumnName="cm_acct_type" />
+          <ScalarProperty Name="cm_mgrp_code" ColumnName="cm_mgrp_code" />
+          <ScalarProperty Name="cm_sgrp_code" ColumnName="cm_sgrp_code" />
+          <ScalarProperty Name="cm_acct_serial" ColumnName="cm_acct_serial" />
+          <ScalarProperty Name="cm_acct_code" ColumnName="cm_acct_code" />
+          <ScalarProperty Name="cm_comp_name" ColumnName="cm_comp_name" />
+          <ScalarProperty Name="cm_comp_name_ar" ColumnName="cm_comp_name_ar" />
+          <ScalarProperty Name="cm_comp_name_short" ColumnName="cm_comp_name_short" />
+          <ScalarProperty Name="cm_comp_offic_name" ColumnName="cm_comp_offic_name" />
+          <ScalarProperty Name="cm_sup_id" ColumnName="cm_sup_id" />
+          <ScalarProperty Name="cm_sup_status" ColumnName="cm_sup_status" />
+          <ScalarProperty Name="cm_sup_status_date" ColumnName="cm_sup_status_date" />
+          <ScalarProperty Name="cm_sup_country" ColumnName="cm_sup_country" />
+          <ScalarProperty Name="cm_sup_bc" ColumnName="cm_sup_bc" />
+          <ScalarProperty Name="cm_comp_type" ColumnName="cm_comp_type" />
+          <ScalarProperty Name="cm_email" ColumnName="cm_email" />
+          <ScalarProperty Name="cm_contact_per" ColumnName="cm_contact_per" />
+          <ScalarProperty Name="cm_contact_pos" ColumnName="cm_contact_pos" />
+          <ScalarProperty Name="cm_mobil" ColumnName="cm_mobil" />
+          <ScalarProperty Name="cm_contact_tel" ColumnName="cm_contact_tel" />
+          <ScalarProperty Name="cm_contact_ext" ColumnName="cm_contact_ext" />
+          <ScalarProperty Name="cm_reg_doc_type" ColumnName="cm_reg_doc_type" />
+          <ScalarProperty Name="cm_license_num" ColumnName="cm_license_num" />
+          <ScalarProperty Name="cm_issu_auth" ColumnName="cm_issu_auth" />
+          <ScalarProperty Name="cm_license_exp_date" ColumnName="cm_license_exp_date" />
+          <ScalarProperty Name="cm_country_code" ColumnName="cm_country_code" />
+          <ScalarProperty Name="cm_address1" ColumnName="cm_address1" />
+          <ScalarProperty Name="cm_address2" ColumnName="cm_address2" />
+          <ScalarProperty Name="cm_city" ColumnName="cm_city" />
+          <ScalarProperty Name="cm_city_code" ColumnName="cm_city_code" />
+          <ScalarProperty Name="cm_pobox" ColumnName="cm_pobox" />
+          <ScalarProperty Name="cm_worktel1" ColumnName="cm_worktel1" />
+          <ScalarProperty Name="cm_worktel2" ColumnName="cm_worktel2" />
+          <ScalarProperty Name="cm_fax" ColumnName="cm_fax" />
+          <ScalarProperty Name="cm_restel" ColumnName="cm_restel" />
+          <ScalarProperty Name="cm_mcoc_num" ColumnName="cm_mcoc_num" />
+          <ScalarProperty Name="cm_url" ColumnName="cm_url" />
+          <ScalarProperty Name="cm_cuscat_code" ColumnName="cm_cuscat_code" />
+          <ScalarProperty Name="cm_retention_acno" ColumnName="cm_retention_acno" />
+          <ScalarProperty Name="cm_advance_acno" ColumnName="cm_advance_acno" />
+          <ScalarProperty Name="cm_vat_acno" ColumnName="cm_vat_acno" />
+          <ScalarProperty Name="cm_is_subcontr" ColumnName="cm_is_subcontr" />
+          <ScalarProperty Name="cm_pay_term" ColumnName="cm_pay_term" />
+          <ScalarProperty Name="cm_cr_limit" ColumnName="cm_cr_limit" />
+          <ScalarProperty Name="cm_amt_bal" ColumnName="cm_amt_bal" />
+          <ScalarProperty Name="cm_pdc_amount" ColumnName="cm_pdc_amount" />
+          <ScalarProperty Name="cm_last_inv_date" ColumnName="cm_last_inv_date" />
+          <ScalarProperty Name="cm_last_rec_date" ColumnName="cm_last_rec_date" />
+          <ScalarProperty Name="cm_age_type" ColumnName="cm_age_type" />
+          <ScalarProperty Name="cm_age_01" ColumnName="cm_age_01" />
+          <ScalarProperty Name="cm_age_02" ColumnName="cm_age_02" />
+          <ScalarProperty Name="cm_age_03" ColumnName="cm_age_03" />
+          <ScalarProperty Name="cm_age_04" ColumnName="cm_age_04" />
+          <ScalarProperty Name="cm_age_05" ColumnName="cm_age_05" />
+          <ScalarProperty Name="cm_age_06" ColumnName="cm_age_06" />
+          <ScalarProperty Name="cm_age_07" ColumnName="cm_age_07" />
+          <ScalarProperty Name="cm_age_08" ColumnName="cm_age_08" />
+          <ScalarProperty Name="cm_age_09" ColumnName="cm_age_09" />
+          <ScalarProperty Name="cm_age_10" ColumnName="cm_age_10" />
+          <ScalarProperty Name="cm_age_11" ColumnName="cm_age_11" />
+          <ScalarProperty Name="cm_age_12" ColumnName="cm_age_12" />
+          <ScalarProperty Name="cm_group_company" ColumnName="cm_group_company" />
+          <ScalarProperty Name="cm_assoc_company" ColumnName="cm_assoc_company" />
+          <ScalarProperty Name="cm_salesman_code" ColumnName="cm_salesman_code" />
+          <ScalarProperty Name="cm_is_vat_registered" ColumnName="cm_is_vat_registered" />
+          <ScalarProperty Name="cm_vat_reg_type" ColumnName="cm_vat_reg_type" />
+          <ScalarProperty Name="cm_vat_reg_no" ColumnName="cm_vat_reg_no" />
+          <ScalarProperty Name="cm_vat_grp_rep_name" ColumnName="cm_vat_grp_rep_name" />
+          <ScalarProperty Name="cm_acct_status" ColumnName="cm_acct_status" />
+          <ScalarProperty Name="cm_registered_by" ColumnName="cm_registered_by" />
+          <ScalarProperty Name="cm_created_by" ColumnName="cm_created_by" />
+          <ScalarProperty Name="cm_last_mod_by" ColumnName="cm_last_mod_by" />
+          <ScalarProperty Name="cm_creation_date" ColumnName="cm_creation_date" />
+          <ScalarProperty Name="cm_last_mod_date" ColumnName="cm_last_mod_date" />
+          <ScalarProperty Name="cm_vat_grp_no" ColumnName="cm_vat_grp_no" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="RetrieveCustomerSupplierLMS" FunctionName="FibConsoModel.Store.RetrieveCustomerSupplierLMS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FibConsoModel.RetrieveCustomerSupplierLMS_Result">
+          <ScalarProperty Name="cm_acct_type" ColumnName="cm_acct_type" />
+          <ScalarProperty Name="cm_mgrp_code" ColumnName="cm_mgrp_code" />
+          <ScalarProperty Name="cm_sgrp_code" ColumnName="cm_sgrp_code" />
+          <ScalarProperty Name="cm_acct_serial" ColumnName="cm_acct_serial" />
+          <ScalarProperty Name="cm_acct_code" ColumnName="cm_acct_code" />
+          <ScalarProperty Name="cm_comp_name" ColumnName="cm_comp_name" />
+          <ScalarProperty Name="cm_comp_name_ar" ColumnName="cm_comp_name_ar" />
+          <ScalarProperty Name="cm_comp_name_short" ColumnName="cm_comp_name_short" />
+          <ScalarProperty Name="cm_comp_offic_name" ColumnName="cm_comp_offic_name" />
+          <ScalarProperty Name="cm_sup_id" ColumnName="cm_sup_id" />
+          <ScalarProperty Name="cm_sup_status" ColumnName="cm_sup_status" />
+          <ScalarProperty Name="cm_sup_status_date" ColumnName="cm_sup_status_date" />
+          <ScalarProperty Name="cm_sup_country" ColumnName="cm_sup_country" />
+          <ScalarProperty Name="cm_sup_bc" ColumnName="cm_sup_bc" />
+          <ScalarProperty Name="cm_comp_type" ColumnName="cm_comp_type" />
+          <ScalarProperty Name="cm_email" ColumnName="cm_email" />
+          <ScalarProperty Name="cm_contact_per" ColumnName="cm_contact_per" />
+          <ScalarProperty Name="cm_contact_pos" ColumnName="cm_contact_pos" />
+          <ScalarProperty Name="cm_mobil" ColumnName="cm_mobil" />
+          <ScalarProperty Name="cm_contact_tel" ColumnName="cm_contact_tel" />
+          <ScalarProperty Name="cm_contact_ext" ColumnName="cm_contact_ext" />
+          <ScalarProperty Name="cm_reg_doc_type" ColumnName="cm_reg_doc_type" />
+          <ScalarProperty Name="cm_license_num" ColumnName="cm_license_num" />
+          <ScalarProperty Name="cm_issu_auth" ColumnName="cm_issu_auth" />
+          <ScalarProperty Name="cm_license_exp_date" ColumnName="cm_license_exp_date" />
+          <ScalarProperty Name="cm_country_code" ColumnName="cm_country_code" />
+          <ScalarProperty Name="cm_address1" ColumnName="cm_address1" />
+          <ScalarProperty Name="cm_address2" ColumnName="cm_address2" />
+          <ScalarProperty Name="cm_city" ColumnName="cm_city" />
+          <ScalarProperty Name="cm_city_code" ColumnName="cm_city_code" />
+          <ScalarProperty Name="cm_pobox" ColumnName="cm_pobox" />
+          <ScalarProperty Name="cm_worktel1" ColumnName="cm_worktel1" />
+          <ScalarProperty Name="cm_worktel2" ColumnName="cm_worktel2" />
+          <ScalarProperty Name="cm_fax" ColumnName="cm_fax" />
+          <ScalarProperty Name="cm_restel" ColumnName="cm_restel" />
+          <ScalarProperty Name="cm_mcoc_num" ColumnName="cm_mcoc_num" />
+          <ScalarProperty Name="cm_url" ColumnName="cm_url" />
+          <ScalarProperty Name="cm_cuscat_code" ColumnName="cm_cuscat_code" />
+          <ScalarProperty Name="cm_retention_acno" ColumnName="cm_retention_acno" />
+          <ScalarProperty Name="cm_advance_acno" ColumnName="cm_advance_acno" />
+          <ScalarProperty Name="cm_is_subcontr" ColumnName="cm_is_subcontr" />
+          <ScalarProperty Name="cm_pay_term" ColumnName="cm_pay_term" />
+          <ScalarProperty Name="cm_cr_limit" ColumnName="cm_cr_limit" />
+          <ScalarProperty Name="cm_amt_bal" ColumnName="cm_amt_bal" />
+          <ScalarProperty Name="cm_pdc_amount" ColumnName="cm_pdc_amount" />
+          <ScalarProperty Name="cm_last_inv_date" ColumnName="cm_last_inv_date" />
+          <ScalarProperty Name="cm_last_rec_date" ColumnName="cm_last_rec_date" />
+          <ScalarProperty Name="cm_age_type" ColumnName="cm_age_type" />
+          <ScalarProperty Name="cm_age_01" ColumnName="cm_age_01" />
+          <ScalarProperty Name="cm_age_02" ColumnName="cm_age_02" />
+          <ScalarProperty Name="cm_age_03" ColumnName="cm_age_03" />
+          <ScalarProperty Name="cm_age_04" ColumnName="cm_age_04" />
+          <ScalarProperty Name="cm_age_05" ColumnName="cm_age_05" />
+          <ScalarProperty Name="cm_age_06" ColumnName="cm_age_06" />
+          <ScalarProperty Name="cm_age_07" ColumnName="cm_age_07" />
+          <ScalarProperty Name="cm_age_08" ColumnName="cm_age_08" />
+          <ScalarProperty Name="cm_age_09" ColumnName="cm_age_09" />
+          <ScalarProperty Name="cm_age_10" ColumnName="cm_age_10" />
+          <ScalarProperty Name="cm_age_11" ColumnName="cm_age_11" />
+          <ScalarProperty Name="cm_age_12" ColumnName="cm_age_12" />
+          <ScalarProperty Name="cm_group_company" ColumnName="cm_group_company" />
+          <ScalarProperty Name="cm_assoc_company" ColumnName="cm_assoc_company" />
+          <ScalarProperty Name="cm_salesman_code" ColumnName="cm_salesman_code" />
+          <ScalarProperty Name="cm_vat_reg_no" ColumnName="cm_vat_reg_no" />
+          <ScalarProperty Name="cm_acct_status" ColumnName="cm_acct_status" />
+          <ScalarProperty Name="cm_registered_by" ColumnName="cm_registered_by" />
+          <ScalarProperty Name="cm_created_by" ColumnName="cm_created_by" />
+          <ScalarProperty Name="cm_last_mod_by" ColumnName="cm_last_mod_by" />
+          <ScalarProperty Name="cm_creation_date" ColumnName="cm_creation_date" />
+          <ScalarProperty Name="cm_last_mod_date" ColumnName="cm_last_mod_date" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="RetrieveDepartmentsPO" FunctionName="FibConsoModel.Store.RetrieveDepartmentsPO" />
+    <FunctionImportMapping FunctionImportName="RetrieveLaborSupplyMaster" FunctionName="FibConsoModel.Store.RetrieveLaborSupplyMaster">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FibConsoModel.RetrieveLaborSupplyMaster_Result">
+          <ScalarProperty Name="lsm_supp_id" ColumnName="lsm_supp_id" />
+          <ScalarProperty Name="lsm_supp_name" ColumnName="lsm_supp_name" />
+          <ScalarProperty Name="lsm_supp_type" ColumnName="lsm_supp_type" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="RetrievePorjetMaster" FunctionName="FibConsoModel.Store.RetrievePorjetMaster" />
+    <FunctionImportMapping FunctionImportName="RptForePurOrderPay" FunctionName="FibConsoModel.Store.RptForePurOrderPay" />
+    <FunctionImportMapping FunctionImportName="RptPurchase360Degree" FunctionName="FibConsoModel.Store.RptPurchase360Degree" />
+    <FunctionImportMapping FunctionImportName="RptStatementOfAcctsConlidation" FunctionName="FibConsoModel.Store.RptStatementOfAcctsConlidation" />
+    <FunctionImportMapping FunctionImportName="SearchSupplierDetails" FunctionName="FibConsoModel.Store.SearchSupplierDetails" />
+    <FunctionImportMapping FunctionImportName="SUPPYMTTRANS_SP" FunctionName="FibConsoModel.Store.SUPPYMTTRANS_SP">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FibConsoModel.SUPPYMTTRANS_SP_Result">
+          <ScalarProperty Name="SUPPLIERID" ColumnName="SUPPLIERID" />
+          <ScalarProperty Name="SUPACCTCODE" ColumnName="SUPACCTCODE" />
+          <ScalarProperty Name="VORGCODE" ColumnName="VORGCODE" />
+          <ScalarProperty Name="PROJECTCODE" ColumnName="PROJECTCODE" />
+          <ScalarProperty Name="PROJECTNAME" ColumnName="PROJECTNAME" />
+          <ScalarProperty Name="VDATE" ColumnName="VDATE" />
+          <ScalarProperty Name="VTYPE" ColumnName="VTYPE" />
+          <ScalarProperty Name="VTYPEDESC" ColumnName="VTYPEDESC" />
+          <ScalarProperty Name="VMNUM" ColumnName="VMNUM" />
+          <ScalarProperty Name="VDNUM" ColumnName="VDNUM" />
+          <ScalarProperty Name="INVOICENUM" ColumnName="INVOICENUM" />
+          <ScalarProperty Name="PONUM" ColumnName="PONUM" />
+          <ScalarProperty Name="POEXEMPT" ColumnName="POEXEMPT" />
+          <ScalarProperty Name="VAMOUNT" ColumnName="VAMOUNT" />
+          <ScalarProperty Name="VSTATUS" ColumnName="VSTATUS" />
+          <ScalarProperty Name="VSTATUSDESC" ColumnName="VSTATUSDESC" />
+          <ScalarProperty Name="INVOICEDATE" ColumnName="INVOICEDATE" />
+          <ScalarProperty Name="INVPAYTERM" ColumnName="INVPAYTERM" />
+          <ScalarProperty Name="INVOICEDUEDATE" ColumnName="INVOICEDUEDATE" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspAgeingForComsolidationReport" FunctionName="FibConsoModel.Store.uspAgeingForComsolidationReport" />
+    <FunctionImportMapping FunctionImportName="uspGetOrgParaFileByOrgId" FunctionName="FibConsoModel.Store.uspGetOrgParaFileByOrgId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FibConsoModel.uspGetOrgParaFileByOrgId_Result">
+          <ScalarProperty Name="opf_org_code" ColumnName="opf_org_code" />
+          <ScalarProperty Name="opf_work_year" ColumnName="opf_work_year" />
+          <ScalarProperty Name="opf_finbeg_date" ColumnName="opf_finbeg_date" />
+          <ScalarProperty Name="org_incp_date" ColumnName="org_incp_date" />
+          <ScalarProperty Name="opf_curr_month" ColumnName="opf_curr_month" />
+          <ScalarProperty Name="opf_fin_process_status" ColumnName="opf_fin_process_status" />
+          <ScalarProperty Name="opf_recjv_curr_month" ColumnName="opf_recjv_curr_month" />
+          <ScalarProperty Name="opf_recjv_process_status" ColumnName="opf_recjv_process_status" />
+          <ScalarProperty Name="opf_recjv_autofinentry" ColumnName="opf_recjv_autofinentry" />
+          <ScalarProperty Name="opf_fa_curr_month" ColumnName="opf_fa_curr_month" />
+          <ScalarProperty Name="opf_fa_process_status" ColumnName="opf_fa_process_status" />
+          <ScalarProperty Name="opf_vat_curr_month" ColumnName="opf_vat_curr_month" />
+          <ScalarProperty Name="opf_vat_process_status" ColumnName="opf_vat_process_status" />
+          <ScalarProperty Name="opf_inv_curr_month" ColumnName="opf_inv_curr_month" />
+          <ScalarProperty Name="opf_inv_process_status" ColumnName="opf_inv_process_status" />
+          <ScalarProperty Name="opf_pay_process_date" ColumnName="opf_pay_process_date" />
+          <ScalarProperty Name="opf_pl_code" ColumnName="opf_pl_code" />
+          <ScalarProperty Name="opf_bspl_mgrp_code" ColumnName="opf_bspl_mgrp_code" />
+          <ScalarProperty Name="opf_bspl_sgrp_code" ColumnName="opf_bspl_sgrp_code" />
+          <ScalarProperty Name="opf_bspl_det_code" ColumnName="opf_bspl_det_code" />
+          <ScalarProperty Name="opf_def_cc_code" ColumnName="opf_def_cc_code" />
+          <ScalarProperty Name="opf_fa_group" ColumnName="opf_fa_group" />
+          <ScalarProperty Name="opf_fa_prov" ColumnName="opf_fa_prov" />
+          <ScalarProperty Name="opf_fa_exp" ColumnName="opf_fa_exp" />
+          <ScalarProperty Name="opf_fa_profit" ColumnName="opf_fa_profit" />
+          <ScalarProperty Name="opf_multi_brn" ColumnName="opf_multi_brn" />
+          <ScalarProperty Name="opf_job_cost" ColumnName="opf_job_cost" />
+          <ScalarProperty Name="opf_proj_act" ColumnName="opf_proj_act" />
+          <ScalarProperty Name="opf_multi_loc" ColumnName="opf_multi_loc" />
+          <ScalarProperty Name="opf_pos_allo_time" ColumnName="opf_pos_allo_time" />
+          <ScalarProperty Name="opf_pos_allo_date" ColumnName="opf_pos_allo_date" />
+          <ScalarProperty Name="opf_pay_calc_type" ColumnName="opf_pay_calc_type" />
+          <ScalarProperty Name="opf_pay_curr_month" ColumnName="opf_pay_curr_month" />
+          <ScalarProperty Name="opf_pay_message" ColumnName="opf_pay_message" />
+          <ScalarProperty Name="opf_pay_acclink" ColumnName="opf_pay_acclink" />
+          <ScalarProperty Name="opf_pay_ats_link" ColumnName="opf_pay_ats_link" />
+          <ScalarProperty Name="opf_pay_sal_acno" ColumnName="opf_pay_sal_acno" />
+          <ScalarProperty Name="opf_pay_lev_pro" ColumnName="opf_pay_lev_pro" />
+          <ScalarProperty Name="opf_pay_lev_exp" ColumnName="opf_pay_lev_exp" />
+          <ScalarProperty Name="opf_pay_ind_pro" ColumnName="opf_pay_ind_pro" />
+          <ScalarProperty Name="opf_pay_ind_exp" ColumnName="opf_pay_ind_exp" />
+          <ScalarProperty Name="opf_pay_tkt_pro" ColumnName="opf_pay_tkt_pro" />
+          <ScalarProperty Name="opf_pay_tkt_exp" ColumnName="opf_pay_tkt_exp" />
+          <ScalarProperty Name="opf_pay_acc_status" ColumnName="opf_pay_acc_status" />
+          <ScalarProperty Name="opf_pay_emp_grp_code" ColumnName="opf_pay_emp_grp_code" />
+          <ScalarProperty Name="opf_pay_emp_beni_code" ColumnName="opf_pay_emp_beni_code" />
+          <ScalarProperty Name="opf_pay_grp_comp_ac" ColumnName="opf_pay_grp_comp_ac" />
+          <ScalarProperty Name="opf_pay_proc_type" ColumnName="opf_pay_proc_type" />
+          <ScalarProperty Name="opf_ats_weekend" ColumnName="opf_ats_weekend" />
+          <ScalarProperty Name="opf_ats_weekend_tot_days" ColumnName="opf_ats_weekend_tot_days" />
+          <ScalarProperty Name="opf_ats_start_day" ColumnName="opf_ats_start_day" />
+          <ScalarProperty Name="opf_ats_grace_min" ColumnName="opf_ats_grace_min" />
+          <ScalarProperty Name="opf_ats_min_ded" ColumnName="opf_ats_min_ded" />
+          <ScalarProperty Name="opf_ats_def_stan_schedule" ColumnName="opf_ats_def_stan_schedule" />
+          <ScalarProperty Name="opf_ats_pay_link" ColumnName="opf_ats_pay_link" />
+          <ScalarProperty Name="opf_ats_recap_entitlement" ColumnName="opf_ats_recap_entitlement" />
+          <ScalarProperty Name="opf_ats_recap_expence" ColumnName="opf_ats_recap_expence" />
+          <ScalarProperty Name="opf_inv_acclink" ColumnName="opf_inv_acclink" />
+          <ScalarProperty Name="opf_inv_asss" ColumnName="opf_inv_asss" />
+          <ScalarProperty Name="opf_inv_stk_purch" ColumnName="opf_inv_stk_purch" />
+          <ScalarProperty Name="opf_inv_consg_acno" ColumnName="opf_inv_consg_acno" />
+          <ScalarProperty Name="opf_inv_cash_cont_acno" ColumnName="opf_inv_cash_cont_acno" />
+          <ScalarProperty Name="opf_inv_ws_inc_acno" ColumnName="opf_inv_ws_inc_acno" />
+          <ScalarProperty Name="opf_inv_stock_adj_acno" ColumnName="opf_inv_stock_adj_acno" />
+          <ScalarProperty Name="opf_inv_proc_control_acno" ColumnName="opf_inv_proc_control_acno" />
+          <ScalarProperty Name="opf_inv_item_serial" ColumnName="opf_inv_item_serial" />
+          <ScalarProperty Name="opf_inv_item_batch" ColumnName="opf_inv_item_batch" />
+          <ScalarProperty Name="opf_inv_po" ColumnName="opf_inv_po" />
+          <ScalarProperty Name="opf_inv_expdate" ColumnName="opf_inv_expdate" />
+          <ScalarProperty Name="opf_inv_mrvdate" ColumnName="opf_inv_mrvdate" />
+          <ScalarProperty Name="opf_inv_acct_sgrp_attr" ColumnName="opf_inv_acct_sgrp_attr" />
+          <ScalarProperty Name="opf_inv_acct_srl_attr" ColumnName="opf_inv_acct_srl_attr" />
+          <ScalarProperty Name="opf_inv_obs_stk_stm_code" ColumnName="opf_inv_obs_stk_stm_code" />
+          <ScalarProperty Name="opf_inv_issue_type" ColumnName="opf_inv_issue_type" />
+          <ScalarProperty Name="opf_inv_cost_type" ColumnName="opf_inv_cost_type" />
+          <ScalarProperty Name="opf_logo" ColumnName="opf_logo" />
+          <ScalarProperty Name="opf_base_currency" ColumnName="opf_base_currency" />
+          <ScalarProperty Name="opf_vat_applicable" ColumnName="opf_vat_applicable" />
+          <ScalarProperty Name="opf_vat_input" ColumnName="opf_vat_input" />
+          <ScalarProperty Name="opf_vat_output" ColumnName="opf_vat_output" />
+          <ScalarProperty Name="opf_vat_rate" ColumnName="opf_vat_rate" />
+          <ScalarProperty Name="opf_vat_control_ac" ColumnName="opf_vat_control_ac" />
+          <ScalarProperty Name="opf_va_expense_ac" ColumnName="opf_va_expense_ac" />
+          <ScalarProperty Name="opf_vat_fta_ac" ColumnName="opf_vat_fta_ac" />
+          <ScalarProperty Name="opf_cc_applicable" ColumnName="opf_cc_applicable" />
+          <ScalarProperty Name="opf_profit_on_sale_sc_acct" ColumnName="opf_profit_on_sale_sc_acct" />
+          <ScalarProperty Name="opf_club_control_acno" ColumnName="opf_club_control_acno" />
+          <ScalarProperty Name="opf_block_curr_fin_month_data" ColumnName="opf_block_curr_fin_month_data" />
+          <ScalarProperty Name="opf_link_with_membership" ColumnName="opf_link_with_membership" />
+          <ScalarProperty Name="opf_res_block_applicable" ColumnName="opf_res_block_applicable" />
+          <ScalarProperty Name="opf_res_link_with_account" ColumnName="opf_res_link_with_account" />
+          <ScalarProperty Name="opf_res_pdc_party_code" ColumnName="opf_res_pdc_party_code" />
+          <ScalarProperty Name="opf_res_inc_st_date" ColumnName="opf_res_inc_st_date" />
+          <ScalarProperty Name="opf_res_ded_inc_acct" ColumnName="opf_res_ded_inc_acct" />
+          <ScalarProperty Name="opf_ar_enabled" ColumnName="opf_ar_enabled" />
+          <ScalarProperty Name="opf_bspl_code" ColumnName="opf_bspl_code" />
+          <ScalarProperty Name="opf_neg_stk_bal_applicable" ColumnName="opf_neg_stk_bal_applicable" />
+          <ScalarProperty Name="opf_budget_applicable" ColumnName="opf_budget_applicable" />
+          <ScalarProperty Name="opf_depm_mandatory" ColumnName="opf_depm_mandatory" />
+          <ScalarProperty Name="opf_inv_op_st_date" ColumnName="opf_inv_op_st_date" />
+          <ScalarProperty Name="opf_pay_mess_amt" ColumnName="opf_pay_mess_amt" />
+          <ScalarProperty Name="opf_pay_mess_stat" ColumnName="opf_pay_mess_stat" />
+          <ScalarProperty Name="opf_pay_trans_amt" ColumnName="opf_pay_trans_amt" />
+          <ScalarProperty Name="opf_pay_trans_stat" ColumnName="opf_pay_trans_stat" />
+          <ScalarProperty Name="opf_pay_accom_amt" ColumnName="opf_pay_accom_amt" />
+          <ScalarProperty Name="opf_pay_accom_stat" ColumnName="opf_pay_accom_stat" />
+          <ScalarProperty Name="opf_cc_acct_code" ColumnName="opf_cc_acct_code" />
+          <ScalarProperty Name="opf_pay_ot_reg_rate" ColumnName="opf_pay_ot_reg_rate" />
+          <ScalarProperty Name="opf_pay_ot_hol_rate" ColumnName="opf_pay_ot_hol_rate" />
+          <ScalarProperty Name="opf_pay_ot_wek_rate" ColumnName="opf_pay_ot_wek_rate" />
+          <ScalarProperty Name="opf_default_loc" ColumnName="opf_default_loc" />
+          <ScalarProperty Name="opf_res_ten_group" ColumnName="opf_res_ten_group" />
+          <ScalarProperty Name="opf_cust_pdc_group" ColumnName="opf_cust_pdc_group" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspSecGetRptVouchertHeader" FunctionName="FibConsoModel.Store.uspSecGetRptVouchertHeader">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FibConsoModel.uspSecGetRptVouchertHeader_Result">
+          <ScalarProperty Name="org_long_name" ColumnName="org_long_name" />
+          <ScalarProperty Name="org_address" ColumnName="org_address" />
+          <ScalarProperty Name="org_pob" ColumnName="org_pob" />
+          <ScalarProperty Name="org_city" ColumnName="org_city" />
+          <ScalarProperty Name="org_state" ColumnName="org_state" />
+          <ScalarProperty Name="org_telephone" ColumnName="org_telephone" />
+          <ScalarProperty Name="org_fax" ColumnName="org_fax" />
+          <ScalarProperty Name="org_email" ColumnName="org_email" />
+          <ScalarProperty Name="org_name_arabic" ColumnName="org_name_arabic" />
+          <ScalarProperty Name="org_address_ar" ColumnName="org_address_ar" />
+          <ScalarProperty Name="org_city_ar" ColumnName="org_city_ar" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ValidateSupplier" FunctionName="FibConsoModel.Store.ValidateSupplier" />
+  </EntityContainerMapping>
+</Mapping>

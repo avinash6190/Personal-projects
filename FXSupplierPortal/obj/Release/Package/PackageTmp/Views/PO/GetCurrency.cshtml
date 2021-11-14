@@ -1,0 +1,84 @@
+﻿
+@model IEnumerable<FXSupplierPortal.SS_ALNDomain>
+
+@{
+    ViewBag.Title = "Purchase Order";
+    Layout = null;
+    WebGrid webGrid = new WebGrid(source: Model, canPage: false, selectionFieldName: "Description", canSort: false);
+}
+<script src="~/Scripts/jquery.dataTables.js"></script>
+<link href="~/Content/jquery.dataTables.css" rel="stylesheet" />
+@Styles.Render("~/Content/webgridstyle.css")
+@Scripts.Render("~/bundles/jqueryui")
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Select Currency from the list</title>
+    <script>
+        $(document).ready(function () {
+            $("#currencyWebGrid").dataTable().fnDestroy();
+            $("#currencyWebGrid thead").find("tr:gt(0)").remove();
+            $('#currencyWebGrid thead tr').clone(true).appendTo('#currencyWebGrid thead');
+
+            $('#currencyWebGrid thead tr:eq(1) th').each(function (i) {
+                var title = $(this).text();
+                if (i == 0) {
+                    $(this).html('<input type="text" style="display:none; width:100%; font-size:11px;" placeholder=" ' + title + '" />');
+                    $(this).removeClass('sorting_asc');
+                }
+                else {
+                    $(this).html('<input type="text" style="width:100%; font-size:11px;" placeholder=" ' + title + '" />');
+                }
+                $('input', this).on('keyup change', function () {
+                    if (table.column(i).search() !== this.value) {
+                        table.column(i).search(this.value).draw();
+                    }
+                });
+            });
+            
+            var table = $('#currencyWebGrid').DataTable({
+                orderCellsTop: true,
+                fixedHeader: true,
+                search: false
+            });
+        });
+
+        setTimeout(function () {
+            $("#currencyWebGridDiv").show();
+        }, 50);
+
+        function setCurrency(currencyCode) {
+            $("#po_CURRENCYCODE").val(currencyCode);
+            $("#GetCurrency").dialog('close');
+        }
+    </script>
+</head>
+<body>
+    <div id="currencyWebGridDiv" style="display:none">
+        <form id="myForm">
+            <div id='GetCurrency'>
+                @webGrid.GetHtml(
+               htmlAttributes: new { @id = "currencyWebGrid" },
+               tableStyle: "webgrid-table",
+               headerStyle: "webgrid-header",
+               footerStyle: "webgrid-footer",
+               alternatingRowStyle: "webgrid-alternating-row",
+               selectedRowStyle: "webgrid-selected-row",
+               rowStyle: "webgrid-row-style",
+               mode: WebGridPagerModes.All,
+               columns: webGrid.Columns(
+                    webGrid.Column("Select", "Select", format: @<text><a href="#" onclick="setCurrency('@item.Value.Value');" + style="color: blue;text-decoration: underline;">Select</a></text>),
+                          webGrid.Column("Value", "Currency Code"),
+                          webGrid.Column("Description", "Currency Name")))
+            </div>
+
+        </form>
+       </div>
+</body>
+</html>
+
+
+
+

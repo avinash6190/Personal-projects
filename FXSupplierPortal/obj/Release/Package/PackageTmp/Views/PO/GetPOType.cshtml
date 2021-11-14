@@ -1,0 +1,89 @@
+﻿
+@model IEnumerable<FXSupplierPortal.SS_ALNDomain>
+
+@{
+    ViewBag.Title = "Purchase Order";
+    Layout = null;
+    WebGrid webGrid = new WebGrid(source: Model, canPage: false, selectionFieldName: "Description", canSort: false);
+}
+<script src="~/Scripts/jquery.dataTables.js"></script>
+<link href="~/Content/jquery.dataTables.css" rel="stylesheet"/>
+@Styles.Render("~/Content/webgridstyle.css")
+@Scripts.Render("~/bundles/jqueryui")
+@Scripts.Render("~/bundles/jqueryval")
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Select POType from the list</title>
+    <script>
+        $(document).ready(function () {
+
+            $("#POWebGrid").dataTable().fnDestroy();
+            $("#POWebGrid thead").find("tr:gt(0)").remove();
+            $('#POWebGrid thead tr').clone(true).appendTo('#POWebGrid thead');
+
+            $('#POWebGrid thead tr:eq(1) th').each(function (i) {
+                var title = $(this).text();
+                if (i == 0) {
+                    $(this).html('<input type="text" style="display:none; width:100%; font-size:11px;" placeholder=" ' + title + '" />');
+                    $(this).removeClass('sorting_asc');
+                }
+                else {
+                    $(this).html('<input type="text" style="width:100%; font-size:11px;" placeholder=" ' + title + '" />');
+                }
+                $('input', this).on('keyup change', function () {
+                    if (table.column(i).search() !== this.value) {
+                        table.column(i).search(this.value).draw();
+                    }
+                });
+            });
+       
+            var table = $('#POWebGrid').DataTable({
+                orderCellsTop: true,
+                fixedHeader: true,
+                search: false
+            });
+        });
+
+        setTimeout(function () {
+            //$("#poWebGridDiv").removeAttr("style");
+            $("#poWebGridDiv").show();
+        }, 10);
+
+        function setPOType(value, description) {
+            $("#po_POTYPE").val(value);
+            $("#po_POTYPETEXT").val(description);
+            $("#GetPOType").dialog('close');
+        }
+    </script>
+</head>
+<body>
+    <div id="poWebGridDiv" style="display:none">
+        <form id="myForm">
+            <div id='GetPOType'>
+                @webGrid.GetHtml(
+               htmlAttributes: new { @id = "POWebGrid" },
+               tableStyle: "webgrid-table",
+               headerStyle: "webgrid-header",
+               footerStyle: "webgrid-footer",
+               alternatingRowStyle: "webgrid-alternating-row",
+               selectedRowStyle: "webgrid-selected-row",
+               rowStyle: "webgrid-row-style",
+               mode: WebGridPagerModes.All,
+               columns: webGrid.Columns(
+                    webGrid.Column("Select", "Select", format: @<text><a href="#" onclick="setPOType('@item.Value.Value','@item.Description');" + style="color: blue;text-decoration: underline;">Select</a></text>),
+                       webGrid.Column("Value", "Value"),
+                       webGrid.Column("Description", "Description")))
+            </div>
+
+        </form>
+    </div>
+</body>
+
+
+</html>
+
+
